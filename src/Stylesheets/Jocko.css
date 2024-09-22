@@ -1,0 +1,6 @@
+iframe {
+    width:100vw;
+    height:50vh;
+     
+    overflow: hidden; /* Ensures that content inside the iframe does not overflow the rounded corners */
+}

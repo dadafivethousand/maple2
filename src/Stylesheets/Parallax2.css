@@ -1,0 +1,10 @@
+/* Parallax effect */
+.parallax2 {
+    height: 500px; /* Adjust the height as needed */
+    background-image: url('../Media/lobby.jpg'); /* Replace with your image */
+    background-attachment: fixed; /* Creates the parallax scrolling effect */
+    background-position:top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  

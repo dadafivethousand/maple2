@@ -1,0 +1,11 @@
+.ContactContainer{
+    background-color: black;
+    color:white;
+}
+
+ 
+.ContactInfo{
+    display: flex;
+    justify-content: space-around;
+    
+}

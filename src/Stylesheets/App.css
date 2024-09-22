@@ -1,0 +1,34 @@
+ 
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    max-width: 100vw;
+ 
+  }
+
+  .Crimson{
+    color: crimson
+}
+
+.White{
+  color:white
+}
+.Flexbox{
+  display:flex;
+}
+  h1{
+    font-family: Young Serif;
+  }
+
+  p{
+    font-family: Sahitya
+  }
+  
+ 
+  html {
+    scroll-behavior: smooth;
+  }
+  
+
+ 

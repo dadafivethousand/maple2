@@ -1,0 +1,106 @@
+  .day-column {
+    margin-bottom: 20px;
+    margin: 0 auto;
+    border: 1px solid #ccc; 
+    background-color:rgba(255, 255, 255, 0.614);
+  }
+
+  .Column{
+    flex: 1 1 0; 
+    
+  }
+
+  .ScheduleContainer{
+    
+    border-top: 2px solid black;
+ border-bottom: 2px solid black;
+    padding-bottom: 50px;
+    background: linear-gradient(to bottom, white, black);
+
+  }
+
+  
+  .ScheduleContainer h1{
+   color: rgb(0, 0, 0);
+  }
+
+  .Schedule {
+    padding-top:100px;
+    display: flex; /* Flex layout for wider screens */
+    justify-content: space-evenly;
+    flex-grow: 1;
+    width:90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    border-radius: 50px;
+  }
+
+  
+  .WeekDay{
+ background-color: rgba(0, 0, 0, 0.914);
+ padding:10px;
+ border: 1px solid #ccc; 
+ color: white;
+ margin-top: 30px;
+ border-radius: 5px;
+  
+  }
+  .timeslot p{
+ font-size: 13px;
+ display: flex;
+ 
+  }
+  .day-column h3 {
+    text-align: center;
+
+  }
+  
+  .timeslot {
+    
+    background-color: #c44;
+    color: white;
+    border-radius: 2px;
+    border:1px solid black;
+   width:100%;
+    text-align: center;
+    padding: 5px auto;
+    box-sizing: border-box;
+    min-height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  @media (min-width: 800px) {
+ 
+
+    .Column{
+      width:15%;
+
+    }
+
+    .WeekDay{
+      margin-top: 0 ;
+    }  
+  }
+  
+  @media (max-width: 800px) {
+    .day-column {
+      
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+
+    
+  .Schedule {
+ 
+    padding:5px;
+  
+  }
+  
+    
+  }

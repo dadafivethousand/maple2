@@ -1,0 +1,27 @@
+.FAQContainer {
+    padding: 20px;
+ 
+    margin: auto;
+  }
+
+  
+  
+  .faq-item {
+    margin-bottom: 20px;
+  }
+  
+  .faq-question h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .faq-answer p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    margin-left: 20px;
+    text-align: left;
+  }
+  
