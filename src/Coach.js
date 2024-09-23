@@ -1,4 +1,6 @@
+import Belt from "./Belt"
 import "./Stylesheets/Coach.css"
+import {useState} from 'react'
 
 export default function Coach({coach}) {
 
@@ -9,7 +11,9 @@ export default function Coach({coach}) {
         <div className="Coach">
         
         <img className="ProfilePic" src={coach.image} />
-        <h4>{coach.name}   {coach.headinstructor? "- Head Instructor":''}</h4>
+        
+     
+        <Belt belt={coach.belt} />
   
     </div>
     </div>

@@ -3,6 +3,13 @@
     height:100vh;
  
 }
+
+.NameAndLeaf{
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .Center{
     margin: 0 auto;
   }
@@ -11,21 +18,22 @@
    font-family: Young Serif;
 }
 
+.MoveDown h3{
+    font-size: 15px;
+    font-weight: normal;
+  }
+
 .LandingContainer img{
-    height: 100px;
-    position:relative;
-    top:40px
+    height: 70px;
 }
 
-.MoveDown{
-    position: relative;
-    top:100px;
+.ButtonContainer >*{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.653);
 }
 
 .LandingContainer h1 {
     color: white;
-    font-size: 3rem;
-    margin-bottom: 2rem;
+ 
 }
 
 .Crimson {
@@ -33,15 +41,17 @@
 }
 
 .LandingContainer button{
-    margin: 20px;
+    margin: 5px;
 }
 
 
 
 .ButtonContainer{
     display: flex;
-    align-items: stretch;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    margin-top:50px;
 }
  
 
@@ -73,7 +83,7 @@ font-family: Sahitya;
     padding: 15px 30px;
     font-size: 1.2rem;
     font-weight: bold;
-  
+    height:70px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 250px;
@@ -87,6 +97,7 @@ font-family: Sahitya;
 
 /* View Membership Options Button */
 .ViewPlansButton {
+    height:70px;
     background-color: black;
     color: white;
     border: 1px solid #ffffff; /* White border */
@@ -105,5 +116,33 @@ font-family: Sahitya;
     color: black;
 }
 
+@media(min-width:800px){
+    .MoveDown{
+        position: relative;
+        top:100px;
+    }
 
+    .ButtonContainer{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+   
+    }
+
+    
+.NameAndLeaf{
+  position:relative;
+  top: 100px;
+  font-size: 25px;
+  text-decoration: underline;
+  color:crimson
+}
+
+.NameAndLeaf img{
+height:150px
+  }
+     
+    
+}
  

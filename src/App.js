@@ -11,6 +11,7 @@ import Parallax2 from "./Parallax2";
 import Parallax3 from "./Parallax3";
 import Landing from "./Landing";
 import Jocko from "./Jocko";
+import Footer from "./Footer";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <Parallax />
       <FAQ />
       <Contact />
+      <Footer />
 
  
     </div>

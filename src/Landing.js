@@ -5,7 +5,8 @@ export default function Landing() {
         <div className="LandingContainer">
             <div>
                 <div className='NameAndLeaf'>
-            <h1> <img src={leaf}/><span className='Crimson'>Maple Jiu-Jitsu Academy</span>  </h1>
+                <img src={leaf}/>
+            <h1> <span className='Crimson'>Maple Jiu-Jitsu Academy</span>  </h1>
            
             </div>
            <div className='MoveDown'>
