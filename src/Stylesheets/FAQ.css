@@ -7,13 +7,7 @@
   border-top: 2px solid black;
 }
 
-
-  .Staircase{
-    display: inline-block;
-  }
-
  
-
 
   .FAQ{
     width:fit-content;
@@ -29,6 +23,11 @@
     justify-content: center;
     align-items: center;
     text-shadow: 2px 2px 5px black;
+    
+  }
+
+  .FAQFlexbox h1{
+    text-align: center;
   }
 
  
