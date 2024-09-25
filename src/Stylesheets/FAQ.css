@@ -42,14 +42,15 @@
   .faq-controls{
  
     margin: 20px 50px;
+    width:100%;
  
   }
   
   .faq-controls >*{
-    margin: 5px;
+    margin: 5px auto;
     height:30px;
     width:200px;
-  
+    display: block;
     background-color: rgba(0, 0, 0, 0.709);
     color: white;
     border: 2px white solid;

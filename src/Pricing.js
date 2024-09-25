@@ -23,7 +23,7 @@ export default function Pricing(){
     const toggleKid = () => setShowKid(prev => !prev);
     return(
         <div id="Pricing" className='PricingContainer'>
-             <h1 >  View our Membership Plans </h1> 
+             <h1 >Membership Plans </h1> 
    
 
  
