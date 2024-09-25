@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import logo from './Media/logo.png'
+import logo from './Media/leaf.png'
 import '@fortawesome/fontawesome-free/css/all.min.css';
  
 export default function Navbar(){
@@ -33,12 +33,12 @@ export default function Navbar(){
         </div>             
         </div>
            <ul className={`${showMenu? 'show': ''} NavbarList`}>
-            <li>About</li>
-            <li>Instructors</li>
-            <li>Schedule</li>
-            <li>F.A.Q.</li>
-            <li>Contact Us</li>
-            <li>Members</li>
+          <a href='#About' >   <li onClick={()=>setShowMenu(false)}>About</li></a>
+          <a href='#Coaches'>   <li onClick={()=>setShowMenu(false)}>Instructors</li></a>
+          <a href='#Schedule'>   <li onClick={()=>setShowMenu(false)}>Schedule</li></a>
+          <a href='#FAQ'>  <li onClick={()=>setShowMenu(false)}>F.A.Q.</li></a>
+          <a href='#Contact'> <li onClick={()=>setShowMenu(false)}>Contact Us</li></a>
+          <a>  <li onClick={()=>setShowMenu(false)}>Log In</li></a>
             <div className='NavbarButtons'>
    
      
@@ -46,8 +46,8 @@ export default function Navbar(){
             <div className='PhoneIcon'> <FontAwesomeIcon icon={faPhone}/> (647)887-9940 </div>
       
           
-            <button className="GetStartedButton">Sign Up <br></br>  </button>
-            <button className="ViewPlansButton"> View Prices</button>
+            <button className="NavbarGetStartedButton">Sign Up <br></br>  </button>
+            <a href='#Pricing'> <div onClick={()=>setShowMenu(false)} className="NavbarViewPlansButton"> View Prices</div></a>
             </div>
            </ul>
 

@@ -8,7 +8,7 @@ const CoachesList =
     name: "Max",
     belt:"Black Belt",
     headinstructor: 1,
-    description: "Black belt in Brazilian Jiu-Jitsu under Jorge Britto, with nearly 15 years of experience. ",
+    description: "Black belt under Jorge Britto, with nearly 15 years of experience. ",
     accomplishments:["Canadian National Champion", "IBJJF Milan Open Gold Medalist", "IBJJF Charlotte Open Gold Medalist", "IBJJF American Nationals Bronze Medalist", "Multiple Time Ontario Open Gold Medalist", "4-1 Amateur MMA Record", "1-0 Pro MMA Record"],
     image:MaxImage
 },
@@ -16,7 +16,7 @@ const CoachesList =
   name: "Rob",
   belt:"Black Belt",
  
-  description: "Black belt in Brazilian Jiu-Jitsu under Fernando Zulick, with nearly 20 years of experience.",
+  description: "Black belt under Fernando Zulick, with nearly 20 years of experience.",
   accomplishments:["Oshawa Open Gold Medalist", "2-2 Pro MMA Record"],
   image:Rob
 },

@@ -1,9 +1,8 @@
 .AboutContainer {
     background-color: rgb(0, 0, 0);
     color: white;
-    padding-bottom: 50px;
- 
-         padding-bottom:200px;
+         padding-bottom:70px;
+         padding-top:60px
 }
  
 .AboutContainer ul li{
@@ -17,13 +16,14 @@
    align-items: center;
    justify-content: flex-start;
    flex-direction: column;
+   
 
 }
 
 ul li i {
     color: #e63946; /* Change color */
     margin-top : 10px; /* Add space between icon and text */
-    font-size: 1.5em; /* Adjust icon size */
+    font-size: 3rem; /* Adjust icon size */
     vertical-align: middle; /* Align icon with text */
 
   }

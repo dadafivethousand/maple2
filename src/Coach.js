@@ -14,10 +14,10 @@ export default function Coach({coach}) {
  
         <div onClick={toggleShowProfile} className="Coach">
         
-        <img className="ProfilePic" src={coach.image} />
+        <img className=  {`${showProfile? 'Dim':''} ProfilePic`} src={coach.image} />
         { showProfile? <div className="Profile">
         <div className="Name">   {coach.name}  </div><br></br>
-            {coach.description} <br></br>
+          <div className="Description">{coach.description} </div>  
             {coach.accomplishments ? (
   <ul className="AccomplishmentsList">
     {coach.accomplishments.map((acc, index) => (

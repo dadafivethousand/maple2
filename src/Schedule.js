@@ -37,9 +37,9 @@ export default function Schedule() {
 
   const totalHours = latestTime - earliestTime;
 
-  return (<div className='ScheduleContainer'>
+  return (<div id="Schedule" className='ScheduleContainer'>
  
-    <div className="Schedule">
+    <div  className="Schedule">
     
       {Object.keys(schedule).map((day) => (
         <div className='Column'>

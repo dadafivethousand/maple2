@@ -11,7 +11,7 @@
   }
 
   .ScheduleContainer{
-    
+    padding-top: 70px;
     border-top: 2px solid black;
  border-bottom: 2px solid black;
     padding-bottom: 50px;
@@ -25,6 +25,7 @@
   }
 
   .Schedule {
+    
     padding-top:100px;
     display: flex; /* Flex layout for wider screens */
     justify-content: space-evenly;
@@ -46,8 +47,9 @@
   
   }
   .timeslot p{
- font-size: 13px;
+ font-size: 12px;
  display: flex;
+ font-family: ronoto;;
  
   }
   .day-column h3 {

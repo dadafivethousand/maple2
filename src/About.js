@@ -2,9 +2,9 @@ import './Stylesheets/About.css'
  
 
 export default function About(){
-
+ 
     return(
-        <div className='AboutContainer'>
+        <div id='About' className='AboutContainer'>
                   
             <h1>  <span className='White'> About </span> <span className='Crimson'> Maple Jiujitsu </span></h1>
            <p> At Maple Jiu-Jitsu Academy, we are committed to delivering a top-tier training experience for all skill levels. Our passion for Brazilian Jiu-Jitsu goes beyond just techniques; it’s about building a strong, inclusive community where everyone can grow, learn, and thrive.</p>

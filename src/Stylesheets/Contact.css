@@ -10,6 +10,8 @@
     text-align: center;
     padding-bottom: 50px 0;
     font-style: italic;
+    margin-bottom: 30px;
+    
 }
 
 .ContactContainer h2{
@@ -61,7 +63,8 @@ margin-bottom:20px;
 
 .Phone, .Email, .Address {
   
-    margin : 20px 0;
+    margin : 20px 30px;
+    width:100%;
 }
 
 .Indent{
@@ -70,6 +73,19 @@ margin-bottom:20px;
 
 .Contact h1{
     text-align: left;
+}
+
+.Contact{
+    margin-top:50px;
+    font-size: 20px;
+}
+ 
+#ContactText{
+    font-size: 17px; 
+}
+
+.Map{
+    padding: 0 20px;
 }
 
 @media(min-width:800px){

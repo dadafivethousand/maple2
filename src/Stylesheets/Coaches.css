@@ -6,6 +6,7 @@
     background: linear-gradient(to bottom, black , rgba(255, 255, 255, 0.312)),
                 linear-gradient(to right, black  , rgba(126, 126, 126, 0.35));
     padding-bottom: 50px;
+    padding-top:50px;
 }
 .CoachesContainer h1 {
    

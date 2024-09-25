@@ -6,7 +6,7 @@ export default function Landing() {
             <div>
                 <div className='NameAndLeaf'>
                 <img src={leaf}/>
-            <h1> <span className='Crimson'>Maple Jiu-Jitsu Academy</span>  </h1>
+            <h1> <span className='Crimson'>Maple Jiu-Jitsu <br></br> Academy</span>  </h1>
            
             </div>
            <div className='MoveDown'>
@@ -18,7 +18,7 @@ export default function Landing() {
        
           <div className="Center ButtonContainer">
               <button className="GetStartedButton">Sign Up <br></br>  </button>
-              <button className="ViewPlansButton"> View Prices</button>
+           <a href='#Pricing'>   <div className="ViewPlansButton"> View Prices</div></a>
           </div>
           </div>
           </div>

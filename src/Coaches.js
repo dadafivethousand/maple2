@@ -27,7 +27,7 @@ const BlueBelt = () => (
 
 
 export default function Coaches(){
-    return(<div className="CoachesContainer">
+    return(<div id="Coaches" className="CoachesContainer">
  
         <h1 className="CoachesIntro">
         

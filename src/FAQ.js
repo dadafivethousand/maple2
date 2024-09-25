@@ -27,7 +27,7 @@ export default function FAQ() {
   };
 
   return (
-    <div className="FAQContainer">
+    <div id="FAQ" className="FAQContainer">
       <div className="FAQFlexbox">
         <div className="Staircase">
           <h1><span className="Crimson"> F</span>requently <span className="Crimson"> A</span>sked <span className="Crimson"> Q</span>uestions</h1>

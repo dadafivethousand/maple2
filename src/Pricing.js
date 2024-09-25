@@ -11,7 +11,7 @@ const Bullets =  [
     {symbol:     <FontAwesomeIcon className='icon  ' icon={faUserPlus} />, header: 'Seamless Onboarding', description: 'Join online without any sales pressure—you’re in control!' },
     {symbol:  <FontAwesomeIcon className='icon ' icon={faDollarSign} />, header: 'Transparent Pricing ', description: 'Everything upfront, no surprises or hidden costs.' },
    
-    {symbol: <FontAwesomeIcon className='icon  ' icon={faUserCog} />, header: 'Easy Membership Management', description: 'Handle everything online. Pause or cancel at any time.' },
+    {symbol: <FontAwesomeIcon className='icon  ' icon={faUserCog} />, header: 'Easy Membership Management', description: 'Handle everything online, including cancellations.' },
 ]
 
 export default function Pricing(){
@@ -22,14 +22,14 @@ export default function Pricing(){
     const toggleAdult = () => setShowAdult(prev => !prev);
     const toggleKid = () => setShowKid(prev => !prev);
     return(
-        <div className='PricingContainer'>
+        <div id="Pricing" className='PricingContainer'>
              <h1 >  View our Membership Plans </h1> 
    
 
  
 
  
- <div className='PricingButtonContainer'>
+ <div  className='PricingButtonContainer'>
  <button onClick={toggleAdult} className='AdultMembershipButton'>Adults & Teens</button> 
  </div>
 { showAdult? < MembershipComponent type={Memberships.adult}/> :null}
