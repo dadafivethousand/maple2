@@ -80,10 +80,13 @@
       align-items: flex-start;
     }
     .FAQ-and-video >*{
-      width:50vw;
-      
+      width:50vw; 
     }
     
+    .faq-controls >*{
+      width:400px
+    }
+
   }
  
   

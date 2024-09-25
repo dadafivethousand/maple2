@@ -1,8 +1,10 @@
 import './Stylesheets/Navbar.css'
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faTimes, faBars, faUser} from '@fortawesome/free-solid-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+
+
 import logo from './Media/leaf.png'
 import '@fortawesome/fontawesome-free/css/all.min.css';
  
@@ -38,7 +40,7 @@ export default function Navbar(){
           <a href='#Schedule'>   <li onClick={()=>setShowMenu(false)}>Schedule</li></a>
           <a href='#FAQ'>  <li onClick={()=>setShowMenu(false)}>F.A.Q.</li></a>
           <a href='#Contact'> <li onClick={()=>setShowMenu(false)}>Contact Us</li></a>
-          <a>  <li onClick={()=>setShowMenu(false)}>Log In</li></a>
+          <a className='LoginFlex'>   <li   onClick={()=>setShowMenu(false)}>  <FontAwesomeIcon icon={faUser}/> <span  className='LoginText'>Log In </span> </li></a>
             <div className='NavbarButtons'>
    
      

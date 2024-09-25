@@ -8,7 +8,7 @@ const faqList = [
       answer: "No, you don’t need any prior experience to start training at Maple Jiu-Jitsu. Our classes are designed for all skill levels, from beginners to advanced practitioners."
     },
     {
-      question: "Is it safe to train at Maple Jiu-Jitsu?",
+      question: "Is it safe to train at Maple BJJ?",
       answer: "Yes, we prioritize safety and promote a safe, supportive environment. Our instructors are experienced in ensuring that all training is conducted with care, minimizing the risk of injury."
     },
     {
@@ -17,7 +17,7 @@ const faqList = [
     },
     {
       question: "Do you offer a free trial?",
-      answer: "For those looking to try a class for the first time we have a promotional drop in rate of $20, which is a negligible amount in today's economy. If you decide to purchase a membership, that $20 will be applied towards the payment."
+      answer: "For those looking to try a class for the first time we have a promotional drop in rate of $20, which will be applied towards your membership if you decide to sign up. Lets face it, $20 is a negligible amount in today's economy."
     },
     {
       question: "What age groups can sign up?",
