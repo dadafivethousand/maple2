@@ -1,11 +1,11 @@
 .LandingContainer {
-    background: linear-gradient(to bottom, white, black);
+    background: linear-gradient(to bottom, rgb(233, 233, 233), black);
     height:100vh;
  
 }
 
 .NameAndLeaf{
-    margin: 100px auto;
+    margin: 90px auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,7 +79,7 @@ font-family: Sahitya;
     background-color: #bd0c09; /* Soft pink */
     color: white;
     border: none;
-    border-radius: 50px;
+    border-radius: 10px;
     padding: 15px 30px;
     font-size: 1.2rem;
     font-weight: bold;
@@ -101,7 +101,7 @@ font-family: Sahitya;
     background-color: black;
     color: white;
     border: 1px solid #ffffff; /* White border */
-    border-radius: 50px;
+    border-radius: 10px;
     padding: 15px 30px;
     font-size: 1.2rem;
     font-weight: bold;
@@ -135,8 +135,10 @@ font-family: Sahitya;
   position:relative;
   top: 100px;
   font-size: 25px;
-  text-decoration: underline;
-  color:crimson
+  
+  color:crimson;
+  text-shadow: 5px 5px 7px black
+
 }
 
 .NameAndLeaf img{

@@ -1,8 +1,11 @@
 import './Stylesheets/Navbar.css'
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobe, faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import logo from './Media/logo.png'
+import '@fortawesome/fontawesome-free/css/all.min.css';
+ 
 export default function Navbar(){
 
     useEffect(() => {
@@ -36,7 +39,19 @@ export default function Navbar(){
             <li>F.A.Q.</li>
             <li>Contact Us</li>
             <li>Members</li>
+            <div className='NavbarButtons'>
+   
+     
+
+            <div className='PhoneIcon'> <FontAwesomeIcon icon={faPhone}/> (647)887-9940 </div>
+      
+          
+            <button className="GetStartedButton">Sign Up <br></br>  </button>
+            <button className="ViewPlansButton"> View Prices</button>
+            </div>
            </ul>
+
+       
          
         </div>
     )

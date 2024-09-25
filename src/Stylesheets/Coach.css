@@ -14,6 +14,25 @@
     font-size: 20px;
 }
 
+.Coach:hover{
+    cursor:pointer
+}
+
+.Coach{
+    position:relative
+}
+.Profile{
+    max-width:250px;
+    position: absolute;
+    top:0;
+    padding: 10px 10px;
+  
+     
+}
+
+.Name{
+    text-align: center;
+}
 
  
  
@@ -46,6 +65,7 @@
     margin: 30px auto;
     border: 2px inset white;
     box-shadow: 10px 10px 10px black;
+    filter: brightness(50%);
 }
 
 @media(min-width:800px){
@@ -56,5 +76,11 @@
         height: 400px; /* Set your desired height */
         border-radius: 10px;
         border:2px solid rgb(255, 255, 255);
+    }
+
+    .Profile{
+        max-width:300px;
+ 
+         
     }
 }

@@ -17,7 +17,7 @@
     list-style: none;
     justify-content: space-evenly;
     align-items: center;
-    font-family: Sahitya;
+    font-family: Roboto;
     font-weight: bolder;
     font-size: 20px;
     background-color: black;
@@ -25,6 +25,7 @@
     transition: transform 0.5s ease-in-out;
     z-index:3;
     will-change: transform;
+    border-bottom:2px solid white;
 }
 
 .NavbarList >*{
@@ -33,7 +34,8 @@
 
 .HamburgerMenu{
     font-size: 20px;
-    margin:20px
+    margin:20px;
+    color:white;
 }
 
 .NavbarList.show{ 
@@ -72,26 +74,67 @@ font-size: 17px;
 .NavbarList li{
     align-items: center;
     text-align: center;
+    transition: transform 0.3s ease-in;
+    color:white;
+   font-weight: lighter;
+  
 }
 
 .NavbarList li:hover{
     cursor: pointer;
-    text-decoration: underline;
+    transform: scale(1.2);
 }
 
+.NavbarList button{
+    display:block;
+    margin: 0 auto;
+    margin-bottom:20px;
+    border-radius: 10px;
+}
 
-@media(min-width:800px){
+.PhoneIcon, .IgIcon{
+    color: white;
+    display: block;
+    text-align: center;
+ 
+padding: 15px 25px;
+}
+
+.NavbarIcons{
+    display: flex;
+    justify-content: center;
+}
+
+.IgIcon{
+    font-size: 25px;
+}
+
+@media(min-width:1000px){
     .HamburgerMenu{
         display: none;
     }
-    .NavbarList{
-        background: linear-gradient(to right, rgb(145, 145, 145), rgb(0, 0, 0));
+
+    .PhoneIcon, .IgIcon{
         display: flex;
-         justify-content:center;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+ 
+    .NavbarList{
+        background-color: black;
+        display: flex;
+         justify-content:flex-end;
         height:100%;
         transform: translateY(0%);
         max-width: 100%;
-        font-size: 30px;
+        font-size: 20px;
+        padding-right:100px;
+        color:rgb(255, 255, 255);
+        font-weight: lighter;
+        align-items: flex-end;
+        padding-bottom: 5px;
        
     }  
     .NavbarList >*{
@@ -103,20 +146,43 @@ font-size: 17px;
         justify-content: flex-start;
         align-items: center;
         height:100%;
+        
     }
 
     .NavbarContainer{
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
+        
     }
 
     .LogoAndHamburger{
         background-color: rgba(0, 0, 0, 0);
     }
 
-    .NavbarList{
-        color:rgb(255, 255, 255);
-        font-weight: lighter;
+    .NavbarContainer img {
+   padding-left:100px;
     }
+
+    .NavbarButtons {
+        display: flex;
+        position:fixed;
+        top:5px
+    }
+
+    .NavbarButtons button {
+       height: 20px;
+       width:200px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+        font-weight: normal;
+       margin: 0 5px;
+    }
+
+   
+
+
+    
+ 
 }

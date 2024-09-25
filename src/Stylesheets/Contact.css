@@ -2,40 +2,95 @@
     background-color: black;
     color:white;
     padding-bottom: 50px;
+    padding-top: 50px;
 }
+
 
 .ContactContainer h1{
     text-align: center;
-    padding: 50px 0;
+    padding-bottom: 50px 0;
+    font-style: italic;
 }
-.ContactInfo{
+
+.ContactContainer h2{
+    text-align: center;
+    margin-bottom: 30px;
+   
+}
+
+.ContactContainer li{
+    font-family: Sahitya;
+    list-style:square;
+    margin-left:20px;
+  
+    margin-bottom:5px;
+   
+}
+
+.ContactContainer ul{
+margin-bottom:20px;
+}
+
+.Contact span{
+   font-size:25px
+    }
+    
+
+.ContactInfo-and-map{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    font-size: 20px;
+   
 }
 
-.ContactInfo img{
+.ContactInfo-and-map img{
     height:250px
 }
 
-.ContactInfo iframe {
-    width:250px;
-    height:250px;
+.ContactInfo-and-map iframe {
+    display: block;
+    width:300px;
+    height:300px;
     border-radius: 15px;
     box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.265);
+    margin: 0 auto;
+    margin-top: 50px;
  
 }
 
 .Phone, .Email, .Address {
   
-    margin-bottom: 20px;
+    margin : 20px 0;
 }
 
- @media(min-width:800px)
-{.ContactInfo{
-    display: flex;
-    justify-content: space-around;
+.Indent{
+    margin-left:25px;
+}
+
+.Contact h1{
+    text-align: left;
+}
+
+@media(min-width:800px){
+    .ContactInfo-and-map iframe {
+        width:500px;
+        height:300px;     
+    }
+
     
-}}
+.ContactContainer h2{
+    text-align: left;
+    padding-bottom: 30px 0;
+    font-size:35px; 
+}
+
+.ContactContainer li{
+   
+    font-size:20px; 
+}
+
+ 
+
+    
+}

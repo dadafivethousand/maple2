@@ -18,7 +18,7 @@ export default function Landing() {
        
           <div className="Center ButtonContainer">
               <button className="GetStartedButton">Sign Up <br></br>  </button>
-              <button className="ViewPlansButton"> View Membership Options</button>
+              <button className="ViewPlansButton"> View Prices</button>
           </div>
           </div>
           </div>

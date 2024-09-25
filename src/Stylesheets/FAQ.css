@@ -28,6 +28,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-shadow: 2px 2px 5px black;
   }
 
  
@@ -64,16 +65,17 @@
     background-color: rgb(90, 83, 83);
   }
 .VideoContainer{
-  padding-top:100px;
+ 
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  margin-top:30px;
 }
 
   @media(min-width: 800px){
     .FAQ-and-video{
       display:flex;
-      
+      margin-top: 50px;
       justify-content: space-around;
       align-items: flex-start;
     }

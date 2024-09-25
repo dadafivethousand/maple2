@@ -3,7 +3,7 @@ import Coaches from "./Coaches";
 import Contact from "./Contact";
 import FAQ from "./FAQ";
 import Navbar from "./Navbar";
- 
+import Pricing from "./Pricing";
 import Schedule from "./Schedule";
 import Parallax from "./Parallax";
 import "./Stylesheets/App.css"
@@ -21,8 +21,9 @@ function App() {
       <Landing />
     
       <About />
-     
+      <Pricing />
    <Parallax3 />
+ 
       <Coaches />
  <Parallax2 />
       <Schedule />

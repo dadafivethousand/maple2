@@ -17,7 +17,7 @@ const faqList = [
     },
     {
       question: "Do you offer a free trial?",
-      answer: "We do offer a $20 drop-in class, and if you sign up for membership, the $20 will be applied to your membership fee."
+      answer: "For those looking to try a class for the first time we have a promotional drop in rate of $20, which is a negligible amount in today's economy. If you decide to purchase a membership, that $20 will be applied towards the payment."
     },
     {
       question: "What age groups can sign up?",
