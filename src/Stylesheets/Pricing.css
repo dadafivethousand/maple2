@@ -51,6 +51,8 @@
 .Description{
     width:90%;
     color:rgb(255, 255, 255);
+    font-size: 1em;
+    font-style: italic;
 }
 
 .Memberships{
