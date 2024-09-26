@@ -13,6 +13,7 @@ import Landing from "./Landing";
 import Jocko from "./Jocko";
 import Footer from "./Footer";
 import useScrollAnimation from "./useScrollAnimation.js";
+import Login from "./Login.js";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <Login />
       <Landing />
     
       <About />

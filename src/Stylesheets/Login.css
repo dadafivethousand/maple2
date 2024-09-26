@@ -1,4 +1,60 @@
-.LoginContainer{
-    height:100vh;
-    
+.LoginContainer {
+    background-color: lightgrey;
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-options button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-google {
+    background-color: #db4437;
+    color: white;
+}
+
+.login-facebook {
+    background-color: #4267B2;
+    color: white;
+}
+
+.login-email {
+    background-color: #333;
+    color: white;
+}
+
+.divider-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.divider {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.or-text {
+    margin: 0 10px;
+    color: #666;
+    font-size: 14px;
 }

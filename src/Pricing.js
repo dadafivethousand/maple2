@@ -72,11 +72,11 @@ export default function Pricing() {
     return (
         <div id="Pricing" className='PricingContainer'>
             <h1 className="animate">Membership Plans</h1>
-            <div className='PricingButtonContainer animate '>
+            <div className='PricingButtonContainer'>
                 <button onClick={toggleAdult} className='AdultMembershipButton'>Adults & Teens</button>
             </div>
             {showAdult && <MembershipComponent type={Memberships.adult} />}
-            <div className='PricingButtonContainer animate'>
+            <div className='PricingButtonContainer'>
                 <button onClick={toggleKid} className='KidsMembershipButton'>Kids (4-13)</button>
             </div>
             {showKid && <MembershipComponent type={Memberships.kids} />}
