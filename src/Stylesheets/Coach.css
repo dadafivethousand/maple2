@@ -47,18 +47,29 @@
     padding-top:20px;
     font-weight:lighter;
     text-shadow: 2px 2px 2px black;
+    transform: translateY(-30px);
+    transition: transform 0.5s ease-in;
  
 }
 
-.Description{
+.CoachDescription{
     font-size:1.1em;
     padding: 0 20px;
     font-weight:lighter;
+    transform: translateY(-30px);
+    transition: transform 0.5s ease-in;
 }
 .AccomplishmentsList{
     font-size: 1em;
     font-weight:lighter;
+    transform: translateY(30px);
+    transition: transform 0.5s ease-in;
 }
+
+.Slide{
+    transform:translateY(0)
+}
+
  
 .CoachNameAndBio{
     display: flex;

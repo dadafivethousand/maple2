@@ -30,13 +30,13 @@ export default function FAQ() {
     <div id="FAQ" className="FAQContainer">
       <div className="FAQFlexbox">
        
-          <h1><span className="Crimson"> F</span>requently <span className="Crimson"> A</span>sked <span className="Crimson"> Q</span>uestions</h1>
+          <h1 className="animate"><span className="Crimson"> F</span>requently <span className="Crimson"> A</span>sked <span className="Crimson"> Q</span>uestions</h1>
  
       </div>
       
       <div className="FAQ-and-video">
         <div className="FAQ">
-          <div className="faq-controls">
+          <div className="faq-controls animate">
             <button onClick={handleExpandAll}>Expand All</button>
             <button onClick={handleMinimizeAll}>Minimize All</button>
           </div>

@@ -56,3 +56,15 @@
  button{
   font-family: Roboto;
  }
+
+ .animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Visible state: fade in and move to original position */
+.animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

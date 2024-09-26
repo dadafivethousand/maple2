@@ -6,7 +6,8 @@ export default function Landing() {
             <div>
                 <div className='NameAndLeaf'>
                 <img src={leaf}/>
-            <h1> <span className='Crimson'>Maple Jiu-Jitsu <br></br> Academy</span>  </h1>
+            <h1> <span className='Crimson'> Maple Jiu-Jitsu <br>
+            </br> Academy</span>  </h1>
            
             </div>
            <div className='MoveDown'>

@@ -39,7 +39,7 @@ export default function Schedule() {
 
   return (<div id="Schedule" className='ScheduleContainer'>
  
-    <div  className="Schedule">
+    <div  className="Schedule animate">
     
       {Object.keys(schedule).map((day) => (
         <div className='Column'>

@@ -1,0 +1,10 @@
+.FacebookLoginButton button{
+    background-color: blue;
+    color:white;
+    height:30px;
+    border-radius:0
+}
+
+.FacebookLoginButton button:hover{
+   cursor: pointer;
+}

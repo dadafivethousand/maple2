@@ -12,9 +12,11 @@ import Parallax3 from "./Parallax3";
 import Landing from "./Landing";
 import Jocko from "./Jocko";
 import Footer from "./Footer";
+import useScrollAnimation from "./useScrollAnimation.js";
 
 
 function App() {
+  useScrollAnimation();
   return (
     <div className="App">
       <Navbar />

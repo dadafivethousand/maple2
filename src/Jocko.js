@@ -2,7 +2,7 @@ import './Stylesheets/Jocko.css'
 
 export default function Jocko() {
     return(
-        <div className='Jocko'>
+        <div className='Jocko animate'>
     <iframe 
   
     src="https://www.youtube.com/embed/EGNEc2Dppgc?" 

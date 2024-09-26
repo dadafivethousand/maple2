@@ -53,7 +53,7 @@ export default function Belt({ belt }) {
     }
 
     return (
-        <div className="BeltContainer">
+        <div className="BeltContainer animate">
             {beltComponent}
         </div>
     );

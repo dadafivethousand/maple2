@@ -7,6 +7,7 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 import logo from './Media/leaf.png'
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import FacebookLoginButton from './FacebookLoginButton';
  
 export default function Navbar(){
 
@@ -43,7 +44,7 @@ export default function Navbar(){
           <a className='LoginFlex'>   <li   onClick={()=>setShowMenu(false)}>  <FontAwesomeIcon icon={faUser}/> <span  className='LoginText'>Log In </span> </li></a>
             <div className='NavbarButtons'>
    
-     
+           
 
             <div className='PhoneIcon'> <FontAwesomeIcon icon={faPhone}/> (647)887-9940 </div>
       

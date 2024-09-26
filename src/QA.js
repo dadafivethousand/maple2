@@ -2,7 +2,7 @@ import './Stylesheets/QA.css';
 
 export default function QA({ faq, isExpanded, toggleExpand }) {
   return (
-    <div className="faq-item-container">
+    <div className="faq-item-container animate">
       <div className="faq-item">
         <div className="faq-question">
           <h2>{faq.question}</h2>
