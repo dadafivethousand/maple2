@@ -46,7 +46,7 @@ export default function Navbar(){
    
            
 
-            <div className='PhoneIcon'> <FontAwesomeIcon icon={faPhone}/> (647)887-9940 </div>
+             
       
           
             <button className="NavbarGetStartedButton">Sign Up <br></br>  </button>
