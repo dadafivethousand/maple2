@@ -22,9 +22,9 @@ export default function Coach({ coach }) {
 
     return (
         <div className="CoachContainer">
-            <div onClick={toggleShowProfile} className="Coach">
+            <div onClick={toggleShowProfile} className="Coach animate">
                 <img 
-                    className={`${showProfile ? 'Dim' : ''} ProfilePic animate`} 
+                    className={`${showProfile ? 'Dim' : ''} ProfilePic`} 
                     src={coach.image} 
                     alt="Coach"
                 />
