@@ -69,8 +69,9 @@ export default function About() {
                     ))}
                 </ul>
             </div>
-            
-            <p className="animate"> Whether you're looking to compete, get in shape, or learn self-defense, Maple Jiu-Jitsu Academy is the place to start your journey. Join us today and become part of our family!</p>
+            <div className="second">
+            <p   className="animate"> Whether you're looking to compete, get in shape, or learn self-defense, Maple Jiu-Jitsu Academy is the place to start your journey. Join us today and become part of our family!</p>
+            </div>
         </div>
     );
 }

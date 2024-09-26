@@ -39,10 +39,10 @@ export default function Schedule() {
 
   return (<div id="Schedule" className='ScheduleContainer'>
  
-    <div  className="Schedule animate">
+    <div  className="Schedule">
     
       {Object.keys(schedule).map((day) => (
-        <div className='Column'>
+        <div className='Column animate'>
         <div className='WeekDay'> <h3>{day}</h3>  </div>
         <div key={day} id={day} className="day-column" style={{ height: `${totalHours * PIXELS_PER_HOUR}px`, position:'relative' }}>
          
