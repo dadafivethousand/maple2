@@ -1,16 +1,22 @@
 .LandingContainer {
     background: linear-gradient(to bottom, rgb(233, 233, 233), black);
     height:100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
  
 }
 
 .NameAndLeaf{
-    margin: 90px auto;
-    padding-top: 90px;
+  
+ 
     display: flex;
     justify-content: center;
     align-items: center;
     text-shadow: 3px 3px 5px black;
+    position:relative;
+ 
  
 }
 
@@ -27,6 +33,10 @@
     font-size: 15px;
     font-weight: normal;
   }
+
+.MoveDown{
+    margin: 10px 0;
+}
 
 .LandingContainer img{
     height: 70px;
@@ -56,7 +66,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top:50px;
+ 
 }
  
 
@@ -126,10 +136,7 @@ font-family: Sahitya;
 }
 
 @media(min-width:800px){
-    .MoveDown{
-        position: relative;
-        top:100px;
-    }
+ 
 
     .ButtonContainer{
         display: flex;
@@ -141,8 +148,7 @@ font-family: Sahitya;
 
     
 .NameAndLeaf{
-  position:relative;
-  top: 100px;
+ 
   font-size: 25px;
   
   color:crimson;
