@@ -13,6 +13,17 @@
     margin-bottom: 30px;
     
 }
+.ig-icon{
+    margin-right: 4px;
+}
+
+.Instagram{
+    text-align: left;
+    font-size: 30px;
+    display: flex;
+align-items: center;
+
+}
 
 .ContactContainer h2{
     text-align: center;
@@ -63,7 +74,7 @@ margin-bottom:20px;
 
 .Phone, .Email, .Address {
   
-    margin : 20px 30px;
+    margin : 20px 0;
     width:100%;
 }
 

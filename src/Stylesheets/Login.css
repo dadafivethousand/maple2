@@ -1,3 +1,16 @@
+.login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
 .LoginContainer {
     background-color: lightgrey;
     padding: 20px;
@@ -6,6 +19,7 @@
     text-align: center;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* Needed for close button positioning */
 }
 
 .LoginContainer h1 {
@@ -56,5 +70,36 @@
 .LoginContainer .or-text {
     margin: 0 10px;
     color: #666;
-    font-size: 14px;
+    font-size: 20px;
 }
+
+.LoginContainer .bottom-message
+{
+    margin: 0 10px;
+    color: #666;
+    font-size: 17px;
+}
+/* Close button styling */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    transform: rotate(45deg);
+}
+
+.link{
+    color: red;
+    text-decoration: underline;
+    cursor:pointer;
+    
+}
+
+.rotated-plus {
+    transform: rotate(45deg); /* Rotate the X icon to make it look like a + */
+    color: #333;
+}
+

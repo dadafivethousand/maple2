@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faTimes, faBars, faUser} from '@fortawesome/free-solid-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-
+import Login from './Login';
 
 import logo from './Media/leaf.png'
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -23,15 +23,21 @@ export default function Navbar(){
         };
      }, []);
     const [showMenu, setShowMenu] = useState(false)
+    const [isLoginVisible, setLoginVisible] = useState(false);
     const toggleMenu = () => {
         setShowMenu((prevState) => !prevState);
+    };
+
+    const toggleLogin = () => {
+      
+        setLoginVisible(!isLoginVisible); // Toggle the login modal
     };
     return (
         <div className='NavbarContainer'> 
         
-        <div className='LogoAndHamburger' onClick={toggleMenu}>
+        <div className='LogoAndHamburger' >
         <img src={logo} alt="Maple Jiujitsu" />
-        <div className='HamburgerMenu'>
+        <div onClick={toggleMenu} className='HamburgerMenu'>
            {showMenu ? <FontAwesomeIcon icon={faTimes} /> : <FontAwesomeIcon icon={faBars} />}
         </div>             
         </div>
@@ -41,18 +47,13 @@ export default function Navbar(){
           <a href='#Schedule'>   <li onClick={()=>setShowMenu(false)}>Schedule</li></a>
           <a href='#FAQ'>  <li onClick={()=>setShowMenu(false)}>F.A.Q.</li></a>
           <a href='#Contact'> <li onClick={()=>setShowMenu(false)}>Contact Us</li></a>
-          <a className='LoginFlex'>   <li   onClick={()=>setShowMenu(false)}>  <FontAwesomeIcon icon={faUser}/> <span  className='LoginText'>Log In </span> </li></a>
+          <a className='LoginFlex'>   <li onClick={toggleLogin}>  <FontAwesomeIcon icon={faUser}/> <span  className='LoginText'>Log In </span> </li></a>
             <div className='NavbarButtons'>
-   
-           
-
-             
-      
-          
             <button className="NavbarGetStartedButton">Sign Up <br></br>  </button>
             <a href='#Pricing'> <div onClick={()=>setShowMenu(false)} className="NavbarViewPlansButton"> View Prices</div></a>
             </div>
            </ul>
+           {isLoginVisible && <Login toggleLogin={toggleLogin} />}
 
        
          

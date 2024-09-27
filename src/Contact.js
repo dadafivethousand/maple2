@@ -2,6 +2,7 @@ import './Stylesheets/Contact.css'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faHome, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import logo from './Media/logo.png'
 
 
@@ -25,7 +26,13 @@ export default function Contact() {
         loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
      </div>
         <div className='Contact'>
+       
+      
           <h1 className="animate">Contact Us</h1>
+           <div className='Instagram Address animate'>
+        <FontAwesomeIcon className='ig-icon' icon={faInstagram} />{/* Envelope icon */}
+        <span id='ContactText'> @MapleBjj</span>
+        </div>
         <div className='Phone animate'>
         <FontAwesomeIcon icon={faPhone} />  {/* Phone icon */}
         <span id='ContactText' className='ContactText animate'> (647) 887-9940</span>
@@ -33,13 +40,14 @@ export default function Contact() {
         <div className='Email animate'>
         <FontAwesomeIcon icon={faEnvelope} />{/* Envelope icon */}
         <span id='ContactText'> admin@maplejj.com</span>
-
         </div>
         <div className='Address animate'>
         <FontAwesomeIcon icon={faHome} /> {/* House icon */}
         <span id='ContactText'>20 Cranston Park Ave <br></br>
-        <span id='ContactText' className='Indent'>Maple, ON L6A 2W2 </span> </span>        
+        <span id='ContactText' className='Indent'>Maple, ON L6A 2W2 </span> </span>  
+             
         </div>
+      
         </div>
 
 
