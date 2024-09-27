@@ -78,6 +78,7 @@
     margin: 0 10px;
     color: #666;
     font-size: 17px;
+    white-space: nowrap;
 }
 /* Close button styling */
 .close-btn {
