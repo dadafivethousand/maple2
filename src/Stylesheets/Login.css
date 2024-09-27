@@ -8,13 +8,13 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+.LoginContainer h1 {
     font-size: 24px;
     margin-bottom: 20px;
     color: #333;
 }
 
-.login-options button {
+.LoginContainer .login-options button {
     display: block;
     width: 100%;
     padding: 10px;
@@ -25,35 +25,35 @@ h1 {
     cursor: pointer;
 }
 
-.login-google {
+.LoginContainer .login-google {
     background-color: #db4437;
     color: white;
 }
 
-.login-facebook {
+.LoginContainer .login-facebook {
     background-color: #4267B2;
     color: white;
 }
 
-.login-email {
+.LoginContainer .login-email {
     background-color: #333;
     color: white;
 }
 
-.divider-container {
+.LoginContainer .divider-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 20px 0;
 }
 
-.divider {
+.LoginContainer .divider {
     flex-grow: 1;
     height: 1px;
     background-color: #ccc;
 }
 
-.or-text {
+.LoginContainer .or-text {
     margin: 0 10px;
     color: #666;
     font-size: 14px;
