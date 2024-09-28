@@ -1,0 +1,20 @@
+.purchase-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 100px auto;
+    flex-wrap: wrap;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+  
+  
+    .purchase-summary {
+      margin-top: 20px;
+    }
+  }
+  

@@ -1,0 +1,25 @@
+.purchase-summary {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .purchase-summary h3 {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .purchase-summary p {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 15px 0;
+  }
+  
