@@ -1,0 +1,45 @@
+.image-reveal-container {
+    position: relative;
+    height: 100vh; /* Full height of the viewport */
+    background-color: rgb(243, 239, 227); /* Beige background */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: poppins;
+  
+  }
+
+  .image-reveal-container h2{
+    margin-top:10px;
+    font-family: poppins;
+    font-weight:400;
+    font-size:20px
+ 
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100vw; /* Adjust width as needed */
+    max-width: 100%;
+    height: auto;
+
+  }
+  
+  img {
+    padding-top:20px;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+
+  @media(min-width:800px){
+    .image-container {
+        position: relative;
+        width: 50vw; /* Adjust width as needed */
+        max-width: 100%;
+        height: auto;
+    
+      }
+  }

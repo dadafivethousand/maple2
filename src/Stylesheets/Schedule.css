@@ -1,108 +1,104 @@
-  .day-column {
-    margin-bottom: 20px;
-    margin: 0 auto;
-    border: 1px solid #ccc; 
-    background-color:rgba(255, 255, 255, 0.614);
-  }
+.day-column {
+  margin-bottom: 20px;
+  margin: 0 auto;
+  border: 1px solid #ccc; 
+  background-color: rgba(255, 255, 255, 0.614);
+}
 
-  .Column{
-    flex: 1 1 0; 
-    
-  }
+.Column {
+  flex: 1 1 0;
+  width: 100%; /* Mobile default to full width */
+}
 
-  .ScheduleContainer{
-    padding-top: 70px;
-    border-top: 2px solid black;
- border-bottom: 2px solid black;
-    padding-bottom: 50px;
-    background: linear-gradient(to bottom,rgba(0, 0, 0, 0.777),  white, rgba(0, 0, 0, 0.737));
+.class-time {
+  font-size:12px;
+  font-family: Roboto condensed;
+}
 
-  }
-
+.ScheduleContainer {
   
-  .ScheduleContainer h1{
-   color: rgb(0, 0, 0);
+  padding-top: 70px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding-bottom: 50px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.777), white, rgba(0, 0, 0, 0.737));
+}
+
+.ScheduleContainer h1 {
+  color: rgb(0, 0, 0);
+}
+
+.Schedule {
+  padding-top: 100px;
+  display: flex;
+   justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+
+.Schedule p {
+  line-height: 1.1;
+}
+
+.WeekDay {
+  background-color: rgba(0, 0, 0, 0.914);
+  border: 1px solid #ccc;
+  color: white;
+  margin-top: 30px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.class-name{
+  text-transform: uppercase;
+}
+
+.timeslot  {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto condensed;
+  justify-content: center;
+ align-items: center;
+  background-color: #c44;
+  color: white;
+  border-radius: 2px;
+  border: 1px solid black;
+  width: 100%;
+  text-align: center;
+  padding: 5px 0;
+  box-sizing: border-box;
+  min-height: 35px;
+   
+}
+
+/* Mobile-first: Show short names by default */
+.WeekDay .short-day-name {
+  display: block;
+}
+
+.WeekDay .full-day-name {
+  display: none;
+}
+
+/* Enhancements for larger screens */
+@media (min-width: 800px) {
+  .Column {
+    width: 16%;
   }
 
   .Schedule {
-    
-    padding-top:100px;
-    display: flex; /* Flex layout for wider screens */
+    flex-direction: row; /* Switch to row layout on wider screens */
     justify-content: space-evenly;
-    flex-grow: 1;
-    width:90%;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    border-radius: 50px;
+    width:80%
   }
 
-  
-  .WeekDay{
- background-color: rgba(0, 0, 0, 0.914);
- padding:10px;
- border: 1px solid #ccc; 
- color: white;
- margin-top: 30px;
- border-radius: 5px;
-  
+  .WeekDay .short-day-name {
+    display: none; /* Hide short names on wide screens */
   }
-  .timeslot p{
- font-size: 12px;
- display: flex;
- font-family: ronoto;;
- 
-  }
-  .day-column h3 {
-    text-align: center;
 
+  .WeekDay .full-day-name {
+    display: block; /* Show full names on wide screens */
   }
-  
-  .timeslot {
-    
-    background-color: #c44;
-    color: white;
-    border-radius: 2px;
-    border:1px solid black;
-   width:100%;
-    text-align: center;
-    padding: 5px auto;
-    box-sizing: border-box;
-    min-height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  
-  @media (min-width: 800px) {
- 
-
-    .Column{
-      width:15%;
-
-    }
-
-    .WeekDay{
-      margin-top: 0 ;
-    }  
-  }
-  
-  @media (max-width: 800px) {
-    .day-column {
-      
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    }
-
-
-    
-  .Schedule {
- 
-    padding:5px;
-  
-  }
-  
-    
-  }
+}

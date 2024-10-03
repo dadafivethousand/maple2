@@ -3,27 +3,44 @@ import schedule from './ScheduleObject'; // Import the schedule
 import './Stylesheets/Schedule.css';
 
 // Config: Pixels per hour
-const PIXELS_PER_HOUR = 45;
+const PIXELS_PER_HOUR = 47;
 
 // Utility function to convert 24-hour time to AM/PM
+const dontConvertToAmPm = (time) => {
+  let hours = Math.floor(time);
+  let minutes = (time % 1) * 60;
+  const ampm = hours >= 12 ? 'pm' : 'am';
+  hours = hours % 12 || 12; // Convert to 12-hour format
+  return `${hours}${minutes === 0 ? '' : ':' + minutes}`;
+};
+
 const convertToAmPm = (time) => {
   let hours = Math.floor(time);
   let minutes = (time % 1) * 60;
-  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const ampm = hours >= 12 ? 'pm' : 'am';
   hours = hours % 12 || 12; // Convert to 12-hour format
-  return `${hours}:${minutes === 0 ? '00' : minutes} ${ampm}`;
+  return `${hours}${minutes === 0 ? '' : ':' + minutes}${ampm}`;
 };
+
+// Time blocks to remove (example: between 9-11 AM and 1:30-3:30 PM)
+const timeBlocksToRemove = [
+  { start: 9, end: 11.5 },
+  { start: 13.5, end: 15.5 }
+];
 
 // Main Schedule component
 export default function Schedule() {
   const [earliestTime, setEarliestTime] = useState(24);
   const [latestTime, setLatestTime] = useState(0);
+  const [totalRemovedHeight, setTotalRemovedHeight] = useState(0);
 
   // This useEffect will calculate the earliest and latest times when the component mounts
   useEffect(() => {
     let minStartTime = 24;
     let maxEndTime = 0;
+    let removedHeight = 0;
 
+    // Calculate the minimum start time and maximum end time across all days
     for (const day in schedule) {
       schedule[day].forEach((classTime) => {
         if (classTime.start < minStartTime) minStartTime = classTime.start;
@@ -31,40 +48,76 @@ export default function Schedule() {
       });
     }
 
+    // Calculate the total height to remove based on time blocks
+    timeBlocksToRemove.forEach((block) => {
+      removedHeight += (block.end - block.start) * PIXELS_PER_HOUR;
+    });
+
     setEarliestTime(minStartTime);
     setLatestTime(maxEndTime);
+    setTotalRemovedHeight(removedHeight);
   }, []);
+
+  // Calculate adjusted position of a class considering the removed time blocks
+  const adjustPosition = (startTime) => {
+    let adjustedTop = (startTime - earliestTime) * PIXELS_PER_HOUR;
+
+    // Iterate through time blocks and adjust top position if class falls after the block
+    timeBlocksToRemove.forEach((block) => {
+      if (startTime >= block.end) {
+        adjustedTop -= (block.end - block.start) * PIXELS_PER_HOUR;
+      } else if (startTime >= block.start && startTime < block.end) {
+        adjustedTop -= (startTime - block.start) * PIXELS_PER_HOUR;
+      }
+    });
+
+    return adjustedTop;
+  };
 
   const totalHours = latestTime - earliestTime;
 
-  return (<div id="Schedule" className='ScheduleContainer'>
- 
-    <div  className="Schedule">
-    
-      {Object.keys(schedule).map((day) => (
-        <div className='Column animate'>
-        <div className='WeekDay'> <h3>{day}</h3>  </div>
-        <div key={day} id={day} className="day-column" style={{ height: `${totalHours * PIXELS_PER_HOUR}px`, position:'relative' }}>
-         
-          {schedule[day].map((classTime, index) => {
-            const topPosition = (classTime.start - earliestTime) * PIXELS_PER_HOUR;
-            const classHeight = (classTime.end - classTime.start) * PIXELS_PER_HOUR;
-            
-            return (
-              <div
-                key={index}
-                className="timeslot"
-                style={{ top: `${topPosition}px`, height: `${classHeight}px`, position:'absolute'}}
-              >
-               <p>{classTime.name}<br />
-                {convertToAmPm(classTime.start)} - {convertToAmPm(classTime.end)}
-                </p> 
-              </div>
-            );
-          })}
-        </div>
-        </div>
-      ))}
+  return (
+    <div id="Schedule" className='ScheduleContainer'>
+      <div className="Schedule">
+        {Object.keys(schedule).map((day) => (
+          <div className='Column animate' key={day}>
+            <div className='WeekDay'>
+              <h3 className="full-day-name">{day}</h3>
+              <h3 className="short-day-name">{day.substring(0, 3)}</h3>
+            </div>
+            <div
+              id={day}
+              className="day-column"
+              style={{
+                height: `${totalHours * PIXELS_PER_HOUR - totalRemovedHeight}px`,
+                position: 'relative'
+              }}
+            >
+              {schedule[day].map((classTime, index) => {
+                const topPosition = adjustPosition(classTime.start);
+                const classHeight = (classTime.end - classTime.start) * PIXELS_PER_HOUR;
+
+                return (
+                  <div
+                    key={index}
+                    className="timeslot"
+                    style={{
+                      top: `${topPosition}px`,
+                      height: `${classHeight}px`,
+                      position: 'absolute'
+                    }}
+                  >
+
+                    <p className='class-name'>{classTime.name} </p>   
+                    <p>  <span className='class-time'> {dontConvertToAmPm(classTime.start)}-{convertToAmPm(classTime.end)} </span>
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-    </div> );
+  );
 }
