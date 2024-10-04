@@ -3,12 +3,14 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const personRoutes = require('./routes/PersonRoutes'); // Import routes
-
-// Initialize environment variables
-dotenv.config();
+const path = require('path');
 
 // Initialize Express app
 const app = express();
+
+// Configure environment variables
+dotenv.config();
+
 const PORT = process.env.PORT || 5000;
 
 // Middleware
@@ -23,10 +25,16 @@ mongoose.connect(process.env.MONGO_URI, {
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log('MongoDB connection error:', err));
 
-// Use routes
+// Serve static files from the React app's build folder
+app.use(express.static(path.join(__dirname, 'build')));
+
+// API Routes
 app.use('/api/person', personRoutes); // Route all person-related requests
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+// Catch-all for serving the React app on any route
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/build/index.html'));
 });
+
+// Start the server only once
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
