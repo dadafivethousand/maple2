@@ -81,7 +81,7 @@ export default function FoundersForm() {
         setMessage(
           <>
             <p className="message-title">Form Submitted Successfully.</p>
-            <p className="message-body">We will be in touch soon. Thank you for your patience.</p>
+            <p className="message-body">We will be in touch soon. <br></br> Thank you for your patience.</p>
           </>
         );
         console.log('Success:', result);
