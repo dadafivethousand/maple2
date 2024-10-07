@@ -17,7 +17,7 @@ exports.createPerson = async (req, res) => {
     await person.save();
     res.status(201).json({ message: 'Person created successfully!', person });
   } catch (error) {
-    res.status(500).json({ message: 'Error creating person', error });
+    res.status(500).json({ message: 'Error creating person', error: error.message });
   }
 };
 
