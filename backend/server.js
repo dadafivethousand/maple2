@@ -26,14 +26,14 @@ mongoose.connect(process.env.MONGO_URI, {
   .catch(err => console.log('MongoDB connection error:', err));
 
 // Serve static files from the React app's build folder
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, '../build')));
 
 // API Routes
 app.use('/api/person', personRoutes); // Route all person-related requests
 
 // Catch-all for serving the React app on any route
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/build/index.html'));
+  res.sendFile(path.join(__dirname + '/../build/index.html'));
 });
 
 // Start the server only once
