@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Stylesheets/FoundersForm.css';
-
+import ReCAPTCHA from 'react-google-recaptcha';
 export default function FoundersForm() {
+  const [captchaVerified, setCaptchaVerified] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -15,6 +16,15 @@ export default function FoundersForm() {
 
   const [message, setMessage] = useState(null); // To display success/error messages
   const [isValid, setIsValid] = useState(false); // To track if the form is valid
+
+  const handleCaptchaChange = (token) => {
+    if (token) {
+        setCaptchaVerified(true); // Enable the submit button when CAPTCHA is verified
+    } else {
+        setCaptchaVerified(false); // Disable it if something goes wrong
+    }
+};
+
 
   // Email validation function using regular expression
   const validateEmail = (email) => {
@@ -55,7 +65,8 @@ export default function FoundersForm() {
       formData.firstName.trim() !== '' &&
       formData.lastName.trim() !== '' &&
       validateEmail(formData.email) &&
-      cleanedPhone.length === 10;
+      cleanedPhone.length === 10 &&
+      captchaVerified === true;
 
     setIsValid(isFormValid);
   }, [formData]);
@@ -65,7 +76,7 @@ export default function FoundersForm() {
     e.preventDefault();
     if (!isValid) return; // Prevent submission if form is not valid
     try {
-      const response = await fetch('https://maplebjj.com/api/person', {
+      const response = await fetch('http://maplebjj.com/api/person', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -160,7 +171,15 @@ export default function FoundersForm() {
                 required
               />
             </div>
-
+             {/* Google reCAPTCHA widget */}
+         
+             
+             <ReCAPTCHA
+                className='center two-columns'
+                sitekey="6LfVmFoqAAAAAF811UKiqels-ToHS8VlodkDiS6G" // Replace with your actual site key from Google reCAPTCHA
+                onChange={handleCaptchaChange} // This function is called when CAPTCHA is solved
+            />
+          
             <button
               type="submit"
               className={isValid ? 'valid-button' : 'invalid-button'}

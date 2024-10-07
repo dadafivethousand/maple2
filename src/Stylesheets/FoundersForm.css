@@ -41,7 +41,7 @@
     text-align: center; /* Centering the placeholder text */
   }
   
-  button {
+  .form-container button {
     width: 60%;
     padding: 10px 20px;
     font-size: 18px;
@@ -51,6 +51,10 @@
     border: none;
     cursor: pointer;
     display: block;
+    grid-column: span 2;
+  }
+
+  .two-columns{
     grid-column: span 2;
   }
   
