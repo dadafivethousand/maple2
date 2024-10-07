@@ -65,7 +65,7 @@ export default function FoundersForm() {
     e.preventDefault();
     if (!isValid) return; // Prevent submission if form is not valid
     try {
-      const response = await fetch('http://localhost:5000/api/person', {
+      const response = await fetch('https://maplebjj.com/api/person', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
