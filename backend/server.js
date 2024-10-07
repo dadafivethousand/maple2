@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const personRoutes = require('./Routes/PersonRoutes'); // Import routes
 const path = require('path');
-
+const bodyParser = require('body-parser');
 // Initialize Express app
 const app = express();
 app.use(bodyParser.json());
