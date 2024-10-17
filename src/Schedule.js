@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import schedule from './ScheduleObject'; // Import the schedule
+import schedule from './Objects/ScheduleObject'; // Import the schedule
 import './Stylesheets/Schedule.css';
 
 // Config: Pixels per hour
@@ -87,7 +87,7 @@ export default function Schedule() {
             </div>
             <div
               id={day}
-              className="day-column"
+              className={`day-column ${day}`}
               style={{
                 height: `${totalHours * PIXELS_PER_HOUR - totalRemovedHeight}px`,
                 position: 'relative'
@@ -109,7 +109,7 @@ export default function Schedule() {
                   >
 
                     <p className='class-name'>{classTime.name} </p>   
-                    <p>  <span className='class-time'> {dontConvertToAmPm(classTime.start)}-{convertToAmPm(classTime.end)} </span>
+                    <p>  <span className='class-time'> {dontConvertToAmPm(classTime.start)} - {convertToAmPm(classTime.end)} </span>
                     </p>
                   </div>
                 );

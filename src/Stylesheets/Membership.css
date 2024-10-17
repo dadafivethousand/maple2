@@ -1,0 +1,84 @@
+.MembershipContainer{
+    margin: 10px auto;
+    border:rgb(255, 255, 255) 1px solid;
+    padding-bottom: 15px ;
+    font-size: 1.5rem;
+    text-align: center;
+    height: 270px;
+    width: 250px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(74, 74, 74);
+    border-radius: 15px;
+}
+
+.PurchaseButton {
+    height:60px;
+    background-color: rgb(15, 14, 14);
+    color: white;
+    border: 1px solid #ffffff; /* White border */
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 150px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+ 
+
+.PurchaseButton:hover {
+    background-color: white;
+    color: black;
+}
+
+.MembershipType{
+    font-size: 1.1em;
+    padding-top:20px;
+    background-color: rgb(14, 14, 14);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding-bottom: 10px;
+    border-bottom:1px solid white;
+}
+
+.hst{
+    font-size: .5em;
+    padding-left: 5px;
+    
+}
+ 
+.Price{
+    font-size: 1.7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.billed{
+    font-size:0.8em;
+    text-transform: capitalize;
+}
+
+.Cancel {
+    font-size: 0.7em;
+    
+}
+
+@media(min-width:800px){
+    .MembershipContainer{
+        margin: 50px auto;
+         
+    }
+    
+}

@@ -69,14 +69,14 @@ export default function FoundersForm() {
       captchaVerified === true;
 
     setIsValid(isFormValid);
-  }, [formData]);
+  }, [formData, captchaVerified]);
 
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!isValid) return; // Prevent submission if form is not valid
     try {
-      const response = await fetch('http://maplebjj.com/api/person', {
+      const response = await fetch('https://maplebjj.com/api/person', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

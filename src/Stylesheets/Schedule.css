@@ -1,8 +1,9 @@
 .day-column {
   margin-bottom: 20px;
   margin: 0 auto;
-  border: 1px solid #ccc; 
-  background-color: rgba(255, 255, 255, 0.614);
+  border-left: 1px solid rgba(0, 0, 0, 0.358);
+ 
+ 
 }
 
 .Column {
@@ -18,10 +19,9 @@
 .ScheduleContainer {
   
   padding-top: 70px;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+ 
   padding-bottom: 50px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.777), white, rgba(0, 0, 0, 0.737));
+  
 }
 
 .ScheduleContainer h1 {
@@ -29,12 +29,19 @@
 }
 
 .Schedule {
-  padding-top: 100px;
+  
   display: flex;
    justify-content: center;
   align-items: center;
   margin: 0 auto;
-  border-radius: 50px;
+}
+
+.Monday{
+  border-left:none;
+}
+
+.Saturday{
+  border-right:none
 }
 
 .Schedule p {
@@ -42,12 +49,16 @@
 }
 
 .WeekDay {
-  background-color: rgba(0, 0, 0, 0.914);
+  background-color: rgba(0, 0, 0, 0.733);
   border: 1px solid #ccc;
   color: white;
-  margin-top: 30px;
+ 
   border-radius: 5px;
   text-align: center;
+}
+
+.WeekDay h3{
+  font-weight: 300;
 }
 
 .class-name{
@@ -61,10 +72,11 @@
   font-family: Roboto condensed;
   justify-content: center;
  align-items: center;
-  background-color: #c44;
-  color: white;
+ background-color:  rgb(243, 239, 227);
+  color: rgb(0, 0, 0);
   border-radius: 2px;
-  border: 1px solid black;
+  border-top: 1px solid rgba(0, 0, 0, 0.119);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.119);
   width: 100%;
   text-align: center;
   padding: 5px 0;

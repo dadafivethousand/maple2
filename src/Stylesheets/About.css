@@ -1,0 +1,123 @@
+.AboutContainer {
+ 
+    color: rgba(0, 0, 0, 0.81);
+         padding-bottom:70px;
+         padding-top:60px;
+         border-top: 1px solid white;
+         z-index:1;
+}
+
+.Sign{
+ 
+    font-weight: normal;
+}
+
+.fa{
+    margin-right:5px;
+    height:20px;
+    width: auto;
+    position: relative;
+    top:3px;
+}
+
+ 
+
+.big{padding-left: 10px;
+}
+.second {
+    margin-top:50px;
+}
+ 
+.AboutContainer ul li{
+    font-family: poppins;
+   width:80%;
+   min-width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    list-style: none;
+    display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   flex-direction: column;
+   
+   
+
+}
+
+ul li i {
+    color: #00000077; /* Change color */
+    margin-top : 10px; /* Add space between icon and text */
+    font-size: 3rem; /* Adjust icon size */
+    vertical-align: middle; /* Align icon with text */
+
+  }
+
+  .IconWrapper{
+    width:100px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+.AboutContainer p{
+    font-family: poppins;
+   
+    width:90%;
+    margin: 0px auto;
+    margin-bottom:20px;
+}
+
+.AboutContainer h1{
+    text-align: center;
+    padding:0;
+    padding-top:50px;
+ 
+    font-weight:300;
+ 
+
+}
+
+ 
+
+
+.AboutContainer h3{
+    margin-top:20px
+}
+
+.Right, .Left {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    text-align: center;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+@media (min-width: 800px){
+
+ 
+ 
+
+
+.AboutTextAndVideo{
+    width:90%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.AboutTextAndVideo >*{
+    margin: 0 5rem;
+    max-width:50%
+}
+
+ 
+
+ 
+}

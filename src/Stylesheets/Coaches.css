@@ -1,0 +1,108 @@
+.coaches-container{
+    display:flex;
+    flex-wrap: wrap;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background-color:  rgb(243, 239, 227);
+    padding-top:50px
+}
+
+
+.coach-belt{
+    margin-top:15px;
+}
+
+
+.coach-container{
+    margin-bottom:100px;
+    position: relative;
+}
+
+.coach-photo img{
+    margin:0 auto;
+   width:300px;
+    height:400px;
+    border-radius:5%;
+    object-fit: cover;
+    display: block;
+}
+.dim{
+    filter: brightness(25%);
+}
+
+
+.coach-name{
+    text-align: center;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform ease-in-out 0.2s;
+    font-weight:200;
+    font-family: Roboto condensed;
+    color:white;
+    font-size:1.5rem
+}
+
+ 
+            
+
+.name-and-bio{
+    position:absolute;
+    top:20px;
+    width:100%;
+    margin: 0 auto;   
+    padding:0 10px;
+    color:white;
+  
+}
+
+.coach-bio, .coach-accomplishments {
+    position: relative;
+    top:70px;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform ease-in 0.2s;
+    font-family: Roboto condensed;
+    font-weight:200;
+}
+
+.coach-bio{
+    margin-bottom:20px
+}
+
+.coach-accomplishments p{
+    font-family: Roboto condensed;
+}
+
+.slide{
+    transform: translateY(0%);
+    opacity: 1;
+  
+}
+
+.coaches-intro{
+    width:90%
+}
+
+.coaches-intro h1{
+    margin-bottom:20px;
+}
+
+.coaches-intro p{
+    margin-bottom:30px;
+    opacity: 80%;
+}
+
+@media(min-width:800px){
+    .coaches{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        width:98vw;
+    }
+    .coaches >*{
+       margin: 10px 10px;
+    }
+}
