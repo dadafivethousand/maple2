@@ -20,6 +20,12 @@
     position: relative;
 }
 
+.coach-container:hover{
+    cursor:pointer
+}
+
+
+
 .coach-photo img{
     margin:0 auto;
    width:300px;
@@ -28,6 +34,8 @@
     object-fit: cover;
     display: block;
 }
+
+ 
 .dim{
     filter: brightness(25%);
 }

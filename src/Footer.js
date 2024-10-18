@@ -12,6 +12,7 @@ export default function Footer(){
             <a href='#Schedule' >  <li>  Schedule  </li></a>
             </ul>
             <ul>
+            <a  href='#programs'>  <li>  Programs  </li></a>
             <a  href='#FAQ'>  <li>  F.A.Q.  </li></a>
             <a  href='#Contact'>   <li>  Contact Us  </li></a>
            

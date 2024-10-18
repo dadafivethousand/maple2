@@ -6,7 +6,7 @@ import Vitaly from '../Media/Vitaly.png'
 const CoachesList = 
 [
 {
-    name: "Max",
+    name: "Мах",
     belt:"Black Belt",
     headinstructor: 1,
     description: "Black belt under Jorge Britto, with nearly 15 years of experience.",

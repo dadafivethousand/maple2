@@ -1,4 +1,102 @@
 .programs-container{
     width:90%;
-    margin: 0 auto
+    margin: 0 auto;
+
+
+}
+
+.program-image{
+    width:350px;
+    height:300px;
+ 
+ 
+    display:block;
+ 
+}
+
+.program-image img{
+    width:350px;
+    height:300px;
+    border-radius: 5%;
+    filter: brightness(60%);
+    display:block;
+    left: 50%;
+}
+
+.dim{
+    filter: brightness(40%);
+}
+
+.program-container{
+  position:relative;
+  text-align: center;
+  margin-bottom:20px;
+  display: flex;
+  justify-content: center;
+}
+
+.program-container:hover{
+ cursor:pointer;
+  }
+  
+
+
+ 
+
+.program-title {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Make sure it spans full width */
+    text-align: center; /* Center the text */
+    color:white;
+ 
+    text-align: center;
+    font-weight: 500;
+}
+
+.program-title h2{
+ 
+    font-weight: 500;
+    font-family: Roboto condensed;
+    font-size:35px;
+}
+
+
+.program-description {
+position: absolute;
+
+color:white;
+width:98%;
+margin: 0 auto;
+font-size: 13px;
+height:100%;
+font-weight: 200;
+text-align: left;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.program-description p{
+   width:90%
+    }
+    
+
+.hiding{
+    display: none;
+    opacity: 0;
+}
+ 
+@media(min-width: 800px){
+    .programs{
+display:flex;
+    }
+
+    .programs{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+            }
 }
