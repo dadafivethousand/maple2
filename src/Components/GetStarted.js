@@ -1,10 +1,10 @@
 import '../Stylesheets/getStarted.css'
-export default function GetStarted(){
+export default function GetStarted({size}){
     return(
         <div className='get-started-container'>
-                 <div className='get-started-button'>
+            <a href='#Pricing'>   <div className={`${size == 'large'? 'large' : ''} get-started-button`}>
             Get Started Now
-            </div>
+            </div> </a> 
         </div>
     )
 }

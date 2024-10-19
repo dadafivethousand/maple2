@@ -1,4 +1,4 @@
-import MaxImage from '../Media/Max.png'
+import MaxImage from '../Media/mx.jpg'
 import ArthurImage from '../Media/Artur.png'
 import TajImage from '../Media/taj.png'
 import Rob from '../Media/rob.png'
@@ -14,6 +14,21 @@ const CoachesList =
     image:MaxImage
 },
 
+
+  {name: "Arthur",
+    belt:"Blue Belt",
+    accomplishments:["IBJJF London Open Bronze Medalist", "AJP Gold Medalist", "Next-Gen Gold Medalist", "Ontario Open Silver Medalist"],
+    description: "A blue belt in BJJ, Arthur has 4 years of Jiujitsu experience. ",
+    image:ArthurImage
+
+  },
+
+
+
+]
+
+const Backup = [
+  
 {
   name: "Vitaly",
   belt:"Black Belt",
@@ -31,20 +46,6 @@ const CoachesList =
   image:TajImage
 
 },
-
-  {name: "Arthur",
-    belt:"Blue Belt",
-    accomplishments:["IBJJF London Open Bronze Medalist", "AJP Gold Medalist", "Next-Gen Gold Medalist", "Ontario Open Silver Medalist"],
-    description: "A blue belt in BJJ, Arthur has 4 years of Jiujitsu experience. ",
-    image:ArthurImage
-
-  },
-
-
-
-]
-
-const Backup = [
   {
     name: "Rob",
     belt:"Black Belt",

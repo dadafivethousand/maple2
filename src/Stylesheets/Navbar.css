@@ -4,7 +4,7 @@
   top:0;
   width:100vw;
   background-color:  rgb(243, 239, 227);
-  z-index:3;
+  z-index:30;
 }
 
 .navbar-outer-container a{
@@ -40,11 +40,21 @@
     transform: translateX(-100%);
  z-index:-1;
     transition: ease-in .5s transform;
-     
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.getstarted{
+    margin: 50px 0;
 }
 
 .slide{
     transform: translateX(0);
+ 
+}
+
+.navbar{
+    padding-bottom:1000px;
 }
 
 
@@ -55,7 +65,7 @@
     background-color:  rgb(243, 239, 227);
 }
 .navbar-options li{
-    padding: 0 10px;
+    padding: 10px;
 }
  
 
@@ -79,8 +89,25 @@
   cursor:pointer
 }
 
+ 
+
 
 @media(min-width:800px){
+
+    .navbar{
+        padding-bottom:0px;
+    }
+    
+    
+
+    .getstarted{
+        margin:  0;
+        height:100%;
+    }
+
+    .navbar-options li{
+        padding: 0 10px;
+    }
     .hamburger{
         display: none;
     }

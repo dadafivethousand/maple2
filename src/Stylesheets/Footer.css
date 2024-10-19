@@ -34,7 +34,7 @@
 }
 
 .FooterContainer img{
-    height:100px
+    height:70px
 }
 
 .FooterContainer h5{
@@ -52,9 +52,17 @@
 
 .FooterContainer li{
  
-    font-family: Roboto;
+    font-family: Roboto condensed;
 }
 
 .white{
     color:white;
+}
+
+@media(min-width:800px){
+    
+.FooterContainer img{
+    height:100px
+}
+
 }

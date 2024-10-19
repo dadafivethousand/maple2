@@ -1,7 +1,7 @@
 .AboutContainer {
  
     color: rgba(0, 0, 0, 0.81);
-         padding-bottom:70px;
+        
          padding-top:60px;
          border-top: 1px solid white;
          z-index:1;
@@ -59,6 +59,9 @@ ul li i {
     align-items: center;
     
   }
+a{
+  text-decoration: none;
+}
 .AboutContainer p{
     font-family: poppins;
    

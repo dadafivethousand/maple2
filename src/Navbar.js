@@ -21,7 +21,9 @@ export default function Navbar() {
             <img src={logo} />
             </div>
             <div className={`navbar ${click? 'slide': ''}`}>
+                <div onClick={()=>setClick(false)} className="getstarted">
              <GetStarted />
+             </div>
             <ul className="navbar-options">
               <a href='#About'>  <li onClick={()=>setClick(false)}>About Us</li></a>
               <a href='#programs'>  <li onClick={()=>setClick(false)}>Programs</li></a>
