@@ -46,6 +46,7 @@
 
 .getstarted{
     margin: 50px 0;
+    
 }
 
 .slide{
@@ -103,6 +104,12 @@
     .getstarted{
         margin:  0;
         height:100%;
+        transform: translateY(-200%);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .show-get-started{
+        transform: translateY(0%);
     }
 
     .navbar-options li{

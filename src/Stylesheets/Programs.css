@@ -1,7 +1,10 @@
 .programs-container{
-    width:90%;
+   padding: 0 5%;
     margin: 0 auto;
-    padding-top:100px
+    padding-top:100px;
+    background-color:  rgb(243, 239, 227);
+   
+    
 }
 
 .program-image{

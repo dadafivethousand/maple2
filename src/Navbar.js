@@ -7,6 +7,25 @@ import GetStarted from "./Components/GetStarted";
 
 export default function Navbar() {
     const [click, setClick] = useState(false);
+    const [showGetStarted, setShowGetStarted] = useState(false);
+ 
+ 
+    const changeExpand = () => {
+        if (window.scrollY >= 400) {
+            setShowGetStarted(true);
+        } else {
+            setShowGetStarted(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', changeExpand);
+        return () => {
+            window.removeEventListener('scroll', changeExpand);
+        };
+    }, []);
+
+     
     const handleClick=()=>{
         setClick((prev)=>!prev)
     }
@@ -21,7 +40,7 @@ export default function Navbar() {
             <img src={logo} />
             </div>
             <div className={`navbar ${click? 'slide': ''}`}>
-                <div onClick={()=>setClick(false)} className="getstarted">
+                <div onClick={()=>setClick(false)} className={`${showGetStarted?'show-get-started': ''} getstarted`}>
              <GetStarted />
              </div>
             <ul className="navbar-options">
