@@ -6,7 +6,7 @@ export default function PurchaseForm() {
     <div className='purchase-form-container'>
        <form  >
     <div className="purchase-form">
-      <h2>Your personal information</h2>
+      <h2>Personal Details</h2>
      
         <div className='grid-form'>
         <div className="form-group">
@@ -37,8 +37,8 @@ export default function PurchaseForm() {
  
       
     </div>
-    <div className="purchase-form">
-      <h2>Your address information</h2>
+    <div className="purchase-form address-info">
+      <h2>Address Information</h2>
      
         <div className='grid-form'>
      

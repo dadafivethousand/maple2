@@ -14,7 +14,7 @@ import Programs from "./Programs.js";
 import Purchase from "./Components/Purchase.js";
 
 function App() {
-  useScrollAnimation();
+ // useScrollAnimation();
 
   return (
     <AppProvider>
