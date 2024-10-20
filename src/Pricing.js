@@ -3,7 +3,7 @@ import './Stylesheets/Pricing.css';
 import Memberships from './Objects/MembershipsObject';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign, faUserPlus, faUserCog } from '@fortawesome/free-solid-svg-icons';
-import MembershipComponent from './Components/AdultMembershipComponent';
+import MembershipComponent from './Components/MembershipComponent';
 import { useState, useEffect, useRef } from 'react';
 
 const Bullets = [

@@ -1,0 +1,122 @@
+.purchase-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+  
+    flex-wrap: wrap;
+  }
+  
+  .purchase-form {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Roboto condensed;
+  }
+  
+  label, input, label, option{
+    font-family: Roboto condensed;
+  }
+   
+  .purchase-form-container h2{
+    margin-top:10px;
+  }
+  
+  .purchase-form h2 {
+    color: #333;
+    margin-bottom: 20px;  
+  }
+  
+  .grid-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-gap: 20px; /* Gap between elements */
+    justify-content: flex-start;
+  }
+  
+  
+  /* Make the button span across both columns */
+  .submit-btn {
+     display:block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 50px auto;
+    width: 50%; 
+    text-align: center; 
+    position: relative;
+   
+  }
+  
+  .submit-btn:hover {
+    background-color: #555;
+  }
+  
+  /* Ensure form fields are full width */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .field-flex{
+    display: flex;
+    justify-content: space-between;
+  }
+  .half{
+    width:48%;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .form-group input, .form-group select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  .purchase-summary {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-width: 300px;
+    margin: 0 auto;
+    margin-top:70px;
+  }
+  
+  .purchase-summary h3 {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .purchase-summary p {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 15px 0;
+  }
+  
+
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+  
+  
+    .purchase-summary {
+      margin-top: 20px;
+    }
+  }
+  

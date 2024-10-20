@@ -1,7 +1,7 @@
 import '../Stylesheets/Membership.css'
-
+import { useAppContext } from '../AppContext'; 
 export default function Membership({ index, type, price, billed, cancel }) {
-
+    const {setPrice, setType, setFrequency} = useAppContext();
     const formatCurrency = (amount) => {
         return new Intl.NumberFormat('en-US', {
           style: 'currency',
@@ -9,6 +9,11 @@ export default function Membership({ index, type, price, billed, cancel }) {
           minimumFractionDigits: 0,
         }).format(amount);
       };
+    const membershipDetails=()=>{
+        setPrice(price)
+        setType(type)
+        setFrequency(billed)
+    }
     return(
         <div className='MembershipContainer'>
       
@@ -21,7 +26,7 @@ export default function Membership({ index, type, price, billed, cancel }) {
          </div>
          <div className='Cancel'> {cancel? cancel: ''} </div>
             <div >
-                <button className='PurchaseButton'>Purchase</button>
+                <button onClick={membershipDetails} className='PurchaseButton'>Purchase</button>
             </div>
 
         </div>

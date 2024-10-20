@@ -5,7 +5,7 @@ export default function Program( {program} ){
       setShow((prev)=>!prev)
    }
     return(
-        <div onClick={handleClick} className="program-container">
+        <div onClick={handleClick} className="program-container animate">
              <div className={`${show? 'dim':''} program-image`}>
                 <img src={program.image} />
              </div>

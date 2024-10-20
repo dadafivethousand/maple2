@@ -19,7 +19,7 @@ export default function Coach({ coach }){
         }
     }, [showProfile])
     return(
-        <div onClick={toggleShowProfile} className="coach-container">
+        <div onClick={toggleShowProfile} className="coach-container animate">
             <div className='image-overlay'>
             </div>
             <div className={`${showProfile ? 'dim' : ''} coach-photo`} >

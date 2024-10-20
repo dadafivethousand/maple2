@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Stylesheets/PurchaseForm.css'; // Separate CSS for the form
+import '../Stylesheets/Purchase.css'; // CSS for combining form and summary
 
 export default function PurchaseForm() {
   return (
@@ -60,9 +60,20 @@ export default function PurchaseForm() {
         <div className="form-group half">
           <label>Province*</label>
           <select>
-            <option>Select</option>
-            <option>Province 1</option>
-            <option>Province 2</option>
+          <option>ON</option>
+          <option>QC</option>
+          <option>BC</option>
+          <option>AB</option>
+          <option>MB</option>
+          <option>SK</option>
+          <option>NB</option>
+          <option>NL</option>
+          <option>NS</option>
+          <option>PE</option>
+          <option>NT</option>
+          <option>NU</option>
+          <option>YT</option>
+                      
           </select>
         </div>
 
@@ -74,7 +85,7 @@ export default function PurchaseForm() {
         </div>
       
      
-      <button type="submit" className="submit-btn">Next</button>
+       
     </div>
     </form>
     </div>

@@ -1,16 +1,19 @@
 import React from 'react';
-import '../Stylesheets/PurchaseSummary.css'; // Separate CSS for the summary
+import '../Stylesheets/Purchase.css'; // CSS for combining form and summary
+import { useAppContext } from '../AppContext'; 
+export default function PurchaseSummary() {
+  const {price, type, frequency} = useAppContext();
 
-export default function PurchaseSummary({type, amount, frequency}) {
   return (
     <div className="purchase-summary">
       <h3>Summary</h3>
-      <p>{type}: $ {amount} ({frequency})</p>
+      <p>{type} <br></br> 
+      ${price} ({frequency})</p>
       <hr />
-      <p>Subtotal: ${amount}</p>
-      <p>HST: ${amount * 0.13}</p>
+      <p>Subtotal: ${price}</p>
+      <p>HST: ${price * 0.13}</p>
       <hr />
-      <p>Total: ${amount * 1.13}</p>
+      <p>Total: ${price * 1.13}</p>
     </div>
   );
 }
