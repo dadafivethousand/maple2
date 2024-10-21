@@ -2,9 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const paymentController = require('../controllers/paymentController'); // Controller to handle Stripe logic
 const personRoutes = require('./Routes/PersonRoutes'); // Import routes
 const path = require('path');
 const bodyParser = require('body-parser');
+const stripe = require('stripe')('your_secret_key'); // Use your Stripe Secret Key
 // Initialize Express app
 const app = express();
 app.use(bodyParser.json());
@@ -43,6 +45,7 @@ app.use(express.static(path.join(__dirname, '../build')));
 
 // API Routes
 app.use('/api/person', personRoutes); // Route all person-related requests
+app.use('/api/payment', paymentRoutes);
 
 app.post('/verify-captcha', async (req, res) => {
   const { captchaValue } = req.body;  // This is the token from the front-end

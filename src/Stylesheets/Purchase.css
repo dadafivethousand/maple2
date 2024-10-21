@@ -52,6 +52,13 @@
     position: relative;
    
   }
+
+   
+
+  .wide {
+    grid-column: span 2;
+  }
+  
   
   .submit-btn:hover {
     background-color: #555;
@@ -97,6 +104,7 @@
   .purchase-summary h3 {
     color: #333;
     margin-bottom: 15px;
+    text-align: center;
   }
   
   .purchase-summary p {
@@ -112,25 +120,63 @@
 
   .close-btn{
  position: absolute ;
- right: 10px;
-    
+ right: 40px;
+ top:20px;
+ font-size:30px;
+ color:black
   }
 
  .close-btn button{
   background-color: rgba(255, 0, 0, 0);
   border:1px solid rgba(0, 0, 0, 0);
-  font-size:20px
+  color:black
+
  }
+
+ .close-btn button:hover{
+  cursor: pointer;
+ }
+
+
+ .purchase-form{
+  margin-top:50px;
+}
+
+.purchase-outer-container img{
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+}
   
+.purchase-form-container button{
+  margin: 0 auto;
+  display: block;
+  margin-top:20px;
+  width: 200px;
+  height:30px;
+  font-family: Roboto;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.924);
+  border-radius: 15px;
+}
+
+.purchase-form-container button:hover{
+  cursor: pointer;
+  color:black;
+  background-color: rgb(231, 231, 231);
+}
 
   /* Responsive design for smaller screens */
   @media (max-width: 768px) {
-  .address-info{
-    margin-top:50px;
-  }
+
   
     .purchase-summary {
       margin-top: 20px;
     }
-  }
+
+
+    .purchase-container {
+      flex-direction: column-reverse;
   
+  }
+}

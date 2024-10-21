@@ -8,6 +8,16 @@
     font-family: poppins;
   }
 
+  a {
+    color: inherit; /* or choose a specific color */
+    text-decoration: none; /* Optional: removes underline */
+  }
+  
+  a:visited {
+    color: inherit; /* or set the desired color for visited links */
+  }
+  
+
   html {
     scroll-behavior: smooth;
   }
