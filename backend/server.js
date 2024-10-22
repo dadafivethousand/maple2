@@ -2,12 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const paymentController = require('../controllers/paymentController'); // Controller to handle Stripe logic
-const personRoutes = require('./Routes/PersonRoutes'); // Import routes
 const path = require('path');
 const bodyParser = require('body-parser');
-const stripe = require('stripe')('your_secret_key'); // Use your Stripe Secret Key
-// Initialize Express app
+const stripe = require('stripe')('6LfVmFoqAAAAAPd3gAfJAsZLhPQU46ilnkcuTkIa'); // Use your Stripe Secret Key
 const app = express();
 app.use(bodyParser.json());
 
