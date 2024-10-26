@@ -1,5 +1,6 @@
 // Pricing.js
 import './Stylesheets/Pricing.css';
+import React from 'react';
 import Memberships from './Objects/MembershipsObject';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign, faUserPlus, faUserCog } from '@fortawesome/free-solid-svg-icons';
@@ -71,8 +72,10 @@ export default function Pricing() {
 
     return (
         <div id="Pricing" className='PricingContainer'>
-            <h1 className="animate">Membership Plans</h1>
-            <div className='PricingButtonContainer'>
+             <h1 className="animate">Take advantage of our Grand Opening Promotion!</h1> 
+            <MembershipComponent type={Memberships.adult} />
+      
+            {/*     <div className='PricingButtonContainer'>
                 <button onClick={toggleAdult} className='AdultMembershipButton'>Adults & Teens</button>
             </div>
             {showAdult && <MembershipComponent type={Memberships.adult} />}
@@ -80,7 +83,7 @@ export default function Pricing() {
                 <button onClick={toggleKid} className='KidsMembershipButton'>Kids (4-13)</button>
             </div>
             {showKid && <MembershipComponent type={Memberships.kids} />}
-            
+            */}
             <ul className='BulletPoints'>
                 {Bullets.map((bullet, index) => (
                     <li

@@ -8,6 +8,13 @@
     font-family: poppins;
   }
 
+  h6{
+    font-weight: 500;
+    opacity: .9;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
   a {
     color: inherit; /* or choose a specific color */
     text-decoration: none; /* Optional: removes underline */

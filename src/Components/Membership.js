@@ -18,15 +18,15 @@ export default function Membership({ index, type, price, billed, cancel }) {
         <div className='MembershipContainer'>
       
           
-         <div  className='MembershipType'>  {type}</div> 
+         <div  className='MembershipType'> <h6> {type} </h6></div> 
          <div>
      <div className='Price'> {formatCurrency(price)} <span className='hst'> + HST</span>  </div> 
          {billed? <div className='billed'> {billed}</div>: null}
         
          </div>
          <div className='Cancel'> {cancel? cancel: ''} </div>
-            <div >
-                <button onClick={membershipDetails} className='PurchaseButton'>Purchase</button>
+            <div className='PurchaseButton'>
+                <a href='https://buy.stripe.com/aEUeYD4fL4kzgU08ww' className='PurchaseButton'>Purchase</a>
             </div>
 
         </div>

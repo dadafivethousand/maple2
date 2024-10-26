@@ -25,8 +25,8 @@ const convertToAmPm = (time) => {
 
 // Time blocks to remove (example: between 9-11 AM and 1:30-3:30 PM)
 const timeBlocksToRemove = [
-  { start: 9, end: 11.5 },
-  { start: 13.5, end: 15.5 }
+  { start: 8.5, end: 11.5 },
+  { start: 14, end: 18 }
 ];
 
 // Main Schedule component
@@ -111,7 +111,7 @@ export default function Schedule() {
                   >
 
                     <p className='class-name'>{classTime.name} </p>   
-                    <p>  <span className='class-time'> {dontConvertToAmPm(classTime.start)} - {convertToAmPm(classTime.end)} </span>
+                    <p>  <span className='class-time'> {convertToAmPm(classTime.start)} - {convertToAmPm(classTime.end)} </span>
                     </p>
                   </div>
                 );

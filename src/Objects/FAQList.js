@@ -1,7 +1,16 @@
 const faqList = [
+  {
+    question: "Do you take kids? What age groups do you teach?",
+    answer: "At the moment, we are enrolling students aged 13 and up (Teens & Adults). While we don't currently offer a kids program, we're happy to recommend other local academies that specialize in training younger children. Feel free to reach out for recommendations, and thank you for considering us!"
+  },
     {
       question: "What is Brazilian Jiu-Jitsu (BJJ)?",
       answer: "Brazilian Jiu-Jitsu (BJJ) is a grappling-based martial art that focuses on ground fighting and submissions. It emphasizes leverage, technique, and strategy over brute strength, making it highly effective for people of all sizes."
+    },
+
+    {
+      question: "Do you offer Muay Thai & Mixed Martial Arts?",
+      answer: "Right now, we’re dedicated to developing and perfecting our Brazilian Jiu-Jitsu program. However, we do have plans to introduce Muay Thai and Mixed Martial Arts (MMA) in the future, so stay tuned for updates!"
     },
     {
       question: "Do I need experience to start?",
@@ -17,12 +26,9 @@ const faqList = [
     },
     {
       question: "Do you offer a free trial?",
-      answer: "For those looking to try a class for the first time we have a promotional drop in rate of $20, which will be applied towards your membership if you decide to sign up. Lets face it, $20 is a negligible amount in today's economy."
+      answer: "Yes, we offer a free class! You’re welcome to try out any class listed on our schedule. Just be sure to fill out the waiver beforehand, and we’ll be happy to have you on the mats."
     },
-    {
-      question: "What age groups can sign up?",
-      answer: "We accept students aged 4 and up, boys & girls, men & women, regardless of experience level."
-    },
+ 
   ];
 
   export default faqList;
