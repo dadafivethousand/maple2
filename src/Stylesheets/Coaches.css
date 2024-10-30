@@ -89,17 +89,19 @@
   
 }
 
-.coaches-intro{
-    width:90%
-}
+
 
 .coaches-intro h1{
     margin-bottom:20px;
+    width: 100vw;;
 }
 
 .coaches-intro p{
-    margin-bottom:30px;
+    
     opacity: 80%;
+    width:90%;
+    margin: 0 auto;
+    margin-bottom:30px;
 }
 
 @media(min-width:800px){
@@ -109,8 +111,9 @@
         justify-content: space-around;
         align-items: center;
         width:98vw;
+      
     }
     .coaches >*{
-       margin: 10px 10px;
+       margin: 10px;
     }
 }

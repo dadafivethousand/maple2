@@ -1,5 +1,5 @@
 .MembershipContainer{
-    margin: 10px auto;
+    margin: 100px auto;
     border:rgb(255, 255, 255) 1px solid;
     padding-bottom: 15px ;
     font-size: 1.5rem;
@@ -11,7 +11,18 @@
     justify-content: space-between;
     background-color: rgb(183, 181, 181);
     border-radius: 15px;
+    transition: scale 0.5s ease-in-out;
+    position: relative;
+    z-index: 5;
+    border:2px solid black;
 }
+ 
+.MembershipContainer:hover{
+cursor: default;
+scale: 1.1;
+ 
+}
+
 
 .PurchaseButton {
     height:60px;
@@ -63,6 +74,7 @@
     padding-left: 5px;
     
 }
+
  
 .Price{
     font-size: 1.4em;
@@ -81,6 +93,8 @@
     font-style: italic;
     
 }
+
+
 
 @media(min-width:800px){
     .MembershipContainer{

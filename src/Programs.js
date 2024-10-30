@@ -5,7 +5,7 @@ import Program from './Components/Program'
 export default function Programs() {
     return(
         <div id='programs' className="programs-container">
-            <h1 className='animate'>Our Programs</h1>
+            <h1 className='animate'>Programs</h1>
          
       
 

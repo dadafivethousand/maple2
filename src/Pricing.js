@@ -72,7 +72,7 @@ export default function Pricing() {
 
     return (
         <div id="Pricing" className='PricingContainer'>
-             <h1 className="animate">Take advantage of our Grand Opening Promotion!</h1> 
+             <h1 className="animate">Pricing</h1> 
             <MembershipComponent type={Memberships.adult} />
       
             {/*     <div className='PricingButtonContainer'>

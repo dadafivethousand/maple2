@@ -1,6 +1,8 @@
 import '../Stylesheets/Membership.css'
+import Ribbon from './Ribbon';
+import BottomRibbon from './BottomRibbon'
 import { useAppContext } from '../AppContext'; 
-export default function Membership({ index, type, price, billed, cancel }) {
+export default function Membership({ index, type, price, billed, cancel, promo, paymentLink }) {
     const {setPrice, setType, setFrequency} = useAppContext();
     const formatCurrency = (amount) => {
         return new Intl.NumberFormat('en-US', {
@@ -15,10 +17,18 @@ export default function Membership({ index, type, price, billed, cancel }) {
         setFrequency(billed)
     }
     return(
-        <div className='MembershipContainer'>
-      
+        <div className={`${promo? 'promo': ''} MembershipContainer`}>
+         {/* Render the Ribbon component only if it's a promotional item */}
+         {promo && (
           
-         <div  className='MembershipType'> <h6> {type} </h6></div> 
+                <Ribbon 
+                    topText="GRAND OPENING PROMO" 
+                    
+                />
+ 
+            )}
+          
+         <div  className='MembershipType'> <h6> {type }   </h6></div> 
          <div>
      <div className='Price'> {formatCurrency(price)} <span className='hst'> + HST</span>  </div> 
          {billed? <div className='billed'> {billed}</div>: null}
@@ -26,8 +36,17 @@ export default function Membership({ index, type, price, billed, cancel }) {
          </div>
          <div className='Cancel'> {cancel? cancel: ''} </div>
             <div className='PurchaseButton'>
-                <a href='https://buy.stripe.com/aEUeYD4fL4kzgU08ww' className='PurchaseButton'>Purchase</a>
+                <a href={paymentLink} className='PurchaseButton'>Purchase</a>
             </div>
+
+            {promo && (
+          
+          <BottomRibbon 
+              topText="Save $40 per month!"
+               bottomText="Only 10 spots available"
+          />
+
+      )}
 
         </div>
     )

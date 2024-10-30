@@ -1,5 +1,5 @@
 .programs-container{
-   padding: 0 5%;
+  
     margin: 0 auto;
     padding-top:100px;
     background-color:  rgb(243, 239, 227);
@@ -70,7 +70,7 @@
 position: absolute;
 
 color:white;
-width:98%;
+width: 350px;;
 margin: 0 auto;
 font-size: 13px;
 height:100%;

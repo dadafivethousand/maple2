@@ -26,7 +26,7 @@ const faqList = [
     },
     {
       question: "Do you offer a free trial?",
-      answer: "Yes, we offer a free class! You’re welcome to try out any class listed on our schedule. Just be sure to fill out the waiver beforehand, and we’ll be happy to have you on the mats."
+      answer: "Yes, we offer a free class! You’re welcome to try out any class listed on our schedule. Just be sure to fill out the waiver beforehand https://waiver.smartwaiver.com/v/maple, and we’ll be happy to have you on the mats."
     },
  
   ];

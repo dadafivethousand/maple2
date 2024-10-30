@@ -51,7 +51,7 @@ export default function About() {
         <div id='About' className='AboutContainer'>
     
 
-            <h1 className="animate"> <span className='White'> About </span> <span className='Crimson'> Maple Jiu-Jitsu </span></h1>
+            <h1 className="animate">   About</h1>
             <p className="animate"> At Maple Jiu-Jitsu Academy, we are committed to delivering a top-tier training experience for all skill levels. 
                 Our passion for Brazilian Jiu-Jitsu goes beyond just techniques; it’s about building a strong, inclusive community where everyone can grow, learn, and thrive.</p>
             

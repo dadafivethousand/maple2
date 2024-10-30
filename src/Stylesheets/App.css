@@ -35,9 +35,24 @@
   }
 
   h1{
-    font-weight: 300;
-    text-align: center;
-    margin-bottom: 50px;
+    text-align:center; font-size:30px; text-transform:uppercase; color:#222; letter-spacing:1px;
+    font-family:"Playfair Display", serif; font-weight:400; margin-bottom: 50px;;
+   
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 27px 0;
+    grid-gap: 20px;
+    align-items: center;
+
+  }
+  
+  h1:after, h1:before {
+      content: " ";
+      display: block;
+      border-bottom: 1px solid #ccc;
+      border-top: 1px solid #ccc;
+      height: 5px;
+    background-color:#f8f8f8;
   }
 
   h2{

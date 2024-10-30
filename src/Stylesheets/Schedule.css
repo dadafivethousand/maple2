@@ -2,8 +2,6 @@
   margin-bottom: 20px;
   margin: 0 auto;
   border-left: 1px solid rgba(0, 0, 0, 0.358);
- 
- 
 }
 
 .Column {
@@ -19,6 +17,7 @@
 .ScheduleContainer {
   
   padding-top: 100px;
+  border-bottom: 1px solid black;
  
  
   
@@ -61,10 +60,7 @@
   font-weight: 300;
 }
 
-.class-name{
-  text-transform: uppercase;
-}
-
+ 
 .timeslot  {
   font-size: 12px;
   display: flex;

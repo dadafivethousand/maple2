@@ -9,7 +9,7 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 export default function Contact() {
     return(
         <div id="Contact"   className='ContactContainer'> 
-      <h1  className="animate">Located In the Heart of <span className='crimson'> Maple </span> </h1>
+      <h1  className="animate">Contact Us </h1>
         <div className='ContactInfo-and-map'>
           <div className='Map'>
            

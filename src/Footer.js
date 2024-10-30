@@ -21,9 +21,10 @@ export default function Footer(){
             <img src={logo} />
             
             </div>
+            {/*
             <hr></hr>
             <h5 className='white'>Powered by <span className='crimson'>5K Studios Inc.</span>  All Rights Reserved</h5>
-
+            */}
         </div>
     )
 }
