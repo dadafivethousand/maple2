@@ -19,6 +19,14 @@ export default function QA({ faq, isExpanded, toggleExpand }) {
         >
           <div className="faq-answer">
             <p>{faq.answer}</p>
+            {faq.link && (
+            <>
+              {" "}
+              <a href={faq.link.url} target="_blank" rel="noopener noreferrer">
+                {faq.link.text}
+              </a>
+            </>
+          )}
           </div>
         </div>
       </div>

@@ -81,6 +81,10 @@
     
   }
 
+  .faq-answer a{
+    text-decoration: underline;
+  }
+
   .faq-answer {
     width:98%;
     margin:0 auto;
