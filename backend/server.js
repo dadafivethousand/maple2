@@ -6,14 +6,20 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const stripe = require('stripe')('6LfVmFoqAAAAAPd3gAfJAsZLhPQU46ilnkcuTkIa'); // Use your Stripe Secret Key
 const app = express();
+const http = require('http');
+const { Server } = require("socket.io");
+const SECRET_KEY = '6LfVmFoqAAAAAPd3gAfJAsZLhPQU46ilnkcuTkIa'
+const PORT = process.env.PORT || 5000;
+const allowedOrigins = ['https://maplebjj.com', 'https://www.maplebjj.com'];
+const server = http.createServer(app);
+
+// Initialize socket.io on the server
+const io = new Server(server);
+
 app.use(bodyParser.json());
 
 // Configure environment variables
 dotenv.config();
-const SECRET_KEY = '6LfVmFoqAAAAAPd3gAfJAsZLhPQU46ilnkcuTkIa'
-const PORT = process.env.PORT || 5000;
-
-const allowedOrigins = ['https://maplebjj.com', 'https://www.maplebjj.com'];
 
 app.use(cors({
     origin: (origin, callback) => {
@@ -43,6 +49,17 @@ app.use(express.static(path.join(__dirname, '../build')));
 // API Routes
 app.use('/api/person', personRoutes); // Route all person-related requests
 app.use('/api/payment', paymentRoutes);
+
+app.post('/webhook/smartwaiver', (req, res) => {
+  const waiverData = req.body; // This will contain the waiver details
+  console.log("Waiver signed:", waiverData);
+
+  // Emit an event to notify the frontend (using WebSocket, etc.)
+  io.emit("waiverSigned", waiverData);
+
+  res.status(200).send('Webhook received');
+});
+
 
 app.post('/verify-captcha', async (req, res) => {
   const { captchaValue } = req.body;  // This is the token from the front-end

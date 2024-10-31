@@ -122,13 +122,19 @@
     .navbar-container{
  display:flex;
  justify-content: space-between;
+ flex-wrap: wrap;
     }
+    .navbar-container > * {
+        flex: 1 1 auto; /* Allow items to grow and shrink as needed */
+        min-width: 100px; /* Set a minimum width to avoid items getting too small */
+      }
 
     .navbar{
         transform: translateX(0%);    
         display: flex;;
         flex-direction: column;
        justify-content: flex-end;
+       align-items: center;
     }
 
     .navbar-options{
