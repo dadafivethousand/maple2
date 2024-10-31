@@ -30,7 +30,7 @@ export default function Contact() {
        
            <div className='Instagram Address animate'>
         <FontAwesomeIcon className='ig-icon' icon={faInstagram} />{/* Envelope icon */}
-        <span id='ContactText'> @MapleBjj</span>
+        <span id='ContactText'> @maple_bjj</span>
         </div>
         <div className='Phone animate'>
         <FontAwesomeIcon icon={faPhone} />  {/* Phone icon */}

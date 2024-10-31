@@ -1,5 +1,5 @@
 .MembershipContainer{
-    margin: 100px auto;
+    margin: 30px auto;
     border:rgb(255, 255, 255) 1px solid;
     padding-bottom: 15px ;
     font-size: 1.5rem;
@@ -94,7 +94,9 @@ scale: 1.1;
     font-style: italic;
     
 }
-
+.promo{
+    margin-bottom: 80px
+}
 
 
 @media(min-width:800px){
