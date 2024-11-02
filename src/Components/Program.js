@@ -7,7 +7,7 @@ export default function Program( {program} ){
     return(
         <div onClick={handleClick} className="program-container animate">
              <div className={`${show? 'dim':''} program-image`}>
-                <img src={program.image} />
+                <img alt={program.name} src={program.image} />
              </div>
          
              <div className={`${show? 'hiding':''} program-title`}>

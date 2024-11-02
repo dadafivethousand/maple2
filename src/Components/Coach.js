@@ -23,7 +23,7 @@ export default function Coach({ coach }){
             <div className='image-overlay'>
             </div>
             <div className={`${showProfile ? 'dim' : ''} coach-photo`} >
-                <img src={coach.image} />
+                <img alt='Brazillian Jiu-Jitsu Instructor' src={coach.image} />
             </div>
             <div className='coach-belt'>
                 <Belt belt={coach.belt} />
