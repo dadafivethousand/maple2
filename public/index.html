@@ -1,75 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+    <!-- Meta Tags for SEO -->
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/MapleLeaf.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Brazillian Jiu-Jitsu, self-defense and martial arts instruction. Join us to learn BJJ and grow in a supportive community."
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="description" content="Maple Jiu-Jitsu Academy in Maple, Ontario, offers Brazilian Jiu-Jitsu and self-defense training in a supportive community. Join us to learn BJJ and improve your skills at any level." />
     
+    <!-- Title for SEO -->
+    <title>Maple Jiu-Jitsu Academy | Brazilian Jiu-Jitsu in Maple, Ontario</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://maplebjj.com" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="%PUBLIC_URL%/MapleLeaf.ico" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Web App Manifest -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bungee+Tint&family=Holtwood+One+SC&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Holtwood+One+SC&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Chathura:wght@100;300;400;700;800&display=swap" rel="stylesheet" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bungee+Tint&family=Holtwood+One+SC&family=Young+Serif&display=swap" rel="stylesheet">
+    <!-- Structured Data for Local SEO (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Maple Jiu-Jitsu Academy",
+        "description": "Maple Jiu-Jitsu Academy in Maple, Ontario offers Brazilian Jiu-Jitsu and self-defense training in a supportive environment. Classes available for all ages and skill levels.",
+        "url": "https://maplebjj.com",
+        "telephone": "+1-647-887-9940",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "20 Cranston Park Ave",
+          "addressLocality": "Maple",
+          "addressRegion": "ON",
+          "postalCode": "L6A 2W2",
+          "addressCountry": "CA"
+        },
+        "openingHours": [
+          "Mo 07:00-09:00",
+          "Mo 18:00-20:00",
+          "Tu 07:00-09:00",
+          "Tu 18:00-20:00",
+          "We 07:00-09:00",
+          "We 18:00-20:00",
+          "Th 07:00-09:00",
+          "Th 18:00-20:00",
+          "Fr 07:00-09:00",
+          "Fr 18:00-20:00"
+        ],
+        "image": "https://maplebjj.com/logo.png"
+      }
+    </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chathura:wght@100;300;400;700;800&family=Sahitya:wght@400;700&display=swap" rel="stylesheet">
-<!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Maple Jiujitsu Academy</title>
+    <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <!-- Facebook SDK -->
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-
   </body>
 </html>
