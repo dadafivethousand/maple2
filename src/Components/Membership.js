@@ -1,21 +1,16 @@
 import '../Stylesheets/Membership.css'
 import Ribbon from './Ribbon';
 import BottomRibbon from './BottomRibbon'
-import { useAppContext } from '../AppContext'; 
-export default function Membership({ index, type, price, billed, cancel, promo, paymentLink }) {
-    const {setPrice, setType, setFrequency} = useAppContext();
-    const formatCurrency = (amount) => {
+ 
+export default function Membership({  type, price, billed, cancel, promo, paymentLink }) {
+     const formatCurrency = (amount) => {
         return new Intl.NumberFormat('en-US', {
           style: 'currency',
           currency: 'USD',
           minimumFractionDigits: 0,
         }).format(amount);
       };
-    const membershipDetails=()=>{
-        setPrice(price)
-        setType(type)
-        setFrequency(billed)
-    }
+ 
     return(
         <div className={`${promo? 'promo': ''} MembershipContainer`}>
          {/* Render the Ribbon component only if it's a promotional item */}

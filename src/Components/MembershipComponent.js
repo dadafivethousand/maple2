@@ -5,9 +5,9 @@ export default function MembershipComponent({ type }) {
 <div className='Memberships'>
 
 {type.map((membership, index)=>{
-return  (   <div className={`Membership`}>
+return  (   <div key={index} className={`Membership`}>
 
-    <Membership index={index} cancel={membership.cancel} type={membership.type} price={membership.price} billed={membership.billed} promo={membership.promo}  paymentLink={membership.paymentLink}   />
+    <Membership  cancel={membership.cancel} type={membership.type} price={membership.price} billed={membership.billed} promo={membership.promo}  paymentLink={membership.paymentLink}   />
      
          
     </div>)

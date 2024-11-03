@@ -14,9 +14,9 @@ export default function Programs() {
         {
                 programs.map((program, index) =>{
                     return(
-                        <>
-                        <Program program={program} />
-                        </>
+                    
+                        <Program  key={index} program={program} />
+                     
                     )
                 })
             }
