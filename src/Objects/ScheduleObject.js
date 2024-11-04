@@ -1,23 +1,31 @@
 const schedule = {
     Monday: [
-      { name: "BJJ", start: 7.5, end: 8.5 },
-      { name: "BJJ", start: 18.5, end: 19.5 }
+      { name: "BJJ - NoGi", start: 7.5, end: 8.5 },
+      { name: "BJJ - NoGi", start: 12, end: 13 },
+      { name: "BJJ - NoGi", start: 18.5, end: 19.5 }
     ],
     Tuesday: [
-      { name: "BJJ", start: 7.5, end: 8.5 },
-      { name: "BJJ", start: 18.5, end: 19.5 }
+      { name: "BJJ - Gi", start: 7.5, end: 8.5 },
+      { name: "BJJ - Gi", start: 12, end: 13 },
+      { name: "BJJ - Gi", start: 18.5, end: 19.5 }
     ],
     Wednesday: [
-      { name: "BJJ", start: 7.5, end: 8.5 },
-      { name: "BJJ", start: 18.5, end: 19.5 }
+      { name: "BJJ - NoGi", start: 7.5, end: 8.5 },
+      { name: "BJJ - NoGi", start: 12, end: 13 },
+      { name: "BJJ - NoGi", start: 18.5, end: 19.5 }
     ],
     Thursday: [
-      { name: "BJJ", start: 7.5, end: 8.5 },
-      { name: "BJJ", start: 18.5, end: 19.5 }
+      { name: "BJJ - Gi", start: 7.5, end: 8.5 },
+      { name: "BJJ - Gi", start: 12, end: 13 },
+      { name: "BJJ - Gi", start: 18.5, end: 19.5 }
     ],
     Friday: [
-      { name: "BJJ", start: 7.5, end: 8.5 },
-      { name: "BJJ", start: 18.5, end: 19.5 }
+      { name: "BJJ - NoGi", start: 7.5, end: 8.5 },
+      { name: "BJJ - NoGi", start: 12, end: 13 },
+      { name: "BJJ - NoGi", start: 18.5, end: 19.5 }
+    ],
+    Saturday: [
+      { name: "BJJ - Gi", start: 12, end: 13},
     ]
   };
 export default schedule  
