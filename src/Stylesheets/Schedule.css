@@ -10,6 +10,11 @@
   border-bottom: 1px solid black;
 }
 
+.class-name {
+  font-size:11px;
+  font-family: Roboto condensed;
+}
+
 .class-time {
   font-size:12px;
   font-family: Roboto condensed;
