@@ -1,7 +1,5 @@
 import './Stylesheets/Landing.css'
-import artur from './Media/Artur.png'
-import gracie from './Media/gracie.webp'
-import max from './Media/mx.jpg'
+ 
 import bg from './Media/bg.jpeg'
 import GetStarted from './Components/GetStarted'
 export default function Landing(){
