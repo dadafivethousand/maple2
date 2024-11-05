@@ -1,5 +1,5 @@
 import MaxImage from '../Media/mx.jpg'
-import ArthurImage from '../Media/Artur.jpg'
+import ArthurImage from '../Media/Artur.png'
 import TajImage from '../Media/taj.png'
 import Rob from '../Media/rob.png'
 import Vitaly from '../Media/Vitaly.png'
