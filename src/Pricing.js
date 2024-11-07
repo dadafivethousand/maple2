@@ -20,7 +20,7 @@ const Bullets = [
     },
     {
         symbol: <FontAwesomeIcon className='icon' icon={faUserCog} />,
-        header: 'Easy Membership Management',
+        header: 'Membership Management',
         description: 'Handle everything online, including cancellations.'
     },
 ];
