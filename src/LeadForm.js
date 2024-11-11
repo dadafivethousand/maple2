@@ -139,7 +139,7 @@ export default function LeadForm({FreeTrial}) {
         </div>
       ) : (
         <>
-     {FreeTrial? <h2>Free Trial Class Signup</h2>: <h2>Please fill out the details below</h2>   }
+     {FreeTrial? <h2>Free Trial Class Signup</h2>: <h2>Please fill out the form</h2>   }
            <form onSubmit={handleSubmit}>
             <div className='grid'>
             <div className="form-group">
