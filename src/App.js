@@ -10,40 +10,50 @@ import Pricing from "./Pricing";
 import Programs from "./Programs";
 import Schedule from "./Schedule";
 import LeadForm from "./LeadForm";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useAppContext } from "./AppContext";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-function App() {
+function MainLayout() {
   const { showForm } = useAppContext();
 
   return (
-    <HelmetProvider>
-      <div className="App">
-        <Helmet>
-          <title>Maple Jiu-Jitsu Academy</title>
-          <meta
-            name="description"
-            content="Join Maple Jiu-Jitsu Academy and embark on your Brazilian Jiu-Jitsu journey."
-          />
-        </Helmet>
+    <>
+      {showForm && <LeadForm FreeTrial={true} />}
+      <Navbar />
+      <Landing />
+      <About />
+      <Programs />
+      <Pricing />
+      <Coaches />
+      <Schedule />
+      <FAQ />
+      <Contact />
+      <Footer />
+    </>
+  );
+}
 
-    
-    
-              <>
-              {showForm && <LeadForm />  }
-              <Navbar />
-              <Landing />
-              <About />
-              <Programs />
-              <Pricing />
-              <Coaches />
-              <Schedule />
-              <FAQ />
-              <Contact />
-              <Footer />
-              </>
-      
-      </div>
+function App() {
+  return (
+    <HelmetProvider>
+      <Router>
+        <div className="App">
+          <Helmet>
+            <title>Maple Jiu-Jitsu Academy</title>
+            <meta
+              name="description"
+              content="Join Maple Jiu-Jitsu Academy and embark on your Brazilian Jiu-Jitsu journey."
+            />
+          </Helmet>
+          <Routes>
+            {/* Main SPA Layout */}
+            <Route path="/" element={<MainLayout />} />
+            {/* Separate Info Form Route */}
+            <Route path="/info" element={<LeadForm FreeTrial={false} />} />
+          </Routes>
+        </div>
+      </Router>
     </HelmetProvider>
   );
 }

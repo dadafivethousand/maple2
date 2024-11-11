@@ -5,7 +5,7 @@ import { faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useAppContext } from "./AppContext";
 import pic from './Media/img.png'
-export default function LeadForm({toggleForm}) {
+export default function LeadForm({FreeTrial}) {
   const { setShowForm } = useAppContext();
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [formData, setFormData] = useState({
@@ -96,10 +96,11 @@ export default function LeadForm({toggleForm}) {
         const result = await response.json();
         console.log(result.message); 
         setMessage(
+          
           <>
             <p className="message-title">Success!</p>
-            <p className="message-body"> Someone from our team will be reaching out to you shortly. </p>  
-            <p className="message-body"> In the meantime, please complete the waiver by <a href='https://waiver.smartwaiver.com/w/dj188118umjqr7iwcr7jfq/web/'>following this link</a>. </p>
+<p className="message-body"> Someone from our team will be reaching out to you shortly. </p>
+{FreeTrial?       <p className="message-body"> In the meantime, please complete the waiver by <a href='https://waiver.smartwaiver.com/w/dj188118umjqr7iwcr7jfq/web/'>following this link</a>. </p>:null  }
              <img className='small-pic' src={pic} />
           </>
         );
@@ -127,8 +128,10 @@ export default function LeadForm({toggleForm}) {
   return (
     <div  className="form-outer-container">
     <div  className="form-container">
+      {FreeTrial?
     <div className='close-form' onClick={()=>setShowForm(false)}> <FontAwesomeIcon icon={faTimes} />
-    </div>
+    </div>:null
+    }
       {message ? (
         <div className='message-container'>
         {message}
@@ -136,8 +139,7 @@ export default function LeadForm({toggleForm}) {
         </div>
       ) : (
         <>
-     
-           <h2>Free Trial Class Signup</h2>
+     {FreeTrial? <h2>Free Trial Class Signup</h2>: <h2>Please fill out the details below</h2>   }
            <form onSubmit={handleSubmit}>
             <div className='grid'>
             <div className="form-group">
