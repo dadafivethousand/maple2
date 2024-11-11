@@ -92,7 +92,9 @@
 .small-pic {
     height: 80px;
     display: block;
-    margin: 0 auto
+    margin: 0 auto;
+    position: relative;
+    top:-10px;
 }
 
 
