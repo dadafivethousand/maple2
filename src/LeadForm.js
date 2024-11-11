@@ -139,6 +139,7 @@ export default function LeadForm({FreeTrial}) {
         </div>
       ) : (
         <>
+          <img className='small-pic' src={pic} />
      {FreeTrial? <h2>Free Trial Class Signup</h2>: <h2>Please fill out the form</h2>   }
            <form onSubmit={handleSubmit}>
             <div className='grid'>
