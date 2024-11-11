@@ -29,7 +29,14 @@ export default function Contact() {
        
        
            <div className='Instagram Address animate'>
+           <a
+      href="https://www.instagram.com/maple_bjj"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit our Instagram"
+    >
         <FontAwesomeIcon className='ig-icon' icon={faInstagram} />{/* Envelope icon */}
+        </a>
         <span id='ContactText'> @maple_bjj</span>
         </div>
         <div className='Phone animate'>
