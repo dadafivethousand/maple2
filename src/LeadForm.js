@@ -137,8 +137,7 @@ export default function LeadForm({toggleForm}) {
       ) : (
         <>
      
-         <img className='large-pic' src={pic} />
-          <h2>Sign up for your free class</h2>
+           <h2>Sign up for your free class</h2>
            <form onSubmit={handleSubmit}>
             <div className='grid'>
             <div className="form-group">
