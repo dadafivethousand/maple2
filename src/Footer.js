@@ -13,7 +13,7 @@ export default function Footer(){
             <a  href='#programs'>  <li>  Programs  </li></a>
             </ul>
             <ul>
-          
+            <a  href='#pricing'>  <li>  Pricing  </li></a>
             <a  href='#FAQ'>  <li>  F.A.Q.  </li></a>
             <a href='https://billing.stripe.com/p/login/7sI3fAgOUdugbvybII'> <li onClick={()=>setClick(false)}>My Account</li></a>
 

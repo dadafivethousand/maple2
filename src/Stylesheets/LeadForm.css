@@ -1,0 +1,126 @@
+.form-outer-container{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.81);
+    position: fixed  ;
+    z-index: 30;
+    
+}
+
+.form-container{
+    position: absolute;
+  
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height:80vh;
+    width:70vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    z-index: 40;
+    border-radius: 5px;
+ }
+
+ .message-container{
+    width:90%;
+ }
+
+ .message-title{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 25px;
+ }
+
+ .message-body{
+    font-size: 14px;
+    margin-bottom: 10px;
+ }
+
+ .captcha-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 10px auto;
+    position: relative;
+}
+
+.captcha {
+    transform: scale(0.7); /* Adjust the scale as needed */
+    transform-origin: center; /* Center the scaling */
+    width: 304px; /* Default width of reCAPTCHA iframe */
+    height: 78px; /* Default height of reCAPTCHA iframe */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  .form-container form{
+   width: 60vw;
+ }
+
+ 
+
+.form-group input{
+    height:40px;
+    width:100%;
+    text-align: center; /* Center the placeholder text horizontally */
+    margin-bottom:2px
+}
+
+.close-form{
+    position: absolute;
+    top:30px;
+    right:30px;
+    font-size: 30px;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+.large-pic {
+    height: 120px;
+    display: block;
+}
+
+.small-pic {
+    height: 80px;
+    display: block;
+    margin: 0 auto
+}
+
+
+.form-container button{
+    margin: 0 auto;
+    display: block;
+    width: 200px;
+    height:30px;    
+    font-family: roboto;;
+ 
+}
+
+
+.form-container a{
+text-decoration: underline;
+}
+ 
+
+
+
+.valid-button{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px black;
+    border: 1px solid white;
+
+}
+
+.no-shadow{
+     box-shadow: 3px 3px 5px black;
+}

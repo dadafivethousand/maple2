@@ -4,7 +4,7 @@
   top:0;
   width:100vw;
   background-color:  rgb(243, 239, 227);
-  z-index:30;
+  z-index:20;
 }
 
 .navbar-outer-container a{

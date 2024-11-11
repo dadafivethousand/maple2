@@ -1,10 +1,17 @@
 import '../Stylesheets/getStarted.css'
+import LeadForm from '../LeadForm'
+import { useState } from 'react'
+import { useAppContext } from "../AppContext";
 export default function GetStarted({size}){
+    const { showForm, setShowForm } = useAppContext();   
+    const toggleForm=()=>setShowForm((prev)=>!prev)
     return(
         <div className='get-started-container'>
-            <a href='#Pricing'>   <div className={`${size == 'large'? 'large' : ''} get-started-button`}>
+            <div onClick={()=>setShowForm(true)} className={`${size == 'large'? 'large' : ''} get-started-button`}>
             Get Started Now
-            </div> </a> 
+            </div>  
+         
+            
         </div>
     )
 }

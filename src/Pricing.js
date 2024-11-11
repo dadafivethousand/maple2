@@ -71,7 +71,7 @@ export default function Pricing() {
     }, []); // Empty dependency array ensures this runs once on mount
 
     return (
-        <div id="Pricing" className='PricingContainer'>
+        <div id="pricing" className='PricingContainer'>
              <h1 className="animate">Pricing</h1> 
             <MembershipComponent type={Memberships.adult} />
       
