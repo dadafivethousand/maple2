@@ -137,7 +137,7 @@ export default function LeadForm({toggleForm}) {
       ) : (
         <>
      
-           <h2>Sign up for your free class</h2>
+           <h2>Free Trial Class Signup</h2>
            <form onSubmit={handleSubmit}>
             <div className='grid'>
             <div className="form-group">
