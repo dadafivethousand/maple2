@@ -12,14 +12,22 @@ import Schedule from "./Schedule";
 import LeadForm from "./LeadForm";
  import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useAppContext } from "./AppContext";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
-function MainLayout() {
+  
+function App() {
   const { showForm } = useAppContext();
-
   return (
-    <>
-      {showForm && <LeadForm FreeTrial={true} />}
+    <HelmetProvider>
+    
+        <div className="App">
+          <Helmet>
+            <title>Maple Jiu-Jitsu Academy</title>
+            <meta
+              name="description"
+              content="Join Maple Jiu-Jitsu Academy and embark on your Brazilian Jiu-Jitsu journey."
+            />
+          </Helmet>
+          <>
+      {showForm && <LeadForm />}
       <Navbar />
       <Landing />
       <About />
@@ -31,29 +39,9 @@ function MainLayout() {
       <Contact />
       <Footer />
     </>
-  );
-}
-
-function App() {
-  return (
-    <HelmetProvider>
-      <Router>
-        <div className="App">
-          <Helmet>
-            <title>Maple Jiu-Jitsu Academy</title>
-            <meta
-              name="description"
-              content="Join Maple Jiu-Jitsu Academy and embark on your Brazilian Jiu-Jitsu journey."
-            />
-          </Helmet>
-          <Routes>
-            {/* Main SPA Layout */}
-            <Route path="/" element={<MainLayout />} />
-            {/* Separate Info Form Route */}
-            <Route path="/info" element={<LeadForm FreeTrial={false} />} />
-          </Routes>
+      
         </div>
-      </Router>
+     
     </HelmetProvider>
   );
 }

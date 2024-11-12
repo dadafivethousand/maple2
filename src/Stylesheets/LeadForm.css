@@ -40,6 +40,11 @@
     text-align: center;
  }
 
+ .top{
+    margin-bottom: 25px;
+
+ }
+
  .captcha-container {
     display: flex;
     justify-content: center;
