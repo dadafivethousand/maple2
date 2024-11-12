@@ -27,5 +27,9 @@ const schedule = {
     Saturday: [
       { name: "BJJ - Gi", start: 12, end: 13},
     ]
+    ,
+    Sunday: [
+      { name: "BJJ - Gi", start: 12, end: 13},
+    ]
   };
 export default schedule  
