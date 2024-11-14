@@ -12,6 +12,8 @@ import Schedule from "./Schedule";
 import LeadForm from "./LeadForm";
  import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useAppContext } from "./AppContext";
+import Parallax from "./Parallax";
+import Parallax1 from "./Parallax1";
   
 function App() {
   const { showForm } = useAppContext();
@@ -31,8 +33,11 @@ function App() {
       <Navbar />
       <Landing />
       <About />
+      <Parallax1 />
       <Programs />
+      
       <Pricing />
+      <Parallax />
       <Coaches />
       <Schedule />
       <FAQ />

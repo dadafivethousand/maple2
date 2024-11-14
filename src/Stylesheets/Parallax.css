@@ -1,0 +1,28 @@
+
+/* ParallaxSection.css */
+.parallax-container {
+    height: 800px; /* Adjust the height as needed */
+    background-image: url('../Media/parallax.jpg'); /* Replace with your image path */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+     position: relative;;
+  }
+
+  .parallax-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Adjust the opacity as needed */
+  }
+  
+  .content {
+    padding: 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+  }
+  
