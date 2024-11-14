@@ -42,11 +42,11 @@ scale: 1.1;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    overflow: hidden;
 }
 
-.PurchaseButton a {
-    color: white
-}
+.MembershipContainer a{color:white}
+ 
 
  
 

@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useAppContext } from "../AppContext";
 export default function GetStarted({size}){
     const { showForm, setShowForm } = useAppContext();   
-    const toggleForm=()=>setShowForm((prev)=>!prev)
+    
     return(
         <div className='get-started-container'>
             <div onClick={()=>setShowForm(true)} className={`${size == 'large'? 'large' : ''} get-started-button`}>

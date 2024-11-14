@@ -1,9 +1,11 @@
 import '../Stylesheets/Membership.css'
 import Ribbon from './Ribbon';
 import BottomRibbon from './BottomRibbon'
+import { useAppContext } from "../AppContext";
  
-export default function Membership({  type, price, billed, cancel, promo, paymentLink }) {
-     const formatCurrency = (amount) => {
+export default function Membership({ free, type, price, billed, cancel, promo, paymentLink }) {
+  const { showForm, setShowForm } = useAppContext();      
+  const formatCurrency = (amount) => {
         return new Intl.NumberFormat('en-US', {
           style: 'currency',
           currency: 'USD',
@@ -25,14 +27,19 @@ export default function Membership({  type, price, billed, cancel, promo, paymen
           
          <div  className='MembershipType'> <h6> {type }   </h6></div> 
          <div>
-     <div className='Price'> {formatCurrency(price)} <span className='hst'> + HST</span>  </div> 
+     <div className='Price'>
+  
+      { free ? <p>Free</p> : <>{formatCurrency(price)} <span className='hst'> + HST</span></> }
+
+       </div> 
          {billed? <div className='billed'> {billed}</div>: null}
         
          </div>
          <div className='Cancel'> {cancel? cancel: ''} </div>
-            <div className='PurchaseButton'>
-                <a href={paymentLink} className='PurchaseButton'>Purchase</a>
-            </div>
+            
+              { free?    <div onClick={()=>setShowForm(true)}  className='PurchaseButton'>Start</div> :
+                <a href={paymentLink} className='PurchaseButton'>Purchase</a>}
+         
 
             {promo && (
           

@@ -26,7 +26,7 @@ const faqList = [
     },
     {
       question: "Do you offer a free trial?",
-      answer: "Yes, we offer one free class. You’re welcome to try out any class listed on our schedule. Please ensure to fill out the waiver prior to the start of the class. ",
+      answer: "Yes, we offer one free week. You’re welcome to try out any classes listed on our schedule. Please ensure to fill out the waiver prior to the start of the class. ",
       link: { text: "Click here to fill out the waiver.", url: "https://waiver.smartwaiver.com/v/maple" }
     },
  

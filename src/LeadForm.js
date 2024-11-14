@@ -139,7 +139,7 @@ export default function LeadForm() {
       ) : (
         <>
           <img className='small-pic' src={pic} />
-     <h2>Free Trial Class Signup</h2> 
+     <h2>Free Trial Form</h2> 
            <form onSubmit={handleSubmit}>
             <div className='grid'>
             <div className="form-group">
