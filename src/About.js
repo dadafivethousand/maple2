@@ -52,7 +52,7 @@ export default function About() {
     
 
             <h1 className="animate">   About</h1>
-            <p className="animate"> At Maple Jiu-Jitsu Academy, we are committed to delivering a top-tier training experience for all skill levels. 
+            <p className="animate"> At Maple Jiu-Jitsu Academy, we are committed to delivering a top-tier training experience for all skill levels. Our head instructor is one of the top-ranked black belts in Canada, bringing elite-level coaching right here to Maple.
                 Our passion for Brazilian Jiu-Jitsu goes beyond just techniques; it’s about building a strong, inclusive community where everyone can grow, learn, and thrive.</p>
             
             <div className='AboutTextAndVideo'>
