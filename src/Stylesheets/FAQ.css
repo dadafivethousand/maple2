@@ -149,6 +149,15 @@
   .faq-answer-wrapper {
     overflow: hidden; /* Prevents overflow during transitions */
   }
+
+  .faq-free-trial{
+    text-decoration: underline;
+  }
+
+  .faq-free-trial:hover{
+cursor: pointer;
+  }
+  
   
     @media(min-width: 800px){
 

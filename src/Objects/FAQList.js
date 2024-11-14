@@ -1,5 +1,11 @@
 const faqList = [
   {
+    question: "Why Maple BJJ?",
+    answer: "At Maple BJJ, you'll be training under one of the top-ranked competitive black belts in Canada. Our head instructor is a Canadian National Champion, a multi-time IBJJF Open Champion, and a multi-time Ontario Open Champion. Whether you’re a complete beginner or looking to compete, you’ll receive the highest level of instruction in a welcoming and supportive environment."
+  },
+
+
+  {
     question: "Do you take kids? What age groups do you teach?",
     answer: "At the moment, we are enrolling students aged 13 and up (Teens & Adults). While we don't currently offer a kids program, we're happy to recommend other local academies that specialize in training younger children. Feel free to reach out for recommendations, and thank you for considering us!"
   },
@@ -26,8 +32,8 @@ const faqList = [
     },
     {
       question: "Do you offer a free trial?",
-      answer: "Yes, we offer one free week. You’re welcome to try out any classes listed on our schedule. Please ensure to fill out the waiver prior to the start of the class. ",
-      link: { text: "Click here to fill out the waiver.", url: "https://waiver.smartwaiver.com/v/maple" }
+      answer: "Yes, we offer one free week to those who have never been here before and want to try it out.",
+      link: { text: "Click here to get started", url: "https://waiver.smartwaiver.com/v/maple" }
     },
  
   ];

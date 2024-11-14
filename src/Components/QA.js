@@ -1,6 +1,7 @@
 import '../Stylesheets/FAQ.css';
-
+import { useAppContext } from "../AppContext";
 export default function QA({ faq, isExpanded, toggleExpand }) {
+  const { showForm, setShowForm } = useAppContext();   
   return (
     <div className="faq-item-container animate">
       <div className="faq-item">
@@ -21,10 +22,10 @@ export default function QA({ faq, isExpanded, toggleExpand }) {
             <p>{faq.answer}</p>
             {faq.link && (
             <>
-              {" "}
-              <a href={faq.link.url} target="_blank" rel="noopener noreferrer">
-                {faq.link.text}
-              </a>
+            
+              <div className='faq-free-trial' onClick={()=>setShowForm(true)} >
+              Click here to get started
+              </div>
             </>
           )}
           </div>

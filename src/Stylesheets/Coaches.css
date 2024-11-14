@@ -34,7 +34,7 @@
     object-fit: cover;
     display: block;
 }
-
+ 
  
 .dim{
     filter: brightness(25%);
