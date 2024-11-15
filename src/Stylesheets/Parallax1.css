@@ -4,7 +4,7 @@
     height: 800px; /* Adjust the height as needed */
     background-image: url('../Media/mats1.jpg'); /* Replace with your image path */
     background-attachment: fixed;
-    background-position:right;
+    background-position:left;
     background-repeat: no-repeat;
     background-size: cover;
      position: relative;;
