@@ -33,13 +33,14 @@ function App() {
       <Navbar />
       <Landing />
       <About />
-      <Parallax1 />
       <Programs />
-      
-      <Pricing />
-      <Parallax />
+      <Parallax1 />
       <Coaches />
       <Schedule />
+      
+   
+      <Parallax />
+      <Pricing />
       <FAQ />
       <Contact />
       <Footer />

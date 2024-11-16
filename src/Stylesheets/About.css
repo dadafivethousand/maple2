@@ -1,10 +1,10 @@
 .AboutContainer {
-    border-bottom: 1px solid black;
+ 
  
     color: rgba(0, 0, 0, 0.81);
         
          padding-top:60px;
-         border-top: 1px solid white;
+        
          z-index:1;
 }
 
