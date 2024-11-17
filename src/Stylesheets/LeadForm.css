@@ -1,15 +1,15 @@
 .form-outer-container{
     height: 100vh;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0.81);
+    background-color: rgba(0, 0, 0, 0.401);
     position: fixed  ;
     z-index: 30;
-    
+   
 }
 
 .form-container{
     position: absolute;
-  
+  border: 2px solid black;
     top:50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -21,7 +21,7 @@
     flex-direction: column;
     background-color: white;
     z-index: 40;
-    border-radius: 5px;
+    border-radius: 20px;
  }
 
  .message-container{

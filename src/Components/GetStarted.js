@@ -8,7 +8,7 @@ export default function GetStarted({size}){
     return(
         <div className='get-started-container'>
             <div onClick={()=>setShowForm(true)} className={`${size == 'large'? 'large' : ''} get-started-button`}>
-            Get Started Now
+            Free Trial
             </div>  
          
             
