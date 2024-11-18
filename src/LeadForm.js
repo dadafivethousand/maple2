@@ -5,7 +5,7 @@ import { faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useAppContext } from "./AppContext";
 import pic from './Media/img.png'
-export default function LeadForm() {
+export default function LeadForm( {closebutton} ) {
   const { setShowForm } = useAppContext();
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [formData, setFormData] = useState({
@@ -129,8 +129,8 @@ export default function LeadForm() {
     <div  className="form-outer-container">
     <div  className="form-container">
     
-    <div className='close-form' onClick={()=>setShowForm(false)}> <FontAwesomeIcon icon={faTimes} />
-    </div> 
+    {closebutton ? <div className='close-form' onClick={()=>setShowForm(false)}> <FontAwesomeIcon icon={faTimes} />
+    </div> : null }
       {message ? (
         <div className='message-container'>
         {message}

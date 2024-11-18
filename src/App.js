@@ -10,16 +10,18 @@ import Pricing from "./Pricing";
 import Programs from "./Programs";
 import Schedule from "./Schedule";
 import LeadForm from "./LeadForm";
- import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useAppContext } from "./AppContext";
 import Parallax from "./Parallax";
 import Parallax1 from "./Parallax1";
-  
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 function App() {
   const { showForm } = useAppContext();
+
   return (
     <HelmetProvider>
-    
+      <Router>
         <div className="App">
           <Helmet>
             <title>Maple Jiu-Jitsu Academy</title>
@@ -28,26 +30,36 @@ function App() {
               content="Join Maple Jiu-Jitsu Academy and embark on your Brazilian Jiu-Jitsu journey."
             />
           </Helmet>
-          <>
-      {showForm && <LeadForm />}
-      <Navbar />
-      <Landing />
-      <About />
-      <Programs />
-      <Parallax1 />
-      <Coaches />
-      <Schedule />
-      
-   
-      <Parallax />
-      <Pricing />
-      <FAQ />
-      <Contact />
-      <Footer />
-    </>
-      
+
+          {showForm && <LeadForm closebutton={true} />}
+
+          <Routes>
+            {/* Route for /freetrial showing only LeadForm */}
+            <Route path="/freetrial" element={<LeadForm  closebutton={false}/>} />
+
+            {/* Default route for the main app */}
+            <Route
+              path="/*"
+              element={
+                <>
+                  <Navbar />
+                  <Landing />
+                  <About />
+                  <Programs />
+                  <Parallax1 />
+                  <Coaches />
+                  <Schedule />
+                  <Parallax />
+                  <Pricing />
+                  <FAQ />
+                  <Contact />
+                  <Footer />
+                </>
+              }
+            />
+          </Routes>
         </div>
-     
+      </Router>
     </HelmetProvider>
   );
 }
