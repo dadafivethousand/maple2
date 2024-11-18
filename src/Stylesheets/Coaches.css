@@ -11,7 +11,7 @@
 
 
 .coach-belt{
-    margin-top:15px;
+    margin-top:5px;
 }
 
 
@@ -20,17 +20,73 @@
     position: relative;
 }
 
-.coach-container:hover{
-    cursor:pointer
+.coach-container p{
+    font-family: roboto condensed;
+}
+
+.name-and-ig{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:25px;
+}
+
+.coach-nm{
+    margin-right:10px
+}
+.image-overlay{
+    background: linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    height:400px;
+    width:320px;
+    position: absolute;
+    z-index: 2;
+}
+
+.left{
+    background: linear-gradient(to left, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    height:400px;
+    width:320px;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    margin-right: 5px; 
+}
+
+.left p{
+    margin-right: 5px;
 }
 
 
+.half{
+    width: 60%;
+    font-family: roboto condensed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height:100%;
+}
 
+.accomplishment{
+    font-size: 15px;
+}
+ 
+
+
+.half p{
+    
+    font-family: roboto condensed;
+    margin-bottom:20px;
+    margin-left:5px;
+ 
+}
+ 
 .coach-photo img{
     margin:0 auto;
-   width:300px;
+   width:320px;
     height:400px;
-    border-radius:5%;
+    border-radius:10%;
     object-fit: cover;
     display: block;
 }

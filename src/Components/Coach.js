@@ -1,6 +1,8 @@
 import '../Stylesheets/Coaches.css'
 import Belt from './Belt'
 import { useState, useEffect } from 'react'
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Coach({ coach }){
     const [showProfile, setShowProfile] = useState(false)
@@ -9,42 +11,41 @@ export default function Coach({ coach }){
         setShowProfile(prev => !prev)
     }
 
-    useEffect(() => {
-        if (showProfile) {
-            // Set slide to true after showProfile becomes true
-            setSlide(true)
-        } else {
-            // Reset slide to false when hiding the profile
-            setSlide(false)
-        }
-    }, [showProfile])
+ 
     return(
         <div onClick={toggleShowProfile} className="coach-container animate">
-            <div className='image-overlay'>
+<div className={`image-overlay ${coach.name === "Arthur" ? 'left' : ''}`}>
+   
+          <div className='half'>
+             
+          <div>
+             {coach.accomplishments.map((acc, index)=>{
+                    return(
+                        <p className='accomplishment' key={index}>{acc}</p>
+                    )
+                })} </div>
+                </div>
+       
             </div>
-            <div className={`${showProfile ? 'dim' : ''} coach-photo`} >
+            <div className='coach-photo'>
                 <img alt='Brazillian Jiu-Jitsu Instructor' src={coach.image} />
             </div>
+            <div>
+                <div className='name-and-ig'>
+                <p className='coach-nm'> {coach.name}</p> 
+            <a 
+             href={coach.link}
+            target="_blank"
+                rel="noopener noreferrer"
+             aria-label="Visit Instagram">   <FontAwesomeIcon className='ig-icon' icon={faInstagram} /> </a>
+         
+            </div>
+            </div>
+
             <div className='coach-belt'>
                 <Belt belt={coach.belt} />
             </div>
-            <div className='name-and-bio'>
-            <div className={`coach-name ${slide ? 'slide' : ''}`}>
-                {coach.name}
-            </div>
-           
-            <div className={`coach-bio ${slide ? 'slide' : ''}`}>
-                {coach.description}
-            </div>
 
-            <div className={`coach-accomplishments ${slide ? 'slide' : ''}`}>
-                {coach.accomplishments.map((acc, index)=>{
-                    return(
-                        <p key={index}>-{acc}</p>
-                    )
-                })}
-            </div>
-            </div>
         </div>
     )
 
