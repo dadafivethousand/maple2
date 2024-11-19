@@ -9,8 +9,9 @@ export default function Footer(){
                
             <a href='#About'> <li>   About </li></a>
             <a href='#Coaches' >   <li>  Coaches  </li></a>
-            <a href='#Schedule' >  <li>  Schedule  </li></a>
             <a  href='#programs'>  <li>  Programs  </li></a>
+            <a href='#Schedule' >  <li>  Schedule  </li></a>
+
             </ul>
             <ul>
             <a  href='#pricing'>  <li>  Pricing  </li></a>

@@ -10,7 +10,7 @@ const CoachesList =
     belt:"Black Belt",
     headinstructor: 1,
     description: "Black belt under Jorge Britto, with nearly 15 years of experience.",
-    accomplishments:["Canadian National Champion", "Multiple Time IBJJF Open Champion", "IBJJF American Nationals Bronze Medalist", "Ontario Open Gold Medalist", "Amateur MMA Champion", "Professional MMA Experience (1-0)"],
+    accomplishments:["Canadian National Champion", "Multiple Time IBJJF Open Champion", "IBJJF American Nationals Bronze Medalist", "Ontario Open Gold Medalist", "Amateur MMA Champion", "1-0 Pro MMA Record"],
     image:MaxImage,
     link: 'https://www.instagram.com/maxli5000'
 },

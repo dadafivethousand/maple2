@@ -27,7 +27,7 @@ export default function Coach({ coach }){
                 </div>
        
             </div>
-            <div className='coach-photo'>
+            <div className={`coach-photo ${coach.name === "Arthur" ? 'artur' : ''}`}>
                 <img alt='Brazillian Jiu-Jitsu Instructor' src={coach.image} />
             </div>
             <div>

@@ -6,12 +6,14 @@ export default function Program( {program} ){
    }
     return(
         <div onClick={handleClick} className="program-container animate">
+         <div className="overlay">     <h2>{program.name}</h2>
+         <p>{program.description}</p> </div>
              <div className={`${show? 'dim':''} program-image`}>
                 <img alt={program.name} src={program.image} />
              </div>
          
              <div className={`${show? 'hiding':''} program-title`}>
-                <h2>{program.name}</h2>
+            
                 </div>
 
            <div className={`${show? '':'hiding'} program-description`}>

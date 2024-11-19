@@ -35,15 +35,19 @@
     margin-right:10px
 }
 .image-overlay{
-    background: linear-gradient(to right, rgb(255, 255, 255) 10%, rgba(255, 255, 255, 0));
+    background:   linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 70%),
+    linear-gradient(to top, rgb(255, 255, 255) , rgba(255, 255, 255, 0) 70%);
     height:400px;
     width:320px;
     position: absolute;
     z-index: 2;
+ 
+ 
 }
 
 .left{
-    background: linear-gradient(to left, rgb(255, 255, 255) 10%, rgba(255, 255, 255, 0));
+    background:   linear-gradient(to left, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 70%),
+    linear-gradient(to top, rgb(255, 255, 255) , rgba(255, 255, 255, 0) 70%);
     height:400px;
     width:320px;
     position: absolute;
@@ -64,7 +68,7 @@
     font-family: roboto condensed;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     height:100%;
 }
 
@@ -77,18 +81,23 @@
 .half p{
     
     font-family: roboto condensed;
-    margin-bottom:20px;
+    margin-bottom:8px;
     margin-left:5px;
-    text-shadow: 0 0 7px white;
+    text-shadow: 0 0 4px white;
 }
  
 .coach-photo img{
     margin:0 auto;
    width:320px;
     height:400px;
-    border-radius:10%;
+    border-top-right-radius:10%;
     object-fit: cover;
     display: block;
+   
+}
+
+.artur img{
+    border-top-left-radius:10%;
 }
  
  

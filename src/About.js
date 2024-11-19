@@ -11,8 +11,7 @@ export default function About() {
         { icon: "fas fa-map-marker-alt", text: "First Brazilian Jiu-Jitsu Academy in Maple" },
         { icon: "fas fa-shield-alt", text: "Safe and healthy training atmosphere" },
         { icon: "fas fa-book-open", text: "Structured and comprehensive curriculum" },
-        { icon: "fas fa-users", text: "Committed to fostering an inclusive environment" },
-        { icon: "fas fa-building", text: "Conveniently located premium facility" },
+ 
         { icon: "fas fa-trophy", text: "Top level professional instruction" }
     ];
 
@@ -53,11 +52,11 @@ export default function About() {
 
             <h1 className="animate">   About</h1>
             <p className="animate"> At Maple Jiu-Jitsu Academy, we are committed to delivering a top-tier training experience for all skill levels. Our head instructor is one of the top-ranked black belts in Canada, bringing elite-level coaching right here to Maple.
-                Our passion for Brazilian Jiu-Jitsu goes beyond just techniques; it’s about building a strong, inclusive community where everyone can grow, learn, and thrive.</p>
+            </p>
             
             <div className='AboutTextAndVideo'>
                 <ul>
-                    {items.slice(0, 3).map((item, index) => (
+                    {items.slice(0, 2).map((item, index) => (
                         <li ref={el => itemRefs.current[index] = el} key={index} className={`${isVisible[index] ? 'visible' : ''} Left`}>
                             <div className='IconWrapper'>
                                 <i className={item.icon}></i>
@@ -67,7 +66,7 @@ export default function About() {
                     ))}
                 </ul>
                 <ul>
-                    {items.slice(3).map((item, index) => (
+                    {items.slice(2).map((item, index) => (
                         <li ref={el => itemRefs.current[index + 3] = el} key={index + 3} className={`${isVisible[index + 3] ? 'visible' : ''} Right`} >
                             <div className='IconWrapper'>
                                 <i className={item.icon}></i>
@@ -78,7 +77,7 @@ export default function About() {
                 </ul>
             </div>
             <div className="second">
-            <p   className="animate"> Whether you're looking to compete, get in shape, or learn self-defense, Maple Jiu-Jitsu Academy is the place to start your journey. Join us today and become part of our family!</p>
+            <p   className="animate"> Whether you're looking to compete, get in shape, or learn self-defense, Maple Jiu-Jitsu Academy is the place to start your journey. </p>
             </div>
         </div>
     );

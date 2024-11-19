@@ -20,8 +20,8 @@
 .program-image img{
     width:350px;
     height:300px;
-    border-radius: 5%;
-    filter: brightness(60%);
+    border-radius: 10%;
+ 
     display:block;
     left: 50%;
 }
@@ -38,6 +38,32 @@
   justify-content: center;
 }
 
+.overlay{position: absolute;
+    padding-top: 40%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.069), rgb(0, 0, 0)80%);
+        height:100%;
+        width: 100%;
+        width:350px;
+        height:300px;
+        z-index: 3;
+    
+        color: white;
+        font-family: roboto condensed;
+
+       border-radius: 10%;
+   
+     }
+
+     .overlay *>{
+        height: fit-content;
+        font-family: roboto condensed;
+     }
+
+     .overlay h2{
+        height: fit-content;
+        font-family: roboto condensed;
+     }
+
 .program-container:hover{
  cursor:pointer;
   }
@@ -48,7 +74,7 @@
 
 .program-title {
     position: absolute;
-    top: 150px;
+    top: 200px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%; /* Make sure it spans full width */
@@ -64,26 +90,29 @@
     font-weight: 500;
     font-family: Roboto condensed;
     font-size:35px;
+    color: white;
 }
 
 
-.program-description {
-position: absolute;
-
+.program-container p {
+ 
+font-family: roboto condensed;
 color:white;
 width: 350px;;
 margin: 0 auto;
-font-size: 13px;
-height:100%;
-font-weight: 200;
+font-size: 15px;
+height:fit-content;
+font-weight: 300;
 text-align: left;
 display: flex;
 justify-content: center;
 align-items: center;
+width:90%;
+z-index:5
 }
 
-.program-description p{
-   width:90%
+.program-title p{
+   width:80%
     }
     
 

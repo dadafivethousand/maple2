@@ -45,9 +45,11 @@ function App() {
                   <Navbar />
                   <Landing />
                   <About />
-                  <Programs />
-                  <Parallax1 />
                   <Coaches />
+                  <Parallax1 />
+                  <Programs />
+                
+                
                   <Schedule />
                   <Parallax />
                   <Pricing />
