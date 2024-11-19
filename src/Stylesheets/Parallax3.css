@@ -1,0 +1,21 @@
+
+/* ParallaxSection.css */
+.parallax3-container {
+    height: 800px; /* Adjust the height as needed */
+    background-image: url('../Media/droneshot.png'); /* Replace with your image path */
+    background-attachment: fixed;
+    background-position:left;
+    background-repeat: no-repeat;
+    background-size: cover;
+     position: relative;;
+  }
+
+  .parallax3-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+   }
+ 
