@@ -5,15 +5,13 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Coach({ coach }){
-    const [showProfile, setShowProfile] = useState(false)
+  
     const [slide, setSlide] = useState(false)
-    const toggleShowProfile = () => {
-        setShowProfile(prev => !prev)
-    }
+ 
 
  
     return(
-        <div onClick={toggleShowProfile} className="coach-container animate">
+        <div   className="coach-container animate">
 <div className={`image-overlay ${coach.name === "Arthur" ? 'left' : ''}`}>
    
           <div className='half'>
