@@ -11,7 +11,6 @@ export default function About() {
         { icon: "fas fa-map-marker-alt", text: "First Brazilian Jiu-Jitsu Academy in Maple" },
         { icon: "fas fa-shield-alt", text: "Safe and healthy training atmosphere" },
         { icon: "fas fa-book-open", text: "Structured and comprehensive curriculum" },
- 
         { icon: "fas fa-trophy", text: "Top level professional instruction" }
     ];
 
@@ -67,7 +66,7 @@ export default function About() {
                 </ul>
                 <ul>
                     {items.slice(2).map((item, index) => (
-                        <li ref={el => itemRefs.current[index + 3] = el} key={index + 3} className={`${isVisible[index + 3] ? 'visible' : ''} Right`} >
+                        <li ref={el => itemRefs.current[index + 2] = el} key={index + 2} className={`${isVisible[index + 2] ? 'visible' : ''} Right`} >
                             <div className='IconWrapper'>
                                 <i className={item.icon}></i>
                             </div>
