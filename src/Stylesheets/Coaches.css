@@ -36,7 +36,7 @@
     margin-right:10px
 }
 .image-overlay{
-    background:   linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 70%);
+    background:   linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0));
      height:400px;
     width:320px;
     position: absolute;
@@ -46,7 +46,7 @@
 }
 
 .left{
-    background:   linear-gradient(to left, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 70%);
+    background:   linear-gradient(to left, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0));
      height:400px;
     width:320px;
     position: absolute;
