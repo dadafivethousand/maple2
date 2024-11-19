@@ -64,7 +64,9 @@
         font-family: roboto condensed;
      }
 
- 
+.program-container:hover{
+ cursor:default;
+  }
   
 
 
@@ -113,11 +115,7 @@ z-index:5
    width:80%
     }
     
-
-.hiding{
-    display: none;
-    opacity: 0;
-}
+ 
  
 @media(min-width: 800px){
     .programs{
