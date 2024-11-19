@@ -6,15 +6,15 @@ export default function Program( {program} ){
         <div   className="program-container animate">
          <div className="overlay">     <h2>{program.name}</h2>
          <p>{program.description}</p> </div>
-             <div className={`${show? 'dim':''} program-image`}>
+             <div className='program-image'>
                 <img alt={program.name} src={program.image} />
              </div>
          
-             <div className={`${show? 'hiding':''} program-title`}>
+             <div className='program-title'>
             
                 </div>
 
-           <div className={`${show? '':'hiding'} program-description`}>
+           <div className='program-description'>
                 <p>{program.description}</p>
              </div>
              </div>
