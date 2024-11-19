@@ -35,9 +35,8 @@
     margin-right:10px
 }
 .image-overlay{
-    background:   linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 70%),
-    linear-gradient(to top, rgb(255, 255, 255) , rgba(255, 255, 255, 0) 70%);
-    height:400px;
+    background:   linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 70%);
+     height:400px;
     width:320px;
     position: absolute;
     z-index: 2;
@@ -46,9 +45,8 @@
 }
 
 .left{
-    background:   linear-gradient(to left, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 70%),
-    linear-gradient(to top, rgb(255, 255, 255) , rgba(255, 255, 255, 0) 70%);
-    height:400px;
+    background:   linear-gradient(to left, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 70%);
+     height:400px;
     width:320px;
     position: absolute;
     z-index: 2;
@@ -68,7 +66,7 @@
     font-family: roboto condensed;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     height:100%;
 }
 
@@ -81,7 +79,7 @@
 .half p{
     
     font-family: roboto condensed;
-    margin-bottom:8px;
+    margin-bottom:20px;
     margin-left:5px;
     text-shadow: 0 0 4px white;
 }
