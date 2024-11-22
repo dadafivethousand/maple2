@@ -25,8 +25,8 @@ const convertToAmPm = (time) => {
 
 // Time blocks to remove (example: between 9-11 AM and 1:30-3:30 PM)
 const timeBlocksToRemove = [
-  { start: 8.5, end: 10.5 },
-  { start: 14, end: 18 }
+  { start: 8.5, end: 10 },
+  { start: 14, end: 16 }
 ];
 
 // Main Schedule component

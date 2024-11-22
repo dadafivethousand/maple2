@@ -7,7 +7,7 @@ const faqList = [
 
   {
     question: "Do you take kids? What age groups do you teach?",
-    answer: "At the moment, we are enrolling students aged 13 and up (Teens & Adults). While we don't currently offer a kids program, we're happy to recommend other local academies that specialize in training younger children. Feel free to reach out for recommendations, and thank you for considering us!"
+    answer: "We currently offer 3 kids classes a week (ages 8-12)."
   },
     {
       question: "What is Brazilian Jiu-Jitsu (BJJ)?",
