@@ -13,6 +13,7 @@
 
 #google-logo{
     height:40px;
+    width:40px;
     display: block;
     margin:0;
     margin-right:10px
@@ -176,12 +177,7 @@ cursor:default
         margin: 0 auto;
         font-size: 14px;
     }
-    .ReviewsOuterContainer img {
-        min-width:600px;
-        height:auto;
-        margin: 0
-    }
-
+ 
     .ReviewsOuterContainer h2 {
  
         font-size: 2rem;
