@@ -67,9 +67,7 @@
     transition: background-color 0.3s ease;
 }
 
-.ReviewsContainer button:hover {
-    background-color: #000000;
-}
+ 
 
 .ReviewWrapper {
     position: relative;
