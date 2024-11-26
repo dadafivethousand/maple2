@@ -24,8 +24,7 @@ export default function Testimonials() {
         { text: "Highly recommend this gym. Great teachers, safe environment and great location.", author: "Jessica Chab" },
         { text: "Great place, very experienced and knowledgble staff, friendly + respectful", author: "Florian P" },
         { text: "Good vibes and friendly atmosphere.", author: "Sukh Brar"},
-        { text: "Amazing jiu jitsu academy!! Really professional coaches, friendly atmosphere and nice space. Highly recommend", author: "Annabelle Caruana"},
-
+ 
         { text: "The instructors here at Maple Jiu-Jitsu present a wealth of knowledge, experience, and passion for anyone looking to learn, train, and pursue Jiu-Jitsu.", author: "Abdula Teymouri"},
         
 
