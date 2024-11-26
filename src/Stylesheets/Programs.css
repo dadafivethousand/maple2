@@ -39,10 +39,9 @@
 }
 
 .overlay{position: absolute;
-    padding-top: 40%;
+    padding-top: 150px;
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.069), rgb(0, 0, 0)80%);
-        height:100%;
-        width: 100%;
+        
         width:350px;
         height:300px;
         z-index: 3;

@@ -9,9 +9,7 @@ export default function Program( {program} ){
              <div className='program-image'>
                 <img alt={program.name} src={program.image} />
              </div>
-         
-             <div className='program-title'>
-                </div>
+        
  
              </div>
     )
