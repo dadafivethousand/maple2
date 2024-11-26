@@ -122,7 +122,7 @@ export default function Testimonials() {
                             <StarRating />
                         </div>
                         <div className='flex'>
-                        <img id='google-logo' src={google} alt="Google Logo" />  <p className="ReviewAuthor">{reviews[reviewIndex].author}</p>
+                       <p className="ReviewAuthor">{reviews[reviewIndex].author}</p>
                         </div>
                     </div>}
                { slideDirection?   <div  onTransitionEnd={handleTransitionEnd}
@@ -133,7 +133,7 @@ export default function Testimonials() {
                             <StarRating />
                         </div>
                         <div className='flex'>
-                        <img id='google-logo' src={google} alt="Google Logo" />  
+                   
                         <p className="ReviewAuthor">{reviews[nextReviewIndex].author}</p>
                         </div>
                     </div> : null}
