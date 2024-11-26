@@ -16,7 +16,7 @@ export default function Contact() {
             <ul>
             <li className="animate"> <p>Plenty of parking </p></li>
               <li className="animate"> <p>Minutes away from Highway 400 </p></li>
-              <li className="animate"> <p>Steps from publit transit (YRT Route 26) </p></li>
+              <li className="animate"> <p>Steps from public transit (YRT Route 26) </p></li>
          
              
             </ul>
