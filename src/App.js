@@ -16,6 +16,7 @@ import Parallax from "./Parallax";
 import Parallax1 from "./Parallax1";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Testimonials from "./Components/Testimonials";
+import Parallax3 from "./Parallax3";
  
 function App() {
   const { showForm } = useAppContext();
@@ -47,16 +48,19 @@ function App() {
                   <Landing />
                   <Testimonials />
                   <About />
-        
-                  <Coaches />
                   <Parallax1 />
+                  <Coaches />
+               
                   <Programs />
                 
-                
+                  <Parallax3 />
                   <Schedule />
-                  <Parallax />
+              
+              
                   <Pricing />
+                  <Parallax />
                   <Contact />
+         
                    <FAQ />
              
                   <Footer />
