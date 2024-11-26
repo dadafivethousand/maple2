@@ -1,0 +1,22 @@
+.star-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.star {
+    color: #fb8e28; /* Change to desired color */
+}
+
+.star-smallest {
+    font-size: 1em;
+}
+
+.star-smaller {
+    font-size: 1.5em;
+}
+
+.star-biggest {
+    font-size: 2em;
+}

@@ -45,7 +45,7 @@ export default function Membership({ free, type, price, billed, cancel, promo, p
           
           <BottomRibbon 
               topText="Save $40 per month!"
-               bottomText="Only 10 spots available"
+               bottomText="7 Spots Remaining"
           />
 
       )}
