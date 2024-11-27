@@ -10,7 +10,7 @@ export default function LeadForm( {closebutton} ) {
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
-    lastName: '',
+ 
     email: '',
     phone: '',
   // Default to Ontario
@@ -64,7 +64,7 @@ export default function LeadForm( {closebutton} ) {
     // Ensure all required fields are filled, phone has exactly 10 digits, and email is valid
     const isFormValid =
       formData.firstName.trim() !== '' &&
-      formData.lastName.trim() !== '' &&
+       
       validateEmail(formData.email) &&
       cleanedPhone.length === 10 &&
       captchaVerified === true;
@@ -109,7 +109,7 @@ export default function LeadForm( {closebutton} ) {
         // Reset the form after a successful submission
         setFormData({
           firstName: '',
-          lastName: '',
+ 
           email: '',
           phone: '',
  
@@ -148,21 +148,12 @@ export default function LeadForm( {closebutton} ) {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                placeholder="First Name"
+                placeholder="Name"
                 required
               />
             </div>
 
-            <div className="form-group">
-              <input
-                type="text"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                placeholder="Last Name"
-                required
-              />
-            </div>
+          
 
             <div className="form-group">
               <input
