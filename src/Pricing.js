@@ -73,17 +73,17 @@ export default function Pricing() {
     return (
         <div id="pricing" className='PricingContainer'>
              <h1 className="animate">Pricing</h1> 
-            <MembershipComponent type={Memberships.adult} />
+          {/*      <MembershipComponent type={Memberships.adult} />  */}
       
-            {/*     <div className='PricingButtonContainer'>
+             <div className='PricingButtonContainer'>
                 <button onClick={toggleAdult} className='AdultMembershipButton'>Adults & Teens</button>
             </div>
             {showAdult && <MembershipComponent type={Memberships.adult} />}
             <div className='PricingButtonContainer'>
-                <button onClick={toggleKid} className='KidsMembershipButton'>Kids (4-13)</button>
+                <button onClick={toggleKid} className='KidsMembershipButton'>Kids (8-12)</button>
             </div>
             {showKid && <MembershipComponent type={Memberships.kids} />}
-            */}
+           
             <ul className='BulletPoints'>
                 {Bullets.map((bullet, index) => (
                     <li
