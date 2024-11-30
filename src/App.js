@@ -17,6 +17,7 @@ import Parallax1 from "./Parallax1";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Testimonials from "./Components/Testimonials";
 import Parallax3 from "./Parallax3";
+import KidsForm from "./Components/KidsForm";
  
 function App() {
   const { showForm } = useAppContext();
@@ -44,6 +45,7 @@ function App() {
               path="/*"
               element={
                 <>
+              
                   <Navbar />
                   <Landing />
                   <Testimonials />

@@ -9,7 +9,7 @@ export default function Coaches() {
             
        <div className="coaches-intro">
        <h1 > Coaches </h1>
-       <p>Our team of coaches is led by one of Canada's top black belts, and is committed to providing top-level BJJ instruction in a safe, inclusive, and professional environment. </p>
+       <p>Our team of coaches is led by one of Canada's top black belts, and is committed to providing top-level instruction in a safe, inclusive, and professional environment. </p>
        </div>
        <div className="coaches">
             {

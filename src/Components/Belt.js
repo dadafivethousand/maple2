@@ -49,7 +49,7 @@ export default function Belt({ belt }) {
             beltComponent = <BlueBelt />;
             break;
         default:
-            beltComponent = <div>Invalid belt color</div>;
+            beltComponent = <div> *Does not yet hold a belt in BJJ</div>;
     }
 
     return (

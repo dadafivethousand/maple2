@@ -3,8 +3,8 @@ import Ribbon from './Ribbon';
 import BottomRibbon from './BottomRibbon'
 import { useAppContext } from "../AppContext";
  
-export default function Membership({ free, type, price, billed, cancel, promo, paymentLink }) {
-  const { showForm, setShowForm } = useAppContext();      
+export default function Membership({ free, type, price, billed, cancel, promo, paymentLink, kids }) {
+  const { showForm, setShowForm, setShowKidForm} = useAppContext();      
   const formatCurrency = (amount) => {
         return new Intl.NumberFormat('en-US', {
           style: 'currency',
@@ -37,8 +37,23 @@ export default function Membership({ free, type, price, billed, cancel, promo, p
          </div>
          <div className='Cancel'> {cancel? cancel: ''} </div>
             
-              { free?    <div onClick={()=>setShowForm(true)}  className='PurchaseButton'>Start</div> :
-                <a href={paymentLink} className='PurchaseButton'>Purchase</a>}
+          {free ? (
+              <div onClick={() => setShowForm(true)} className="PurchaseButton">Start</div>
+            ) : (
+              <a
+                href={!kids ? paymentLink : undefined} // Only set href if kids is false
+                onClick={(e) => {
+                  if (kids) {
+                    e.preventDefault(); // Prevent navigation if kids is true
+                    setShowKidForm(true);
+                  }
+                }}
+                className="PurchaseButton"
+              >
+                Purchase
+              </a>
+            )}
+
          
 
             {promo && (

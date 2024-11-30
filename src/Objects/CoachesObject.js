@@ -3,6 +3,7 @@ import ArthurImage from '../Media/art.jpg'
 import TajImage from '../Media/taj.png'
 import Rob from '../Media/rob.png'
 import Vitaly from '../Media/Vitaly.png'
+import Vijay from '../Media/vij.png'
 const CoachesList = 
 [
 {
@@ -16,6 +17,18 @@ const CoachesList =
 },
 
 
+{
+  name: "Vidzhay",
+  belt:"None",
+ 
+ 
+  accomplishments:["30+ Years of Wrestling",  "Donetsk Regional Champion", "Greco-Roman Wrestling Master of Sport (Ukraine)", " Head Coach of Thailand's National Wrestling Team" ,"Cadets Competition Winner", "United World Wrestling Certified Coach"],
+  image:Vijay,
+  link: 'https://www.instagram.com/aj_coach_wrestling/'
+},
+
+
+
   {name: "Arthur",
     belt:"Blue Belt",
     accomplishments:[, "AJP Gold Medalist", "Next-Gen Gold Medalist", "Ontario Open Silver Medalist", "IBJJF London Open Bronze Medalist", "ADCC Canada 4th place", "Godai Open Bronze Medallist"],
@@ -24,6 +37,7 @@ const CoachesList =
     link: 'https://www.instagram.com/cucarachinho',
 
   },
+
 
 
 

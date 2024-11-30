@@ -1,6 +1,5 @@
 import '../Stylesheets/getStarted.css'
-import LeadForm from '../LeadForm'
-import { useState } from 'react'
+ 
 import { useAppContext } from "../AppContext";
 export default function GetStarted({size}){
     const { showForm, setShowForm } = useAppContext();   
