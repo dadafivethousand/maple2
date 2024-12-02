@@ -23,7 +23,7 @@ const schedule = {
     Thursday: [
       { name: "BJJ - Gi", start: 7.5, end: 8.5 },
       { name: "BJJ - Gi", start: 12, end: 13 },
-      { name: "Kids - BJJ (Gi)", start: 17.5, end: 18.33 },
+      { name: "Kids BJJ (Gi)", start: 17.5, end: 18.33 },
       { name: "BJJ - Gi", start: 18.5, end: 19.5 }
     ],
     Friday: [
