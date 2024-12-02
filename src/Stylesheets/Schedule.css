@@ -11,13 +11,13 @@
 }
 
 .class-name {
-  font-size:11px;
+  font-size:9px;
   font-family: Roboto condensed;
   font-weight: 600;
 }
 
 .class-time {
-  font-size:12px;
+  font-size:10px;
   font-family: Roboto condensed;
 }
 
@@ -70,7 +70,7 @@
 
  
 .timeslot  {
-  font-size: 12px;
+  font-size: 9px;
   display: flex;
   flex-direction: column;
   font-family: Roboto condensed;
@@ -86,6 +86,7 @@
   padding: 5px 0;
   box-sizing: border-box;
   min-height: 35px;
+  line-height: 0px;
    
 }
 
@@ -100,6 +101,23 @@
 
 /* Enhancements for larger screens */
 @media (min-width: 800px) {
+
+  .class-name {
+    font-size:12px
+  }
+  
+
+
+.class-time {
+  font-size:12px;
+  font-family: Roboto condensed;
+}
+
+.timeslot  {
+  font-size: 12px;
+
+}
+
   .Column {
     width: 16%;
   }
