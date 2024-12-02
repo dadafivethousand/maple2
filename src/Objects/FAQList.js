@@ -7,7 +7,7 @@ const faqList = [
 
   {
     question: "Do you take kids? What age groups do you teach?",
-    answer: "We currently offer 3 kids classes a week (ages 8-12). The rest of the classes are for students ages 13+."
+    answer: "We currently offer 6 kids classes a week (ages 8-12). The rest of the classes are for students ages 13+."
   },
     {
       question: "What is Brazilian Jiu-Jitsu (BJJ)?",
