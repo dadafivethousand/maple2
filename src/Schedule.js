@@ -9,7 +9,7 @@ const PIXELS_PER_HOUR = 47;
 // Utility function to convert 24-hour time to AM/PM
 const dontConvertToAmPm = (time) => {
   let hours = Math.floor(time);
-  let minutes = (time % 1) * 60;
+  let minutes = Math.round((time % 1) * 60); // Round minutes to the nearest whole number
   const ampm = hours >= 12 ? 'pm' : 'am';
   hours = hours % 12 || 12; // Convert to 12-hour format
   return `${hours}${minutes === 0 ? '' : ':' + minutes}`;
@@ -17,10 +17,10 @@ const dontConvertToAmPm = (time) => {
 
 const convertToAmPm = (time) => {
   let hours = Math.floor(time);
-  let minutes = (time % 1) * 60;
+  let minutes = Math.round((time % 1) * 60); // Round minutes to the nearest whole number
   const ampm = hours >= 12 ? 'pm' : 'am';
   hours = hours % 12 || 12; // Convert to 12-hour format
-  return `${hours}${minutes === 0 ? '' : ':' + minutes}${ampm}`;
+  return `${hours}${minutes === 0 ? '' : ':' + String(minutes).padStart(2, '0')}${ampm}`;
 };
 
 // Time blocks to remove (example: between 9-11 AM and 1:30-3:30 PM)
