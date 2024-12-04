@@ -42,6 +42,7 @@ export default function Membership({ free, type, price, billed, cancel, promo, p
             ) : (
               <a
                 href={!kids ? paymentLink : undefined} // Only set href if kids is false
+                target="_blank"
                 onClick={(e) => {
                   if (kids) {
                     e.preventDefault(); // Prevent navigation if kids is true
