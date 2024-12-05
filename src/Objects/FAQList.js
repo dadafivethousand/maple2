@@ -27,8 +27,8 @@ const faqList = [
       answer: "Yes, we prioritize safety and promote a safe, supportive environment. Our instructors are experienced in ensuring that all training is conducted with care, minimizing the risk of injury."
     },
     {
-      question: "What should I wear to class?",
-      answer: "For No-Gi classes, you should wear shorts and a rashguard. For Gi classes, you will need a Gi, which we also offer for purchase at the academy."
+      question: "I do not have a Gi, but want to do the Gi class, what are my options?",
+      answer: "We have Gis here at the academy that you can rent free of charge, so no worries, just come train!"
     },
     {
       question: "Do you offer a free trial?",
