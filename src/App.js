@@ -47,6 +47,7 @@ function App() {
                 <>
               
                   <Navbar />
+              
                   <Landing />
                   <Testimonials />
                   <About />
