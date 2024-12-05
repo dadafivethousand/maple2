@@ -2,3 +2,14 @@
     margin-top:25px;
 text-align: center;
 }
+
+
+@media(max-width:800px){
+    .legend-container{
+    font-size: 15px;
+    width:85%;
+    margin: 0 auto;
+    margin-top:25px;
+    }
+
+}
