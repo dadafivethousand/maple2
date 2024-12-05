@@ -19,9 +19,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.404);
     color:white;
     font-family: Roboto condensed;
+
+    
+}
+
+.large .little-letters{
+    font-family: Roboto condensed;
+    font-size: 15px;
+}
+
+.little-letters{
+    font-family: Roboto condensed;
+    font-size: 9px;
 }
 
 .large{
