@@ -89,6 +89,13 @@
     font-size: 17px;
 }
 
+.form-container p {
+    margin-bottom: 20px;
+    font-size: 13px;
+    font-family: poppins;
+}
+
+
 .large-pic {
     height: 120px;
     display: block;

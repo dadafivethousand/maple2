@@ -139,7 +139,10 @@ export default function LeadForm( {closebutton} ) {
       ) : (
         <>
           <img className='small-pic' src={pic} />
-     <h2>One Week Free Trial</h2> 
+     <h2>One Week Free Trial</h2>  <br></br>
+
+
+
            <form onSubmit={handleSubmit}>
             <div className='grid'>
             <div className="form-group">
