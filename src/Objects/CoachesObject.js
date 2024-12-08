@@ -18,7 +18,7 @@ const CoachesList =
 
 
 {
-  name: "Vidzhay",
+  name: "A. J.",
   belt:"None",
  
  
