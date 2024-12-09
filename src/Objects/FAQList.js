@@ -10,9 +10,8 @@ const faqList = [
     answer: "We currently offer 6 kids classes a week (ages 8-12). The rest of the classes are for students ages 13+."
   },
     {
-      question: "What is Brazilian Jiu-Jitsu (BJJ) and why should I train it over something more traditional like Karate or Taekwondo?",
-      answer: "Brazilian Jiu-Jitsu (BJJ) is a grappling-based martial art that focuses on ground fighting, submissions, and control through leverage and technique. Its core strength lies in neutralizing opponents by taking the fight to the ground, where size and strength matter less than skill and strategy. This effectiveness was famously proven in the first UFC, where Royce Gracie, a BJJ practitioner, defeated multiple opponents trained in traditional martial arts like Karate and Taekwondo. Today, at the highest levels of MMA, BJJ is a compulsory skill, setting it apart from the traditional arts like Karate and Taekwondo, and proving its superiority in real combat situations."
-    },
+      question: "What is Brazilian Jiu-Jitsu (BJJ) and why should choose it over other martial arts",
+      answer: "Brazilian Jiu-Jitsu (BJJ) is a grappling-based martial art focused on ground fighting, submissions, and controlling opponents through leverage and technique. Its superiority over other martial arts like was proven in the first ever UFC event in 1993, where Royce Gracie, a BJJ practitioner, dominated opponents from various disciplines including Boxing and Karate . BJJ continues to be a mandatory discipline at the highest level of MMA, solidifying its position as one of the most, if not the most effective martial art for real combat."    },
     {
       question: "Do you offer Muay Thai & Mixed Martial Arts (MMA)?",
       answer: "Right now, we’re dedicated to developing and perfecting our Brazilian Jiu-Jitsu program. However, we do have plans to introduce Muay Thai and Mixed Martial Arts (MMA) in the future, so stay tuned for updates!"
