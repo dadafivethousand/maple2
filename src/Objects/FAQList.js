@@ -11,6 +11,20 @@ const faqList = [
     question: "What is Brazilian Jiu-Jitsu (BJJ) and why should choose it over other martial arts",
     answer: "Brazilian Jiu-Jitsu (BJJ) is a grappling-based martial art focused on ground fighting, submissions, and controlling opponents through leverage and technique. Its superiority over other martial arts like was proven in the first ever UFC event in 1993, where Royce Gracie, a BJJ practitioner, dominated opponents from various disciplines including Boxing and Karate . BJJ continues to be a mandatory discipline at the highest level of MMA, solidifying its position as one of the most, if not the most effective martial art for real combat." 
      },
+     {
+      question: "What are the physical benefits of training Brazilian Jiu-Jitsu (BJJ)?",
+      answer: "Brazilian Jiu-Jitsu (BJJ) provides a full-body workout, improving your strength, flexibility, and cardiovascular fitness. It’s a highly effective way to burn calories, build core muscles, and enhance overall endurance. Unlike traditional gym workouts, BJJ keeps you engaged mentally while physically challenging your body, making it a fun and sustainable fitness routine."
+    },
+  
+    {
+      question: "Can women train Brazilian Jiu-Jitsu (BJJ) at Maple BJJ?",
+      answer: "Absolutely! Brazilian Jiu-Jitsu (BJJ) is highly recommended for women, especially for self-defense purposes. BJJ focuses on leverage and technique, enabling practitioners to defend themselves effectively against larger or stronger opponents. Many women train at Maple BJJ in a safe, supportive environment where they build confidence, improve fitness, and learn valuable self-defense skills. Our experienced instructors ensure that all students, regardless of gender, feel comfortable and empowered on the mats."    },
+
+    {
+      question: "How often should I train as a beginner?",
+      answer: "As a beginner, we recommend training 2–3 times per week to build a strong foundation in Brazilian Jiu-Jitsu (BJJ). This allows your body to adapt to the physical demands while giving you time to recover between sessions. As you progress, you can increase your training frequency to match your goals and fitness level."
+    },
+
   {
     question: "Do you offer Muay Thai & Mixed Martial Arts (MMA)?",
     answer: "Right now, we’re focused on perfecting our Brazilian Jiu-Jitsu (BJJ) program. However, we have plans to introduce Muay Thai and Mixed Martial Arts (MMA) in the future. These striking arts complement BJJ, making them excellent additions for anyone interested in self-defense, fitness, or a complete martial arts experience. Stay tuned for updates!"
@@ -32,6 +46,7 @@ const faqList = [
     answer: "Yes, we offer a free one-week trial for newcomers who want to experience Brazilian Jiu-Jitsu (BJJ) at Maple BJJ. This trial gives you access to our beginner-friendly classes, allowing you to explore the benefits of training and see if BJJ is right for you.",
     link: { text: "Click here to get started", url: "https://waiver.smartwaiver.com/v/maple" }
   },
+
 ];
 
 export default faqList;
