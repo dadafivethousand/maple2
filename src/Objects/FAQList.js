@@ -42,8 +42,8 @@ const faqList = [
     answer: "No worries! If you don’t have a Gi, we’ve got you covered. We provide Gi rentals free of charge, so you can join our Gi classes without any hassle. Just show up ready to train!"
   },
   {
-    question: "How do I sign up for a membership?",
-    answer: "Signing up for a membership at Maple BJJ is easy and flexible. You can choose to make payments using our online portal in the Pricing section of our website, or you can sign up and pay in person at the academy—whichever is more convenient for you. If you have any questions, feel free to contact us, and we’ll guide you through the process!"
+    question: "How does the onboarding process work? How do I sign up for a membership? ",
+    answer: "Signing up for a membership at Maple BJJ is easy and stress-free. You won’t get follow-up calls or pressure after your free trial. Our focus is on providing a welcoming and transparent environment, and we believe those who want to sign up will make that decision on their own. You can find all our pricing details in the Pricing section of our website. Payments can be made online through our portal or in person at the academy—whatever works best for you. If you have any questions, feel free to contact us, and we’ll be happy to help!"  
   },
   {
     question: "Do you offer a free trial?",
