@@ -102,6 +102,7 @@
 /* Enhancements for larger screens */
 @media (min-width: 800px) {
 
+ 
   .class-name {
     font-size:12px
   }

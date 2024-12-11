@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDollarSign, faUserPlus, faUserCog } from '@fortawesome/free-solid-svg-icons';
 import MembershipComponent from './Components/MembershipComponent';
 import { useState, useEffect, useRef } from 'react';
+import SetmoreBookingPage from './Components/SetmoreWidget';
+import { useAppContext } from './AppContext';
 
 const Bullets = [
     {
@@ -26,13 +28,21 @@ const Bullets = [
 ];
 
 export default function Pricing() {
-    const [showAdult, setShowAdult] = useState(false);
-    const [showKid, setShowKid] = useState(false);
+    const {
+        showAdult,
+        setShowAdult,
+        showKid,
+        setShowKid,
+        showPrivate,
+        setShowPrivate,
+      } = useAppContext();
     const itemRefs = useRef([]);
     const [show, setShow] = useState(new Array(Bullets.length).fill(false));
 
     const toggleAdult = () => setShowAdult(prev => !prev);
     const toggleKid = () => setShowKid(prev => !prev);
+    const togglePrivate = () => setShowPrivate(prev => !prev);
+
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -74,16 +84,27 @@ export default function Pricing() {
         <div id="pricing" className='PricingContainer'>
              <h1 className="animate">Pricing</h1> 
           {/*      <MembershipComponent type={Memberships.adult} />  */}
-      
+  <div className='pricing-flex'>
+   
              <div className='PricingButtonContainer'>
                 <button onClick={toggleAdult} className='AdultMembershipButton'>Adults & Teens</button>
             </div>
             {showAdult && <MembershipComponent type={Memberships.adult} />}
-            <div className='PricingButtonContainer'>
+             <div className='PricingButtonContainer'>
                 <button onClick={toggleKid} className='KidsMembershipButton'>Kids (8-12)</button>
             </div>
             {showKid && <MembershipComponent type={Memberships.kids} />}
-           
+          {/*  
+   
+                <div className='PricingButtonContainer'>
+                <button  onClick={togglePrivate}  className='KidsMembershipButton'>Private & Group Training</button>
+                <div className='booking-page'>
+                {showPrivate &&  <SetmoreBookingPage />}
+                </div>
+            </div>
+          */}
+      
+            </div>
             <ul className='BulletPoints'>
                 {Bullets.map((bullet, index) => (
                     <li
@@ -101,6 +122,12 @@ export default function Pricing() {
                     </li>
                 ))}
             </ul>
+   
+
+
+
+     
+      
         </div>
     );
 }

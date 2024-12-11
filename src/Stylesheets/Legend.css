@@ -6,10 +6,11 @@ text-align: center;
 
 @media(max-width:800px){
     .legend-container{
-    font-size: 15px;
+    font-size: 12px;
     width:85%;
     margin: 0 auto;
-    margin-top:25px;
+     
+    margin-bottom:20px;
     }
 
 }

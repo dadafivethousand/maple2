@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import schedule from './Objects/ScheduleObject'; // Import the schedule
 import './Stylesheets/Schedule.css';
 import Legend from './Components/Legend';
+import ScheduleWidget from './Components/ScheduleWidget';
 
 // Config: Pixels per hour
 const PIXELS_PER_HOUR = 47;
@@ -80,6 +81,7 @@ export default function Schedule() {
   return (
     <div id="Schedule" className='ScheduleContainer'>
       <h1 className='animate'>Class Schedule</h1>
+ 
       <div className="Schedule">
         {Object.keys(schedule).map((day) => (
           <div className='Column animate' key={day}>
@@ -120,7 +122,12 @@ export default function Schedule() {
           </div>
         ))}
       </div>
-        <Legend />
+
+ 
+
+      <ScheduleWidget />
+   
+ 
     
     </div>
   );

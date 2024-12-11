@@ -1,0 +1,77 @@
+/* ScheduleWidget.css */
+.schedule-widget {
+    margin: 0 auto;
+    margin-top:40px;
+ 
+    font-family: Arial, sans-serif;
+    width:90vw;
+  
+    border-radius:10px;
+    border:1px solid rgb(175, 6, 6);
+  }
+  
+  .schedule-widget h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #312e2e;
+
+  }
+  
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+  
+  .schedule-table th {
+    background-color: #f4f4f4;
+    text-align: left;
+    padding: 0.75rem;
+    border-bottom: 2px solid #ddd;
+    font-size: 15px;
+    color: #555;
+  }
+  
+  .schedule-table td {
+    padding: 0.2rem;
+    border-bottom: 1px solid #eee;
+    font-size: 12px;
+    color: #333;
+
+  }
+  
+  .schedule-date-row td {
+    background-color: #eee6e6;
+ 
+ 
+    font-size: 15px;
+    color: #222;
+    font-family: roboto condensed;
+    text-align: center;
+  }
+  
+ tr{
+max-height: 15px;
+ }
+  
+  
+ .schedule-widget h4{
+    text-align: center;
+ padding-bottom:10px;
+ padding-top:10px;
+    font-weight:400;
+    background-color: rgba(255, 0, 0, 0.205);
+ }
+
+
+ @media(min-width:800px){
+
+    .schedule-widget {
+
+        width:40vw;
+      
+      }
+      
+
+ }

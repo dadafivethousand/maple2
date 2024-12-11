@@ -61,17 +61,18 @@
 .MembershipButtons {
     width: 150px;
     margin: 0 auto;
+
 }
 
 .PricingButtonContainer {
-    width: fit-content;
+    width: 90vw;
     margin: 40px auto;
 }
 
 .PricingButtonContainer button {
     width: 300px;
     height: 40px;
-    margin: 10px 0;
+    margin: 10px auto;
     font-size: 1.2em;
     background-color: black;
     color: white;
@@ -80,6 +81,7 @@
     box-shadow: 5px 5px 5px black;
     font-family: Roboto, sans-serif;
     transition: background-color 0.3s, color 0.3s; /* Added transition for smooth hover effect */
+    display: block;
 }
 
 .PricingButtonContainer button:hover {
@@ -100,6 +102,10 @@
     
    
 }
+.booking-page{
+    margin-top:50px
+}
+
 
 .Show {
     opacity: 1;
@@ -108,13 +114,29 @@
 
 
 
+ 
 
+
+ 
+ 
 
 @media (min-width: 800px) {
+
+    .PricingButtonContainer {
+        width: 70vw;
+        margin: 40px auto;
+    }
+
+   
+    
     .Description {
         width: 100%;
-    }
+    };
+
+ 
 }
+
+
 
 /* Optional: Center class if not defined */
 .Center {

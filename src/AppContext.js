@@ -17,6 +17,9 @@ export const AppProvider = ({ children }) => {
   // State to control form visibility
   const [showForm, setShowForm] = useState(() => getInitialState("showForm", false));
   const [showKidForm, setShowKidForm] = useState(() => getInitialState("showKidForm", false));
+  const [showAdult, setShowAdult] = useState(() => getInitialState("showAdult", false));
+  const [showKid, setShowKid] = useState(() => getInitialState("showKid", false));
+  const [showPrivate, setShowPrivate] = useState(() => getInitialState("showPrivate", false));
 
   // Save states to localStorage whenever they change
   useEffect(() => {
@@ -27,8 +30,21 @@ export const AppProvider = ({ children }) => {
     localStorage.setItem("showKidForm", JSON.stringify(showKidForm));
   }, [showKidForm]);
 
+
+  useEffect(() => {
+    localStorage.setItem("showAdult", JSON.stringify(showAdult));
+  }, [showAdult]);
+
+  useEffect(() => {
+    localStorage.setItem("showKid", JSON.stringify(showKid));
+  }, [showKid]);
+
+  useEffect(() => {
+    localStorage.setItem("showPrivate", JSON.stringify(showPrivate));
+  }, [showPrivate]);
+
   return (
-    <AppContext.Provider value={{ showForm, setShowForm, showKidForm, setShowKidForm }}>
+    <AppContext.Provider value={{ showForm, setShowForm, showKidForm, setShowKidForm, showAdult, setShowAdult, showKid, setShowKid, showPrivate, setShowPrivate }}>
       {children}
     </AppContext.Provider>
   );
