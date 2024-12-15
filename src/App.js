@@ -47,7 +47,7 @@ function App() {
                 <>
               
                   <Navbar />
-       <KidsForm />
+     {/* <KidsForm />*/} 
                   <Landing />
                   <Testimonials />
                   <About />
