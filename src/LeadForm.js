@@ -139,7 +139,7 @@ export default function LeadForm( {closebutton} ) {
       ) : (
         <>
           <img className='small-pic' src={pic} />
-     <h2>7 Day Unlimited Free Trial</h2>  <br></br>
+     <h2>Unlimited Free Trial - 7 Days</h2>  <br></br>
 
 
 
