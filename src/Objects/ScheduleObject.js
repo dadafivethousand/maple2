@@ -9,7 +9,7 @@ const schedule = {
   Tuesday: [
     { name: "Basics - Gi", start: 7.5, end: 8.5 },
     { name: "Basics - Gi", start: 12, end: 13 },
-    { name: "Kids - Gi", start: 17.25, end: 18.25},
+    { name: "Kids - (8-12)", start: 17.25, end: 18.25},
     { name: "Basics - Gi", start: 18.25, end: 19.25 },
     { name: "Advanced - Gi", start: 19.25, end: 20.25 }
   ],
@@ -23,7 +23,7 @@ const schedule = {
   Thursday: [
     { name: "Basics - Gi", start: 7.5, end: 8.5 },
     { name: "Basics - Gi", start: 12, end: 13 },
-    { name: "Kids - Gi", start: 17.25, end: 18.25},
+    { name: "Kids (8-12)", start: 17.25, end: 18.25},
     { name: "Basics - Gi", start: 18.25, end: 19.25 },
     { name: "Advanced - Gi", start: 19.25, end: 20.25 }
   ],
