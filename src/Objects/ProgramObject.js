@@ -1,5 +1,5 @@
 import comp from '../Media/comp.webp'
-import gi from '../Media/gi.webp'
+import gi from '../Media/comp.webp'
 import nogi from '../Media/nogi.jpg'
 import kids from '../Media/children.webp'
 import mma from '../Media/mma.webp'
