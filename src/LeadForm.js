@@ -98,10 +98,10 @@ export default function LeadForm( {closebutton} ) {
         setMessage(
           
           <>
-            <p id='message-title' className="message-title">Success!</p>
-<p className="message-body top"> Someone from our team will be reaching out to you shortly. </p>
-   <p className="message-body"> Please complete the waiver by <a href='https://waiver.smartwaiver.com/w/dj188118umjqr7iwcr7jfq/web/'>following this link</a>. </p> 
-             <img className='small-pic' src={pic} />
+            <p id='message-title' className="message-title">Thank You!</p>
+<p className="message-body top"> Please feel free to attend any classes on our schedule.  </p>
+   <p className="message-body"> Kindly ensure that you complete the waiver by <a href='https://waiver.smartwaiver.com/w/dj188118umjqr7iwcr7jfq/web/'>following this link</a>. </p> 
+             <img id='success-message-image' className='small-pic' src={pic} />
           </>
         );
         console.log('Success:', result);

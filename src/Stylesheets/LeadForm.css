@@ -126,6 +126,10 @@
 }
 
 
+#success-message-image{
+    margin-top:30px
+}
+
 .form-container a{
 text-decoration: underline;
 }
