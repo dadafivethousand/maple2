@@ -35,7 +35,7 @@
     background-color: #ffffff;
     height: 20vh;
     border-radius: 8px;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.478);
+ 
     width: 80vw;
     opacity: 90%;
     border: 2px solid rgb(0, 0, 0);
@@ -167,16 +167,23 @@ cursor:default
 
 @media (max-width: 800px) {
     .ReviewsContainer {
-        min-height: 300px;
+        min-height: 200px;
         padding: 0vh;
         width: 98vw;
+    }
+
+    .Review-Text p {
+       
+        font-size: 13px;
+        
     }
     Text {
         padding: 0vh;
         margin: 0 auto;
-        font-size: 14px;
+        font-size: 12px;
     }
- 
+
+   
     .ReviewsOuterContainer h2 {
  
         font-size: 2rem;

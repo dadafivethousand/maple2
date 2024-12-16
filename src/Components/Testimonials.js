@@ -25,8 +25,7 @@ export default function Testimonials() {
         { text: "Great place, very experienced and knowledgble staff, friendly + respectful", author: "Florian P" },
         { text: "Good vibes and friendly atmosphere.", author: "Sukh Brar"},
  
-        { text: "The instructors here at Maple Jiu-Jitsu present a wealth of knowledge, experience, and passion for anyone looking to learn, train, and pursue Jiu-Jitsu.", author: "Abdula Teymouri"},
-        
+         
 
         
         // ... more reviews
