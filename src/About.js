@@ -8,9 +8,9 @@ import { faCanadianMapleLeaf } from '@fortawesome/free-brands-svg-icons';
 
 export default function About() {
     const items = [
-        { icon: "fas fa-map-marker-alt", text: "First Brazilian Jiu-Jitsu Academy in Maple" },
+        { icon: "fas fa-map-marker-alt", text: "#1 Brazilian Jiu-Jitsu Academy in Maple" },
         { icon: "fas fa-shield-alt", text: "Safe and healthy training atmosphere" },
-        { icon: "fas fa-book-open", text: "Structured and comprehensive curriculum" },
+        { icon: "fas fa-book-open", text: "Structured & comprehensive curriculum" },
         { icon: "fas fa-trophy", text: "Top level professional instruction" }
     ];
 
