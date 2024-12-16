@@ -102,7 +102,7 @@ export default function LeadForm( {closebutton} ) {
 <p className="message-body top"> Kindly complete the waiver by <a href='https://waiver.smartwaiver.com/w/dj188118umjqr7iwcr7jfq/web/'>following this link</a>. Once finished, please feel free to attend any classes listed on our schedule. </p>
  
    <p className="message-body"> If you decide to join, you can sign up online or in person. We will not be hassling you with follow-ups after your free trial. </p> 
-   <p className="message-body"> See you on the mats! </p> 
+   <p className="message-body center"> See you on the mats! </p> 
 
              <img id='success-message-image' className='small-pic' src={pic} />
           </>

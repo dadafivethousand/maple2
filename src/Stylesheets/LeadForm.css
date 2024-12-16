@@ -150,6 +150,10 @@ text-decoration: underline;
      box-shadow: 3px 3px 5px black;
 }
 
+.center{
+    text-align:center
+}
+
 
 @media(min-width:800px){
     .form-container{
