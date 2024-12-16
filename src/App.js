@@ -51,17 +51,17 @@ function App() {
                   <Landing />
                   <Testimonials />
                   <About />
-                  <Parallax1 />
+                 {/*     <Parallax1 /> */} 
                   <Coaches />
                
                   <Programs />
                 
-                  <Parallax3 />
+                 {/*     <Parallax3 />*/} 
                   <Schedule />
               
               
                   <Pricing />
-                  <Parallax />
+                 {/*     <Parallax />*/} 
                   <Contact />
          
                    <FAQ />
