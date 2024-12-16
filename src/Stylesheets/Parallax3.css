@@ -1,7 +1,7 @@
 
 /* ParallaxSection.css */
 .parallax3-container {
-    height: 800px; /* Adjust the height as needed */
+    height: 600px; /* Adjust the height as needed */
     background-image: url('../Media/parallax3.jpg'); /* Replace with your image path */
      /*  background-attachment: fixed;*/
     background-position:left;
