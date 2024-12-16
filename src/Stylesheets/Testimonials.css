@@ -1,11 +1,5 @@
 /* Reviews.css */
-
-.ReviewsOuterContainer {
-    margin: 0px auto;
  
-    overflow: hidden;
-}
-
  
 .ReviewTitle h1{
     margin-bottom:100px;
@@ -28,17 +22,21 @@
 }
 
 .ReviewsContainer {
+    margin: 0px auto;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    overflow: hidden;
     margin: 30px auto;
     display: flex;
     justify-content: space-between;
     font-family: 'Arial', sans-serif;
     background-color: #ffffff;
     height: 20vh;
-    border-radius: 8px;
+  
  
     width: 80vw;
     opacity: 90%;
-    border: 2px solid rgb(0, 0, 0);
+ 
     min-height: 270px;
     position: relative;
     overflow: hidden;
@@ -167,14 +165,15 @@ cursor:default
 
 @media (max-width: 800px) {
     .ReviewsContainer {
-        min-height: 200px;
+        min-height: 150px;
+        max-height: 150px;
         padding: 0vh;
         width: 98vw;
     }
 
     .Review-Text p {
        
-        font-size: 13px;
+        font-size: 12px;
         
     }
     Text {
@@ -190,7 +189,8 @@ cursor:default
     }
 
     .ReviewsContainer{
-        width:99vw;
+        width:101vw;
+ 
     }
 
     .ReviewTitle{
