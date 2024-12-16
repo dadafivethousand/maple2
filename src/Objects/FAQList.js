@@ -27,7 +27,7 @@ const faqList = [
 
   {
     question: "Do you offer Muay Thai & Mixed Martial Arts (MMA)?",
-    answer: "Right now, we’re focused on perfecting our Brazilian Jiu-Jitsu (BJJ) program. However, we have plans to introduce Muay Thai and Mixed Martial Arts (MMA) in the future. These striking arts complement BJJ, making them excellent additions for anyone interested in self-defense, fitness, or a complete martial arts experience. Stay tuned for updates!"
+    answer: "Yes, we proudly offer both Muay Thai and Mixed Martial Arts (MMA) programs! Our Muay Thai program focuses on developing powerful striking techniques using punches, kicks, elbows, and knees, while improving fitness, coordination, and self-defense skills. Our MMA program integrates techniques from Muay Thai, Brazilian Jiu-Jitsu, wrestling, and boxing to provide a well-rounded martial arts experience. Whether you’re looking to improve your striking, grappling, or overall skills, our programs are designed for all levels. Join us today to elevate your training!"
   },
   {
     question: "Do I need experience to start?",
