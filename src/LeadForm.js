@@ -10,7 +10,7 @@ export default function LeadForm( {closebutton} ) {
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
- 
+    lastName: '', 
     email: '',
     phone: '',
   // Default to Ontario
@@ -98,9 +98,9 @@ export default function LeadForm( {closebutton} ) {
         setMessage(
           
           <>
-            <p className="message-title">Success!</p>
+            <p id='message-title' className="message-title">Success!</p>
 <p className="message-body top"> Someone from our team will be reaching out to you shortly. </p>
-   <p className="message-body"> In the meantime, please complete the waiver by <a href='https://waiver.smartwaiver.com/w/dj188118umjqr7iwcr7jfq/web/'>following this link</a>. </p> 
+   <p className="message-body"> Please complete the waiver by <a href='https://waiver.smartwaiver.com/w/dj188118umjqr7iwcr7jfq/web/'>following this link</a>. </p> 
              <img className='small-pic' src={pic} />
           </>
         );
@@ -109,7 +109,7 @@ export default function LeadForm( {closebutton} ) {
         // Reset the form after a successful submission
         setFormData({
           firstName: '',
- 
+          lastName: '',
           email: '',
           phone: '',
  
@@ -139,7 +139,7 @@ export default function LeadForm( {closebutton} ) {
       ) : (
         <>
           <img className='small-pic' src={pic} />
-     <h2>Unlimited Free Trial - 7 Days</h2>  <br></br>
+     <h2> Free Trial - 7 Days</h2>  <br></br>
 
 
 
@@ -151,10 +151,23 @@ export default function LeadForm( {closebutton} ) {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                placeholder="Name"
+                placeholder="First Name"
                 required
               />
             </div>
+
+
+            <div className="form-group">
+              <input
+                type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+                placeholder="Last Name"
+                required
+              />
+            </div>
+
 
           
 
