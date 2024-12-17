@@ -31,14 +31,14 @@
     justify-content: space-between;
     font-family: 'Arial', sans-serif;
     background-color: #ffffff;
-    height: 20vh;
+    height: 170px;
   
     border: 2px solid black;
     border-radius: 10px;
     width: 80vw;
     opacity: 90%;
  
-    min-height: 270px;
+    
     position: relative;
     overflow: hidden;
     z-index: 4;
