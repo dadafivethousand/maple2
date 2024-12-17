@@ -51,6 +51,7 @@ function App() {
                   <Landing />
 
                   <About />
+                 
                  {/*     <Parallax1 /> */} 
                   <Coaches />
                
