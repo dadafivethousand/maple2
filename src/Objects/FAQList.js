@@ -5,7 +5,7 @@ const faqList = [
   },
   {
     question: "Do you take kids? What age groups do you teach?",
-    answer: "We currently offer six kids' classes per week for ages 8–12, focusing on building foundational Brazilian Jiu-Jitsu (BJJ) skills, confidence, and fitness in a fun and structured environment. For teens and adults, we provide classes for ages 13 and up, catering to all skill levels, from beginners to experienced practitioners. Our kids' program helps develop discipline, teamwork, and self-defense skills while keeping children active and engaged."
+    answer: "We currently offer two kids' classes per week for ages 8–12, focusing on building foundational Brazilian Jiu-Jitsu (BJJ) skills, confidence, and fitness in a fun and structured environment. For teens and adults, we provide classes for ages 13 and up, catering to all skill levels, from beginners to experienced practitioners. Our kids' program helps develop discipline, teamwork, and self-defense skills while keeping children active and engaged."
   },
   {
     question: "What is Brazilian Jiu-Jitsu (BJJ) and why should choose it over other martial arts",
