@@ -2,8 +2,7 @@ import './Stylesheets/About.css';
 import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCanadianMapleLeaf } from '@fortawesome/free-brands-svg-icons';
-
-
+import logoImg from './Media/logos.jpg'
  
 
 export default function About() {
@@ -77,6 +76,7 @@ export default function About() {
             <div className="second">
             <p   className="animate"> Whether you're looking to compete, get in shape, or learn self-defense, Maple Jiu-Jitsu Academy is the place to start your journey. </p>
             </div>
+            
         </div>
     );
 }

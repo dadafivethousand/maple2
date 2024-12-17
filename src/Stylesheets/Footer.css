@@ -21,7 +21,7 @@
 .FooterContainer ul{
    list-style: none;
    font-family: Roboto;
-   font-weight: lighter;
+   font-weight: 350;
 }
 
 .FooterContainer li:hover{

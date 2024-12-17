@@ -21,7 +21,14 @@
     top:3px;
 }
 
- 
+.AboutContainer img{
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    position: relative;
+    left:-7px
+}
 
 .big{padding-left: 10px;
 }
