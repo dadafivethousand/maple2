@@ -123,11 +123,11 @@ export default function Schedule() {
         ))}
       </div>
 
- 
+ {/* 
 
     <ScheduleWidget />
    
- 
+ */}
     
     </div>
   );
