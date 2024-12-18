@@ -100,10 +100,7 @@ export default function Testimonials() {
 
     return (
         <div className="ReviewsOuterContainer" id='Testimonials'>
-            <div className='ReviewTitle'>
-         
     
-            </div>
 
             <div className="ReviewsContainer">
                 <div className="ButtonContainer">

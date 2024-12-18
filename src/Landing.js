@@ -13,8 +13,11 @@ export default function Landing(){
          
             <div className='get-started-landing-container'>
             <GetStarted size='large' />
-            <Testimonials />
-            
+             <Testimonials />
+ 
+ 
+
+ 
             </div>
           
  

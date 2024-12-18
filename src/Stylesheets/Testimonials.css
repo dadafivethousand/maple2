@@ -26,7 +26,7 @@
     border-bottom: 2px solid black;
     border-top: 2px solid black;
     overflow: hidden;
-    margin: 30px auto;
+ 
     display: flex;
     justify-content: space-between;
     font-family: 'Arial', sans-serif;
@@ -174,9 +174,8 @@ cursor:default
 
     
     .ReviewsContainer {
-        min-height: 150px;
-        max-height: 150px;
-        padding: 0vh;
+      height:140px;
+    
         width:101vw;
           
      border-left:none;
@@ -201,7 +200,4 @@ cursor:default
         font-size: 2rem;
     }
  
-    .ReviewTitle{
-        margin-bottom:100px
-    }
 }
