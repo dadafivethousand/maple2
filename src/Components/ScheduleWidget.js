@@ -15,7 +15,7 @@ const ScheduleWidget = () => {
 
   return (
     <div className="schedule-widget">
-      <h4>Class Cancellations (Week of Dec 16-22)</h4>
+      <h4>Holiday Class Cancellations</h4>
       <table className="schedule-table">
  
         <tbody>
@@ -37,7 +37,7 @@ const ScheduleWidget = () => {
           ))}
         </tbody>
       </table>
-    </div>
+     </div>
   );
 };
 
