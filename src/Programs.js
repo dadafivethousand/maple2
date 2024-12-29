@@ -13,10 +13,8 @@ export default function Programs() {
     
         {
                 programs.map((program, index) =>{
-                    return(
-                    
-                        <Program  key={index} program={program} />
-                     
+                    return(               
+                        <Program  key={index} program={program} />        
                     )
                 })
             }

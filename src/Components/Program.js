@@ -5,10 +5,16 @@ export default function Program( {program} ){
     return(
         <div   className="program-container animate">
          <div className="overlay">     <h2>{program.name}</h2>
-         <p>{program.description}</p> </div>
+         <p>{program.description}</p>
+         {program.button?
+             <a className="book-private" href='https://maplejiujitsu.setmore.com'>
+                Book Now
+             </a>:null        }
+          </div>
              <div className='program-image'>
                 <img alt={program.name} src={program.image} />
              </div>
+
         
  
              </div>
