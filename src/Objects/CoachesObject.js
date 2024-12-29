@@ -3,7 +3,7 @@ import ArthurImage from '../Media/art.jpg'
 import TajImage from '../Media/taj.png'
 import Rob from '../Media/rob.png'
 import Vitaly from '../Media/Vitaly.png'
-import Vijay from '../Media/vij.png'
+import Vijay from '../Media/ajj.jpg'
 const CoachesList = 
 [
 {
