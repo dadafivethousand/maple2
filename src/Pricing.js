@@ -94,15 +94,15 @@ export default function Pricing() {
                 <button onClick={toggleKid} className='KidsMembershipButton'>Kids (8-12)</button>
             </div>
             {showKid && <MembershipComponent type={Memberships.kids} />}
-          {/*  
+        
    
                 <div className='PricingButtonContainer'>
                 <button  onClick={togglePrivate}  className='KidsMembershipButton'>Private & Group Training</button>
                 <div className='booking-page'>
-                {showPrivate &&  <SetmoreBookingPage />}
+                {showPrivate &&  <MembershipComponent type={Memberships.private}/>}
                 </div>
             </div>
-          */}
+      
       
             </div>
             <ul className='BulletPoints'>

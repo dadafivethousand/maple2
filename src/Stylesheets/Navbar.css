@@ -10,8 +10,7 @@
 .navbar-outer-container a{
     color:black;
     text-decoration: none;
-    font-family: Roboto condensed;
-}
+    font-weight:500; margin-bottom: 5px;;}
 
 .navbar-image-conatiner{
     height:fit-content;
