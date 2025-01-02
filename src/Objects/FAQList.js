@@ -41,10 +41,7 @@ const faqList = [
     question: "I do not have a Gi but want to do the Gi class. What are my options?",
     answer: "No worries! If you don’t have a Gi, we’ve got you covered. We provide Gi rentals free of charge, so you can join our Gi classes without any hassle. Just show up ready to train!"
   },
-  {
-    question: "How does the onboarding process work? How do I sign up? ",
-    answer: "Signing up for a membership at Maple BJJ is easy and stress-free. You won’t get follow-up calls or pressure after your free trial. Our focus is on providing a welcoming and transparent environment, and we believe those who want to sign up will make that decision on their own. You can find all our pricing details in the Pricing section of our website. Payments can be made online through our portal or in person at the academy—whatever works best for you. If you have any questions, feel free to contact us, and we’ll be happy to help!"  
-  },
+ 
   {
     question: "Do you offer a free trial?",
     answer: "Yes, we offer a free one-week trial for newcomers who want to experience Brazilian Jiu-Jitsu (BJJ) at Maple BJJ. This trial gives you access to our beginner-friendly classes, allowing you to explore the benefits of training and see if BJJ is right for you.",
