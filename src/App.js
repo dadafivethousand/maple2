@@ -61,7 +61,7 @@ function App() {
                   <Schedule />
               
               
-                  <Pricing />
+                
                  {/*     <Parallax />*/} 
                   <Contact />
          
