@@ -54,7 +54,7 @@ export default function Navbar() {
 
               <a href='#FAQ'>  <li onClick={()=>setClick(false)}>FAQ</li></a>
 
-              <a href='https://billing.stripe.com/p/login/7sI3fAgOUdugbvybII'> <li onClick={()=>setClick(false)}>Members</li></a>
+              {/*<a href='https://billing.stripe.com/p/login/7sI3fAgOUdugbvybII'> <li onClick={()=>setClick(false)}>Members</li></a>  */}
               <a href='#Contact'> <li onClick={()=>setClick(false)}>Contact Us</li></a>
              
             </ul>

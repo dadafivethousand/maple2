@@ -15,7 +15,7 @@ export default function Footer(){
             </ul>
             <ul>
              <a  href='#FAQ'>  <li>  F.A.Q.  </li></a>
-            <a href='https://billing.stripe.com/p/login/7sI3fAgOUdugbvybII'> <li onClick={()=>setClick(false)}>Members</li></a>
+         {/* <a href='https://billing.stripe.com/p/login/7sI3fAgOUdugbvybII'> <li onClick={()=>setClick(false)}>Members</li></a>  */}  
 
             <a  href='#Contact'>   <li>  Contact Us  </li></a>
            
