@@ -14,6 +14,8 @@ export default function Footer(){
 
             </ul>
             <ul>
+            <a href='https://maplejiujitsu.setmore.com' target="_blank"> <li>Private Training</li></a> 
+
              <a  href='#FAQ'>  <li>  F.A.Q.  </li></a>
          {/* <a href='https://billing.stripe.com/p/login/7sI3fAgOUdugbvybII'> <li onClick={()=>setClick(false)}>Members</li></a>  */}  
 
