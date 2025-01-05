@@ -50,7 +50,7 @@ export default function Navbar() {
               <a href='#programs'>  <li onClick={()=>setClick(false)}>Programs</li></a>
       
               <a  href='#Schedule'>  <li onClick={()=>setClick(false)}>Schedule</li></a>
-               <a href='https://maplejiujitsu.setmore.com' target="_blank">  <li onClick={()=>setClick(false)}>Private Training</li></a>
+               <a href='https://maplejiujitsu.setmore.com/services/ce9112be-2765-4a91-a8c7-d8d923ac6c5a' target="_blank">  <li onClick={()=>setClick(false)}>Private Training</li></a>
 
               <a href='#FAQ'>  <li onClick={()=>setClick(false)}>FAQ</li></a>
 

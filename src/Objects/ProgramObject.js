@@ -5,6 +5,7 @@ import kids from '../Media/children.webp'
 import mma from '../Media/mma.webp'
 import muaythai from '../Media/mt.webp'
 import taj from '../Media/Taj.jpg'
+import littlekids from '../Media/littlekids.jpg'
 
 import wrestling from '../Media/wrestling.jpeg'
 const Programs = [
@@ -17,6 +18,8 @@ const Programs = [
     {image: taj, name:'Private Training', description: 'Private training offers personalized coaching tailored to your specific goals, whether improving technique, enhancing fitness, or preparing for competition.', button: "Book Now"},
 
     {image: kids,name:'Kids (ages 8-12)', description: 'Our Kids program is designed to build confidence, discipline, and coordination in a fun and supportive environment. We focus on teaching the fundamentals of BJJ while instilling important life values like respect, perseverance, and teamwork.'},
+    {image: littlekids, name:'Kids (ages 4-7)', description: 'Our Kids program for ages 4-7 is private or semi-private (max 2 per class) to ensure safety and focused learning. Classes must be reserved and are offered in English, Russian, and Ukrainian.'},
+
 ]
 
 const BackupPrograms = [

@@ -7,7 +7,7 @@ export default function Program( {program} ){
          <div className="overlay">     <h2>{program.name}</h2>
          <p>{program.description}</p>
          {program.button?
-             <a className="book-private" href='https://maplejiujitsu.setmore.com' target="_blank">
+             <a className="book-private" href='https://maplejiujitsu.setmore.com/services/ce9112be-2765-4a91-a8c7-d8d923ac6c5a' target="_blank">
                 Book Now
              </a>:null        }
           </div>
