@@ -29,6 +29,8 @@ const Bullets = [
 
 export default function Pricing() {
     const {
+        setShowPizduq,
+        showPizduq,
         showAdult,
         setShowAdult,
         showKid,
@@ -42,11 +44,12 @@ export default function Pricing() {
 
     const toggleAdult = () => setShowAdult(prev => !prev);
     const toggleKid = () => setShowKid(prev => !prev);
+    const togglePizduq = () => setShowPizduq(prev => !prev);
     const togglePrivate = () => setShowPrivate(prev => !prev);
 
     useEffect(()=>{
-        async function fetchMembershipInfo()
-        {
+        console.log('fetchinginfo')
+        async function fetchMembershipInfo(){
         try {
             const response = await fetch('https://worker-consolidated.maxli5004.workers.dev/membership-info');
             if (response.ok) {
@@ -62,6 +65,7 @@ export default function Pricing() {
         }
     }
     fetchMembershipInfo();
+
 }, 
 []);
 
@@ -111,19 +115,30 @@ export default function Pricing() {
              <div className='PricingButtonContainer'>
                 <button onClick={toggleAdult} className='AdultMembershipButton'>Adults & Teens</button>
             </div>
-            {showAdult && <MembershipComponent type={priceObject.adult} />}
+            {showAdult && priceObject?.adult && <MembershipComponent type={priceObject.adult} />}
              <div className='PricingButtonContainer'>
                 <button onClick={toggleKid} className='KidsMembershipButton'>Kids (8-12)</button>
             </div>
-            {showKid && <MembershipComponent type={priceObject.kids} />}
-        
-   
-                <div className='PricingButtonContainer'>
-                <button  onClick={togglePrivate}  className='KidsMembershipButton'>Private & Group Training</button>
-                <div className='booking-page'>
-                {showPrivate &&  <MembershipComponent type={priceObject.privates}/>}
+            {showKid && priceObject?.kids && <MembershipComponent type={priceObject.kids} />}
+
+
+            <div className='PricingButtonContainer'>
+                <button  onClick={togglePizduq}  className='KidsMembershipButton'>Kids (4-7)</button>
                 </div>
-            </div>
+            
+                {showPizduq && priceObject?.privates &&  <MembershipComponent type={priceObject.pizduqi}/>}
+              
+            
+
+                <div className='PricingButtonContainer'>
+                <button  onClick={togglePrivate}  className='KidsMembershipButton'>Private Training</button>
+                </div>
+            
+                {showPrivate && priceObject?.privates &&  <MembershipComponent type={priceObject.privates}/>}
+              
+            
+
+       
       
       
             </div>

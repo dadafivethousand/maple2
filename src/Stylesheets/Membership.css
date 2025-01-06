@@ -4,7 +4,7 @@
     padding-bottom: 15px ;
     font-size: 1.5rem;
     text-align: center;
-    height: 270px;
+    height: 200px;
     width: 250px;
     display:flex;
     flex-direction: column;
@@ -26,7 +26,7 @@ scale: 1.1;
 
 
 .PurchaseButton {
-    height:60px;
+    height:40px;
     background-color: rgb(15, 14, 14);
     color: white;
     border: 1px solid #ffffff; /* White border */
@@ -78,14 +78,14 @@ scale: 1.1;
 
  
 .Price{
-    font-size: 1.4em;
+    font-size: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .billed{
-    font-size:0.8em;
+    font-size:0.6em;
     text-transform: capitalize;
 }
 

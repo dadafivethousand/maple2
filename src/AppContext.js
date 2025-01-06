@@ -20,6 +20,7 @@ export const AppProvider = ({ children }) => {
   const [showAdult, setShowAdult] = useState(() => getInitialState("showAdult", false));
   const [showKid, setShowKid] = useState(() => getInitialState("showKid", false));
   const [showPrivate, setShowPrivate] = useState(() => getInitialState("showPrivate", false));
+  const [showPizduq, setShowPizduq] = useState(() => getInitialState("showPizduq", false));
 
   // Save states to localStorage whenever they change
   useEffect(() => {
@@ -43,8 +44,12 @@ export const AppProvider = ({ children }) => {
     localStorage.setItem("showPrivate", JSON.stringify(showPrivate));
   }, [showPrivate]);
 
+  useEffect(() => {
+    localStorage.setItem("showPizduq", JSON.stringify(showPizduq));
+  }, [showPizduq]);
+
   return (
-    <AppContext.Provider value={{ showForm, setShowForm, showKidForm, setShowKidForm, showAdult, setShowAdult, showKid, setShowKid, showPrivate, setShowPrivate }}>
+    <AppContext.Provider value={{ showForm, showPizduq, setShowPizduq, setShowForm, showKidForm, setShowKidForm, showAdult, setShowAdult, showKid, setShowKid, showPrivate, setShowPrivate }}>
       {children}
     </AppContext.Provider>
   );

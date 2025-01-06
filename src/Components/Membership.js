@@ -3,14 +3,15 @@ import Ribbon from './Ribbon';
 import BottomRibbon from './BottomRibbon'
 import { useAppContext } from "../AppContext";
  
-export default function Membership({ free, type, price, billed, cancel, promo, paymentLink, kids }) {
+export default function Membership({ free, type, price, description, billed, cancel, promo, paymentLink, kids }) {
   const { showForm, setShowForm, setShowKidForm} = useAppContext();      
   const formatCurrency = (amount) => {
         return new Intl.NumberFormat('en-US', {
           style: 'currency',
           currency: 'USD',
-          minimumFractionDigits: 0,
-        }).format(amount);
+          minimumFractionDigits: 2, // Always show two decimal places
+          maximumFractionDigits: 2,
+        }).format(amount/100);
       };
  
     return(
@@ -25,7 +26,7 @@ export default function Membership({ free, type, price, billed, cancel, promo, p
  
             )}
           
-         <div  className='MembershipType'> <h6> {type }   </h6></div> 
+         <div  className='MembershipType'> <h6> {description}   </h6></div> 
          <div>
      <div className='Price'>
   
