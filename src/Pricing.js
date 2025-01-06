@@ -3,7 +3,7 @@ import './Stylesheets/Pricing.css';
 import React from 'react';
 import Memberships from './Objects/MembershipsObject';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDollarSign, faUserPlus, faUserCog } from '@fortawesome/free-solid-svg-icons';
+import { faDollarSign, faUserPlus, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import MembershipComponent from './Components/MembershipComponent';
 import { useState, useEffect, useRef } from 'react';
 import SetmoreBookingPage from './Components/SetmoreWidget';
@@ -21,9 +21,9 @@ const Bullets = [
         description: 'Everything upfront, no surprises or hidden costs.'
     },
     {
-        symbol: <FontAwesomeIcon className='icon' icon={faUserCog} />,
-        header: 'Membership Management',
-        description: 'Handle everything online, including cancellations.'
+        symbol: <FontAwesomeIcon className='icon' icon={faCalendarAlt} />,
+        header: 'Flexible Scheduling',
+        description: 'Train at times that fit your busy lifestyle'
     },
 ];
 
@@ -38,10 +38,32 @@ export default function Pricing() {
       } = useAppContext();
     const itemRefs = useRef([]);
     const [show, setShow] = useState(new Array(Bullets.length).fill(false));
+    const [priceObject, setPriceObject] = useState(null)
 
     const toggleAdult = () => setShowAdult(prev => !prev);
     const toggleKid = () => setShowKid(prev => !prev);
     const togglePrivate = () => setShowPrivate(prev => !prev);
+
+    useEffect(()=>{
+        async function fetchMembershipInfo()
+        {
+        try {
+            const response = await fetch('https://worker-consolidated.maxli5004.workers.dev/membership-info');
+            if (response.ok) {
+                const data = await response.json()
+                console.log(data)
+                setPriceObject(data);
+            } else {
+                console.error('Failed to fetch membership info');
+            }
+
+        } catch (error) {
+            console.error('Error fetching Membership Info:', error)
+        }
+    }
+    fetchMembershipInfo();
+}, 
+[]);
 
 
     useEffect(() => {
@@ -89,17 +111,17 @@ export default function Pricing() {
              <div className='PricingButtonContainer'>
                 <button onClick={toggleAdult} className='AdultMembershipButton'>Adults & Teens</button>
             </div>
-            {showAdult && <MembershipComponent type={Memberships.adult} />}
+            {showAdult && <MembershipComponent type={priceObject.adult} />}
              <div className='PricingButtonContainer'>
                 <button onClick={toggleKid} className='KidsMembershipButton'>Kids (8-12)</button>
             </div>
-            {showKid && <MembershipComponent type={Memberships.kids} />}
+            {showKid && <MembershipComponent type={priceObject.kids} />}
         
    
                 <div className='PricingButtonContainer'>
                 <button  onClick={togglePrivate}  className='KidsMembershipButton'>Private & Group Training</button>
                 <div className='booking-page'>
-                {showPrivate &&  <MembershipComponent type={Memberships.private}/>}
+                {showPrivate &&  <MembershipComponent type={priceObject.privates}/>}
                 </div>
             </div>
       

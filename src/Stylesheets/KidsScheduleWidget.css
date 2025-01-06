@@ -1,0 +1,47 @@
+.kids-schedule-widget{
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    width:25vw;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    padding:5px;
+    font-size: 12px;
+    font-family: roboto condensed;
+    box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.833);
+ 
+}
+
+ 
+ .booking-button{
+    border:1px solid black;
+    font-size:10px;
+    display: block;
+    margin: 0 auto;;
+    text-align: center;
+    margin-top: 20px;
+    background-color: rgb(0, 0, 0);
+  
+ }
+
+ #booking-button{
+    color: white;
+ }
+
+ .bold{
+    font-weight:600
+ }
+
+ @media(min-width:600px) {
+    .kids-schedule-widget{
+        width:20vw;
+        right:15px;
+    }
+ }
+
+ @media(min-width:800px) {
+    .kids-schedule-widget{
+ 
+        right:100px;
+    }
+ }

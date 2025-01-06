@@ -3,6 +3,7 @@ import schedule from './Objects/ScheduleObject'; // Import the schedule
 import './Stylesheets/Schedule.css';
 import Legend from './Components/Legend';
 import ScheduleWidget from './Components/ScheduleWidget';
+import KidsScheduleWidget from './Components/KidsScheduleWidget';
 
 // Config: Pixels per hour
 const PIXELS_PER_HOUR = 47;
@@ -26,8 +27,8 @@ const convertToAmPm = (time) => {
 
 // Time blocks to remove (example: between 9-11 AM and 1:30-3:30 PM)
 const timeBlocksToRemove = [
-  { start: 8.5, end: 10.5 },
-  { start: 14, end: 17.25 }
+  { start: 8.5, end: 9.5 },
+  { start: 15, end: 16.25 }
 ];
 
 // Main Schedule component
@@ -121,6 +122,7 @@ export default function Schedule() {
             </div>
           </div>
         ))}
+        < KidsScheduleWidget />
       </div>
 
   
