@@ -45,7 +45,7 @@ export default function Contact() {
         </div>
         <div className='Email animate'>
         <FontAwesomeIcon icon={faEnvelope} />{/* Envelope icon */}
-        <span id='ContactText'> admin@maplejj.com</span>
+        <span id='ContactText'> admin@maplebjj.com</span>
         </div>
         <div className='Address animate'>
         <FontAwesomeIcon icon={faHome} /> {/* House icon */}

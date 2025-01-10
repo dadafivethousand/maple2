@@ -20,7 +20,7 @@ import Parallax3 from "./Parallax3";
 import KidsForm from "./Components/KidsForm";
  
 function App() {
-  const { showForm } = useAppContext();
+  const { showForm, showKidForm,  } = useAppContext();
 
   return (
     <HelmetProvider>
@@ -35,6 +35,7 @@ function App() {
           </Helmet>
 
           {showForm && <LeadForm closebutton={true} />}
+        {/*  {showKidForm && <KidsForm />}*/}
 
           <Routes>
             {/* Route for /freetrial showing only LeadForm */}
@@ -59,7 +60,7 @@ function App() {
                 
                  {/*     <Parallax3 />*/} 
                   <Schedule />
-                  {/*      <Pricing /> */} 
+                {/*     <Pricing /> */} 
               
                 
                  {/*     <Parallax />*/} 
