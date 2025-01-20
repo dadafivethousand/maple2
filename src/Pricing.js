@@ -8,18 +8,40 @@ import MembershipComponent from './Components/MembershipComponent';
 import { useState, useEffect, useRef } from 'react';
 import SetmoreBookingPage from './Components/SetmoreWidget';
 import { useAppContext } from './AppContext';
+import { useNavigate } from 'react-router-dom';
+
+import KidsForm from './Components/KidsForm';
+import Leadform from './LeadForm'
+import ScheduleWidget from './Components/ScheduleWidget';
+import LeadForm from './LeadForm';
+import Footer from './Footer';
+import Belt from './Components/Belt';
+import GetStarted from './Components/GetStarted';
+import Purchase from './Components/Purchase';
+import TopRibbon from './Components/Ribbon';
+ 
+
+const formatCurrency = (amount) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2, // Always show two decimal places
+      maximumFractionDigits: 2,
+    }).format(amount/100);
+  };
 
 const Bullets = [
+        {
+        symbol: <FontAwesomeIcon className='icon' icon={faDollarSign} />,
+        header: 'Transparent Pricing',
+        description: 'Everything upfront, no surprises or hidden costs.'
+    },
     {
         symbol: <FontAwesomeIcon className='icon' icon={faUserPlus} />,
         header: 'Seamless Onboarding',
         description: 'Join online without any sales pressure—you’re in control!'
     },
-    {
-        symbol: <FontAwesomeIcon className='icon' icon={faDollarSign} />,
-        header: 'Transparent Pricing',
-        description: 'Everything upfront, no surprises or hidden costs.'
-    },
+
     {
         symbol: <FontAwesomeIcon className='icon' icon={faCalendarAlt} />,
         header: 'Flexible Scheduling',
@@ -41,12 +63,42 @@ export default function Pricing() {
     const itemRefs = useRef([]);
     const [show, setShow] = useState(new Array(Bullets.length).fill(false));
     const [priceObject, setPriceObject] = useState(null)
+    const [displayArray, setDisplayArray] = useState([ ])
+    const [purchasing, setPurchasing] = useState(null)
+    const [purchasingHigherIndex, setPurchasingHigherIndex] = useState(null)
+    const [showPaymentForm, setShowPaymentForm]=useState(false)
+    const togglePaymentForm = () => {
+        console.log('hi')
+        setShowPaymentForm(prev => !prev);
+    }
 
     const toggleAdult = () => setShowAdult(prev => !prev);
     const toggleKid = () => setShowKid(prev => !prev);
     const togglePizduq = () => setShowPizduq(prev => !prev);
     const togglePrivate = () => setShowPrivate(prev => !prev);
+    const display = (index) => {
+        setDisplayArray((prevArray) => {
+            if (prevArray.includes(index)) {
+                // Remove the index if it is already in the array
+                return prevArray.filter(item => item !== index);
+            } else {
+                // Add the index if it is not in the array
+                return [...prevArray, index];
+            }
+        });
+    };
 
+    const handlePurchasing = (higherIndex, index) => {
+        setPurchasingHigherIndex(higherIndex)
+        setPurchasing(index)
+    }
+
+    const cancelPurchase = () => {
+        setPurchasingHigherIndex(null)
+        setPurchasing(null)
+    }
+    
+    
     useEffect(()=>{
         console.log('fetchinginfo')
         async function fetchMembershipInfo(){
@@ -108,40 +160,45 @@ export default function Pricing() {
 
     return (
         <div id="pricing" className='PricingContainer'>
+             
+      
+
              <h1 className="animate">Pricing</h1> 
+            
+    
+           
+             {priceObject?.map((item, index) => {
+    return (
+        <div key={index} className='PricingButtonContainer'>
+
+            <button onClick={() => display(index)} className='AdultMembershipButton'>{item.label}</button>
+            {item.info.map((option, optionIndex) => {
+                return (
+               
+                    displayArray.includes(index) && ( // Check if the index is in displayArray
+                        <div key={optionIndex} className={`pricing-flex ${purchasing===optionIndex && purchasingHigherIndex===index ? 'big': ''}`}>
+                                          {purchasing===optionIndex && purchasingHigherIndex===index ? <Purchase formatCurrency={formatCurrency} option={option} cancelPurchase={cancelPurchase} />:
+                                          <>
+                            <div className={`name-and-price ${purchasing===optionIndex && purchasingHigherIndex===index ? 'flex': ''}`}>
+                            <p className='name-of-class'>{option.description}</p>
+                            <p>{formatCurrency(option.price)} <span className='hst'>+ HST</span></p>
+                            </div>
+              
+                            <button onClick={() => handlePurchasing(index, optionIndex)} id='purchase-button'>Get Started</button>
+                            </>
+                        }
+                       </div>
+                      
+                    )
+                );
+            })}
+        </div>
+    );
+})}
+
+
           {/*      <MembershipComponent type={Memberships.adult} />  */}
-  <div className='pricing-flex'>
-   
-             <div className='PricingButtonContainer'>
-                <button onClick={toggleAdult} className='AdultMembershipButton'>Adults & Teens</button>
-            </div>
-            {showAdult && priceObject?.adult && <MembershipComponent type={priceObject.adult} />}
-             <div className='PricingButtonContainer'>
-                <button onClick={toggleKid} className='KidsMembershipButton'>Kids (8-12)</button>
-            </div>
-            {showKid && priceObject?.kids && <MembershipComponent type={priceObject.kids} />}
 
-
-            <div className='PricingButtonContainer'>
-                <button  onClick={togglePizduq}  className='KidsMembershipButton'>Kids (4-7)</button>
-                </div>
-            
-                {showPizduq && priceObject?.privates &&  <MembershipComponent type={priceObject.pizduqi}/>}
-              
-            
-
-                <div className='PricingButtonContainer'>
-                <button  onClick={togglePrivate}  className='KidsMembershipButton'>Private Training</button>
-                </div>
-            
-                {showPrivate && priceObject?.privates &&  <MembershipComponent type={priceObject.privates}/>}
-              
-            
-
-       
-      
-      
-            </div>
             <ul className='BulletPoints'>
                 {Bullets.map((bullet, index) => (
                     <li

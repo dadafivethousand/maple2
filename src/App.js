@@ -18,9 +18,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Testimonials from "./Components/Testimonials";
 import Parallax3 from "./Parallax3";
 import KidsForm from "./Components/KidsForm";
+ import Purchase from "./Components/Purchase";
  
 function App() {
-  const { showForm, showKidForm,  } = useAppContext();
+  const { showForm, showKidForm, showPurchase } = useAppContext();
 
   return (
     <HelmetProvider>
@@ -35,11 +36,14 @@ function App() {
           </Helmet>
 
           {showForm && <LeadForm closebutton={true} />}
+          {showKidForm && <KidsForm />}
+          {showPurchase && <Purchase />}
         {/*  {showKidForm && <KidsForm />}*/}
 
           <Routes>
             {/* Route for /freetrial showing only LeadForm */}
             <Route path="/freetrial" element={<LeadForm  closebutton={false}/>} />
+            <Route path="/purchase" element={<Purchase />} />
 
             {/* Default route for the main app */}
             <Route
@@ -48,18 +52,21 @@ function App() {
                 <>
               
                   <Navbar />
-     {/* <KidsForm />*/} 
+  {/*   <KidsForm />*/} 
+   
+                 {/*     <Purchase /> */} 
                   <Landing />
 
                   <About />
                  
                  {/*     <Parallax1 /> */} 
                   <Coaches />
-               
+          
                   <Programs />
                 
                  {/*     <Parallax3 />*/} 
                   <Schedule />
+
                 {/*     <Pricing /> */} 
               
                 

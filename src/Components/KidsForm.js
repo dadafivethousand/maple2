@@ -5,50 +5,43 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useAppContext } from "../AppContext";
 import pic from '../Media/img.png';
 
-export default function KidsForm() {
+export default function KidsForm({ kidsFormData, setKidsFormData }) {
   const { setShowKidForm } = useAppContext();
 
   // Initialize state from localStorage or use default
-  const getInitialKids = () => {
-    const storedKids = localStorage.getItem('kids');
-    return storedKids ? JSON.parse(storedKids) : [{ firstName: '', lastName: '', dob: '' }];
-  };
-
-  const [kids, setKids] = useState(getInitialKids);
-  const [parentEmail, setParentEmail] = useState(localStorage.getItem('parentEmail') || ''); // Parent's email
-
+ 
   // Save state to localStorage whenever it changes
-  useEffect(() => {
-    localStorage.setItem('kids', JSON.stringify(kids));
-    localStorage.setItem('parentEmail', parentEmail);
-  }, [kids, parentEmail]);
+ 
+ 
 
-  const handleInputChange = (index, field, value) => {
-    const updatedKids = [...kids];
+  const handleKidInputChange = (index, field, value) => {
+    const updatedKids = [...kidsFormData];
     updatedKids[index][field] = value;
-    setKids(updatedKids);
+    setKidsFormData( updatedKids );
+  };
+  const addKid = () => {
+    setKidsFormData(
+      [...kidsFormData, { firstName: '', lastName: '', dob: '' }]
+    );
   };
 
-  const addKid = () => {
-    setKids([...kids, { firstName: '', lastName: '', dob: '' }]);
-  };
 
   const removeKid = (index) => {
-    const updatedKids = kids.filter((_, i) => i !== index);
-    setKids(updatedKids);
+    const updatedKids = kidsFormData.filter((_, i) => i !== index);
+    setKidsFormData( updatedKids );
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Submitting data:', { parentEmail, kids });
+    console.log('Submitting data:', kidsFormData);
 
     try {
-      const response = await fetch('https://worker-server.maxli5004.workers.dev/new_kids_subscription', {
+      const response = await fetch('https://worker-consolidated.maxli5004.workers.dev/new_kids_subscription', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ parentEmail, kids }), // Send parentEmail and kids data
+        body: JSON.stringify(kidsFormData), // Send parentEmail and kids data
       });
   
       if (!response.ok) throw new Error('Failed to create session');
@@ -58,75 +51,60 @@ export default function KidsForm() {
     } catch (error) {
       console.error('Error submitting data:', error);
     }
-    setKids([{ firstName: '', lastName: '', dob: '' }]);
-    setParentEmail('');
-    localStorage.removeItem('kids');
-    localStorage.removeItem('parentEmail');
+    setKidsFormData({
+      firstName: '',
+      lastName: '',
+      parentEmail: '',
+      phone: '',
+      membershipCode: 'basic',
+      kids: [{ firstName: '', lastName: '', dob: '' }]
+    });
+    localStorage.removeItem('kidsFormData');
     setShowKidForm(false);
   };
 
   return (
-    <div className="kids-form-outer-container">
+  
       <div className="kids-form-container">
-        <div className="kids-form-close" onClick={() => setShowKidForm(false)}>
-          <FontAwesomeIcon icon={faTimes} />
-        </div>
-        <img className="pic" src={pic} alt="Icon" />
+        <h3>Kid's Info</h3>
 
-        <p>Please fill out the form for each child and provide your email</p>
-        <form onSubmit={handleSubmit}>
-          <div className="parent-email-container">
      
-            <input
-              type="email"
-              id="parentEmail"
-              className="kids-form-input"
-              placeholder="Parent's Email"
-              value={parentEmail}
-              onChange={(e) => setParentEmail(e.target.value)}
-              required
-            />
-          </div>
+        <form onSubmit={handleSubmit}>
+    
 
-          {kids.map((kid, index) => (
+          {kidsFormData.map((kid, index) => (
             <div key={index} className="kids-form">
-              <div>
-                <div>
+              <div className='input-container'>
+                <input
+                  type="text"
+                  className="kids-form-input"
+                  placeholder="Child's First Name"
+                  value={kid.firstName}
+                  onChange={(e) => handleKidInputChange(index, 'firstName', e.target.value)}
+                  required
+                />
+                <input
+                  type="text"
+                  className="kids-form-input"
+                  placeholder="Child's Last Name"
+                  value={kid.lastName}
+                  onChange={(e) => handleKidInputChange(index, 'lastName', e.target.value)}
+                  required
+                />
+                <div className="kids-form-dob">
+                  <p>Date of Birth:</p>
                   <input
-                    type="text"
+                    type="date"
                     className="kids-form-input"
-                    placeholder="Child's First Name"
-                    value={kid.firstName}
-                    onChange={(e) => handleInputChange(index, 'firstName', e.target.value)}
+                    value={kid.dob}
+                    onChange={(e) => handleKidInputChange(index, 'dob', e.target.value)}
                     required
                   />
-                </div>
-                <div>
-                  <input
-                    type="text"
-                    className="kids-form-input"
-                    placeholder="Child's Last Name"
-                    value={kid.lastName}
-                    onChange={(e) => handleInputChange(index, 'lastName', e.target.value)}
-                    required
-                  />
-                </div>
-                <div>
-                  <div className="kids-form-dob">
-                    <p>Date of Birth:</p>
-                    <input
-                      type="date"
-                      className="kids-form-input"
-                      value={kid.dob}
-                      onChange={(e) => handleInputChange(index, 'dob', e.target.value)}
-                      required
-                    />
-                  </div>
                 </div>
               </div>
               <button
                 type="button"
-                className="kids-form-remove-button"
+                id="kids-form-remove-button"
                 onClick={() => removeKid(index)}
               >
                 Remove
@@ -135,15 +113,12 @@ export default function KidsForm() {
           ))}
 
           <div className="kids-form-buttons">
-            <button type="button" className="kids-form-add-button" onClick={addKid}>
-              Add Child
+            <button type="button" id="kids-form-add-button" onClick={addKid}>
+             + Add Child
             </button>
-            <button type="submit" className="kids-form-submit-button">
-              Submit
-            </button>
+   
           </div>
         </form>
       </div>
-    </div>
   );
 }

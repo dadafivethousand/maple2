@@ -1,27 +1,19 @@
-.kids-form-outer-container {
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    z-index: 30;
-  }
-  
   .kids-form-container {
-    position: absolute;
-    border: 2px solid black;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 90vh;
-    width: 90vw;
+ 
+    margin-top:30px;
+ 
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     background-color: white;
     z-index: 40;
-    border-radius: 20px;
+ 
     overflow: scroll;
+  }
+
+  .kids-form-container h3 {
+    margin-bottom: 0px;
   }
   
   .kids-form-title {
@@ -34,7 +26,8 @@
     display: flex;
 justify-content: center;
 align-items: center;
-height: 150px
+height: 80px;
+ 
 }
 
 
@@ -43,14 +36,20 @@ height: 150px
   }
   
   .kids-form-input {
-    height: 40px;
-    width: 90%;
-    padding: 0 10px;
+ 
+ 
     border: 1px solid #ccc;
-    border-radius: 5px;
+ 
   }
   
-  .kids-form-add-button,
+  .input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:20px;
+ 
+  }
+
   .kids-form-submit-button {
     margin-top: 20px;
     background-color: black;
@@ -60,42 +59,45 @@ height: 150px
     padding: 10px 20px;
     font-size: 14px;
     cursor: pointer;
+
   }
-  
+
+  #kids-form-add-button
+  {
+    margin-top: 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    width: 95px;;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 12px;
+    cursor: pointer;
+  }
   .kids-form-add-button:hover,
   .kids-form-submit-button:hover {
     background-color: #333;
   }
   
-  .kids-form-remove-button {
+  #kids-form-remove-button {
     background-color: red;
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 5px 10px;
-height:30%;
+    width: 90px;;
     cursor: pointer;
- 
+    font-size: 12px;
   }
   
-.kids-form-buttons{
-    display: flex;
- justify-content: center;
-}
 
-.kids-form-buttons >*{
-    margin-right:10px
-}
 
-.kids-form-dob{
-    display: flex;
-    font-size: 12px;
-    align-items: center;
+
+
  
-}
 
-.kids-form-dob input{
-   width: 58%
+.kids-form-dob {
+   display: flex;
+ 
 }
  
 .parent-email-container{
@@ -105,9 +107,9 @@ margin-top:30px
 
 
 .kids-form-dob p{
-    width: 30%;
-    font-size: 12px;
-    margin-right:5px;
+margin-bottom: 0;
+    font-size: 11px;
+ 
  }
 
  .kids-form-input[type="date"] {
@@ -123,9 +125,7 @@ margin-top:30px
   }
   
   .kids-form-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+   
     font-size: 30px;
     cursor: pointer;
   }

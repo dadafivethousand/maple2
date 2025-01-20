@@ -3,8 +3,8 @@ import Ribbon from './Ribbon';
 import BottomRibbon from './BottomRibbon'
 import { useAppContext } from "../AppContext";
  
-export default function Membership({ free, stripe, type, price, description, billed, cancel, promo, paymentLink, kids }) {
-  const { showForm, setShowForm, setShowKidForm} = useAppContext();      
+export default function Membership({ free, stripe, adult, type, price, description, billed, cancel, promo, paymentLink, kids }) {
+  const { showForm, setShowForm, setShowKidForm, setShowPurchase} = useAppContext();      
   const formatCurrency = (amount) => {
         return new Intl.NumberFormat('en-US', {
           style: 'currency',
@@ -49,6 +49,12 @@ export default function Membership({ free, stripe, type, price, description, bil
                     e.preventDefault(); // Prevent navigation if kids is true
                     setShowKidForm(true);
                   }
+                  else if (stripe && adult) {
+                    e.preventDefault(); // Prevent navigation if kids is true
+                    setShowPurchase(true);
+                  }
+       
+                
                 }}
                 className="PurchaseButton"
               >

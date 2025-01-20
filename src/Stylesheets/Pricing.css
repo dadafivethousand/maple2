@@ -2,7 +2,6 @@
 
 .PricingContainer {
     padding-top: 50px;
-
 }
 
 .PricingContainer h1 {
@@ -65,8 +64,10 @@
 }
 
 .PricingButtonContainer {
-    width: 90vw;
+    width: 300px;
     margin: 40px auto;
+     min-height: fit-content
+ 
 }
 
 .PricingButtonContainer button {
@@ -113,12 +114,66 @@
 }
 
 
+ 
+#purchase-button{
+    margin: 0;
+    width:80px;
+    font-size: 18px;
+    font-family: roboto condensed;
+    background-color: rgba(24, 97, 24, 0.871);
+    line-height: .9
+}
 
+.name-and-price{
+    line-height: 1.3
+}
+
+.pricing-flex p{
+    width: 150px;
+}
+
+.hst{
+    font-size: 12px;
+}
+
+
+.name-of-class{
+    font-size: 17px;
+}
+ 
+.pricing-flex{
+    display: flex;
+    justify-content: center;
+    width:100%;
+    margin: 20px auto;   
+ 
+    height: 50px; /* Define an initial height */
+}
  
 
+.big{
+    background-color: rgb(255, 255, 255);
+height: 250px ;
+transform: scale(1.2);
+border:1px solid black;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+border-radius: 10px;
+ position: fixed;
+ left:0;
+margin: 0 auto;
+bottom:0;
+width: 100vw;
+height:90vh;
+z-index: 50;
 
+}
+.big p{
+width: fit-content;
  
- 
+}
+  
 
 @media (min-width: 800px) {
 
