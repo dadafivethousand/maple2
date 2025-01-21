@@ -122,8 +122,9 @@ export default function Schedule() {
             </div>
           </div>
         ))}
+        {/*
         < KidsScheduleWidget />
-  
+          */}
       </div>
 
   
