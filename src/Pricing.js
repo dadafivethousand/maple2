@@ -161,7 +161,7 @@ export default function Pricing() {
     }, []); // Empty dependency array ensures this runs once on mount
 
     return (
-        <div id="pricing" className='PricingContainer'>
+        <div id="Pricing" className='PricingContainer'>
              
       
 
