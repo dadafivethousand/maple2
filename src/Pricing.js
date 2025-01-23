@@ -9,6 +9,7 @@ import { useState, useEffect, useRef } from 'react';
 import SetmoreBookingPage from './Components/SetmoreWidget';
 import { useAppContext } from './AppContext';
 import { useNavigate } from 'react-router-dom';
+import logo from './Media/logo-image.png'
 
 import KidsForm from './Components/KidsForm';
 import Leadform from './LeadForm'
@@ -180,9 +181,11 @@ export default function Pricing() {
                         <div>
                             { option.promo ? <TopRibbon topText={'PROMOTIONAL OFFER'} />: null}
                         <div key={optionIndex} className={`pricing-flex ${purchasing===optionIndex && purchasingHigherIndex===index ? 'big':'' } ${option.promo ? 'promotion': ''}`}>
+                                         
                                           {purchasing===optionIndex && purchasingHigherIndex===index ? <Purchase formatCurrency={formatCurrency} option={option} cancelPurchase={cancelPurchase} />:
                                           <>
-                            <div className='name-and-price'>
+                             <div className='name-and-price'>
+                        
                             <p className='name-of-class'>{option.description}</p>
                             <p className='price'>{formatCurrency(option.price)} <span className='hst'>+ HST</span></p>
                            {option.cash ? <p className='cash-disclaimer'>  Cash Payments Accepted </p> : null}

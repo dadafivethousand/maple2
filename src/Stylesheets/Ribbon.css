@@ -15,7 +15,7 @@
     justify-content: center;
     text-align: center;
     height:25px;
-    width: 300px;
+    width: 260px;
     border-left: 1px solid rgba(0, 0, 0, 0.701); 
     border-right: 1px solid rgba(0, 0, 0, 0.701); 
     border-top: 1px solid rgba(0, 0, 0, 0.701); 
@@ -41,7 +41,7 @@
     text-align: center;
     z-index: -10;
     height:25px;
-    width: 300px;
+    width: 260px;
     margin: 0 auto;
 
 }
