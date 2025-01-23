@@ -60,8 +60,7 @@ max-height: 15px;
   
  .schedule-widget h4{
     text-align: center;
- padding-bottom:10px;
- padding-top:10px;
+padding:10px;
     font-weight:400;
     background-color: rgba(255, 0, 0, 0.205);
  }

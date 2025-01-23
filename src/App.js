@@ -66,9 +66,9 @@ function App() {
                 
                  {/*     <Parallax3 />*/} 
                   <Schedule />
-  {/* 
+  
              <Pricing />
-              */} 
+           
                 
                  {/*     <Parallax />*/} 
                   <Contact />

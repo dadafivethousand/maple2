@@ -19,6 +19,7 @@ import Belt from './Components/Belt';
 import GetStarted from './Components/GetStarted';
 import Purchase from './Components/Purchase';
 import TopRibbon from './Components/Ribbon';
+import BottomRibbon from './Components/BottomRibbon';
  
 
 const formatCurrency = (amount) => {
@@ -176,22 +177,37 @@ export default function Pricing() {
                 return (
                
                     displayArray.includes(index) && ( // Check if the index is in displayArray
-                        <div key={optionIndex} className={`pricing-flex ${purchasing===optionIndex && purchasingHigherIndex===index ? 'big': ''}`}>
+                        <div>
+                            { option.promo ? <TopRibbon topText={'PROMOTIONAL OFFER'} />: null}
+                        <div key={optionIndex} className={`pricing-flex ${purchasing===optionIndex && purchasingHigherIndex===index ? 'big':'' } ${option.promo ? 'promotion': ''}`}>
                                           {purchasing===optionIndex && purchasingHigherIndex===index ? <Purchase formatCurrency={formatCurrency} option={option} cancelPurchase={cancelPurchase} />:
                                           <>
-                            <div className={`name-and-price ${purchasing===optionIndex && purchasingHigherIndex===index ? 'flex': ''}`}>
+                            <div className='name-and-price'>
                             <p className='name-of-class'>{option.description}</p>
-                            <p>{formatCurrency(option.price)} <span className='hst'>+ HST</span></p>
+                            <p className='price'>{formatCurrency(option.price)} <span className='hst'>+ HST</span></p>
+                           {option.cash ? <p className='cash-disclaimer'>  Cash Payments Accepted </p> : null}
+                           {option.cancel ? <p className='cancel-disclaimer'>  Cancel Any Time </p> : null}
+
                             </div>
               
-                            <button onClick={() => handlePurchasing(index, optionIndex)} id='purchase-button'>Get Started</button>
-                            </>
+                            {option.paymentLink ? (
+                    <a href={option.paymentLink} id="purchase-button" target="_blank" rel="noopener noreferrer">
+                        Get Started
+                    </a>
+                ) : (
+                    <button onClick={() => handlePurchasing(index, optionIndex)} id='purchase-button'>
+                        Get Started
+                    </button>
+                )}                            </>
                         }
                        </div>
-                      
+                       { option.promo ? <BottomRibbon topText={'10 SPOTS REMAINING'} />: null}
+
+                       </div>
                     )
                 );
             })}
+
         </div>
     );
 })}

@@ -64,7 +64,7 @@
 }
 
 .PricingButtonContainer {
-    width: 300px;
+    width: 100vw;
     margin: 40px auto;
      min-height: fit-content
  
@@ -118,14 +118,24 @@
 #purchase-button{
     margin: 0;
     width:80px;
+    height: 40px;
     font-size: 18px;
     font-family: roboto condensed;
     background-color: rgba(24, 97, 24, 0.871);
-    line-height: .9
+    line-height: .9;
+     color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px black;
+    text-align: center;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .name-and-price{
-    line-height: 1.3
+    line-height: 1.3;
 }
 
 .pricing-flex p{
@@ -138,18 +148,44 @@
 
 
 .name-of-class{
-    font-size: 17px;
+    font-size: 16px;
 }
  
+.price {
+    font-size: 13px;
+}
 .pricing-flex{
+    position: relative;
     display: flex;
     justify-content: center;
-    width:100%;
-    margin: 20px auto;   
- 
+    width:300px;
+    margin: 10px auto;   
+    align-items: center;
     height: 50px; /* Define an initial height */
+    background-color:  rgb(243, 239, 227);
+    padding:40px 0;
+    border-radius: 10px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+ }
+
+.promotion{
+    background-color: rgb(255, 217, 0, 0.334);
+    margin:0 auto;
+    border-left: 1px solid rgba(0, 0, 0, 0.701);
+    border-right: 1px solid rgba(0, 0, 0, 0.701); 
+    border-radius: 0px;
+    border-top: 0;
+    border-bottom: 0; 
+
+
+
 }
- 
+.hide{
+    background-color: blue;
+}
 
 .big{
     background-color: rgb(255, 255, 255);
@@ -173,17 +209,22 @@ z-index: 50;
 width: fit-content;
  
 }
-  
+
+.cash-disclaimer{
+    font-size: 10px;
+    font-style: italic;
+}
+.cancel-disclaimer{
+    font-size: 13px;
+    font-style: italic;
+}
+
 
 @media (min-width: 800px) {
 
-    .PricingButtonContainer {
-        width: 70vw;
-        margin: 40px auto;
-    }
+  
 
-   
-    
+     
     .Description {
         width: 100%;
     };
