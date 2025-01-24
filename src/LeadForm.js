@@ -99,7 +99,7 @@ export default function LeadForm( {closebutton} ) {
           
           <>
             <p id='message-title' className="message-title">Thank You!</p>
-<p className="message-body top"> Kindly complete the  <a href='https://waiver.smartwaiver.com/w/dj188118umjqr7iwcr7jfq/web/'>waiver</a>. <br></br> Once finished, you can attend any classes listed on our schedule. </p>
+<p className="message-body top"> Kindly complete the  <a href='https://waiver.smartwaiver.com/w/dj188118umjqr7iwcr7jfq/web/'>waiver</a>. You can then attend any classes listed on our schedule. </p>
  
     <p className="message-body center"> See you on the mats! </p> 
 
