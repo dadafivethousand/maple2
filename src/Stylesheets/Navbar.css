@@ -2,7 +2,7 @@
 .navbar-outer-container{
   position:fixed;
   top:0;
-  width:98vw;
+  width:100vw;
   background-color:  rgb(243, 239, 227);
   z-index:20;
 }
