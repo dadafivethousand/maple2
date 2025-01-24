@@ -80,7 +80,7 @@ export default function LeadForm( {closebutton} ) {
     if (!isValid) return; // Prevent submission if form is not valid
     console.log('sending request to worker')
     try {
-      const response = await fetch('https://worker-intake-form.maxli5004.workers.dev/add-lead', {
+      const response = await fetch('https://worker-consolidated.maxli5004.workers.dev/intake-form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
