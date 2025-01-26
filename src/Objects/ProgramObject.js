@@ -3,7 +3,7 @@ import gi from '../Media/comp.webp'
 import nogi from '../Media/nogi.jpg'
 import kids from '../Media/children.webp'
 import mma from '../Media/mma.webp'
-import muaythai from '../Media/mt.webp'
+import muaythai from '../Media/mt.png'
 import taj from '../Media/Taj.jpg'
 import littlekids from '../Media/littlekids.jpg'
 
