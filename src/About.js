@@ -7,7 +7,7 @@ import logoImg from './Media/logos.jpg'
 
 export default function About() {
     const items = [
-        { icon: "fas fa-map-marker-alt", text: "#1 MMA, Muay Thai & BJJ in Maple" },
+        { icon: "fas fa-map-marker-alt", text: "#1 MMA, Muay Thai & BJJ Academy in Maple" },
         { icon: "fas fa-shield-alt", text: "Safe and healthy training atmosphere" },
         { icon: "fas fa-book-open", text: "Structured & comprehensive curriculum" },
         { icon: "fas fa-trophy", text: "Top level professional instruction" }
