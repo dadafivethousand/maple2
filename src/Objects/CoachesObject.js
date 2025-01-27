@@ -30,7 +30,7 @@ const CoachesList =
 {
   name: "Artur",
 
-  description: "With over 30 years of wrestling experience, Artur is a decorated competitor from Dagestan. A former regional and freestyle wrestling champion of Southern Russia, he holds the prestigious title of Freestyle Wrestling Master of Sport. Artur also has an extensive MMA background and has trained with some of the most elite fighters of the sport including Alexander Volkov and Zabit Magomedsharipov.",
+  description: "With over 30 years of wrestling experience, Artur is a decorated competitor from Dagestan. A former regional chamption in Dagestan and champion of Southern Russia, he holds the prestigious title of Master of Sport in Freestyle Wrestling. Artur also has an extensive MMA background and has trained with some of the most elite fighters of the sport including Alexander Volkov and Zabit Magomedsharipov.",
  
   accomplishments:["30+ Years of Wrestling", "Dagestan Regional Wrestling Champion", "Freestyle Wrestling Champion of Southern Russia", "Freestyle Wrestling Master of Sport (Russia)", "Trained with the likes of Alexander Volkov and Zabit Magomedsharipov" , "Winner of the Ivan Yarygin Wrestling Tournament" ],
   image:Arthur,
