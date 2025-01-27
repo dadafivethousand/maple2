@@ -9,7 +9,7 @@ export default function Coaches() {
             
        <div className="coaches-intro">
        <h1 > Coaches </h1>
-       <p>Our team of coaches is led by one of Canada's top black belts, and is committed to providing top-level instruction in a safe, inclusive, and professional environment. </p>
+       <p>  At Maple BJJ, our coaches bring years of experience in both grappling and striking, ensuring top-tier instruction for all skill levels. With backgrounds in Brazilian Jiu-Jitsu, wrestling, Muay Thai, and MMA, they’ve competed at the highest levels and are dedicated to helping you reach your goals—whether it’s self-defense, competition, or just getting in great shape. Train with the best and take your skills to the next level!  </p>
        </div>
        <div className="coaches">
             {

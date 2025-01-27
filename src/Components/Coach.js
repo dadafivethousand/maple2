@@ -12,20 +12,8 @@ export default function Coach({ coach }){
  
     return(
         <div   className="coach-container animate">
-<div className={`image-overlay ${coach.name === "Arthur" ? 'left' : ''}`}>
-   
-          <div className='half'>
-             
-          <div>
-             {coach.accomplishments.map((acc, index)=>{
-                    return(
-                        <p className='accomplishment' key={index}>{acc}</p>
-                    )
-                })} </div>
-                </div>
-       
-            </div>
-            <div className={`coach-photo ${coach.name === "Arthur" ? 'artur' : ''}`}>
+            <div>
+            <div className='coach-photo'>
                 <img alt='Brazillian Jiu-Jitsu Instructor' src={coach.image} />
             </div>
             <div>
@@ -39,9 +27,10 @@ export default function Coach({ coach }){
          
             </div>
             </div>
-
-            <div className='coach-belt'>
-                <Belt belt={coach.belt} />
+            </div>
+            <div className='coach-description'>
+               {coach.description}
+                
             </div>
 
         </div>

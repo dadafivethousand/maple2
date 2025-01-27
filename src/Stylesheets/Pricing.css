@@ -121,12 +121,12 @@
     height: 40px;
     font-size: 18px;
     font-family: roboto condensed;
-    background-color: rgba(24, 97, 24, 0.871);
+    background-color: black;
     line-height: .9;
      color: white;
     border: 1px solid white;
     border-radius: 5px;
-    box-shadow: 5px 5px 5px black;
+    box-shadow: 2px 2px 3px black;
     text-align: center;
     font-size: 1.2em;
     display: flex;
