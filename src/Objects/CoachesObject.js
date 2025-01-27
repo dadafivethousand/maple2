@@ -22,7 +22,7 @@ const CoachesList =
 {
   name: "A J",
  
- description: "With over 30 years of wrestling expertise, A J is a Greco-Roman Wrestling Master of Sport from Ukraine. A Donetsk Regional Champion and Cadets Competition Winner, he has also served as the Head Coach of Thailand’s National Wrestling Team. Aj also has Muay Thai and MMA experience having trained extensively at AKA Thailand",
+ description: "With over 30 years of wrestling expertise, A J is a Greco-Roman Wrestling Master of Sport from Ukraine. A Donetsk Regional Champion and Cadets Competition Winner, he has also served as the Head Coach of Thailand’s National Wrestling Team. Aj also has Muay Thai and MMA experience having trained extensively at AKA Thailand.",
   accomplishments:["30+ Years of Wrestling",  "Donetsk Regional Champion", "Greco-Roman Wrestling Master of Sport (Ukraine)", " Head Coach of Thailand's National Wrestling Team" ,"Cadets Competition Winner", "United World Wrestling Certified Coach"],
   image:Vijay,
   link: 'https://www.instagram.com/aj_coach_wrestling/'
