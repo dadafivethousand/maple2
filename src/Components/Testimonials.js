@@ -17,13 +17,14 @@ export default function Testimonials() {
     const [isVisible, setIsVisible] = useState(false);
 
     const reviews = [
+        { text: "Good vibes and friendly atmosphere.", author: "Sukh Brar"},
+
         { text: "Highly recommend this gym. Great teachers, safe environment and great location.", author: "Jessica Chab" },
         { text: "Best place for Brazilian Jiu Jitsu in Maple", author: "Taj Gordon"},
         { text: "Top instruction from one of the best competitive BJJ athletes in Canada.", author: "Robert Rende"},
         { text: "Best place for training, Very friendly and highly professional. I recommend", author: "Iryna Kap" },
         { text: "Amazing coaches and environment. Highly recommend!", author: "Amr Ghoneim" },
         { text: "Great place, very experienced and knowledgble staff, friendly + respectful", author: "Florian P" },
-        { text: "Good vibes and friendly atmosphere.", author: "Sukh Brar"},
         // ... more reviews
     ];
    
