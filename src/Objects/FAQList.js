@@ -1,50 +1,59 @@
 const faqList = [
   {
     question: "Why Maple BJJ?",
-    answer: "At Maple BJJ, you'll train under one of Canada's top-ranked Brazilian Jiu-Jitsu (BJJ) black belts. Our head instructor is a Canadian National Champion, a multi-time IBJJF Open Champion, and a multi-time Ontario Open Champion. Whether you're new to martial arts or looking to compete at a high level, Maple BJJ offers world-class instruction in a supportive and welcoming environment. We emphasize technique, discipline, and community to help you achieve your goals in Brazilian Jiu-Jitsu."
+    answer: "At Maple BJJ, you will train under top-level coaches in Brazilian Jiu-Jitsu (BJJ), Wrestling, Muay Thai, and Mixed Martial Arts (MMA). Our head instructor is a Canadian National Champion and a multi-time IBJJF Open Champion. We offer elite instruction in a structured and welcoming environment for beginners, competitors, and professional fighters."
   },
- 
-  {
-    question: "What is Brazilian Jiu-Jitsu (BJJ) and why should choose it over other martial arts",
-    answer: "Brazilian Jiu-Jitsu (BJJ) is a grappling-based martial art focused on ground fighting, submissions, and controlling opponents through leverage and technique. Its superiority over other martial arts like was proven in the first ever UFC event in 1993, where Royce Gracie, a BJJ practitioner, dominated opponents from various disciplines including Boxing and Karate . BJJ continues to be a mandatory discipline at the highest level of MMA, solidifying its position as one of the most, if not the most effective martial art for real combat." 
-     },
-     {
-      question: "What are the physical benefits of training Brazilian Jiu-Jitsu (BJJ)?",
-      answer: "Brazilian Jiu-Jitsu (BJJ) provides a full-body workout, improving your strength, flexibility, and cardiovascular fitness. It’s a highly effective way to burn calories, build core muscles, and enhance overall endurance. Unlike traditional gym workouts, BJJ keeps you engaged mentally while physically challenging your body, making it a fun and sustainable fitness routine."
-    },
   
-    {
-      question: "Can women train Brazilian Jiu-Jitsu (BJJ) at Maple BJJ?",
-      answer: "Absolutely! Brazilian Jiu-Jitsu (BJJ) is highly recommended for women, especially for self-defense purposes. BJJ focuses on leverage and technique, enabling practitioners to defend themselves effectively against larger or stronger opponents. Many women train at Maple BJJ in a safe, supportive environment where they build confidence, improve fitness, and learn valuable self-defense skills. Our experienced instructors ensure that all students, regardless of gender, feel comfortable and empowered on the mats."    },
-
-    {
-      question: "How often should I train as a beginner?",
-      answer: "As a beginner, we recommend training 2–3 times per week to build a strong foundation in Brazilian Jiu-Jitsu (BJJ). This allows your body to adapt to the physical demands while giving you time to recover between sessions. As you progress, you can increase your training frequency to match your goals and fitness level."
-    },
+  {
+    question: "What disciplines are taught at Maple BJJ?",
+    answer: "Maple BJJ specializes in Brazilian Jiu-Jitsu (BJJ) but also offers Wrestling (Greco-Roman & Freestyle), Muay Thai, and MMA. Whether you want to master grappling, striking, or complete MMA skills, we provide structured programs for all levels."
+  },
 
   {
-    question: "Do you offer Muay Thai & Mixed Martial Arts (MMA)?",
-    answer: "Yes, we proudly offer both Muay Thai and Mixed Martial Arts (MMA) programs! Our Muay Thai program focuses on developing powerful striking techniques using punches, kicks, elbows, and knees, while improving fitness, coordination, and self-defense skills. Our MMA program integrates techniques from Muay Thai, Brazilian Jiu-Jitsu, wrestling, and boxing to provide a well-rounded martial arts experience. Whether you’re looking to improve your striking, grappling, or overall skills, our programs are designed for all levels. Join us today to elevate your training!"
+    question: "How does Brazilian Jiu-Jitsu (BJJ) compare to other martial arts?",
+    answer: "Brazilian Jiu-Jitsu (BJJ) is a grappling-based martial art focusing on submissions, positional control, and leverage. It was proven highly effective in the first UFC event in 1993 when Royce Gracie dominated opponents from various disciplines, including Boxing and Karate. Today, BJJ remains a fundamental skill in MMA and self-defense."
   },
+
+  {
+    question: "What kind of Wrestling is taught at Maple BJJ?",
+    answer: "We offer high-level Wrestling classes in both Greco-Roman and Freestyle Wrestling. Greco-Roman emphasizes upper-body control and throws, while Freestyle Wrestling incorporates leg attacks and takedowns, making it an essential skill for MMA and grappling."
+  },
+
+  {
+    question: "What are the benefits of training Muay Thai?",
+    answer: "Muay Thai is the art of eight limbs, incorporating punches, kicks, elbows, and knees. Training Muay Thai improves striking technique, conditioning, reaction time, and overall combat ability. It is one of the most effective striking styles and a key component of MMA."
+  },
+
+  {
+    question: "Can women train at Maple BJJ?",
+    answer: "Yes, Maple BJJ is open to everyone. Women benefit from training in BJJ, Wrestling, Muay Thai, and MMA for self-defense, fitness, and competition. We maintain a respectful training environment where all students, regardless of gender, feel comfortable learning high-level techniques."
+  },
+
+  {
+    question: "How often should I train as a beginner?",
+    answer: "We recommend training 2 to 3 times per week to build a strong foundation while allowing your body to recover. As you progress, you can increase training frequency based on your goals."
+  },
+
   {
     question: "Do I need experience to start?",
-    answer: "No, you don’t need any prior experience to start training at Maple BJJ. Our classes are designed for all skill levels, from beginners to advanced practitioners. Whether you're stepping onto the mats for the first time or looking to sharpen your techniques, our experienced instructors will guide you every step of the way."
-  },
-  {
-    question: "Is it safe to train at Maple BJJ?",
-    answer: "Yes, safety is our top priority at Maple BJJ. We maintain a supportive environment where training is conducted under the guidance of experienced instructors. From warm-ups to sparring, we focus on minimizing the risk of injury while ensuring everyone can enjoy the benefits of Brazilian Jiu-Jitsu."
-  },
-  {
-    question: "I do not have a Gi but want to do the Gi class. What are my options?",
-    answer: "No worries! If you don’t have a Gi, we’ve got you covered. We provide Gi rentals free of charge, so you can join our Gi classes without any hassle. Just show up ready to train!"
-  },
- 
-  {
-    question: "Do you offer a free trial?",
-    answer: "Yes, we offer a free one-week trial for newcomers who want to experience Brazilian Jiu-Jitsu (BJJ) at Maple BJJ. This trial gives you access to our beginner-friendly classes, allowing you to explore the benefits of training and see if BJJ is right for you.",
-    link: { text: "Click here to get started", url: "https://waiver.smartwaiver.com/v/maple" }
+    answer: "No experience is necessary. Our classes are structured to help beginners learn at their own pace, whether they choose BJJ, Wrestling, Muay Thai, or MMA."
   },
 
+  {
+    question: "Is training at Maple BJJ safe?",
+    answer: "Yes, safety is a priority at Maple BJJ. Our experienced instructors ensure that all training is conducted with proper technique, control, and injury prevention measures."
+  },
+
+  {
+    question: "I do not have a Gi but want to do the Gi class. What are my options?",
+    answer: "We provide Gi rentals free of charge, allowing you to train in our Gi BJJ classes without needing to buy one immediately."
+  },
+
+  {
+    question: "Do you offer a free trial?",
+    answer: "Yes, we offer a free one-week trial for new students. This trial includes access to BJJ, Wrestling, Muay Thai, and MMA classes, allowing you to experience our programs firsthand.",
+    link: { text: "Click here to get started", url: "https://waiver.smartwaiver.com/v/maple" }
+  }
 ];
 
 export default faqList;
