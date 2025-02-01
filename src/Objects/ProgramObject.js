@@ -6,13 +6,15 @@ import mma from '../Media/mma.webp'
 import muaythai from '../Media/mt.png'
 import taj from '../Media/Taj.jpg'
 import littlekids from '../Media/littlekids.jpg'
+import mijain from '../Media/449841326_854080600078830_4396801610981333942_n.jpg'
 
 import wrestling from '../Media/wrestling.jpeg'
 const Programs = [
     {image: gi,  name:'Gi Jiu-Jitsu', description: 'Training in the gi emphasizes grips, leverage, and technical precision, offering students a deep understanding of BJJ fundamentals. Whether you are a beginner or advanced practitioner, our Gi classes will help you sharpen your skills, improve fitness, and develop a strong sense of discipline. '},
     {image: nogi,name:'No-Gi Jiu-Jitsu', description: 'Our No-Gi Brazilian Jiu-Jitsu program focuses on grappling techniques without the traditional gi, emphasizing speed, agility, and positional control. This program is perfect for those who want to improve their grappling skills in a faster-paced environment.' },
     {image: mma,name:'Mixed Martial Arts (MMA)', description: 'Our Mixed Martial Arts (MMA) program combines the best techniques from various disciplines, including striking, grappling, and ground control. With a focus on integrating techniques from Brazilian Jiu-Jitsu, Muay Thai, wrestling, and boxing, you will develop the skills needed to be a well-rounded martial artist. '},
-    
+    {image: mijain,name:'Wrestling', description: 'Wrestling classes provide a dynamic environment to master the art of takedowns and control. Whether you are learning fundamental techniques, improving your transitions, or perfecting your mat skills, these sessions are designed to build strength, endurance, and technical precision.' },
+
     {image: wrestling,name:'Wrestling', description: 'Wrestling classes provide a dynamic environment to master the art of takedowns and control. Whether you are learning fundamental techniques, improving your transitions, or perfecting your mat skills, these sessions are designed to build strength, endurance, and technical precision.' },
     {image: muaythai, name:'Muay Thai', description: 'Our Muay Thai program focuses on developing powerful striking techniques using punches, kicks, elbows, and knees. This dynamic training improves fitness, coordination, and self-defense skills while emphasizing discipline and mental toughness. Suitable for beginners and advanced practitioners.'},
     {image: taj, name:'Private Training', description: 'Private training offers personalized coaching tailored to your specific goals, whether improving technique, enhancing fitness, or preparing for competition.', link: 'https://maplejiujitsu.setmore.com/services/ce9112be-2765-4a91-a8c7-d8d923ac6c5a' },
