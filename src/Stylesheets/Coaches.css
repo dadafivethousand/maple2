@@ -100,6 +100,13 @@
    
 }
 
+.lineage{
+    margin-top:50px;
+    font-size: 15px;
+    text-align: center;
+    font-family: roboto consensed;
+}
+
 .artur img{
     border-top-left-radius:10%;
 }

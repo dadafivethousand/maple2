@@ -2,9 +2,9 @@ import '../Stylesheets/Belt.css';
 
 const BlackBelt = () => (
     <div className='Belt'>
-        {[...Array(7)].map((_, i) => <div key={i} className='black'></div>)}
-        {[...Array(2)].map((_, i) => <div key={i + 5} className='red'></div>)}
-        {[...Array(2)].map((_, i) => <div key={i + 7} className='black'></div>)}
+        {[...Array(12)].map((_, i) => <div key={i} className='black'></div>)}
+        {[...Array(4)].map((_, i) => <div key={i + 5} className='red'></div>)}
+        {[...Array(4)].map((_, i) => <div key={i + 7} className='black'></div>)}
     </div>
 );
 
