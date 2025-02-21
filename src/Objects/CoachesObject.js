@@ -42,7 +42,7 @@ const CoachesList =
 {
   name: "Tigran",
 
-  description: "Judo black belt with a highly decorated competitive background including a National Championship and a gold medal at the 2023 Canada Games, Panamerican and European Cups annd 2024 World Championship Qualifier. With experience at the highest levels of competition, Tigran brings elite-level skill, technical expertise, and a deep understanding of the sport to his coaching.",
+  description: "Judo black belt with a highly decorated competitive background including a National Championship and a gold medal at the 2023 Canada Games, Panamerican and European Cups and 2024 World Championship Qualifier. With experience at the highest levels of competition, Tigran brings elite-level skill, technical expertise, and a deep understanding of the sport to his coaching.",
  
   accomplishments:["30+ Years of Wrestling", "Dagestan Regional Wrestling Champion", "Freestyle Wrestling Champion of Southern Russia", "Freestyle Wrestling Master of Sport (Russia)", "Trained with the likes of Alexander Volkov and Zabit Magomedsharipov" , "Winner of the Ivan Yarygin Wrestling Tournament" ],
   image:Tigran,
