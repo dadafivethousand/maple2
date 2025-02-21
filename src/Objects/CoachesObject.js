@@ -46,6 +46,7 @@ const CoachesList =
  
   accomplishments:["30+ Years of Wrestling", "Dagestan Regional Wrestling Champion", "Freestyle Wrestling Champion of Southern Russia", "Freestyle Wrestling Master of Sport (Russia)", "Trained with the likes of Alexander Volkov and Zabit Magomedsharipov" , "Winner of the Ivan Yarygin Wrestling Tournament" ],
   image:Tigran,
+    link: 'https://www.instagram.com/cctviv/'
  },
 
   {name: "Arthur",
