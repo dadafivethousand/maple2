@@ -20,11 +20,13 @@ export default function Coach({ coach }){
             <div>
                 <div className='name-and-ig'>
                 <p className='coach-nm'> {coach.name}</p> 
+            {    coach.link?
             <a 
              href={coach.link}
             target="_blank"
                 rel="noopener noreferrer"
-             aria-label="Visit Instagram">   <FontAwesomeIcon className='ig-icon' icon={faInstagram} /> </a>
+             aria-label="Visit Instagram">   <FontAwesomeIcon className='ig-icon' icon={faInstagram} /> 
+             </a> : null}
          
             </div>
             </div>
@@ -32,12 +34,13 @@ export default function Coach({ coach }){
             <div className='coach-description'>
                {coach.description}
 
+{/* 
                {coach.headinstructor? 
                <div className="lineage">
                <p> <span className='bold'>BJJ Lineage </span> <br></br> Helio Gracie ➡ Royler Gracie ➡ Saulo Ribeiro/Vini Aieta ➡ Jorge Britto ➡ Max Li </p>
                 <Belt belt="Black Belt"/> 
                 </div>
-                : null}
+                : null} */}
                 
             </div>
 

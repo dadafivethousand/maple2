@@ -5,6 +5,7 @@ import Rob from '../Media/rob.png'
 import Vitaly from '../Media/Vitaly.png'
 import Vijay from '../Media/aj.jpg'
 import Arthur from '../Media/ar.jpg'
+import Tigran from '../Media/tigran.png'
 const CoachesList = 
 [
 
@@ -37,6 +38,15 @@ const CoachesList =
   link: 'https://www.instagram.com/ar_knv/'
 },
 
+
+{
+  name: "Tigran",
+
+  description: "Tigran is a judo black belt with a highly decorated competitive background. A National Championships winner and gold medalist at the 2023 Canada Games, he has also claimed titles at the Panamerican and European Cups as well as the Qualifier to the 2024 World Championships. With experience at the highest levels of competition, he brings elite-level skill, technical expertise, and a deep understanding of the sport to his coaching.",
+ 
+  accomplishments:["30+ Years of Wrestling", "Dagestan Regional Wrestling Champion", "Freestyle Wrestling Champion of Southern Russia", "Freestyle Wrestling Master of Sport (Russia)", "Trained with the likes of Alexander Volkov and Zabit Magomedsharipov" , "Winner of the Ivan Yarygin Wrestling Tournament" ],
+  image:Tigran,
+ },
 
   {name: "Arthur",
     belt:"Blue Belt",
