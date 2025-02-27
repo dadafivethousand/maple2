@@ -12,7 +12,7 @@ const CoachesList =
 {
     name: "Мах",
  
-    headinstructor: 1,
+    headInstructor: true,
     description: "A black belt under Jorge Britto, Мах brings nearly 15 years of Brazilian Jiu-Jitsu experience. He is a multiple-time IBJJF Open Champion, a Canadian National Champion, and an Ontario Open Gold Medalist. With a background in Muay Thai and MMA, he has 10 amateur Muay Thai fights, 5 amateur MMA fights, an amateur MMA Championship and a 1-0 professional MMA record.",
     accomplishments:["Canadian National Champion", "Multiple Time IBJJF Open Champion", "IBJJF American Nationals Bronze Medalist", "Ontario Open Gold Medalist", "Amateur MMA Champion", "1-0 Pro MMA Record"],
     image:MaxImage,
@@ -26,7 +26,9 @@ const CoachesList =
  description: "With over 30 years of wrestling expertise, AJ is a Greco-Roman Wrestling Master of Sport from Ukraine. A Donetsk Regional Champion and Cadets Competition Winner, he has also served as the Head Coach of Thailand’s National Wrestling Team. AJ also has Muay Thai and MMA experience having trained extensively at AKA Thailand.",
   accomplishments:["30+ Years of Wrestling",  "Donetsk Regional Champion", "Greco-Roman Wrestling Master of Sport (Ukraine)", " Head Coach of Thailand's National Wrestling Team" ,"Cadets Competition Winner", "United World Wrestling Certified Coach"],
   image:Vijay,
-  link: 'https://www.instagram.com/aj_coach_wrestling/'
+  link: 'https://www.instagram.com/aj_coach_wrestling/',
+  setmoreLink: 'https://maplejiujitsu.setmore.com/aj'
+
 },
 {
   name: "Artur",
