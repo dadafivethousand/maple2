@@ -44,12 +44,13 @@ export default function Navbar() {
              <GetStarted />
              </div>
             <ul className="navbar-options">
+            <a  href='#Schedule'>  <li onClick={()=>setClick(false)}>Schedule</li></a>
+
               <a href='#About'>  <li onClick={()=>setClick(false)}>About Us</li></a>
                      
               <a href='#Coaches'>  <li onClick={()=>setClick(false)}>Coaches</li></a>
               <a href='#programs'>  <li onClick={()=>setClick(false)}>Programs</li></a>
       
-              <a  href='#Schedule'>  <li onClick={()=>setClick(false)}>Schedule</li></a>
  
               <a href='#FAQ'>  <li onClick={()=>setClick(false)}>FAQ</li></a>
 
