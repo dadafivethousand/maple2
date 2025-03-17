@@ -15,7 +15,7 @@ export default function Coach({ coach }){
         <div   className="coach-container animate">
             <div>
             <div className='coach-photo'>
-                <img alt='Brazillian Jiu-Jitsu Instructor' src={coach.image} />
+                <img alt='Brazillian Jiu-Jitsu Instructor' src={coach.image} loading="lazy" />
             </div>
 {/*
             { !coach.headInstructor && 
