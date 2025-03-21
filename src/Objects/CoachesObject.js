@@ -5,13 +5,14 @@ import Rob from '../Media/rob.png'
 import Vitaly from '../Media/Vitaly.png'
 import Vijay from '../Media/aj.jpg'
 import Arthur from '../Media/ar.jpg'
+import Tigran from '../Media/tigran.png'
 const CoachesList = 
 [
 
 {
     name: "Мах",
  
-    headinstructor: 1,
+    headInstructor: true,
     description: "A black belt under Jorge Britto, Мах brings nearly 15 years of Brazilian Jiu-Jitsu experience. He is a multiple-time IBJJF Open Champion, a Canadian National Champion, and an Ontario Open Gold Medalist. With a background in Muay Thai and MMA, he has 10 amateur Muay Thai fights, 5 amateur MMA fights, an amateur MMA Championship and a 1-0 professional MMA record.",
     accomplishments:["Canadian National Champion", "Multiple Time IBJJF Open Champion", "IBJJF American Nationals Bronze Medalist", "Ontario Open Gold Medalist", "Amateur MMA Champion", "1-0 Pro MMA Record"],
     image:MaxImage,
@@ -25,7 +26,9 @@ const CoachesList =
  description: "With over 30 years of wrestling expertise, AJ is a Greco-Roman Wrestling Master of Sport from Ukraine. A Donetsk Regional Champion and Cadets Competition Winner, he has also served as the Head Coach of Thailand’s National Wrestling Team. AJ also has Muay Thai and MMA experience having trained extensively at AKA Thailand.",
   accomplishments:["30+ Years of Wrestling",  "Donetsk Regional Champion", "Greco-Roman Wrestling Master of Sport (Ukraine)", " Head Coach of Thailand's National Wrestling Team" ,"Cadets Competition Winner", "United World Wrestling Certified Coach"],
   image:Vijay,
-  link: 'https://www.instagram.com/aj_coach_wrestling/'
+  link: 'https://www.instagram.com/aj_coach_wrestling/',
+  setmoreLink: 'https://maplejiujitsu.setmore.com/aj'
+
 },
 {
   name: "Artur",
@@ -38,10 +41,20 @@ const CoachesList =
 },
 
 
+{
+  name: "Tigran",
+
+  description: "Judo black belt with a highly decorated competitive background including a National Championship and a gold medal at the 2023 Canada Games, Panamerican and European Cups and 2024 World Championship Qualifier. With experience at the highest levels of competition, Tigran brings elite-level skill, technical expertise, and a deep understanding of the sport to his coaching.",
+ 
+  accomplishments:["30+ Years of Wrestling", "Dagestan Regional Wrestling Champion", "Freestyle Wrestling Champion of Southern Russia", "Freestyle Wrestling Master of Sport (Russia)", "Trained with the likes of Alexander Volkov and Zabit Magomedsharipov" , "Winner of the Ivan Yarygin Wrestling Tournament" ],
+  image:Tigran,
+    link: 'https://www.instagram.com/cctviv/'
+ },
+
   {name: "Arthur",
-    belt:"Blue Belt",
+    belt:"Purple Belt",
     accomplishments:[, "AJP Gold Medalist", "Next-Gen Gold Medalist", "Ontario Open Silver Medalist", "IBJJF London Open Bronze Medalist", "ADCC Canada 4th place", "Godai Open Bronze Medallist"],
-    description: "A blue belt in Brazilian Jiu-Jitsu, Arthur has been training for four years and has already made a name for himself in competition. He has won gold at the AJP and Next-Gen tournaments, secured a silver medal at the Ontario Open, and earned a bronze at the IBJJF London Open. Additionally, he placed fourth at ADCC Canada and took bronze at the Godai Open.",
+    description: "A purple belt in Brazilian Jiu-Jitsu, Arthur has been training for 4.5 years and has already made a name for himself in competition. He has won gold at the AJP and Next-Gen tournaments, secured a silver medal at the Ontario Open, and earned a bronze at the IBJJF London Open. Additionally, he placed fourth at ADCC Canada and took bronze at the Godai Open.",
     image:ArthurImage,
     link: 'https://www.instagram.com/cucarachinho',
 

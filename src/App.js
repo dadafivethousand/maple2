@@ -56,6 +56,7 @@ function App() {
    
                  {/*     <Purchase /> */} 
                   <Landing />
+                  <Schedule />
 
                   <About />
                  
@@ -65,9 +66,8 @@ function App() {
                   <Programs />
                 
                  {/*     <Parallax3 />*/} 
-                  <Schedule />
-  
-             <Pricing />
+          
+                  <Pricing />
            
                 
                  {/*     <Parallax />*/} 

@@ -8,8 +8,7 @@ export default function Landing(){
         <div className="landing-container">
         <div className='image-container'>
             <div className='before'></div>
-            <img className='max' src={bg} alt='BJJ Black Belt'
-            />
+            <img  className='max' src={bg} alt='BJJ Black Belt' loading="lazy" />
          
             <div className='get-started-landing-container'>
             <GetStarted size='large' />

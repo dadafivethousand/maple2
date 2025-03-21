@@ -102,7 +102,14 @@
 
 .lineage{
     margin-top:50px;
-    font-size: 15px;
+    font-size: 12px;
+    text-align: center;
+    font-family: roboto consensed;
+}
+
+.lineage p{
+    margin-top:50px;
+    font-size: 8px;
     text-align: center;
     font-family: roboto consensed;
 }
@@ -187,8 +194,35 @@
     margin-top:10px;
     border-left:2px solid black;
     padding-left:6px;
- 
- 
+}
+
+.green-circle{
+    height:15px;
+    width:15px;
+    border-radius: 50%;
+    background-color: green;
+    margin-right:10px;
+    border: 1px solid black;
+}
+
+.privates{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    
+}
+
+.privates-text{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.click-to-book{
+    font-style: italic;
+    font-size: 13px;
+    text-decoration: underline;
+    font-family: Roboto condensed;
 }
 
 

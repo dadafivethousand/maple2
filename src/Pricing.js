@@ -174,7 +174,7 @@ export default function Pricing() {
         <div key={index} className='PricingButtonContainer'>
 
             <button onClick={() => display(index)} className='AdultMembershipButton'>{item.label}</button>
-            {item.info.map((option, optionIndex) => {
+            {item.info && item.info.map((option, optionIndex) => {
                 return (
                
                     displayArray.includes(index) && ( // Check if the index is in displayArray

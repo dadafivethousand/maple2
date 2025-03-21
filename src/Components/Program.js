@@ -12,7 +12,7 @@ export default function Program( {program} ){
              </a>:null        }
           </div>
              <div className='program-image'>
-                <img alt={program.name} src={program.image} />
+                <img alt={program.name} src={program.image} loading="lazy" />
              </div>
 
         
