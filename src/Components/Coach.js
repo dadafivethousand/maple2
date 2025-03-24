@@ -17,19 +17,10 @@ export default function Coach({ coach }){
             <div className='coach-photo'>
                 <img alt='Brazillian Jiu-Jitsu Instructor' src={coach.image} loading="lazy" />
             </div>
-{/*
-            { !coach.headInstructor && 
-           <a className='privates' target="_blank"
-           rel="noopener noreferrer"  href={coach.setmoreLink}>
-                <div className='green-circle'>
+ 
+        
 
-                </div>
-                <div className='privates-text'>
-         <p>Available for Private Training -  <span className='click-to-book'>Click to book</span></p>
-                </div>
-            </a>}
-
-            */}
+         
             <div>
                 <div className='name-and-ig'>
                 <p className='coach-nm'> {coach.name}</p> 
@@ -44,8 +35,16 @@ export default function Coach({ coach }){
          
             </div>
             </div>
-                {coach.headInstructor}
+            { !coach.headInstructor && 
+           <a className='privates' target="_blank"
+           rel="noopener noreferrer"  href={coach.setmoreLink}>
+                <div className='green-circle'>
 
+                </div>
+                <div className='privates-text'>
+         <p>  Private Training Available - <span className='click-to-book'>Click to book</span></p>
+                </div>
+            </a>}
             </div>
             <div className='coach-description'>
                {coach.description}
