@@ -216,11 +216,12 @@
 .privates-text{
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
 }
 
 .click-to-book{
     font-style: italic;
-    font-size: 13px;
+    font-size: 17px;
     text-decoration: underline;
     font-family: Roboto condensed;
 }
