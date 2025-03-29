@@ -50,7 +50,7 @@ const CoachesList =
     description: "A purple belt in Brazilian Jiu-Jitsu, Arthur has been training for 4.5 years and has already made a name for himself in competition. He has won gold at the AJP and Next-Gen tournaments, secured a silver medal at the Ontario Open, and earned a bronze at the IBJJF London Open. Additionally, he placed fourth at ADCC Canada and took bronze at the Godai Open.",
     image:ArthurImage,
     link: 'https://www.instagram.com/cucarachinho',
-    setmoreLink: 'https://maplejiujitsu.setmore.com/maple'
+    setmoreLink: 'https://maplejiujitsu.setmore.com/arthur-li'
 
   },
 
