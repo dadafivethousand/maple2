@@ -45,8 +45,7 @@ function App() {
           <Routes>
             {/* Route for /freetrial showing only LeadForm */}
             <Route path="/freetrial" element={<LeadForm  closebutton={false}/>} />
-            <Route path="/purchase" element={<Purchase />} />
-            <Route path="/blog" element={<Blog />} />
+             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<FullPost />} />  {/* ← ADD THIS LINE */}
 
 
