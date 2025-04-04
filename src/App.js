@@ -19,6 +19,8 @@ import Testimonials from "./Components/Testimonials";
 import Parallax3 from "./Parallax3";
 import KidsForm from "./Components/KidsForm";
  import Purchase from "./Components/Purchase";
+import Blog from "./Blog";
+import FullPost from "./Components/FullPost";
  
 function App() {
   const { showForm, showKidForm, showPurchase } = useAppContext();
@@ -44,6 +46,9 @@ function App() {
             {/* Route for /freetrial showing only LeadForm */}
             <Route path="/freetrial" element={<LeadForm  closebutton={false}/>} />
             <Route path="/purchase" element={<Purchase />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<FullPost />} />  {/* ← ADD THIS LINE */}
+
 
             {/* Default route for the main app */}
             <Route
@@ -72,6 +77,7 @@ function App() {
                 
                  {/*     <Parallax />*/} 
                   <Contact />
+              
          
                    <FAQ />
              

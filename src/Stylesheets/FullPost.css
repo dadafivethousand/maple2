@@ -1,0 +1,77 @@
+.full-post {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  color: #111;
+  font-family: 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+#post-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #000000; /* Maple Jiu-Jitsu red theme */
+  word-wrap: break-word;
+  overflow-wrap: break-word;  /* modern equivalent */
+  white-space: normal;
+  font-family: roboto condensed;
+}
+
+.full-post p {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+.full-post em {
+  color: #777;
+  font-style: italic;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.full-post h2 {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  color: #333;
+  border-left: 4px solid #cc0000;
+  padding-left: 0.5rem;
+}
+
+.full-post ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.full-post li {
+  margin-bottom: 0.6rem;
+  list-style-type: disc;
+}
+
+.full-post strong {
+  color: #000;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .full-post {
+    padding: 1rem;
+    margin: 2rem 1rem;
+  }
+
+  .full-post h1 {
+    font-size: 1.8rem;
+  }
+
+  .full-post h2 {
+    font-size: 1.4rem;
+  }
+
+  .full-post p {
+    font-size: 1rem;
+  }
+}
+ 

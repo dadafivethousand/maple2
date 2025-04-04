@@ -1,0 +1,58 @@
+.blog-container{
+  padding-top: 40px;
+}
+
+
+
+.pagination-controls {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination-controls button {
+  margin: 0 4px;
+  padding: 6px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+.pagination-controls button.active-page {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.blog-post p{
+  font-size: 12px;
+}
+
+.blog-post{
+  margin:10px 15px;
+  border-top: 1px dotted black;
+ padding-top: 1px;
+
+}
+
+#blog-title{
+  margin-bottom: 5px;
+}
+
+.blog-posts{
+  height:75vh
+}
+
+.post-snipped-and-continuation{
+ display: flex;
+}
+
+
+#post-title{
+  font-size: 13px;
+}
