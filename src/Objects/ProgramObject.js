@@ -20,7 +20,7 @@ const Programs = [
     {image: muaythai, name:'Muay Thai', description: 'Our Muay Thai program focuses on developing powerful striking techniques using punches, kicks, elbows, and knees. This dynamic training improves fitness, coordination, and self-defense skills while emphasizing discipline and mental toughness. Suitable for beginners and advanced practitioners.'},
     {image: taj, name:'Private Training', description: 'Private training offers personalized coaching tailored to your specific goals, whether improving technique, enhancing fitness, or preparing for competition.', link: 'https://maplejiujitsu.setmore.com/services/ce9112be-2765-4a91-a8c7-d8d923ac6c5a' },
 
-    {image: kids,name:'Kids (ages 4-12)', description: 'Our Kids program is designed to build confidence, discipline, and coordination in a fun and supportive environment. We focus on teaching the fundamentals of BJJ while instilling important life values like respect, perseverance, and teamwork.'},
+    {image: kids,name:'Kids (ages 5-12)', description: 'Our Kids program is designed to build confidence, discipline, and coordination in a fun and supportive environment. We focus on teaching the fundamentals of BJJ while instilling important life values like respect, perseverance, and teamwork.'},
 ]
 
 const BackupPrograms = [
