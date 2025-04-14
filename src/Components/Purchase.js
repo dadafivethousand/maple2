@@ -9,6 +9,8 @@ import KidsForm from './KidsForm';
 export default function Purchase({ formatCurrency, cancelPurchase, option }) {
   const { setShowAdult,  } = useAppContext();
   const [captchaVerified, setCaptchaVerified] = useState(false);
+ 
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '', 
@@ -153,7 +155,7 @@ export default function Purchase({ formatCurrency, cancelPurchase, option }) {
           </div>
           </div>
           {
-            option.kids && <h3>Parent/Guardian Info</h3>
+            option.kids ? <h3>Parent/Guardian Info</h3> : <h3>Member Info</h3 >
           }
 
 
