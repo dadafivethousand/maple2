@@ -56,6 +56,7 @@ function App() {
                 <>
               
                   <Navbar />
+ 
   {/*   <KidsForm />*/} 
    
                  {/*     <Purchase /> */} 

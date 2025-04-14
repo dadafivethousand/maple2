@@ -169,7 +169,7 @@ export default function Pricing() {
             
     
            
-             {priceObject?.map((item, index) => {
+{priceObject?.map((item, index) => {
     return (
         <div key={index} className='PricingButtonContainer'>
 
@@ -188,8 +188,7 @@ export default function Pricing() {
                         
                             <p className='name-of-class'>{option.description}</p>
                             <p className='price'>{formatCurrency(option.price)} <span className='hst'>+ HST</span></p>
-                           {option.cash ? <p className='cash-disclaimer'>  Cash Payments Accepted </p> : null}
-                           {option.cancel ? <p className='cancel-disclaimer'>  Cancel Any Time </p> : null}
+                            {option.cancel ? <p className='cancel-disclaimer'>  Cancel Any Time </p> : null}
 
                             </div>
               
