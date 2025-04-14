@@ -214,13 +214,22 @@ width: fit-content;
 }
 
 .cash-disclaimer{
+
+    font-size: 12px;
+
+ 
+}
+.cancel-disclaimer{
     font-size: 10px;
     font-style: italic;
 }
-.cancel-disclaimer{
-    font-size: 13px;
+
+.option-type{
+    font-size: 12px;
     font-style: italic;
+ 
 }
+
 
 
 @media (min-width: 800px) {

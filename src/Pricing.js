@@ -188,9 +188,9 @@ export default function Pricing() {
                         
                             <p className='name-of-class'>{option.description}</p>
                             <p className='price'>{formatCurrency(option.price)} <span className='hst'>+ HST</span></p>
-                            {option.cancel ? <p className='cancel-disclaimer'>  Cancel Any Time </p> : null}
-
-                            </div>
+                            <p className='option-type'>  {option.type} </p>
+                     {/*          {option.cancel ? <p className='cancel-disclaimer'>  Cancel Any Time </p> : null}  */}
+                             </div>
               
                             {option.paymentLink ? (
                     <a href={option.paymentLink} id="purchase-button" target="_blank" rel="noopener noreferrer">
