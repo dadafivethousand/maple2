@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import './Stylesheets/Navbar.css'
-import logo from './Media/image.png'; 
+import toplogo from './Media/image-top.png'; 
+import bottomlogo from './Media/image-bottom.png'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
 import GetStarted from "./Components/GetStarted";
@@ -8,6 +9,27 @@ import GetStarted from "./Components/GetStarted";
 export default function Navbar() {
     const [click, setClick] = useState(false);
     const [showGetStarted, setShowGetStarted] = useState(false);
+    const [animateLogo, setAnimateLogo] = useState(false)
+    const [animateBottomLogo, setAnimateBottomLogo] = useState(false)
+ 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setAnimateLogo(true);
+        }, 100);
+    
+        return () => clearTimeout(timer); // optional cleanup
+    }, []);
+    
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setAnimateBottomLogo(true);
+        }, 300);
+    
+        return () => clearTimeout(timer); // optional cleanup
+    }, []);
+    
+
  
  
     const changeExpand = () => {
@@ -37,7 +59,10 @@ export default function Navbar() {
              <div className="hamburger" onClick={handleClick}> {click ?  <FontAwesomeIcon icon={faTimes} /> : <FontAwesomeIcon icon={faBars} />}  </div>
         <div className="navbar-container">
            <div className="navbar-image-conatiner">
-            <img src={logo} />
+
+            <img className={`top-logo ${animateLogo? "move-logo": ''}`}  src={toplogo} />
+            <img className={`bottom-logo ${animateBottomLogo? "move-logo": ''}`} src={bottomlogo} />
+
             </div>
             <div className={`navbar ${click? 'slide': ''}`}>
                 <div   className={`${showGetStarted?'show-get-started': ''} getstarted`}>
