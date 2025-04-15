@@ -70,7 +70,7 @@ function App() {
           
                   <Programs />
                 
-                    <Parallax3 />
+                   {/*     <Parallax3 />*/} 
           
                   <Pricing />
              
