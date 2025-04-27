@@ -188,7 +188,7 @@ export default function Pricing() {
                         
                             <p className='name-of-class'>{option.description}</p>
                             <p className='price'>{formatCurrency(option.price)} <span className='hst'>+ HST</span></p>
-                            <p className='option-type'>  {option.subscription ? 'per month': 'installment option available'} </p>
+                            <p className='option-type'>  {option.subscription ? 'per month': 'installment options available'} </p>
                      {/*          {option.cancel ? <p className='cancel-disclaimer'>  Cancel Any Time </p> : null}  */}
                              </div>
               
