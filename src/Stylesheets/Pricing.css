@@ -157,7 +157,7 @@
 .pricing-flex{
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     width:300px;
     margin: 10px auto;   
     align-items: center;
@@ -221,7 +221,7 @@ width: fit-content;
 }
 
 .option-type{
-    font-size: 12px;
+    font-size: 10px;
     font-style: italic;
  
 }
