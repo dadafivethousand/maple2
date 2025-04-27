@@ -6,6 +6,8 @@ import Vitaly from '../Media/Vitaly.png'
 import Vijay from '../Media/aj.jpg'
 import Arthur from '../Media/ar.jpg'
 import Tigran from '../Media/tigran.png'
+import Joe from "../Media/1000008288.jpg"
+import Matt from "../Media/1000008223.jpg"
 const CoachesList = 
 [
 
@@ -41,6 +43,32 @@ const CoachesList =
     setmoreLink: 'https://maplejiujitsu.setmore.com/artur-k'
 },
 
+{name: "Arthur",
+  belt:"Purple Belt",
+  accomplishments:[, "AJP Gold Medalist", "Next-Gen Gold Medalist", "Ontario Open Silver Medalist", "IBJJF London Open Bronze Medalist", "ADCC Canada 4th place", "Godai Open Bronze Medallist"],
+  description: "A purple belt in Brazilian Jiu-Jitsu, Arthur has been training for 4.5 years and has already made a name for himself in competition. He has won gold at the AJP and Next-Gen tournaments, secured a silver medal at the Ontario Open, and earned a bronze at the IBJJF London Open. Additionally, he placed fourth at ADCC Canada and took bronze at the Godai Open.",
+  image:ArthurImage,
+  link: 'https://www.instagram.com/cucarachinho',
+  setmoreLink: 'https://maplejiujitsu.setmore.com/arthur-li'
+
+},
+
+
+{name: "Matt",
+  belt:"Brown Belt",
+  accomplishments:[],
+  description: "Matt is a brown belt with over 12 years of experience in Brazilian Jiu-Jitsu. Known for his technical approach and dedication to the art, he has spent years refining his skills on the mats. His commitment to continuous improvement and deep understanding of the sport make him a respected member of the BJJ community.",
+  image:Matt, 
+},
+
+{name: "Joe",
+  belt:"Purple Belt",
+  accomplishments:["Ontario Open Silver Medalist", "Provincial Champion"],
+  description: "With over 10 years of experience in Brazilian Jiu-Jitsu, Joe has built a solid foundation in the sport. Throughout his time on the mats, he has achieved notable accomplishments, including a silver medal at the Ontario Open and a Provincial Championship title. His consistent training and commitment to learning continue to shape his journey in BJJ.",
+  image:Joe,
+  link: 'https://www.instagram.com/bullbulan',
+ 
+},
 
  
 

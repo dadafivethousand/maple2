@@ -91,16 +91,7 @@ export default function KidsForm({ kidsFormData, setKidsFormData }) {
                   onChange={(e) => handleKidInputChange(index, 'lastName', e.target.value)}
                   required
                 />
-                <div className="kids-form-dob">
-                  <p>Date of Birth:</p>
-                  <input
-                    type="date"
-                    className="kids-form-input"
-                    value={kid.dob}
-                    onChange={(e) => handleKidInputChange(index, 'dob', e.target.value)}
-                    required
-                  />
-                </div>
+
               </div>
               <button
                 type="button"
@@ -114,7 +105,7 @@ export default function KidsForm({ kidsFormData, setKidsFormData }) {
 
           <div className="kids-form-buttons">
             <button type="button" id="kids-form-add-button" onClick={addKid}>
-             + Add Child
+             + Add
             </button>
    
           </div>

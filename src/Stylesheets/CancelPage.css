@@ -1,0 +1,85 @@
+/* CancelPage.css */
+
+.cancel-page {
+  background: #f6f3e3;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cancel-content {
+  text-align: center;
+}
+
+.cancelmark {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+}
+
+.cancelmark__circle {
+  stroke: #ab0000;
+  stroke-width: 2;
+  stroke-dasharray: 157;
+  stroke-dashoffset: 157;
+  animation: draw-circle 0.6s ease-out forwards;
+}
+
+.cancelmark__line1,
+.cancelmark__line2 {
+  stroke: #b80000;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+}
+
+.cancelmark__line1 {
+  animation: draw-line1 0.3s ease-out 0.6s forwards;
+}
+
+.cancelmark__line2 {
+  animation: draw-line2 0.3s ease-out 0.9s forwards;
+}
+
+@keyframes draw-circle {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes draw-line1 {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes draw-line2 {
+  to { stroke-dashoffset: 0; }
+}
+
+.cancel-content h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.cancel-content p {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.cancel-back-button {
+  display: inline-block;
+  background: #000000;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+ 
+  text-decoration: none;
+  transition: opacity 0.2s;
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.443);
+}
+
+.back-button:hover {
+  opacity: 0.8;
+}

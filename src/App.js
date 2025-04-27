@@ -21,6 +21,8 @@ import KidsForm from "./Components/KidsForm";
  import Purchase from "./Components/Purchase";
 import Blog from "./Blog";
 import FullPost from "./Components/FullPost";
+import SuccessPage from "./SuccessPage";
+import CancelPage from "./CancelPage";
  
 function App() {
   const { showForm, showKidForm, showPurchase } = useAppContext();
@@ -46,8 +48,10 @@ function App() {
             {/* Route for /freetrial showing only LeadForm */}
             <Route path="/freetrial" element={<LeadForm  closebutton={false}/>} />
              <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<FullPost />} />  {/* ← ADD THIS LINE */}
-
+            <Route path="/blog/:slug" element={<FullPost />} />   
+            <Route path="/success" element={<SuccessPage />} />   
+            <Route path="/cancel" element={<CancelPage />} />   
+      
 
             {/* Default route for the main app */}
             <Route
@@ -61,6 +65,7 @@ function App() {
    
                  {/*     <Purchase /> */} 
                   <Landing />
+                
                   <Schedule />
 
                   <About />

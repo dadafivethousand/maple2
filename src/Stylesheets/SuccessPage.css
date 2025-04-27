@@ -1,0 +1,74 @@
+/* SuccessPage.css */
+
+.success-page {
+    background: #f6f3e3;       /* same cream as your site */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .success-content {
+    text-align: center;
+  }
+  
+  .checkmark {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+  }
+  
+  .checkmark__circle {
+    stroke: #13a100;
+    stroke-width: 2;
+    stroke-dasharray: 157;     /* ≈2π·r */
+    stroke-dashoffset: 157;
+    animation: draw-circle 0.6s ease-out forwards;
+  }
+  
+  .checkmark__tick {
+    stroke: #13a100;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 48;      /* approx length of path */
+    stroke-dashoffset: 48;
+    animation: draw-tick 0.3s ease-out 0.6s forwards;
+  }
+  
+  @keyframes draw-circle {
+    to { stroke-dashoffset: 0; }
+  }
+  
+  @keyframes draw-tick {
+    to { stroke-dashoffset: 0; }
+  }
+  
+  .success-content h1 {
+    font-family: 'Cinzel', serif;  /* or whatever you use */
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .success-content p {
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .success-content a {
+    background: #000;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.443);
+  }
+  
+  .success-content button:hover {
+    opacity: 0.8;
+  }
+  

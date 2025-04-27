@@ -6,7 +6,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { useAppContext } from "../AppContext";
 import pic from '../Media/img.png'
 import KidsForm from './KidsForm';
-export default function Purchase({ formatCurrency, cancelPurchase, option }) {
+export default function Purchase({ formatCurrency, cancelPurchase, option, optionIndex, purchasingHigherIndex }) {
   const { setShowAdult,  } = useAppContext();
   const [captchaVerified, setCaptchaVerified] = useState(false);
  
@@ -16,7 +16,10 @@ export default function Purchase({ formatCurrency, cancelPurchase, option }) {
     lastName: '', 
     email: '',
     phone: '',
-    membershipCode: 'basic'
+  
+    optionIndex:optionIndex,
+    purchasingHigherIndex:purchasingHigherIndex,
+    
   // Default to Ontario
   });
   const [kidsFormData, setKidsFormData] = useState([{ firstName: '', lastName: '', dob: '' }]);
@@ -47,6 +50,7 @@ export default function Purchase({ formatCurrency, cancelPurchase, option }) {
       const cleanedPhone = value.replace(/\D/g, '');
 
       // Apply the format (123) 456-7890
+     
       let formattedPhone = cleanedPhone;
       if (cleanedPhone.length > 3 && cleanedPhone.length <= 6) {
         formattedPhone = `(${cleanedPhone.slice(0, 3)}) ${cleanedPhone.slice(3)}`;
@@ -112,7 +116,10 @@ export default function Purchase({ formatCurrency, cancelPurchase, option }) {
           lastName: '',
           email: '',
           phone: '',
-          membershipCode: 'basic'
+          membershipCode: 'basic',
+          optionIndex:null,
+          purchasingHigherIndex:null,
+          
  
         });
               setKidsFormData([{ firstName: '', lastName: '', dob: '' }]); 
@@ -129,10 +136,32 @@ export default function Purchase({ formatCurrency, cancelPurchase, option }) {
 
   return (
     <div  className="purchase-container">
-        <div className="close-btn" onClick={() => cancelPurchase()}>
+      <div className="purchase-navbar">
+  
+          <img className='small-pic' src={pic} />
+          <div className="close-btn" onClick={() => cancelPurchase()}>
                 <FontAwesomeIcon icon={faTimes} />
-              </div>
+          </div>
+
+     
+          <div className='purchase-navbar-product-and-price'>
+    
+          <div className='transaction-details'>
+            <div>
+            {option.description}
+            </div>
+            -
+            <div className='purchase-navbar-price'>
+          {formatCurrency(option.price)} <span className='hst'>+ HST </span>
+
+          </div>
+          </div>
+          </div>
+
+      </div>
     <div  className="purchase-form-container">
+
+
     
  
       {message ? (
@@ -142,18 +171,9 @@ export default function Purchase({ formatCurrency, cancelPurchase, option }) {
         </div>
       ) : (
         <>
-          <img className='small-pic' src={pic} />
+    
  
-          <div className='transaction-details'>
-            <div>
-            {option.description}
-            </div>
-            
-            <div>
-          {formatCurrency(option.price)} <span className='hst'>+ HST </span>
-
-          </div>
-          </div>
+    
           {
             option.kids ? <h3>Parent/Guardian Info</h3> : <h3>Member Info</h3 >
           }
@@ -226,7 +246,7 @@ export default function Purchase({ formatCurrency, cancelPurchase, option }) {
             />
             </div>
             </div>
-
+            <div className='submit-btn-container'>
  
             <button
               type="submit"
@@ -234,7 +254,7 @@ export default function Purchase({ formatCurrency, cancelPurchase, option }) {
             >
               Continue
             </button>
-      
+            </div>
           </form>
         </>
       )}

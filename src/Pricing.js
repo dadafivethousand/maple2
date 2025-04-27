@@ -182,7 +182,7 @@ export default function Pricing() {
                             { option.promo ? <TopRibbon topText={'PROMOTIONAL OFFER'} />: null}
                         <div key={optionIndex} className={`pricing-flex ${purchasing===optionIndex && purchasingHigherIndex===index ? 'big':'' } ${option.promo ? 'promotion': ''}`}>
                                          
-                                          {purchasing===optionIndex && purchasingHigherIndex===index ? <Purchase formatCurrency={formatCurrency} option={option} cancelPurchase={cancelPurchase} />:
+                                          {purchasing===optionIndex && purchasingHigherIndex===index ? <Purchase formatCurrency={formatCurrency} option={option} cancelPurchase={cancelPurchase} optionIndex={optionIndex} purchasingHigherIndex={purchasingHigherIndex}/>:
                                           <>
                              <div className='name-and-price'>
                         
@@ -192,15 +192,15 @@ export default function Pricing() {
                      {/*          {option.cancel ? <p className='cancel-disclaimer'>  Cancel Any Time </p> : null}  */}
                              </div>
               
-                            {option.paymentLink ? (
+                          {option.paymentLink ? (
                     <a href={option.paymentLink} id="purchase-button" target="_blank" rel="noopener noreferrer">
                         Get Started
                     </a>
-                ) : (
+                ) : ( 
                     <button onClick={() => handlePurchasing(index, optionIndex)} id='purchase-button'>
                         Get Started
                     </button>
-                )}                            </>
+                   )}                           </>
                         }
                        </div>
                        { option.promo ? <BottomRibbon topText={'10 SPOTS REMAINING'} />: null}

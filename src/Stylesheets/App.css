@@ -19,10 +19,7 @@
     text-decoration: none; /* Optional: removes underline */
   }
   
-  a:visited {
-    color: inherit; /* or set the desired color for visited links */
-  }
-  
+ 
 
   html {
     scroll-behavior: smooth;
@@ -42,7 +39,6 @@
     grid-template-rows: 27px 0;
     grid-gap: 20px;
     align-items: center;
-
   }
   
   h1:after, h1:before {

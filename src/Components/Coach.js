@@ -35,7 +35,7 @@ export default function Coach({ coach }){
          
             </div>
             </div>
-            { !coach.headInstructor && 
+            { coach.setmoreLink && 
            <a className='privates' target="_blank"
            rel="noopener noreferrer"  href={coach.setmoreLink}>
                 <div className='green-circle'>
