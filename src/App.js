@@ -23,6 +23,7 @@ import Blog from "./Blog";
 import FullPost from "./Components/FullPost";
 import SuccessPage from "./SuccessPage";
 import CancelPage from "./CancelPage";
+import BJJWhiteBelt from "./Components/BJJWhiteBelt";
  
 function App() {
   const { showForm, showKidForm, showPurchase } = useAppContext();
@@ -60,14 +61,15 @@ function App() {
                 <>
               
                   <Navbar />
- 
+         
   {/*   <KidsForm />*/} 
    
                  {/*     <Purchase /> */} 
                   <Landing />
+              
                 
                   <Schedule />
-
+                  {/*     <BJJWhiteBelt /> */} 
                   <About />
                  
                  {/*     <Parallax1 /> */} 
@@ -77,7 +79,7 @@ function App() {
                 
                    {/*     <Parallax3 />*/} 
           
-                  <Pricing />
+                   <Pricing /> 
              
                 
                  {/*     <Parallax />*/} 

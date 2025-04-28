@@ -166,6 +166,7 @@ export default function Pricing() {
       
 
              <h1 className="animate">Pricing</h1> 
+
             
     
            
@@ -174,33 +175,35 @@ export default function Pricing() {
         <div key={index} className='PricingButtonContainer'>
 
             <button onClick={() => display(index)} className='AdultMembershipButton'>{item.label}</button>
+            <div className='membership-flex'>
             {item.info && item.info.map((option, optionIndex) => {
                 return (
-               
                     displayArray.includes(index) && ( // Check if the index is in displayArray
-                        <div>
+                        <div >
                             { option.promo ? <TopRibbon topText={'PROMOTIONAL OFFER'} />: null}
                         <div key={optionIndex} className={`pricing-flex ${purchasing===optionIndex && purchasingHigherIndex===index ? 'big':'' } ${option.promo ? 'promotion': ''}`}>
                                          
                                           {purchasing===optionIndex && purchasingHigherIndex===index ? <Purchase formatCurrency={formatCurrency} option={option} cancelPurchase={cancelPurchase} optionIndex={optionIndex} purchasingHigherIndex={purchasingHigherIndex}/>:
                                           <>
                              <div className='name-and-price'>
-                        
+                      
                             <p className='name-of-class'>{option.description}</p>
-                            <p className='price'>{formatCurrency(option.price)} <span className='hst'>+ HST</span></p>
-                            <p className='option-type'>  {option.subscription ? 'per month': 'installment options available'} </p>
-                     {/*          {option.cancel ? <p className='cancel-disclaimer'>  Cancel Any Time </p> : null}  */}
+                             </div>
+                            <div className='name-and-price'>
+                            <p className='price'>{formatCurrency(option.price)}</p>
+ 
+                         {option.subscription ? <p className='cancel-disclaimer'>  Monthly </p> : <p className='cancel-disclaimer'>  Payable upfront or with installments </p> }   
                              </div>
               
-                          {option.paymentLink ? (
+                {/*            {option.paymentLink ? (
                     <a href={option.paymentLink} id="purchase-button" target="_blank" rel="noopener noreferrer">
                         Get Started
                     </a>
-                ) : ( 
+                ) : (  */}
                     <button onClick={() => handlePurchasing(index, optionIndex)} id='purchase-button'>
-                        Get Started
+                        Start
                     </button>
-                   )}                           </>
+                  {/*    )}  */}                         </>
                         }
                        </div>
                        { option.promo ? <BottomRibbon topText={'10 SPOTS REMAINING'} />: null}
@@ -209,11 +212,14 @@ export default function Pricing() {
                     )
                 );
             })}
-
+</div>
         </div>
     );
 })}
 
+<p className='hst-disclaimer'>*All prices subject to HST <br></br>
+    **All sales are final. 
+ </p>
 
           {/*      <MembershipComponent type={Memberships.adult} />  */}
 

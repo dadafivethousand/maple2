@@ -1,14 +1,12 @@
-import '../Stylesheets/Legend.css'
+import React from "react";
+import "../Stylesheets/BJJWhiteBelt.css";
 
-export default function Legend(){
-    return(
-        <div className='legend-container'>
-
-*If you do not own a Gi, we will let you borrow one free of charge (subject to availability). 
-
-
-            
-        </div>
-    )
-
+export default function BJJWhiteBelt() {
+  return (
+    <div className="belt-wrapper">
+      <div className="belt">
+        <div className="black-bar"></div>
+      </div>
+    </div>
+  );
 }
