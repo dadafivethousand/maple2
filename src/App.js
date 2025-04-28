@@ -61,13 +61,14 @@ function App() {
                 <>
               
                   <Navbar />
+
          
   {/*   <KidsForm />*/} 
    
                  {/*     <Purchase /> */} 
                   <Landing />
               
-                
+            
                   <Schedule />
                   {/*     <BJJWhiteBelt /> */} 
                   <About />
