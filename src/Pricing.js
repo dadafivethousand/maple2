@@ -195,15 +195,15 @@ export default function Pricing() {
                          {option.subscription ? <p className='cancel-disclaimer'>  Monthly </p> : <p className='cancel-disclaimer'>  Payable upfront or with installments </p> }   
                              </div>
               
-                {/*            {option.paymentLink ? (
+                          {option.paymentLink ? (
                     <a href={option.paymentLink} id="purchase-button" target="_blank" rel="noopener noreferrer">
                         Get Started
                     </a>
-                ) : (  */}
+                ) : (   
                     <button onClick={() => handlePurchasing(index, optionIndex)} id='purchase-button'>
                         Start
                     </button>
-                  {/*    )}  */}                         </>
+                     )}                          </>
                         }
                        </div>
                        { option.promo ? <BottomRibbon topText={'10 SPOTS REMAINING'} />: null}
