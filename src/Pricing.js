@@ -190,7 +190,7 @@ export default function Pricing() {
                             <p className='name-of-class'>{option.description}</p>
                              </div>
                             <div className='name-and-price'>
-                            <p className='full-price'> {formatCurrency(22999)}</p>
+                        {/*    <p className='full-price'> {formatCurrency(22999)}</p> */}
                             <p className='price'>{formatCurrency(option.price)}</p>
  
                          {option.subscription ? <p className='cancel-disclaimer'>  Monthly </p> : <p className='cancel-disclaimer'>  Payable upfront or with installments </p> }   
