@@ -24,6 +24,7 @@ import FullPost from "./Components/FullPost";
 import SuccessPage from "./SuccessPage";
 import CancelPage from "./CancelPage";
 import BJJWhiteBelt from "./Components/BJJWhiteBelt";
+import GetStarted from "./Components/GetStarted";
  
 function App() {
   const { showForm, showKidForm, showPurchase } = useAppContext();
@@ -67,7 +68,7 @@ function App() {
    
                  {/*     <Purchase /> */} 
                   <Landing />
-              
+                  <GetStarted />
             
                   <Schedule />
                   {/*     <BJJWhiteBelt /> */} 
