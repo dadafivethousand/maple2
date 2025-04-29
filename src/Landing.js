@@ -15,7 +15,7 @@ export default function Landing(){
              {/*  <div className='before'></div>
             <img  className='max' src={bg} alt='Brazillian Jiu-Jitsu BJJ Black Belt' loading="lazy" />
              
-         */}
+         */}       
             <Testimonials />
            
   

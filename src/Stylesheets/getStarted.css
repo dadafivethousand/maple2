@@ -15,7 +15,7 @@
 .get-started-button{
     height:55px;
     width:300px;
-    background-color: rgba(0, 0, 0, 0.942);
+    background-color: rgb(0, 0, 0);
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -26,9 +26,12 @@
     font-family: Roboto condensed;
     z-index: 20;
     border: 2px solid rgb(255, 255, 255);
-   
-    
+    animation: pulseGlow 3s ease-in-out infinite;
+
 }
+
+ 
+
 
 .large .little-letters{
     font-family: Roboto condensed;
@@ -43,9 +46,35 @@
 .large{
     height:80px;
     width:300px;
-    font-size:30px;
+    font-size:40px;
     border:1px solid white;
     text-align: left;
+    animation: appear 2s ease-in;
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0% {
+      box-shadow: 0 0 0px rgba(0, 0, 0, 0.3); /* warm gold-yellow */
+    }
+    50% {
+      box-shadow: 0 0 50px rgb(0, 0, 0);
+    }
+    100% {
+      box-shadow: 0 0 0px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  
+@keyframes appear {
+    0%{
+        opacity:0
+    }
+
+    100%{
+        opacity:1
+    }
+    
 }
 .get-started-button:hover{
     cursor: pointer;
