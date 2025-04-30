@@ -188,7 +188,7 @@ export default function Pricing() {
                              <div className='name-and-price'>
                       
                             <p className='name-of-class'>{option.description}</p>
-                            <div class="badge">Spring Special <br></br> 20% OFF! <br></br>    </div>
+                            <div class="badge"> <span className='spring-special'>Spring Special</span> <br></br> <span className='percentage-off'> 20% OFF!</span>  <br></br>    </div>
 
                              </div>
                             <div className='name-and-price'>

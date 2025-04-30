@@ -113,7 +113,14 @@
     transform: translateY(0);
 }
 
+.spring-special{
+    font-size: 11px;
+}
 
+
+.percentage-off{
+    font-size: 14px;
+}
  
 #purchase-button{
     margin: 0;
