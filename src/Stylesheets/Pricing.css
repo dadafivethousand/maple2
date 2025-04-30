@@ -148,7 +148,10 @@
     height:50px; 
 
  }
-
+.name-of-class{
+    font-size: 23px;
+    font-family: roboto condensed;
+}
  
 
 .hst{
@@ -192,7 +195,7 @@
   .price {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #111;
+    color: #111111c6;
   }
   
 .badge {

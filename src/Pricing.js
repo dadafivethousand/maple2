@@ -186,9 +186,9 @@ export default function Pricing() {
                                           {purchasing===optionIndex && purchasingHigherIndex===index ? <Purchase formatCurrency={formatCurrency} option={option} cancelPurchase={cancelPurchase} optionIndex={optionIndex} purchasingHigherIndex={purchasingHigherIndex}/>:
                                           <>
                              <div className='name-and-price'>
-                      
+                             <div class="badge"> <span className='spring-special'>Spring Special</span> <br></br> <span className='percentage-off'> 20% OFF!</span>  <br></br>    </div>
+
                             <p className='name-of-class'>{option.description}</p>
-                            <div class="badge"> <span className='spring-special'>Spring Special</span> <br></br> <span className='percentage-off'> 20% OFF!</span>  <br></br>    </div>
 
                              </div>
                             <div className='name-and-price'>
