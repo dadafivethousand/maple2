@@ -51,6 +51,8 @@ font-size: 20px;
     text-align: left;
     animation: appear 2s ease-in;
     animation: pulseGlow 3s ease-in-out infinite;
+    position: relative;
+    top:100px;
 }
 
 @keyframes pulseGlow {
