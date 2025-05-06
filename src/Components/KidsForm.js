@@ -66,7 +66,7 @@ export default function KidsForm({ kidsFormData, setKidsFormData }) {
   return (
   
       <div className="kids-form-container">
-        <h3>Kid's Info</h3>
+        <h3>Student's Info</h3>
 
      
         <form onSubmit={handleSubmit}>
@@ -78,7 +78,7 @@ export default function KidsForm({ kidsFormData, setKidsFormData }) {
                 <input
                   type="text"
                   className="kids-form-input"
-                  placeholder="Child's First Name"
+                  placeholder=" First Name"
                   value={kid.firstName}
                   onChange={(e) => handleKidInputChange(index, 'firstName', e.target.value)}
                   required
@@ -86,13 +86,14 @@ export default function KidsForm({ kidsFormData, setKidsFormData }) {
                 <input
                   type="text"
                   className="kids-form-input"
-                  placeholder="Child's Last Name"
+                  placeholder=" Last Name"
                   value={kid.lastName}
                   onChange={(e) => handleKidInputChange(index, 'lastName', e.target.value)}
                   required
                 />
 
               </div>
+              { kidsFormData.length > 1  &&
               <button
                 type="button"
                 id="kids-form-remove-button"
@@ -100,6 +101,7 @@ export default function KidsForm({ kidsFormData, setKidsFormData }) {
               >
                 Remove
               </button>
+              }
             </div>
           ))}
 

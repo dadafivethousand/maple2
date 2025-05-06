@@ -175,7 +175,7 @@ export default function Purchase({ formatCurrency, cancelPurchase, option, optio
  
     
           {
-            option.kids ? <h3>Parent/Guardian Info</h3> : <h3>Member Info</h3 >
+            option.kids ? <h3>Parent/Guardian Info</h3> : <h3>Student Info</h3 >
           }
 
 

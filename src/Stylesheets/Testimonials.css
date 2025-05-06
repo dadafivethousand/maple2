@@ -30,7 +30,7 @@
     display: flex;
     justify-content: space-between;
     font-family: 'Arial', sans-serif;
-    background-color: #ffffff;
+    background-color: #ffffffcb;
     height: 170px;
   
     border: 2px solid black;
@@ -130,8 +130,7 @@ cursor:default
     display: flex;
     align-items: center;
     z-index:10;
-    background-color: white;
-}
+ }
 
 .ReviewsOuterContainer img {
     margin: 0 auto;

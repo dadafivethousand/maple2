@@ -23,6 +23,9 @@ import Blog from "./Blog";
 import FullPost from "./Components/FullPost";
 import SuccessPage from "./SuccessPage";
 import CancelPage from "./CancelPage";
+import BJJWhiteBelt from "./Components/BJJWhiteBelt";
+import GetStarted from "./Components/GetStarted";
+import ArturImage from "./Components/ArturImage";
  
 function App() {
   const { showForm, showKidForm, showPurchase } = useAppContext();
@@ -60,14 +63,17 @@ function App() {
                 <>
               
                   <Navbar />
- 
+
+         
   {/*   <KidsForm />*/} 
    
                  {/*     <Purchase /> */} 
                   <Landing />
-                
+                  <GetStarted size='large' />
+          
+            
                   <Schedule />
-
+                  {/*     <BJJWhiteBelt /> */} 
                   <About />
                  
                  {/*     <Parallax1 /> */} 
@@ -77,7 +83,7 @@ function App() {
                 
                    {/*     <Parallax3 />*/} 
           
-                  <Pricing />
+                   <Pricing /> 
              
                 
                  {/*     <Parallax />*/} 

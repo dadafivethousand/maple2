@@ -45,7 +45,6 @@ const CoachesList =
 
  
 
-
 {name: "Matt",
   belt:"Brown Belt",
   accomplishments:[],

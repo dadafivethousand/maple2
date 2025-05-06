@@ -15,7 +15,7 @@ export default function Navbar() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setAnimateLogo(true);
-        }, 100);
+        }, 400);
     
         return () => clearTimeout(timer); // optional cleanup
     }, []);
@@ -24,7 +24,7 @@ export default function Navbar() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setAnimateBottomLogo(true);
-        }, 300);
+        }, 100);
     
         return () => clearTimeout(timer); // optional cleanup
     }, []);
