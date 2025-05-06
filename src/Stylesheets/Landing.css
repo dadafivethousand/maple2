@@ -3,7 +3,7 @@
     height:fit-content;
  
       overflow: hidden;
-     background-image: url("../Media/Maple\ Jiujitsu-190.jpg");
+     background-image: url("../Media/Maple\ Jiujitsu-19.jpg");
     height:80vh;
     width:100vw;
     background-size:cover;
@@ -12,6 +12,7 @@
     flex-direction: column;
     justify-content: flex-end;
     background-attachment: fixed;
+    top:100px;
     background-position: center 180px;
     background-repeat: no-repeat;
     background-size: cover;    
