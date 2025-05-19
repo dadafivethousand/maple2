@@ -8,12 +8,8 @@ export default function Footer(){
             <ul>
             <a href='#Schedule' >  <li>  Schedule  </li></a>
             <a href='#About'> <li>   About </li></a>
-    
             <a href='#Coaches' >   <li>  Coaches  </li></a>
             <a  href='#programs'>  <li>  Programs  </li></a>
-
-   
-
             </ul>
             <ul>
          <a  href='#Pricing'>  <li>  Pricing </li></a>  
@@ -21,11 +17,8 @@ export default function Footer(){
          {/* <a href='https://billing.stripe.com/p/login/7sI3fAgOUdugbvybII'> <li onClick={()=>setClick(false)}>Members</li></a>  */}  
          <a  href='blog'>   <li>  Blog  </li></a>
             <a  href='#Contact'>   <li>  Contact Us  </li></a>
-           
             </ul>
-
             <img src={logo} />
-            
             </div>
             {/*
             <hr></hr>
