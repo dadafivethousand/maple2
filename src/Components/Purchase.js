@@ -137,12 +137,13 @@ export default function Purchase({ formatCurrency, cancelPurchase, option, optio
   return (
     <div  className="purchase-container">
       <div className="purchase-navbar">
-  
-          <img className='small-pic' src={pic} />
+
+          <img className='' src={pic} />
+   
           <div className="close-btn" onClick={() => cancelPurchase()}>
                 <FontAwesomeIcon icon={faTimes} />
           </div>
-
+ 
      
           <div className='purchase-navbar-product-and-price'>
     

@@ -69,6 +69,9 @@ export default function Pricing() {
     const [purchasing, setPurchasing] = useState(null)
     const [purchasingHigherIndex, setPurchasingHigherIndex] = useState(null)
     const [showPaymentForm, setShowPaymentForm]=useState(false)
+    const [optIdx, setOptIdx] = useState(null)
+    const [idx, setIdx]= useState(null)
+    const [opt, setOpt] = useState(null)
     const togglePaymentForm = () => {
         console.log('hi')
         setShowPaymentForm(prev => !prev);
@@ -162,6 +165,17 @@ export default function Pricing() {
 
     return (
         <div id="Pricing" className='PricingContainer'>
+
+{purchasing !== null && purchasingHigherIndex !== null ? 
+    <Purchase 
+        formatCurrency={formatCurrency} 
+        option={priceObject[purchasingHigherIndex].info[purchasing]} 
+        cancelPurchase={cancelPurchase} 
+        optionIndex={purchasing} 
+        purchasingHigherIndex={purchasingHigherIndex}
+    /> 
+    : null}
+
              
       
 
@@ -171,19 +185,18 @@ export default function Pricing() {
     
            
 {priceObject?.map((item, index) => {
-    return (
+     return (
         <div key={index} className='PricingButtonContainer'>
 
             <button onClick={() => display(index)} className='AdultMembershipButton'>{item.label}</button>
             <div className='membership-flex'>
             {item.info && item.info.map((option, optionIndex) => {
+               
                 return (
                     displayArray.includes(index) && ( // Check if the index is in displayArray
                         <div >
                             { option.promo ? <TopRibbon topText={'PROMOTIONAL OFFER'} />: null}
-                        <div key={optionIndex} className={`pricing-flex ${purchasing===optionIndex && purchasingHigherIndex===index ? 'big':'' } ${option.promo ? 'promotion': ''}`}>
-                                         
-                                          {purchasing===optionIndex && purchasingHigherIndex===index ? <Purchase formatCurrency={formatCurrency} option={option} cancelPurchase={cancelPurchase} optionIndex={optionIndex} purchasingHigherIndex={purchasingHigherIndex}/>:
+                        <div key={optionIndex} className='pricing-flex'>
                                           <>
                              <div className='name-and-price'>
                              <div class="badge"> <span className='spring-special'>Spring Special</span> <br></br> <span className='percentage-off'> 20% OFF!</span>  <br></br>    </div>
@@ -199,16 +212,16 @@ export default function Pricing() {
                          {option.subscription ? <p className='cancel-disclaimer'>  Monthly </p> : <p className='cancel-disclaimer'>  Payable upfront or with installments </p> }   
                              </div>
               
-                          {option.paymentLink ? (
+               {/*        {option.paymentLink ? (
                     <a href={option.paymentLink} id="purchase-button" target="_blank" rel="noopener noreferrer">
                         Get Started
                     </a>
-                ) : (   
+                ) : (   */}   
                     <button onClick={() => handlePurchasing(index, optionIndex)} id='purchase-button'>
                         Start
                     </button>
-                     )}                          </>
-                        }
+                     {/*     )}    */}                         </>
+                      
                        </div>
                        { option.promo ? <BottomRibbon topText={'10 SPOTS REMAINING'} />: null}
 

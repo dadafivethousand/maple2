@@ -6,11 +6,19 @@ html, body {
 .purchase-container {
  
   overflow: scroll;
-  width: 80vw;
+  width: 100vw;
  height:100vh;
   margin-top: 90px;;
   padding-top: 50px;
-
+  position: absolute;
+  top:0px;
+   z-index: 100;
+    position: fixed;
+  top:0px;
+  left:0px;
+  margin: 0 auto;
+background-color: white;;
+ 
   }
 
 
@@ -38,7 +46,7 @@ html, body {
 
   .purchase-form-container{
     margin: 0 auto;
-    padding-top:20px;
+    padding-top:100px;
      
    }
  
@@ -48,7 +56,7 @@ html, body {
     margin: 0 auto;
  align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .transaction-details >* {
@@ -145,10 +153,11 @@ html, body {
  font-size:30px;
  color:black;
  text-align: center;
- position:relative;
- left:250px;
- top:-80px;
- height:0px;
+ position:absolute;
+ right:1rem;
+ top:25px;
+ width:fit-content
+ 
  
   }
 
@@ -174,8 +183,12 @@ margin-bottom:2px;
 }
 
 .purchase-container img{
-  margin-top: 1.4rem;
-  height: 80px; 
+
+  height: 85px; 
+  margin-top:40px;
+     display: block;
+    margin: 0 auto;
+      margin-top: 30px;
 }
 
 .purchase-form-container h3{
@@ -213,6 +226,7 @@ margin-bottom:2px;
   margin: 0 auto;
   width: fit-content
 }
+ 
 
   /* Responsive design for smaller screens */
   @media (max-width: 768px) {
@@ -220,9 +234,7 @@ margin-bottom:2px;
       margin-top: 20px;
     }
 
-    .close-btn{
-      left:130px
-       }
+  
 }
 
  
@@ -233,30 +245,18 @@ margin-bottom:2px;
   position: fixed;
   top:0px;
   left:0px;
-  display: flex;
-  flex-direction: column;
+ 
   max-width:100vw;
   min-width:100vw;
-   height:120px;
-  
-   padding-top: 80px;
-
  
- 
-
-  
+ background-color: white;;   
 }
 
-.purchase-navbar-image-and-close{
-  display: flex;
-  justify-content: space-around;
-  margin-top:30px;
-}
+ 
 
 
 .purchase-navbar-product-and-price{
- position: relative;
- top:-15px;
+ 
  font-size: 13px;
 }
 
