@@ -135,6 +135,7 @@ export default function Purchase({ formatCurrency, cancelPurchase, option, optio
   };
 
   return (
+    <div  className="purchase-outer-container">
     <div  className="purchase-container">
       <div className="purchase-navbar">
 
@@ -259,6 +260,7 @@ export default function Purchase({ formatCurrency, cancelPurchase, option, optio
           </form>
         </>
       )}
+    </div>
     </div>
     </div>
   );

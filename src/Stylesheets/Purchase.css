@@ -3,21 +3,30 @@ html, body {
   width: 100%;
 }
 
+.purchase-outer-container{
+      height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.401);
+    position: fixed  ;
+    top:0;
+    z-index: 80;
+}
+
+
 .purchase-container {
- 
+    border-radius: 20px;
   overflow: scroll;
-  width: 100vw;
- height:100vh;
-  margin-top: 90px;;
-  padding-top: 50px;
+   border: 2px solid black;
+
+   padding-top: 50px;
   position: absolute;
-  top:0px;
-   z-index: 100;
-    position: fixed;
-  top:0px;
-  left:0px;
+      top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);  
   margin: 0 auto;
 background-color: white;;
+ height:90vh;
+    width:80vw;
  
   }
 
@@ -112,6 +121,12 @@ background-color: white;;
     font-size: 14px;
     color: #333;
   }
+
+  .input-container{
+ 
+    margin: 0 auto;
+
+  }
   
   .form-group input, .form-group select {
     padding: 10px;
@@ -154,7 +169,7 @@ background-color: white;;
  color:black;
  text-align: center;
  position:absolute;
- right:1rem;
+ right:4rem;
  top:25px;
  width:fit-content
  
@@ -233,8 +248,15 @@ margin-bottom:2px;
     .purchase-summary {
       margin-top: 20px;
     }
+      .close-btn{
+ right:1rem;
+  }
+}
 
-  
+@media (min-width: 768px) {
+  .purchase-container input{
+    width:300px;
+  }
 }
 
  
@@ -246,8 +268,8 @@ margin-bottom:2px;
   top:0px;
   left:0px;
  
-  max-width:100vw;
-  min-width:100vw;
+  max-width:100%;
+  min-width:100%;
  
  background-color: white;;   
 }
