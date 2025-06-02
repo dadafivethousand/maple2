@@ -116,13 +116,11 @@ export default function Pricing() {
             } else {
                 console.error('Failed to fetch membership info');
             }
-
         } catch (error) {
             console.error('Error fetching Membership Info:', error)
         }
     }
     fetchMembershipInfo();
-
 }, 
 []);
 

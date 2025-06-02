@@ -20,18 +20,7 @@ const CoachesList =
     image: MaxImage,
     link: 'https://www.instagram.com/maxli5000'
 },
-
-
-{
-  name: "AJ",
  
- description: "With over 30 years of wrestling expertise, AJ is a Greco-Roman Wrestling Master of Sport from Ukraine. A Donetsk Regional Champion and Cadets Competition Winner, he has also served as the Head Coach of Thailand’s National Wrestling Team. AJ also has Muay Thai and MMA experience having trained extensively at AKA Thailand.",
-  accomplishments:["30+ Years of Wrestling",  "Donetsk Regional Champion", "Greco-Roman Wrestling Master of Sport (Ukraine)", " Head Coach of Thailand's National Wrestling Team" ,"Cadets Competition Winner", "United World Wrestling Certified Coach"],
-  image:Vijay,
-  link: 'https://www.instagram.com/aj_coach_wrestling/',
-  setmoreLink: 'https://maplejiujitsu.setmore.com/aj'
-
-},
 {
   name: "Artur",
 
