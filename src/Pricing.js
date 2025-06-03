@@ -69,9 +69,7 @@ export default function Pricing() {
     const [purchasing, setPurchasing] = useState(null)
     const [purchasingHigherIndex, setPurchasingHigherIndex] = useState(null)
     const [showPaymentForm, setShowPaymentForm]=useState(false)
-    const [optIdx, setOptIdx] = useState(null)
-    const [idx, setIdx]= useState(null)
-    const [opt, setOpt] = useState(null)
+ 
     const togglePaymentForm = () => {
         console.log('hi')
         setShowPaymentForm(prev => !prev);
