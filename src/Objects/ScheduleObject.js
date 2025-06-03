@@ -35,15 +35,13 @@ const schedule = {
     { name: "BJJ - NoGi", start: 19.25, end: 20.25 }
   ],
   Saturday: [ 
-    { name: "MMA", start: 11, end: 12},
-    { name: "BJJ - NoGi", start: 12, end: 13},
+     { name: "BJJ - NoGi", start: 12, end: 13},
       { name: "Kids", start: 14, end: 15},
   ]
   ,
   Sunday: [
     { name: "Kids", start: 11, end: 12},
-    { name: "Wrestling", start: 12, end: 13},
-    { name: "Open Mat", start: 13, end: 14},
+     { name: "Open Mat", start: 13, end: 14},
   ]
 };
 export default schedule  
