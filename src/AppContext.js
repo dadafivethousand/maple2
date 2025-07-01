@@ -53,6 +53,8 @@ export const AppProvider = ({ children }) => {
     localStorage.setItem("showPizduq", JSON.stringify(showPizduq));
   }, [showPizduq]);
 
+
+  
   return (
     <AppContext.Provider value={{ showForm, showPurchase, setShowPurchase, showPizduq, setShowPizduq, setShowForm, showKidForm, setShowKidForm, showAdult, setShowAdult, showKid, setShowKid, showPrivate, setShowPrivate }}>
       {children}

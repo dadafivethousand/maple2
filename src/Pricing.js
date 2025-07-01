@@ -197,7 +197,7 @@ export default function Pricing() {
                         <div key={optionIndex} className='pricing-flex'>
                                           <>
                              <div className='name-and-price'>
-                             <div class="badge"> <span className='spring-special'>Spring Special</span> <br></br> <span className='percentage-off'> 20% OFF!</span>  <br></br>    </div>
+                             <div class="badge"> <span className='summer-special'>Spring Special</span> <br></br> <span className='percentage-off'> 20% OFF!</span>  <br></br>    </div>
 
                             <p className='name-of-class'>{option.description}</p>
 

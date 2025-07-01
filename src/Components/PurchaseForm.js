@@ -4,7 +4,7 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'; /
 import '../Stylesheets/Purchase.css';
 
 export default function PurchaseForm() {
-  const { formData, setFormData } = useAppContext();
+  const { formData, setFormData, } = useAppContext();
   const [errors, setErrors] = useState({});
   const stripe = useStripe();
   const elements = useElements();
