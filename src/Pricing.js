@@ -207,7 +207,7 @@ export default function Pricing() {
                          <p className='full-price'> {formatCurrency(option.price*1.20)}</p>  
                             <p className='price'>{formatCurrency(option.price)}</p>
  
-                         {option.subscription ? <p className='cancel-disclaimer'>  Monthly </p> : <p className='cancel-disclaimer'>  Payable upfront or with installments </p> }   
+                         {option.subscription ? <p className='cancel-disclaimer'>  Monthly </p> : <p className='cancel-disclaimer'>  Payable upfront or with installments via Klarna </p> }   
                              </div>
               
                {/*        {option.paymentLink ? (
