@@ -12,8 +12,7 @@
     flex-direction: column;
     justify-content: flex-end;
  
-    top:100px;
-    background-position: center 180px;
+     background-position: center 180px;
     background-repeat: no-repeat;
     background-size: cover;    
     animation: slowPan 50s ease infinite;
@@ -45,8 +44,7 @@ z-index: 4;
 
 .image-container{
     width:100%;
-    position:relative;
-    top:-15px
+ 
   
 } 
    

@@ -17,7 +17,7 @@ export default function Landing(){
              
          */}       
             <Testimonials />
-           
+            <GetStarted size='large' />
   
  
             </div>
