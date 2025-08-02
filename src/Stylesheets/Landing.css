@@ -11,7 +11,7 @@
      display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    background-attachment: fixed;
+ 
     top:100px;
     background-position: center 180px;
     background-repeat: no-repeat;
