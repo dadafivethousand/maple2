@@ -1,58 +1,77 @@
 const faqList = [
   {
-    question: "Why Maple BJJ?",
-    answer: "At Maple BJJ, you will train under top-level coaches in Brazilian Jiu-Jitsu (BJJ), Wrestling, Muay Thai, and Mixed Martial Arts (MMA). Our head instructor is a Canadian National Champion and a multi-time IBJJF Open Champion. We offer elite instruction in a structured and welcoming environment for beginners, competitors, and professional fighters."
-  },
-  
-  {
-    question: "What disciplines are taught at Maple BJJ?",
-    answer: "Maple BJJ specializes in Brazilian Jiu-Jitsu (BJJ) but also offers Wrestling (Greco-Roman & Freestyle), Muay Thai, and MMA. Whether you want to master grappling, striking, or complete MMA skills, we provide structured programs for all levels."
+    question: "Why choose Maple BJJ?",
+    answer:
+      "Because we offer a complete combat-sports pathway for all levels. Our coaches teach Brazilian Jiu-Jitsu (Gi and No-Gi), Muay Thai striking, Wrestling, and MMA integration in a clean, welcoming space. Whether your goal is fitness, self-defense, or competition, we’ll help you progress safely and consistently."
   },
 
   {
-    question: "How does Brazilian Jiu-Jitsu (BJJ) compare to other martial arts?",
-    answer: "Brazilian Jiu-Jitsu (BJJ) is a grappling-based martial art focusing on submissions, positional control, and leverage. It was proven highly effective in the first UFC event in 1993 when Royce Gracie dominated opponents from various disciplines, including Boxing and Karate. Today, BJJ remains a fundamental skill in MMA and self-defense."
+    question: "What’s the difference between BJJ, Muay Thai, MMA, and Wrestling?",
+    answer:
+      "BJJ focuses on grappling—takedowns, control, and submissions—using technique over strength. Muay Thai is a striking art using punches, kicks, knees, and elbows with clinch work. Wrestling emphasizes takedowns, pressure, and top control from the feet to the mat. MMA blends striking and grappling for a well-rounded skill set. Many members cross-train to build complete fundamentals."
   },
 
-  {
-    question: "What kind of Wrestling is taught at Maple BJJ?",
-    answer: "We offer high-level Wrestling classes in both Greco-Roman and Freestyle Wrestling. Greco-Roman emphasizes upper-body control and throws, while Freestyle Wrestling incorporates leg attacks and takedowns, making it an essential skill for MMA and grappling."
-  },
 
   {
-    question: "What are the benefits of training Muay Thai?",
-    answer: "Muay Thai is the art of eight limbs, incorporating punches, kicks, elbows, and knees. Training Muay Thai improves striking technique, conditioning, reaction time, and overall combat ability. It is one of the most effective striking styles and a key component of MMA."
-  },
-
-  {
-    question: "Can women train at Maple BJJ?",
-    answer: "Yes, Maple BJJ is open to everyone. Women benefit from training in BJJ, Wrestling, Muay Thai, and MMA for self-defense, fitness, and competition. We maintain a respectful training environment where all students, regardless of gender, feel comfortable learning high-level techniques."
+    question: "I’m a complete beginner. Where should I start?",
+    answer:
+      "You can start in any of our beginner-friendly classes. New students often begin with BJJ Fundamentals or Muay Thai Fundamentals, and you can add Wrestling once you’re comfortable with the basics. Coaches will guide you to the right first class and pace."
   },
 
   {
     question: "How often should I train as a beginner?",
-    answer: "We recommend training 2 to 3 times per week to build a strong foundation while allowing your body to recover. As you progress, you can increase training frequency based on your goals."
+    answer:
+      "Two to three classes per week is perfect to build a foundation without overtraining. As your conditioning and technique improve, you can add sessions or cross-train across programs."
   },
 
   {
-    question: "Do I need experience to start?",
-    answer: "No experience is necessary. Our classes are structured to help beginners learn at their own pace, whether they choose BJJ, Wrestling, Muay Thai, or MMA."
+    question: "Is training safe? Is sparring required?",
+    answer:
+      "Safety is our top priority. We emphasize proper technique, controlled partner work, and mutual respect. Sparring/rolling is optional for beginners and always supervised; you can focus on drills and technique until you’re ready."
   },
 
   {
-    question: "Is training at Maple BJJ safe?",
-    answer: "Yes, safety is a priority at Maple BJJ. Our experienced instructors ensure that all training is conducted with proper technique, control, and injury prevention measures."
+    question: "Do women train here?",
+    answer:
+      "Absolutely. We’re committed to an inclusive, respectful environment. Women of all experience levels train in BJJ, Muay Thai, Wrestling, and MMA here—many start with fundamentals and progress at their own pace."
   },
 
   {
-    question: "I do not have a Gi but want to do the Gi class. What are my options?",
-    answer: "We provide Gi rentals free of charge, allowing you to train in our Gi BJJ classes without needing to buy one immediately."
+    question: "What gear do I need?",
+    answer:
+      "For BJJ Gi classes: a Gi and belt. For No-Gi: rashguard/t-shirt and shorts/leggings (no zippers). For Muay Thai/MMA: hand wraps, gloves, shin guards, and a mouthguard is recommended. For Wrestling: athletic apparel; wrestling shoes are optional—if worn, they must be clean and used only on the mats. We have limited loaner gear for first-time visitors (subject to availability) and pro-shop options if you’d like to buy."
+  },
+
+
+  {
+    question: "Can I cross-train between programs (BJJ, Muay Thai, MMA, Wrestling)?",
+    answer:
+      "Yes. Many members train both grappling and striking. We’ll help you plan a weekly mix that matches your goals—self-defense, fitness, or competition—and integrate Wrestling takedowns with BJJ/MMA groundwork."
   },
 
   {
-    question: "Do you offer a free trial?",
-    answer: "Yes, we offer a free one-week trial for new students. This trial includes access to BJJ, Wrestling, Muay Thai, and MMA classes, allowing you to experience our programs firsthand.",
-    link: { text: "Click here to get started", url: "https://waiver.smartwaiver.com/v/maple" }
+    question: "Do you offer a trial for new students?",
+    answer:
+      "Yes. Try our classes, meet the coaches, and experience the atmosphere before committing.",
+    link: { text: "Start your free trial", url: "https://waiver.smartwaiver.com/v/maple" }
+  },
+
+  {
+    question: "What should I bring to my first class?",
+    answer:
+      "A water bottle, comfortable athletic clothing, and (if you have them) basic gear. Arrive 10 minutes early so we can show you around and get you set up."
+  },
+
+  {
+    question: "Do you prepare students for competition?",
+    answer:
+      "We support first-time and experienced competitors with structured coaching, sparring/rolling sessions, and game-planning across BJJ, Muay Thai, Wrestling, and MMA. Competing is always optional—many members train for fitness and self-defense only."
+  },
+
+  {
+    question: "Can I pay less if I only train once or twice a week?",
+    answer:
+      "Short answer: no. We keep pricing simple and don’t offer reduced rates based on attendance. We’re not set up to track per-week usage for everyone—handling that would create too much overhead and take focus away from coaching."
   }
 ];
 

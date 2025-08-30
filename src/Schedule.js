@@ -31,6 +31,33 @@ const timeBlocksToRemove = [
   { start: 15, end: 16.75 }
 ];
 
+// NEW: tiny palette + detector (background only + inset bar; no layout impact)
+const PALETTE = {
+  nogi:      { bg: '#9EC5FF' }, // cornflower blue
+  gi:        { bg: '#AEE6B1' }, // mint green
+  muay:      { bg: 'rgb(243, 239, 227)' }, // apricot
+  wrestling: { bg: '#D3B3FF' }, // lavender
+  mma:       { bg: '#FF9AA8' }, // coral pink
+  kids:      { bg: '#FFE38A' }, // sunny yellow
+  openmat:   { bg: '#B8C2FF' }, // periwinkle
+ };
+
+
+
+
+
+const paintFor = (name = '') => {
+  if (/open\s*mat/i.test(name)) return PALETTE.openmat;
+  if (/no[ -]?gi|nogi/i.test(name)) return PALETTE.nogi;
+  if (/\bgi\b|bjj/i.test(name)) return PALETTE.gi;
+  if (/muay|thai|striking/i.test(name)) return PALETTE.muay;
+  if (/wrestling|freestyle|folkstyle|greco/i.test(name)) return PALETTE.wrestling;
+  if (/\bmma\b/i.test(name)) return PALETTE.mma;
+  if (/\bkids?\b|youth|junior|teen/i.test(name)) return PALETTE.kids;
+  if (/fundamentals?|basics?|intro/i.test(name)) return PALETTE.fundamentals;
+  return PALETTE.default;
+};
+
 // Main Schedule component
 export default function Schedule() {
   const [earliestTime, setEarliestTime] = useState(24);
@@ -82,7 +109,7 @@ export default function Schedule() {
   return (
     <div id="Schedule" className='ScheduleContainer'>
       <h1 className='animate'>Class Schedule</h1>
-    {/*  <ScheduleWidget />   */}
+      {/*  <ScheduleWidget />   */}
       <div className="Schedule">
         {Object.keys(schedule).map((day) => (
           <div className='Column animate' key={day}>
@@ -102,6 +129,9 @@ export default function Schedule() {
                 const topPosition = adjustPosition(classTime.start);
                 const classHeight = (classTime.end - classTime.start) * PIXELS_PER_HOUR;
 
+                // NEW: compute colors per class name
+                const { bg, bar } = paintFor(classTime.name);
+
                 return (
                   <div
                     key={index}
@@ -109,12 +139,15 @@ export default function Schedule() {
                     style={{
                       top: `${topPosition}px`,
                       height: `${classHeight}px`,
-                      position: 'absolute'
-                    }}
+                      position: 'absolute',        // unchanged
+                      backgroundColor: bg,         // NEW: background only
+                     }}
                   >
-
-                    <p className='class-name'>{classTime.name} </p>   
-                    <p>  <span className='class-time'> {convertToAmPm(classTime.start)} - {convertToAmPm(classTime.end)} </span>
+                    <p className='class-name'>{classTime.name} </p>
+                    <p>
+                      <span className='class-time'>
+                        {convertToAmPm(classTime.start)} - {convertToAmPm(classTime.end)}
+                      </span>
                     </p>
                   </div>
                 );
@@ -126,12 +159,6 @@ export default function Schedule() {
         < KidsScheduleWidget />
           */}
       </div>
-
-  
-
-
- 
-    
     </div>
   );
 }
