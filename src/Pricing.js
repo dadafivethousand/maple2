@@ -179,12 +179,15 @@ export default function Pricing() {
 
              <h1 className="animate">Pricing</h1> 
 
-            
+            <p className='hst-disclaimer'>*All prices subject to HST <br></br>
+    **All sales are final. 
+ </p>
     
            
 {priceObject?.map((item, index) => {
      return (
         <div key={index} className='PricingButtonContainer'>
+
 
             <button onClick={() => display(index)} className='AdultMembershipButton'>{item.label}</button>
             <div className='membership-flex'>
@@ -232,9 +235,7 @@ export default function Pricing() {
     );
 })}
 
-<p className='hst-disclaimer'>*All prices subject to HST <br></br>
-    **All sales are final. 
- </p>
+
 
           {/*      <MembershipComponent type={Memberships.adult} />  */}
 
