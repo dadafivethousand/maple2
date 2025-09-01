@@ -24,13 +24,24 @@ const CoachesList =
 {
   name: "Artur",
 
-  description: "With over 30 years of wrestling experience, Artur is a decorated competitor from Dagestan. A former regional chamption in Dagestan and champion of Southern Russia, he holds the prestigious title of Master of Sport in Freestyle Wrestling. Artur also has an extensive MMA background and has trained with some of the most elite fighters of the sport including Alexander Volkov and Zabit Magomedsharipov.",
+  description: "With over 30 years of wrestling experience, Artur is a decorated competitor from Dagestan. A former regional chamption in Dagestan and champion of Southern Russia, he holds the prestigious title of Master of Sport in Freestyle Wrestling. Artur also has an extensive Muay Thai & MMA background and has trained with some of the most elite fighters of the sport including Alexander Volkov and Zabit Magomedsharipov.",
  
   accomplishments:["30+ Years of Wrestling", "Dagestan Regional Wrestling Champion", "Freestyle Wrestling Champion of Southern Russia", "Freestyle Wrestling Master of Sport (Russia)", "Trained with the likes of Alexander Volkov and Zabit Magomedsharipov" , "Winner of the Ivan Yarygin Wrestling Tournament" ],
   image:Arthur,
   link: 'https://www.instagram.com/ar_knv/',
     setmoreLink: 'https://maplejiujitsu.setmore.com/artur-k'
 },
+
+
+  {name: "Arthur",
+    belt:"Purple Belt",
+    accomplishments:[, "AJP Gold Medalist", "Next-Gen Gold Medalist", "Ontario Open Silver Medalist", "IBJJF London Open Bronze Medalist", "ADCC Canada 4th place", "Godai Open Bronze Medallist"],
+    description: "A purple belt in Brazilian Jiu-Jitsu, Arthur has been training for 5 years and has already made a name for himself in competition. He has won gold at the AJP and Next-Gen tournaments, secured a silver medal at the Ontario Open, and earned a bronze at the IBJJF London Open. Additionally, he placed fourth at ADCC Canada and took bronze at the Godai Open.",
+    image:ArthurImage,
+    link: 'https://www.instagram.com/cucarachinho',
+    setmoreLink: 'https://maplejiujitsu.setmore.com/arthur-li'
+
+  },
 
  
 
@@ -52,15 +63,6 @@ const CoachesList =
 
  
 
-  {name: "Arthur",
-    belt:"Purple Belt",
-    accomplishments:[, "AJP Gold Medalist", "Next-Gen Gold Medalist", "Ontario Open Silver Medalist", "IBJJF London Open Bronze Medalist", "ADCC Canada 4th place", "Godai Open Bronze Medallist"],
-    description: "A purple belt in Brazilian Jiu-Jitsu, Arthur has been training for 4.5 years and has already made a name for himself in competition. He has won gold at the AJP and Next-Gen tournaments, secured a silver medal at the Ontario Open, and earned a bronze at the IBJJF London Open. Additionally, he placed fourth at ADCC Canada and took bronze at the Godai Open.",
-    image:ArthurImage,
-    link: 'https://www.instagram.com/cucarachinho',
-    setmoreLink: 'https://maplejiujitsu.setmore.com/arthur-li'
-
-  },
 
 
 
