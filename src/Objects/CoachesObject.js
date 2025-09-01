@@ -8,6 +8,7 @@ import Arthur from '../Media/ar.jpg'
 import Tigran from '../Media/tigran.png'
 import Joe from "../Media/1000008288.jpg"
 import Matt from "../Media/1000008223.jpg"
+import Goran from "../Media/Goran.jpg"
 const CoachesList = 
 [
 
@@ -30,6 +31,17 @@ const CoachesList =
   image:Arthur,
   link: 'https://www.instagram.com/ar_knv/',
     setmoreLink: 'https://maplejiujitsu.setmore.com/artur-k'
+},
+
+{
+  name: "Goran",
+
+  description: "A brown belt with 8 years of dedicated Brazilian Jiu-Jitsu training, Goran has developed a reputation for his relentless pace and sharp technical game. In 2023, he captured gold at Grappling Industries as a purple belt, showcasing his ability to dominate in high-level competition. Known among his teammates for his strategic mindset and pressure-heavy style, Goran continues to refine his craft and push the boundaries of his performance on the mats.",
+ 
+ 
+   image:Goran
+ 
+ 
 },
 
 
