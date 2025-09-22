@@ -9,6 +9,8 @@ import Tigran from '../Media/tigran.png'
 import Joe from "../Media/1000008288.jpg"
 import Matt from "../Media/1000008223.jpg"
 import Goran from "../Media/Goran.jpg"
+import Thusean from "../Media/Thusean.jpg"
+import Isaiah from "../Media/Isaiah.jpg"
 const CoachesList = 
 [
 
@@ -55,6 +57,16 @@ const CoachesList =
 
   },
 
+  {name: "Thusean",
+  belt:"Blue Belt",
+  accomplishments:[],
+  description: "With about 5 years of dedicated training in Brazilian Jiu-Jitsu & MMA, Thusean has already made a strong impact on the competition scene, secureing a gold at the 905 Championship, and added a bronze medal from the GTA Classic. His steady progress and competitive spirit continue to push him forward in the sport.",
+  image:Thusean,
+  link: 'https://www.instagram.com/thenightmare155',
+ 
+},
+
+
  
 
 {name: "Matt",
@@ -73,12 +85,17 @@ const CoachesList =
  
 },
 
- 
-
-
-
-
-
+{
+  name: "Isaiah",
+  belt: "Blue Belt",
+  accomplishments: [
+    "Submission Arts United Gold Medalist",
+    "Former Football Player"
+  ],
+  description: "Isaiah brings a strong athletic foundation to Brazilian Jiu-Jitsu through his years as a competitive football player. His transition to the mats has been impressive, highlighted by a gold medal performance at the Submission Arts United tournament. With his natural athleticism, discipline, and determination, Isaiah continues to grow as a grappler and competitor.",
+  image: Isaiah,
+  link: "https://www.instagram.com/vieux.fm", // add his IG if you’d like
+}
 ]
 
 const Backup = [
