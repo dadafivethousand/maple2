@@ -82,11 +82,9 @@ function App() {
           
                   <Programs />
                 
-                   {/*     <Parallax3   */} 
-          
-                   <Pricing />  
-             
-                
+                   {/*     <Parallax3   
+                         <Pricing />  */} 
+
                  {/*     <Parallax />*/} 
                   <Contact />
               
