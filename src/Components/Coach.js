@@ -35,7 +35,7 @@ export default function Coach({ coach }){
          
             </div>
             </div>
-            { coach.setmoreLink && 
+       {/*     { coach.setmoreLink && 
            <a className='privates' target="_blank"
            rel="noopener noreferrer"  href={coach.setmoreLink}>
                 <div className='green-circle'>
@@ -47,7 +47,7 @@ export default function Coach({ coach }){
             </a>}
             </div>
             <div className='coach-description'>
-               {coach.description}
+               {coach.description}*/}
 
 {/* 
                {coach.headinstructor? 
