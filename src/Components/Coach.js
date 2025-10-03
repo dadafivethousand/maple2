@@ -44,10 +44,10 @@ export default function Coach({ coach }){
                 <div className='privates-text'>
          <p>  Private Training Available - <span className='click-to-book'>Click to book</span></p>
                 </div>
-            </a>}
+            </a>}*/}
             </div>
             <div className='coach-description'>
-               {coach.description}*/}
+               {coach.description}
 
 {/* 
                {coach.headinstructor? 
