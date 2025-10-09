@@ -155,7 +155,8 @@
  
 
 .hst{
-    font-size: 14px;
+    font-size: .89em;
+ 
 }
 
 .unlimited-training{
@@ -193,9 +194,11 @@
     margin-right: 8px;
   }
   .price {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #111111c6;
+    line-height: .8;
+    margin: 10px 0;
   }
   
 .badge {

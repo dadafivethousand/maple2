@@ -215,7 +215,7 @@ export default function Pricing() {
                             <div className='name-and-price'>
                          
                          <p className='full-price'> {formatCurrency(option.price*1.20)}</p>  
-                            <p className='price'>{formatCurrency(option.price)}</p>
+                            <p className='price'>{formatCurrency(option.price)} <br></br>  <span className='hst'>+ HST </span></p>
  
                          {option.subscription ? <p className='cancel-disclaimer'>  Monthly </p> : <p className='cancel-disclaimer'>  Installment Options Available via Klarna </p> }   
                              </div>
