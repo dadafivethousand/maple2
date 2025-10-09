@@ -96,7 +96,7 @@ export default function Purchase({ formatCurrency, cancelPurchase, option, optio
         phone: formData.phone.replace(/\D/g, ''), // Send only digits
         kids: kidsFormData, // Add kidsFormData to request body
       };
-      const endpoint = `https://worker-consolidated.maxli5004.workers.dev/purchase'}`;
+      const endpoint = "https://worker-consolidated.maxli5004.workers.dev/purchase";
       const response = await fetch(endpoint, {
         method: 'POST',
         headers: {

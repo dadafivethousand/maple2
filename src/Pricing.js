@@ -68,19 +68,14 @@ export default function Pricing() {
     const [displayArray, setDisplayArray] = useState([ ])
     const [purchasing, setPurchasing] = useState(null)
     const [purchasingHigherIndex, setPurchasingHigherIndex] = useState(null)
-    const [showPaymentForm, setShowPaymentForm]=useState(false)
-    const [optIdx, setOptIdx] = useState(null)
-    const [idx, setIdx]= useState(null)
-    const [opt, setOpt] = useState(null)
+ 
+    const [optionIndex, setOptionIndex]= useState(null)
+    const [higherOptionIndex, setHigherOptionIndex] = useState(null)
     const togglePaymentForm = () => {
         console.log('hi')
         setShowPaymentForm(prev => !prev);
     }
-
-    const toggleAdult = () => setShowAdult(prev => !prev);
-    const toggleKid = () => setShowKid(prev => !prev);
-    const togglePizduq = () => setShowPizduq(prev => !prev);
-    const togglePrivate = () => setShowPrivate(prev => !prev);
+ 
     const display = (index) => {
         setDisplayArray((prevArray) => {
             if (prevArray.includes(index)) {
@@ -93,14 +88,37 @@ export default function Pricing() {
         });
     };
 
-    const handlePurchasing = (higherIndex, index) => {
+ 
+ 
+    async function handleCheckout(higherIndex, index){
+        console.log('handling purchase request')
+        const submissionData = {
+ 
+        higherIndex: higherIndex, // Send only digits
+        index: index, // Add kidsFormData to request body
+      };
         setPurchasingHigherIndex(higherIndex)
         setPurchasing(index)
-    }
-
-    const cancelPurchase = () => {
-        setPurchasingHigherIndex(null)
-        setPurchasing(null)
+        try{ const response = await fetch('https://worker-consolidated.maxli5004.workers.dev/purchase', 
+            {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submissionData), // Send merged object 
+        mode: 'cors', // Explicitly set the mode to 'cors'
+       }
+        )
+            if (response.ok) {
+               const { url } = await response.json(); // Stripe Checkout URL
+               window.location.href = url; // Redirect to Stripe Checkout
+            }
+            else {
+            console.error('Failed to process checkout');
+            }
+        }  catch (error) {
+            console.error('Error with the checkout:', error)
+        }
     }
     
     
@@ -163,18 +181,7 @@ export default function Pricing() {
 
     return (
         <div id="Pricing" className='PricingContainer'>
-
-{purchasing !== null && purchasingHigherIndex !== null ? 
-    <Purchase 
-        formatCurrency={formatCurrency} 
-        option={priceObject[purchasingHigherIndex].info[purchasing]} 
-        cancelPurchase={cancelPurchase} 
-        optionIndex={purchasing} 
-        purchasingHigherIndex={purchasingHigherIndex}
-    /> 
-    : null}
-
-             
+    
       
 
              <h1 className="animate">Pricing</h1> 
@@ -200,7 +207,7 @@ export default function Pricing() {
                         <div key={optionIndex} className='pricing-flex'>
                                           <>
                              <div className='name-and-price'>
-                             <div class="badge"> <span className='spring-special'>Fall Special</span> <br></br> <span className='percentage-off'> 20% OFF!</span>  <br></br>    </div>
+                             <div className="badge"> <span className='spring-special'>Fall Special</span> <br></br> <span className='percentage-off'> 20% OFF!</span>  <br></br>    </div>
 
                             <p className='name-of-class'>{option.description}</p>
 
@@ -218,7 +225,7 @@ export default function Pricing() {
                         Get Started
                     </a>
                 ) : (   */}   
-                    <button onClick={() => handlePurchasing(index, optionIndex)} id='purchase-button'>
+                    <button onClick={() => handleCheckout(index, optionIndex)} id='purchase-button'>
                         Start
                     </button>
                      {/*     )}    */}                         </>
