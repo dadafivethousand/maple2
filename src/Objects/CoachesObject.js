@@ -35,7 +35,50 @@ const CoachesList =
     setmoreLink: 'https://maplejiujitsu.setmore.com/artur-k'
 },
 
+  {name: "Arthur",
+    belt:"Purple Belt",
+    accomplishments:[, "AJP Gold Medalist", "Next-Gen Gold Medalist", "Ontario Open Silver Medalist", "IBJJF London Open Bronze Medalist", "ADCC Canada 4th place", "Godai Open Bronze Medallist"],
+    description: "A purple belt in Brazilian Jiu-Jitsu, Arthur has been training for 5 years and has already made a name for himself in competition. He has won gold at the AJP and Next-Gen tournaments, secured a silver medal at the Ontario Open, and earned a bronze at the IBJJF London Open. Additionally, he placed fourth at ADCC Canada and took bronze at the Godai Open.",
+    image:ArthurImage,
+    link: 'https://www.instagram.com/cucarachinho',
+    setmoreLink: 'https://maplejiujitsu.setmore.com/arthur-li'
+
+  },
+
+
+
+]
+
+const Backup = [
+  
 {
+  name: "Vitaly",
+  belt:"Black Belt",
+ 
+  description: "Black belt with over 10 years of experience",
+  accomplishments:["Grappling Industries Gold Medalist", "ADCC Canada Silver Medalist", "Ontario Open Silver Medalist"],
+  image:Vitaly
+},
+
+{name: "TG",
+  belt:"Brown Belt",
+ 
+  description: "TG is one of the best local MMA prospects and owns a brown belt in Brazilian Jiu-Jitsu. Over a decade of MMA and Jiu-Jitsu experience.",
+  accomplishments:["Fighter of the Year and Knockout of the Year award winner in 2022", "MMA Champion", "IBJJF International Competitor"],
+  image:TajImage
+
+},
+  {
+    name: "Rob",
+    belt:"Black Belt",
+   
+    description: "Black belt with nearly 20 years of experience.",
+    accomplishments:["Oshawa Open Gold Medalist", "Professional MMA Experience"],
+    image:Rob
+  },
+
+
+  {
   name: "Goran",
 
   description: "A brown belt with 8 years of dedicated Brazilian Jiu-Jitsu training, Goran has developed a reputation for his relentless pace and sharp technical game. In 2023, he captured gold at Grappling Industries as a purple belt, showcasing his ability to dominate in high-level competition. Known among his teammates for his strategic mindset and pressure-heavy style, Goran continues to refine his craft and push the boundaries of his performance on the mats.",
@@ -47,15 +90,6 @@ const CoachesList =
 },
 
 
-  {name: "Arthur",
-    belt:"Purple Belt",
-    accomplishments:[, "AJP Gold Medalist", "Next-Gen Gold Medalist", "Ontario Open Silver Medalist", "IBJJF London Open Bronze Medalist", "ADCC Canada 4th place", "Godai Open Bronze Medallist"],
-    description: "A purple belt in Brazilian Jiu-Jitsu, Arthur has been training for 5 years and has already made a name for himself in competition. He has won gold at the AJP and Next-Gen tournaments, secured a silver medal at the Ontario Open, and earned a bronze at the IBJJF London Open. Additionally, he placed fourth at ADCC Canada and took bronze at the Godai Open.",
-    image:ArthurImage,
-    link: 'https://www.instagram.com/cucarachinho',
-    setmoreLink: 'https://maplejiujitsu.setmore.com/arthur-li'
-
-  },
 
   {name: "Thusean",
   belt:"Blue Belt",
@@ -96,35 +130,6 @@ const CoachesList =
   image: Isaiah,
   link: "https://www.instagram.com/vieux.fm", // add his IG if you’d like
 }
-]
-
-const Backup = [
-  
-{
-  name: "Vitaly",
-  belt:"Black Belt",
- 
-  description: "Black belt with over 10 years of experience",
-  accomplishments:["Grappling Industries Gold Medalist", "ADCC Canada Silver Medalist", "Ontario Open Silver Medalist"],
-  image:Vitaly
-},
-
-{name: "TG",
-  belt:"Brown Belt",
- 
-  description: "TG is one of the best local MMA prospects and owns a brown belt in Brazilian Jiu-Jitsu. Over a decade of MMA and Jiu-Jitsu experience.",
-  accomplishments:["Fighter of the Year and Knockout of the Year award winner in 2022", "MMA Champion", "IBJJF International Competitor"],
-  image:TajImage
-
-},
-  {
-    name: "Rob",
-    belt:"Black Belt",
-   
-    description: "Black belt with nearly 20 years of experience.",
-    accomplishments:["Oshawa Open Gold Medalist", "Professional MMA Experience"],
-    image:Rob
-  },
 ]
   
   export default CoachesList;
