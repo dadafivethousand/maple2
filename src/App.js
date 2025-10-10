@@ -79,12 +79,12 @@ function App() {
                  
                  {/*     <Parallax1 /> */} 
                   <Coaches />
-          
-                  <Programs />
+         
                 
                    {/*     <Parallax3   */} 
                          <Pricing />  
-
+ 
+                  <Programs />
                  {/*     <Parallax />*/} 
                   <Contact />
               
