@@ -155,7 +155,7 @@ text-decoration: underline;
 }
 
 
-@media(min-width:800px){
+@media(min-width:700px){
     .form-container{
         width:50vw;
     }
@@ -164,5 +164,7 @@ text-decoration: underline;
         width: 40vw;
       }
      
-
+       .message-body{
+    text-align: center;
+ }
 }
