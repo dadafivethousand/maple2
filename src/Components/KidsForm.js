@@ -3,7 +3,6 @@ import '../Stylesheets/KidsForm.css'; // Separate CSS file for this component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useAppContext } from "../AppContext";
-import pic from '../Media/img.png';
 
 export default function KidsForm({ kidsFormData, setKidsFormData }) {
   const { setShowKidForm } = useAppContext();

@@ -4,6 +4,7 @@ import './Stylesheets/Schedule.css';
 import Legend from './Components/Legend';
 import ScheduleWidget from './Components/ScheduleWidget';
 import KidsScheduleWidget from './Components/KidsScheduleWidget';
+import bluelogo from "./Media/blue-logo.png"
 
 // Config: Pixels per hour
 const PIXELS_PER_HOUR = 47;
@@ -108,7 +109,7 @@ export default function Schedule() {
 
   return (
     <div id="Schedule" className='ScheduleContainer'>
-      <h1 className='animate'>Class Schedule</h1>
+ <h1 className='animate'> 🗓️ Schedule</h1>
       {/*  <ScheduleWidget />   */}
       <div className="Schedule">
         {Object.keys(schedule).map((day) => (
@@ -159,6 +160,7 @@ export default function Schedule() {
         < KidsScheduleWidget />
           */}
       </div>
+      <div></div>
     </div>
   );
 }

@@ -49,9 +49,7 @@ export default function FAQ() {
             />
           ))}
         </div>
-        <div className="VideoContainer">
-         { /*<Jocko /> */}
-        </div>
+ 
       </div>
     </div>
   );

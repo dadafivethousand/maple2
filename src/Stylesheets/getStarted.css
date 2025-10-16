@@ -3,7 +3,7 @@
  
    background-color:  rgba(243, 239, 227, 0);
     text-align: center;
-    margin: 10px auto;
+    margin: 0auto;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -44,13 +44,14 @@ font-size: 20px;
 }
 
 .large{
-    height:80px;
-    width:300px;
-    font-size:40px;
+    height:60px;
+    width:250px;
+    font-size:32px;
     border:1px solid white;
     text-align: left;
     animation: appear 2s ease-in;
     animation: pulseGlow 3s ease-in-out infinite;
+    background-color: rgba(0, 0, 0, 0.747);
  
 }
 

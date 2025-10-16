@@ -8,6 +8,7 @@
   flex: 1 1 0;
   width: 100%; /* Mobile default to full width */
   border-bottom: 1px solid black;
+   z-index: 3;
 }
 
 .class-name {
@@ -22,26 +23,67 @@
 }
 
 .ScheduleContainer {
-  
-  padding-top: 100px;
-
-  margin-bottom:100px;
+  min-height: 80vh;
+ 
+ background-image: url('../Media/ibjjf.jpg');
+ 
+ 
   position: relative;
  border-top:2px solid black;
+ background-size:cover;
+ 
+ background-size: cover;
+ background-position: top center;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
  
   
 }
 
-.ScheduleContainer h1 {
-  color: rgb(0, 0, 0);
+
+
+
+.ScheduleContainer::after {
+  content:'';
+  position: absolute;
+  top:0;
+  background: linear-gradient(to bottom, rgb(221, 231, 245), rgba(0, 0, 0, 0.373));
+  height:100%;
+  width: 100vw;
 }
 
-.Schedule {
+
+.ScheduleContainer  h1:after, .ScheduleContainer h1:before {
+      content: " ";
+      display: block;
+      border-bottom: 1px solid #041e42;
+      border-top: 1px solid  #041e42;
+      height: 5px;
+    background-color: #042042;
+  }
+
+
+.ScheduleContainer h1{
+ 
+  padding-top: 40px;
   
+ 
+ color: #041e42;
+  position: relative;
+ 
+ z-index: 3;
+}
+
+ 
+
+.Schedule {
+ 
   display: flex;
    justify-content: center;
   align-items: center;
   margin: 0 auto;
+  width:100vw;
 }
 
 .Monday{
@@ -104,6 +146,8 @@
 @media (min-width: 800px) {
 
  
+
+ 
   .class-name {
     font-size:12px
   }
@@ -138,3 +182,4 @@
     display: block; /* Show full names on wide screens */
   }
 }
+.header-logo{z-index: 30; height:40px;}

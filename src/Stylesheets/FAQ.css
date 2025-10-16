@@ -1,182 +1,239 @@
-.FAQContainer {
-    margin: auto;
-    background-color: rgb(253, 253, 253);
-    padding-top: 100px;
+/* ===========================
+   Maple BJJ – FAQ (Refactor)
+   Clean, compact, responsive, accessible
+   =========================== */
+
+/* ---- Theme Tokens ---- */
+:root{
+  --bg: #0c1938;                 /* page background */
+  --card: rgba(0, 0, 0, 0.78);   /* question bar */
+  --card-2: rgba(3, 4, 22, 0.88); /* answer panel */
+  --ink: #ffffff;
+  --muted: #c5d3e8;
+  --accent: #5ab0ff;             /* links / focus ring */
+  --outline: rgba(255,255,255,.28);
+  --outline-strong: rgba(255,255,255,.45);
+  --shadow-1: 0 10px 28px rgba(0,0,0,.35);
+  --radius: 12px;
+  --maxw: 960px;
+}
+
+/* ---- Page Container ---- */
+.FAQContainer{
+  margin: 0 auto;
+  background:
+    radial-gradient(1200px 420px at 50% -120px, rgba(90,176,255,.15), transparent 60%),
+    var(--bg);
+ font-family: roboto condensed;
+  padding: 80px 0px 48px;
+  color: var(--ink);
+}
+
+.FAQContainer h1{
+  color: var(--ink);
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: .02em;
+  margin: 0 0 18px;
+}
+
+/* ---- Layout ---- */
+.FAQ{
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.FAQFlexbox{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.Second{ margin-left: 0; }
+.Third{  margin-left: 0; }
+
+/* ---- Controls (optional buttons above list) ---- */
+.faq-controls{
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 22px 0px;
+  width: 100%;
+}
  
-  }
-  
-   
-  
-    .FAQ{
-      width:fit-content;
-      display:flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin: 0 auto;
-    }
-     
-    
-    .FAQFlexbox{
-      display: flex;
-      justify-content: center;
-      align-items: center;
+.faq-controls > *{
+  appearance: none;
+  border: 1px solid var(--outline);
+  background:
+    linear-gradient(180deg, rgba(209, 193, 193, 0.659), rgba(1, 36, 161, 0.631));
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 14px;
+  height: 36px;
+ width:170px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-1);
+  transition: transform .15s ease, border-color .15s ease, background-color .2s ease;
+  font-family: roboto condensed;
+}
+
  
-      
-    }
-  
-    .FAQFlexbox h1{
-      text-align: center;
-    }
-  
-   
-  
-   .Second{
-    margin-left:20px;
-   }
-  
-   .Third{
-   margin-left:40px;
-   }
-    .faq-controls{
-      display:flex;
-      justify-content: center;
-      margin: 20px 0;
-      width:100%;
-   
-    }
-    
-    .faq-controls >*{
-      margin: 5px 2px;
-      height:30px;
-      width:175px;
-      display: block;
-      background-color: rgba(0, 0, 0, 0.709);
-      color: white;
-      border: 2px white solid;
-      font-size: 15px;
-      font-weight: 300;
-      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.84);
-       transition: background-color 0.3s ease;
-    }
-    
-    .faq-controls >*:hover{
-      cursor: pointer;
+
+.faq-controls > *:focus-visible{
+  outline: 2.5px solid var(--accent);
+  outline-offset: 2px;
+}
+
  
-    }
-  .VideoContainer{
-   
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top:30px;
-  }
 
-  .faq-item-container {
- width:90%
-  }
+/* ---- FAQ Items ---- */
+.faq-item-container{
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 1px auto;
+  display: flex;
+  justify-content: flex-start;
+}
 
-  .faq-item{
-    width:90%
-    
-  }
+.faq-item{
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden; /* rounds both header + body */
+  box-shadow: var(--shadow-1);
+  border: 1px solid var(--outline);
+  background: transparent; /* header & body handle their own bg */
+}
 
-  .faq-answer a{
-    text-decoration: underline;
-  }
+/* ---- Question Row ---- */
+.faq-question{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background:
+    linear-gradient(180deg, rgba(12, 111, 210, 0.7), rgba(15, 33, 43, 0.88));
+  color: var(--ink);
+  padding: 12px 14px;
+  border: none; /* outer wrapper has border */
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  position: relative;
+  transition: background-color .2s ease, border-color .2s ease;
+}
 
-  .faq-answer {
-    width:98%;
-    margin:0 auto;
-    font-weight: 200;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.872);
-    color: white;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-right: 0.5px solid rgb(255, 255, 255);
-    border-left: 0.5px solid rgb(255, 255, 255);
-    border-bottom: 0.5px solid rgb(255, 255, 255);
-    transition: opacity 0.5s ease; /* Optional: fade in/out effect */
-  }
+ 
 
-  .faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.903);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border: 1px solid rgb(255, 255, 255);
-    color: white;
-    padding: 10px;
-  }
-  
-    
-  .faq-question h2 {
-    font-size: 20px;
-    font-weight: bold;
-    white-space: nowrap;
-    margin-bottom: 2px;
-    padding-left: 5px;
-  }
-  
-  .faq-item-container {
-    display: flex;
-    justify-content: flex-start;
-    width: 90%;
-    margin: 2px auto;
-  }
-  
-  .faq-item {
-    width:100%
-  }
-  
-  .faq-item-container button {
-    height: 35px;
-    width: 35px;
-    background-color: #05050500;
-    border: none;
-    font-size: 20px;
-    color: white;
-  }
-  
-  .faq-item-container button:hover {
-    cursor: pointer;
-  }
-  
-  /* Container for the answer content */
-  .faq-answer-wrapper {
-    overflow: hidden; /* Prevents overflow during transitions */
-  }
+ 
+.faq-question h2{
+  font-size: 15px;
+  line-height: 1.25;
+  font-weight: 600;
+  margin: 0;
+  padding-left: 2px;
+  /* Allow wrapping on small screens */
+  white-space: normal;
+  word-break: break-word;
+}
 
-  .faq-free-trial{
-    text-decoration: underline;
-  }
+/* Toggle button on the right (the one you already render) */
+.faq-item-container button{
+  height: 36px;
+  width: 42px;
+  min-width: 42px;
+  background: transparent;
+  border: none;
+  font-size: 17px;
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  transition: transform .25s ease, color .2s ease;
+}
 
-  .faq-free-trial:hover{
-cursor: pointer;
-  }
-  
-  
-    @media(min-width: 800px){
+.faq-item-container button:hover{ cursor: pointer; color: var(--muted); }
+.faq-item-container button:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
 
-   
-    
-      .FAQ-and-video >*{
-        width:50vw; 
-      }
-      
-      .faq-controls >*{
-        width:400px;
-        margin: 0 5px;
-      }
-  
-    }
-   
-    
-   
-    
-      
-  
-        
+/* If your JS adds .is-open to the .faq-item, rotate the toggle (works for SVG chevrons or +/−) */
+.faq-item.is-open .faq-item-container button{
+  transform: rotate(180deg);
+}
+
+.FAQ-and-video{
+  width:90vw;
+  margin: 0 auto;
+}
+
+/* ---- Answer Panel ---- */
+.faq-answer-wrapper{
+  overflow: hidden;
+  /* Smooth open/close – relies on toggling .is-open on .faq-item */
+  max-height: 0;
+ 
+  transition: max-height .35s ease, opacity .25s ease;
+}
+
+/* Expanded state */
+.faq-item.is-open .faq-answer-wrapper{
+  max-height: 700px; /* large enough to fit most answers */
+  opacity: 1;
+}
+
+.faq-answer{
+  width: 100%;
+  margin: 0;
+  font-weight: 300;
+  line-height: 1;
+  padding: 14px 16px 18px;
+  background:
+    linear-gradient(180deg, var(--card), var(--card-2));
+  color: var(--ink);
+  border-top: 1px solid black;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+.faq-answer p{
+ color: white;
+ 
+}
+
+/* Links inside answers */
+.faq-answer a{
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.faq-answer a:hover{ opacity: .9; }
+
+/* Special CTA link (if used) */
+.faq-free-trial{
+  text-decoration: underline;
+  color: var(--accent);
+  font-weight: 700;
+}
+.faq-free-trial:hover{ cursor: pointer; opacity: .9; }
+
+/* ---- Minor utilities ---- */
+.faq-item + .faq-item{ margin-top: 8px; }
+
+/* ---- Responsive ---- */
+@media (min-width: 640px){
+  .faq-question h2{ font-size: 17px; }
+}
+
+@media (min-width: 900px){
+  .FAQContainer{ padding-top: 96px; }
+  .faq-question{ padding: 14px 16px; }
+  .faq-question h2{ font-size: 20px; }
+}
+
+ 

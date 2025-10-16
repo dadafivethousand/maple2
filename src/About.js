@@ -2,8 +2,7 @@ import './Stylesheets/About.css';
 import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCanadianMapleLeaf } from '@fortawesome/free-brands-svg-icons';
-import logoImg from './Media/logos.jpg'
- 
+
 
 export default function About() {
     const items = [

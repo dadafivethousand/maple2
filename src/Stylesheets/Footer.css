@@ -1,5 +1,6 @@
 .FooterContainer{
     background-color: black;
+    overflow: hidden;
     
 }
 .FooterFlexbox{
@@ -8,7 +9,7 @@
     background-color: black;
     font-size:20px;
     padding: 10px 10px;
-  
+  height:100px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -34,7 +35,7 @@
 }
 
 .FooterContainer img{
-    height:70px
+    height:110px
 }
 
 .FooterContainer h5{

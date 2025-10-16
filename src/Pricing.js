@@ -1,274 +1,160 @@
 // Pricing.js
 import './Stylesheets/Pricing.css';
-import React from 'react';
-import Memberships from './Objects/MembershipsObject';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDollarSign, faUserPlus, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
-import MembershipComponent from './Components/MembershipComponent';
 import { useState, useEffect, useRef } from 'react';
-import SetmoreBookingPage from './Components/SetmoreWidget';
-import { useAppContext } from './AppContext';
-import { useNavigate } from 'react-router-dom';
-import logo from './Media/logo-image.png'
 
-import KidsForm from './Components/KidsForm';
-import Leadform from './LeadForm'
-import ScheduleWidget from './Components/ScheduleWidget';
-import LeadForm from './LeadForm';
-import Footer from './Footer';
-import Belt from './Components/Belt';
-import GetStarted from './Components/GetStarted';
-import Purchase from './Components/Purchase';
-import TopRibbon from './Components/Ribbon';
-import BottomRibbon from './Components/BottomRibbon';
- 
-
-const formatCurrency = (amount) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      minimumFractionDigits: 2, // Always show two decimal places
-      maximumFractionDigits: 2,
-    }).format(amount/100);
-  };
-
-const Bullets = [
-        {
-        symbol: <FontAwesomeIcon className='icon' icon={faDollarSign} />,
-        header: 'Transparent Pricing',
-        description: 'Everything upfront, no surprises or hidden costs.'
-    },
-    {
-        symbol: <FontAwesomeIcon className='icon' icon={faUserPlus} />,
-        header: 'Seamless Onboarding',
-        description: 'Join online without any sales pressure—you’re in control!'
-    },
-
-    {
-        symbol: <FontAwesomeIcon className='icon' icon={faCalendarAlt} />,
-        header: 'Flexible Scheduling',
-        description: 'Train at times that fit your busy lifestyle'
-    },
-];
+const formatCurrency = (amount) =>
+  new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(amount / 100);
 
 export default function Pricing() {
-    const {
-        setShowPizduq,
-        showPizduq,
-        showAdult,
-        setShowAdult,
-        showKid,
-        setShowKid,
-        showPrivate,
-        setShowPrivate,
-      } = useAppContext();
-    const itemRefs = useRef([]);
-    const [show, setShow] = useState(new Array(Bullets.length).fill(false));
-    const [priceObject, setPriceObject] = useState(null)
-    const [displayArray, setDisplayArray] = useState([ ])
-    const [purchasing, setPurchasing] = useState(null)
-    const [purchasingHigherIndex, setPurchasingHigherIndex] = useState(null)
- 
-    const [optionIndex, setOptionIndex]= useState(null)
-    const [higherOptionIndex, setHigherOptionIndex] = useState(null)
-    const togglePaymentForm = () => {
-        console.log('hi')
-        setShowPaymentForm(prev => !prev);
-    }
- 
-    const display = (index) => {
-        setDisplayArray((prevArray) => {
-            if (prevArray.includes(index)) {
-                // Remove the index if it is already in the array
-                return prevArray.filter(item => item !== index);
-            } else {
-                // Add the index if it is not in the array
-                return [...prevArray, index];
-            }
-        });
-    };
+  const [priceObject, setPriceObject] = useState(null);
+  const [displayArray, setDisplayArray] = useState([]);
 
- 
- 
-    async function handleCheckout(higherIndex, index){
-        console.log('handling purchase request')
-        const submissionData = {
- 
-        higherIndex: higherIndex, // Send only digits
-        index: index, // Add kidsFormData to request body
-      };
-        setPurchasingHigherIndex(higherIndex)
-        setPurchasing(index)
-        try{ const response = await fetch('https://worker-consolidated.maxli5004.workers.dev/purchase', 
-            {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(submissionData), // Send merged object 
-        mode: 'cors', // Explicitly set the mode to 'cors'
-       }
-        )
-            if (response.ok) {
-               const { url } = await response.json(); // Stripe Checkout URL
-               window.location.href = url; // Redirect to Stripe Checkout
-            }
-            else {
-            console.error('Failed to process checkout');
-            }
-        }  catch (error) {
-            console.error('Error with the checkout:', error)
+  // NEW: watch the whole Pricing section
+  const containerRef = useRef(null);
+  const [buttonsRevealed, setButtonsRevealed] = useState(false);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry], obs) => {
+        if (entry.isIntersecting) {
+          setButtonsRevealed(true); // fire once
+          obs.disconnect();
         }
+      },
+      { threshold: 0.5 } // ~50% of Pricing is visible
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  const display = (index) => {
+    setDisplayArray((prevArray) =>
+      prevArray.includes(index)
+        ? prevArray.filter((i) => i !== index)
+        : [...prevArray, index]
+    );
+  };
+
+  async function handleCheckout(higherIndex, index) {
+    try {
+      const response = await fetch(
+        'https://worker-consolidated.maxli5004.workers.dev/purchase',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ higherIndex, index }),
+          mode: 'cors',
+        }
+      );
+      if (response.ok) {
+        const { url } = await response.json();
+        window.location.href = url;
+      } else {
+        console.error('Failed to process checkout');
+      }
+    } catch (error) {
+      console.error('Error with the checkout:', error);
     }
-    
-    
-    useEffect(()=>{
-        console.log('fetchinginfo')
-        async function fetchMembershipInfo(){
-        try {
-            const response = await fetch('https://worker-consolidated.maxli5004.workers.dev/membership-info');
-            if (response.ok) {
-                const data = await response.json()
-                console.log(data)
-                setPriceObject(data);
-            } else {
-                console.error('Failed to fetch membership info');
-            }
-        } catch (error) {
-            console.error('Error fetching Membership Info:', error)
+  }
+
+  useEffect(() => {
+    async function fetchMembershipInfo() {
+      try {
+        const response = await fetch(
+          'https://worker-consolidated.maxli5004.workers.dev/membership-info'
+        );
+        if (response.ok) {
+          const data = await response.json();
+          setPriceObject(data);
+        } else {
+          console.error('Failed to fetch membership info');
         }
+      } catch (error) {
+        console.error('Error fetching Membership Info:', error);
+      }
     }
     fetchMembershipInfo();
-}, 
-[]);
+  }, []);
 
+  return (
+    <div id="Pricing" className="PricingContainer" ref={containerRef}>
+      <h1 className="animate">Pricing</h1>
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    const itemIndex = itemRefs.current.findIndex(ref => ref === entry.target);
-                    if (itemIndex === -1) return; // Safety check
+      <div>
+        {priceObject?.map((item, idx) => (
+          <div key={idx} className="PricingButtonContainer">
+            {/* Button slides in; alternates L/R with a stagger */}
+            <button
+              onClick={() => display(idx)}
+              className={`AdultMembershipButton reveal-btn ${
+                idx % 2 === 0 ? 'from-left' : 'from-right'
+              } ${buttonsRevealed ? 'is-visible' : ''}`}
+              style={{ ['--btn-delay']: `${idx * 140}ms` }}
+            >
+              {item.label}
+            </button>
 
-                    if (entry.isIntersecting) {
-                        setShow(prev => {
-                            const newShow = [...prev];
-                            newShow[itemIndex] = true;
-                            return newShow;
-                        });
-                    } else {
-                        setShow(prev => {
-                            const newShow = [...prev];
-                            newShow[itemIndex] = false;
-                            return newShow;
-                        });
-                    }
-                });
-            },
-            { threshold: 0.5 }
-        );
+            <div className="membership-flex">
+              {item.info &&
+                item.info.map((option, optionIndex) => {
+                  if (!displayArray.includes(idx)) return null;
 
-        // Observe each bullet point
-        itemRefs.current.forEach(ref => {
-            if (ref) observer.observe(ref);
-        });
-
-        // Cleanup on unmount
-        return () => {
-            if (observer) observer.disconnect();
-        };
-    }, []); // Empty dependency array ensures this runs once on mount
-
-    return (
-        <div id="Pricing" className='PricingContainer'>
-    
-      
-
-             <h1 className="animate">Pricing</h1> 
-
-            <p className='hst-disclaimer'>*All prices subject to HST <br></br>
-    **All sales are final. 
- </p>
-    
-           
-{priceObject?.map((item, index) => {
-     return (
-        <div key={index} className='PricingButtonContainer'>
-
-
-            <button onClick={() => display(index)} className='AdultMembershipButton'>{item.label}</button>
-            <div className='membership-flex'>
-            {item.info && item.info.map((option, optionIndex) => {
-               
-                return (
-                    displayArray.includes(index) && ( // Check if the index is in displayArray
-                        <div >
-                            { option.promo ? <TopRibbon topText={'PROMOTIONAL OFFER'} />: null}
-                        <div key={optionIndex} className='pricing-flex'>
-                                          <>
-                             <div className='name-and-price'>
-                             <div className="badge"> <span className='spring-special'>Fall Special</span> <br></br> <span className='percentage-off'> 20% OFF!</span>  <br></br>    </div>
-
-                            <p className='name-of-class'>{option.description}</p>
-
-                             </div>
-                            <div className='name-and-price'>
-                         
-                         <p className='full-price'> {formatCurrency(option.price*1.20)}</p>  
-                            <p className='price'>{formatCurrency(option.price)} <br></br>  <span className='hst'>+ HST </span></p>
- 
-                         {option.subscription ? <p className='cancel-disclaimer'>  Monthly </p> : <p className='cancel-disclaimer'>  Installment Options Available via Klarna </p> }   
-                             </div>
-              
-               {/*        {option.paymentLink ? (
-                    <a href={option.paymentLink} id="purchase-button" target="_blank" rel="noopener noreferrer">
-                        Get Started
-                    </a>
-                ) : (   */}   
-                    <button onClick={() => handleCheckout(index, optionIndex)} id='purchase-button'>
-                        Start
-                    </button>
-                     {/*     )}    */}                         </>
-                      
-                       </div>
-                       { option.promo ? <BottomRibbon topText={'10 SPOTS REMAINING'} />: null}
-
-                       </div>
-                    )
-                );
-            })}
-</div>
-        </div>
-    );
-})}
-
-
-
-          {/*      <MembershipComponent type={Memberships.adult} />  */}
-
-            <ul className='BulletPoints'>
-                {Bullets.map((bullet, index) => (
-                    <li
-                        ref={el => itemRefs.current[index] = el}
-                        key={index}
-                        className='bullet-item'
-                    >
-                        <div className={`${show[index] ? 'Show' : ''} Vertical`}>
-                            {bullet.symbol}
-                            <div className='center'>
-                                <div className='BulletHeader'>{bullet.header}</div>
-                                <div className='Description'>{bullet.description}</div>
-                            </div>
+                  return (
+                    <div key={optionIndex}>
+                      <div
+                        className={`pricing-flex ${
+                          option.bestvalue ? 'best' : ''
+                        }`}
+                      >
+                        <div className="name-and-price">
+                          <p className="name-of-class">{option.description}</p>
                         </div>
-                    </li>
-                ))}
-            </ul>
-   
 
+                        <div className="name-and-price">
+                          <p className="price">
+                            {formatCurrency(option.price)} <br />
+                            <span className="hst">+ HST</span>
+                          </p>
+                        </div>
 
+                        {Array.isArray(option.features) &&
+                          option.features.length > 0 && (
+                            <ul className="features" aria-label="What you get">
+                              {option.features.map((f, i) => (
+                                <li key={i} className="feature-item">
+                                  <span>✅ </span>
+                                  <span>{f}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
 
-     
-      
-        </div>
-    );
+                        <button
+                          onClick={() => handleCheckout(idx, optionIndex)}
+                          id="purchase-button"
+                        >
+                          Start
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p className="hst-disclaimer">
+        *All prices subject to HST <br />
+        **All sales are final.
+      </p>
+    </div>
+  );
 }

@@ -1,0 +1,301 @@
+/* ================= ImpactPlaque (ULTRA realistic, compact/mobile-safe) ================= */
+
+.ipx {
+  /* Absolute bounds: small but strong; never exceeds viewport on mobile */
+  --w: clamp(260px, 92vw, 520px);
+  --radius: 16px;
+  --pad: clamp(10px, 2.2vw, 16px);
+  --thickness: 16px; /* apparent plate thickness */
+
+  /* Steel tuning */
+  --metal-1: #2e3439;
+  --metal-2: #596167;
+  --metal-3: #8d959c;
+  --metal-4: #cbd2d8;
+  --lip-light: rgba(255,255,255,.28);
+  --lip-dark: rgba(0,0,0,.55);
+
+  /* Shadows */
+  --wall-shadow: 34px;
+  --occlusion: rgba(0,0,0,.45);
+
+  margin: 18px auto 28px;
+  width: var(--w);
+  position: relative;
+  box-sizing: border-box;
+  user-select: none;
+  perspective: 1200px;
+}
+
+/* Off-wall ambient + anchor shadow */
+.ipx::before {
+  content: "";
+  position: absolute;
+  inset: 8px 14px -10px 14px;
+  border-radius: calc(var(--radius) + 10px);
+  background:
+    radial-gradient(140% 160% at 60% 30%, rgba(0,0,0,.45), rgba(0,0,0,.18) 42%, transparent 70%),
+    radial-gradient(120% 150% at 40% 70%, rgba(0,0,0,.35), rgba(0,0,0,.12) 50%, transparent 72%);
+  filter: blur(18px);
+  z-index: 0;
+  pointer-events: none;
+  transform: translateZ(-1px);
+}
+
+/* ================= Plate ================= */
+
+.ipx-plate {
+  position: relative;
+  border-radius: var(--radius);
+  padding: clamp(26px, 6vw, 48px) clamp(20px, 4.8vw, 42px);
+  overflow: hidden;
+  z-index: 1;
+
+  /* Complex brushed alloy stack */
+  background:
+    /* warm/cold multi-directional speculars (satin feel) */
+    radial-gradient(180% 150% at 20% -10%, rgba(255,255,255,.28), transparent 55%),
+    radial-gradient(180% 150% at 80% 110%, rgba(0,0,0,.32), transparent 58%),
+
+    /* micro pitting (turbulence illusion) */
+    repeating-conic-gradient(from 0deg at 50% 50%,
+      rgba(255,255,255,.012) 0 1deg, rgba(0,0,0,.012) 1deg 2deg),
+
+    /* ultra-fine hairlines (diagonal) */
+    repeating-linear-gradient(13deg,
+      rgba(255,255,255,.035) 0 1px,
+      rgba(0,0,0,.045) 1px 2px),
+
+    /* main brushed grain (horizontal) */
+    repeating-linear-gradient(90deg,
+      rgba(255,255,255,.06) 0 2px,
+      rgba(0,0,0,.08) 2px 4px),
+
+    /* base steel gradient */
+    linear-gradient(180deg, var(--metal-4), var(--metal-3) 30%, var(--metal-2) 68%, var(--metal-1));
+
+  /* Inner rim + mass + cast */
+  box-shadow:
+    /* crisp inner rim */
+    0 0 0 .9px rgba(255,255,255,.16) inset,
+    0 0 0 6px rgba(0,0,0,.24) inset,
+
+    /* apparent thickness (bottom/right) */
+    12px 14px 0 -8px rgba(18,22,26,.35),
+
+    /* wall cast */
+    0 18px var(--wall-shadow) rgba(0,0,0,.28);
+
+  /* subtle 3D tilt */
+  transform: translateZ(0) rotateX(.45deg) rotateY(-.35deg);
+}
+
+/* Rolled edges (bottom + right chamfer) */
+.ipx-plate::before,
+.ipx-plate::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+.ipx-plate::before {
+  left: 2px; right: 2px; bottom: -1px; height: var(--thickness);
+  border-bottom-left-radius: calc(var(--radius) + 6px);
+  border-bottom-right-radius: calc(var(--radius) + 6px);
+  background: linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.42));
+  filter: blur(.2px);
+}
+
+.ipx-plate::after {
+  top: 2px; bottom: 2px; right: -1px; width: var(--thickness);
+  border-top-right-radius: calc(var(--radius) + 6px);
+  border-bottom-right-radius: calc(var(--radius) + 6px);
+  background: linear-gradient(90deg, rgba(0,0,0,.06), rgba(0,0,0,.42));
+  filter: blur(.25px);
+}
+
+/* Subtle moving specular sweep on hover/tap */
+.ipx-plate:after {
+  /* already used; add a child sheen layer instead */
+}
+.ipx-plate::marker { content: ""; }
+
+/* Reduce motion */
+@media (prefers-reduced-motion: no-preference) {
+  .ipx-plate {
+    isolation: isolate;
+  }
+  .ipx-plate > .ipx-sheen { display: none; }
+  .ipx-plate:hover { transform: translateZ(0) rotateX(.7deg) rotateY(-.55deg); }
+}
+
+/* ================= Bolts (countersunk, crisp) ================= */
+
+.ipx-bolt {
+  --bolt: clamp(16px, 2.8vw, 24px);
+  position: absolute;
+  width: var(--bolt);
+  height: var(--bolt);
+  border-radius: 50%;
+
+  /* countersink bowl + cap */
+  background:
+    radial-gradient(90% 90% at 50% 50%, #eef2f6 0 40%, #99a1a8 65%, #3e454b 100%),
+    radial-gradient(120% 120% at 50% 58%, rgba(0,0,0,.6), transparent 62%);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.65) inset,
+    0 -2px 4px rgba(0,0,0,.75) inset,
+    0 10px 18px rgba(0,0,0,.45);
+}
+
+/* Hex + slot hybrid for realism */
+.ipx-bolt::before,
+.ipx-bolt::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* hex cavity */
+.ipx-bolt::before {
+  clip-path: polygon(25% 12%, 75% 12%, 90% 50%, 75% 88%, 25% 88%, 10% 50%);
+  background: linear-gradient(180deg, rgba(0,0,0,.3), rgba(255,255,255,.06));
+  transform: translateZ(0) scale(.58);
+  filter: blur(.15px);
+}
+
+/* screw slot */
+.ipx-bolt::after {
+  background:
+    linear-gradient(transparent 46%, rgba(0,0,0,.6) 47% 53%, transparent 54%),
+    linear-gradient(90deg, transparent 46%, rgba(0,0,0,.6) 47% 53%, transparent 54%);
+  filter: drop-shadow(0 1px 0 rgba(255,255,255,.55));
+}
+
+.ipx-bolt--tl { top: var(--pad); left: var(--pad); }
+.ipx-bolt--tr { top: var(--pad); right: var(--pad); }
+.ipx-bolt--bl { bottom: var(--pad); left: var(--pad); }
+.ipx-bolt--br { bottom: var(--pad); right: var(--pad); }
+
+/* ================= Engraving ================= */
+
+.ipx-engrave {
+  position: relative;
+  margin: clamp(2px, 0.8vw, 8px) auto;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-weight: 900;
+  font-family: "Impact", "Avenir Next Condensed", "Segoe UI", system-ui, sans-serif;
+  font-size: clamp(28px, 7.2vw, 72px);
+  line-height: .94;
+
+  /* Metallic fill locked to text */
+  background: linear-gradient(180deg, #e9eff5 0%, #a8b0b7 52%, #6e767d 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+
+  /* Depth: heavy incision shadow + subtle lip */
+  filter:
+    drop-shadow(0 18px 14px rgba(0,0,0,.46))
+    drop-shadow(0 2px 0 rgba(255,255,255,.06));
+  mix-blend-mode: multiply;
+}
+
+/* Crisp inner bevel: light facing NW, dark facing SE */
+.ipx-engrave::before,
+.ipx-engrave::after {
+  content: attr(data-text);
+  position: absolute; inset: 0;
+  pointer-events: none; color: transparent;
+}
+
+/* light rim */
+.ipx-engrave::before {
+  -webkit-text-stroke: 2px var(--lip-light);
+  text-shadow: -1px -1px 0 rgba(255,255,255,.32);
+  transform: translate(-.35px,-.55px);
+  mix-blend-mode: screen;
+}
+
+/* inner wall */
+.ipx-engrave::after {
+  -webkit-text-stroke: 1.9px var(--lip-dark);
+  filter: blur(.25px);
+  opacity: .96;
+  transform: translate(.45px,.6px);
+  mix-blend-mode: multiply;
+}
+
+/* Subtitle – finer cut */
+.ipx-sub {
+  position: relative;
+  margin-top: .55em;
+  text-align: center;
+  letter-spacing: .28em;
+  font-weight: 800;
+  font-size: clamp(9px, 1.6vw, 14px);
+  text-transform: uppercase;
+
+  background: linear-gradient(180deg, #e7edf3, #9aa2a9 60%, #6a7178);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+
+  filter: drop-shadow(0 6px 8px rgba(0,0,0,.35));
+  mix-blend-mode: multiply;
+}
+
+.ipx-sub::before,
+.ipx-sub::after {
+  content: attr(data-text);
+  position: absolute; inset: 0; color: transparent; pointer-events: none;
+}
+.ipx-sub::before { -webkit-text-stroke: 1px rgba(255,255,255,.22); transform: translate(-.25px,-.25px); mix-blend-mode: screen; }
+.ipx-sub::after  { -webkit-text-stroke: .85px rgba(0,0,0,.52); transform: translate(.25px,.25px);  mix-blend-mode: multiply; }
+
+/* Serial – etched microtype */
+.ipx-serial {
+  position: absolute;
+  right: clamp(10px, 2.4vw, 16px);
+  bottom: clamp(8px, 2vw, 14px);
+  font: 700 clamp(8px, 1.5vw, 11px)/1.1 ui-monospace, "SFMono-Regular", Menlo, monospace;
+  letter-spacing: .18em;
+
+  background: linear-gradient(180deg, #e6edf3, #9aa2a9 60%, #6a7178);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,.35));
+  mix-blend-mode: multiply;
+}
+
+.ipx-serial::before,
+.ipx-serial::after {
+  content: attr(data-text);
+  position: absolute; inset: 0; color: transparent; pointer-events: none;
+}
+.ipx-serial::before { -webkit-text-stroke: .7px rgba(255,255,255,.22); transform: translate(-.25px,-.25px); mix-blend-mode: screen; }
+.ipx-serial::after  { -webkit-text-stroke: .7px rgba(0,0,0,.55);  transform: translate(.25px,.25px);   mix-blend-mode: multiply; }
+
+/* Screenreader text */
+.ipx-sr {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0, 0, 1px, 1px);
+  white-space: nowrap; border: 0;
+}
+
+/* Mobile safety + reduced motion */
+@media (max-width: 520px) {
+  .ipx { width: min(92vw, var(--w)); }
+  .ipx-plate { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ipx-plate, .ipx-plate:hover { transform: none !important; }
+}

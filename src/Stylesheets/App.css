@@ -4,7 +4,7 @@
     margin: 0;
     box-sizing: border-box;
     padding: 0;
-     font-family: poppins;
+   
   }
 
   h6{
@@ -31,23 +31,25 @@
   }
 
   h1{
-    text-align:center; font-size:30px; text-transform:uppercase; color:#222; letter-spacing:1px;
-    font-family:"Fugaz One"; font-weight:400; margin-bottom: 50px;;
+    text-align:center; font-size:40px; text-transform:uppercase; color: #041e42; letter-spacing:1px;
+    font-family:"Fugaz One"; font-weight:400;  
    
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
     grid-template-rows: 27px 0;
     grid-gap: 20px;
     align-items: center;
+color:white;
+    padding:30px 0px;
   }
   
   h1:after, h1:before {
       content: " ";
       display: block;
-      border-bottom: 1px solid #ccc;
-      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #041e42;
+      border-top: 1px solid  #041e42;
       height: 5px;
-    background-color:#f8f8f8;
+    background-color: #042042;
   }
 
   h2{

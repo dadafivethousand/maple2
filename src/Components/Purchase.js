@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useAppContext } from "../AppContext";
-import pic from '../Media/img.png'
+
 import KidsForm from './KidsForm';
 export default function Purchase({ formatCurrency, cancelPurchase, option, optionIndex, purchasingHigherIndex }) {
   const { setShowAdult,  } = useAppContext();
@@ -139,7 +139,7 @@ export default function Purchase({ formatCurrency, cancelPurchase, option, optio
     <div  className="purchase-container">
       <div className="purchase-navbar">
 
-          <img className='' src={pic} />
+
    
           <div className="close-btn" onClick={() => cancelPurchase()}>
                 <FontAwesomeIcon icon={faTimes} />

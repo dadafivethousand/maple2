@@ -22,7 +22,7 @@
 }
 
 .ReviewsContainer {
-    margin: 0px auto;
+    margin: 20px auto;
     border-bottom: 2px solid black;
     border-top: 2px solid black;
     overflow: hidden;
@@ -30,7 +30,7 @@
     display: flex;
     justify-content: space-between;
     font-family: 'Arial', sans-serif;
-    background-color: #ffffffcb;
+    background-color: #fffffff1;
     height: 170px;
   
     border: 2px solid black;
@@ -43,6 +43,7 @@
     overflow: hidden;
     z-index: 4;
 }
+
 
 .ReviewsOuterContainer h2 {
     margin: 0 4rem;
@@ -120,10 +121,7 @@
 .Review-Text p:hover {
 cursor:default    
 }
-.txt {
-    height: 50%;
-    padding: 0 5px;
-}
+ 
 
 .ButtonContainer {
     height: 100%;
@@ -142,6 +140,7 @@ cursor:default
 
 .txt {
     font-style: italic;
+    font-size: 15px;
 }
 
 /* Sliding animation classes */
@@ -158,12 +157,12 @@ cursor:default
  
 
 .next.slide-in-from-left {
-    transform: translateX(100%);
+    transform: translateX(130%);
     opacity: 1;
 }
 
 .next.slide-in-from-right {
-    transform: translateX(-100%);
+    transform: translateX(-130%);
     opacity: 1;
 }
 
@@ -182,7 +181,7 @@ cursor:default
     border-radius: 0
     }
 
-    .Review-Text p {
+    .ReviewAuthor{
        
         font-size: 12px;
         

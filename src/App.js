@@ -13,10 +13,9 @@ import LeadForm from "./LeadForm";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useAppContext } from "./AppContext";
 import Parallax from "./Parallax";
-import Parallax1 from "./Parallax1";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Testimonials from "./Components/Testimonials";
-import Parallax3 from "./Parallax3";
 import KidsForm from "./Components/KidsForm";
  import Purchase from "./Components/Purchase";
 import Blog from "./Blog";
@@ -26,8 +25,7 @@ import CancelPage from "./CancelPage";
 import BJJWhiteBelt from "./Components/BJJWhiteBelt";
 import GetStarted from "./Components/GetStarted";
 import ArturImage from "./Components/ArturImage";
- 
- 
+  
 function App() {
   const { showForm, showKidForm, showPurchase } = useAppContext();
 
@@ -75,21 +73,21 @@ function App() {
             
                   <Schedule />
                   {/*     <BJJWhiteBelt /> */} 
-                  <About />
-                 
+   
+       
                  {/*     <Parallax1 /> */} 
                   <Coaches />
          
                 
                    {/*     <Parallax3   */} 
                          <Pricing />  
- 
-                  <Programs />
-                 {/*     <Parallax />*/} 
+               <Parallax /> 
+                   <FAQ />
+           
                   <Contact />
               
          
-                   <FAQ />
+             
              
                   <Footer />
                 </>

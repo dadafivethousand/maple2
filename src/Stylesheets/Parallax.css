@@ -1,28 +1,36 @@
-
-/* ParallaxSection.css */
+/* Simple version: background-attachment: fixed */
 .parallax-container {
-    height: 600px; /* Adjust the height as needed */
-    background-image: url('../Media/parallax.jpg'); /* Replace with your image path */
+  height: 60vh;
+  position: relative;
+  isolation: isolate;                     /* safe stacking */
+  display: grid;
+  place-items: center;
+  text-align: center;
 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-     position: relative;;
-       /*  background-attachment: fixed;*/
+  /* The entire parallax trick here: */
+  background: url('../Media/22784.jpg') top right / cover no-repeat fixed;
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+
+
+ 
+}
+
+/* iPhone fallback (Safari often breaks background-attachment: fixed) */
+@supports (-webkit-touch-callout: none) {
+  .parallax-container {
+    background: none;                     /* disable the buggy path */
   }
-
   .parallax-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-   }
-  
-  .content {
-    padding: 20px;
-    text-align: center;
-    background-color: #f4f4f4;
+    content: "";
+    position: fixed;                      /* pinned to viewport = true parallax */
+    inset: 0;
+    background: url('../Media/filipazzo.jpeg') center / cover no-repeat;
+    z-index: -1;                          /* behind content */
+    pointer-events: none;
   }
-  
+}

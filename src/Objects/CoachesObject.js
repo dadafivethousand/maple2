@@ -1,11 +1,11 @@
 import MaxImage from '../Media/maxim.jpg'
 import ArthurImage from '../Media/art.jpg'
-import TajImage from '../Media/taj.png'
+
 import Rob from '../Media/rob.png'
 import Vitaly from '../Media/Vitaly.png'
-import Vijay from '../Media/aj.jpg'
+
 import Arthur from '../Media/ar.jpg'
-import Tigran from '../Media/tigran.png'
+
 import Joe from "../Media/1000008288.jpg"
 import Matt from "../Media/1000008223.jpg"
 import Goran from "../Media/Goran.jpg"
@@ -35,18 +35,14 @@ const CoachesList =
     setmoreLink: 'https://maplejiujitsu.setmore.com/artur-k'
 },
 
-  {name: "Arthur",
+  {name: "Artoorius",
     belt:"Purple Belt",
     accomplishments:[, "AJP Gold Medalist", "Next-Gen Gold Medalist", "Ontario Open Silver Medalist", "IBJJF London Open Bronze Medalist", "ADCC Canada 4th place", "Godai Open Bronze Medallist"],
-    description: "A purple belt in Brazilian Jiu-Jitsu, Arthur has been training for 5 years and has already made a name for himself in competition. He has won gold at the AJP and Next-Gen tournaments, secured a silver medal at the Ontario Open, and earned a bronze at the IBJJF London Open. Additionally, he placed fourth at ADCC Canada and took bronze at the Godai Open.",
+    description: "A purple belt in Brazilian Jiu-Jitsu, Artoorius has been training for 5 years and has already made a name for himself in competition. He has won gold at the AJP and Next-Gen tournaments, secured a silver medal at the Ontario Open, and earned a bronze at the IBJJF London Open. Additionally, he placed fourth at ADCC Canada and took bronze at the Godai Open.",
     image:ArthurImage,
     link: 'https://www.instagram.com/cucarachinho',
     setmoreLink: 'https://maplejiujitsu.setmore.com/arthur-li'
-
   },
-
-
-
 ]
 
 const Backup = [
@@ -60,14 +56,6 @@ const Backup = [
   image:Vitaly
 },
 
-{name: "TG",
-  belt:"Brown Belt",
- 
-  description: "TG is one of the best local MMA prospects and owns a brown belt in Brazilian Jiu-Jitsu. Over a decade of MMA and Jiu-Jitsu experience.",
-  accomplishments:["Fighter of the Year and Knockout of the Year award winner in 2022", "MMA Champion", "IBJJF International Competitor"],
-  image:TajImage
-
-},
   {
     name: "Rob",
     belt:"Black Belt",

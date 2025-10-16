@@ -1,123 +1,155 @@
+/* Contact.css — Compact hi-tech / glassmorphism, Leafs-blue palette */
+
 .ContactContainer{
-    background-color:  white;
-    color:black;
-    padding-bottom: 50px;
-    padding-top: 100px;
-}
-
-
-.ContactContainer h1{
-    text-align: center;
-    padding-bottom: 50px 0;
+  --ink: #e9f1f8;
+  --ink-2: #cfe0f7;
+  --bg-1: #0a2242;
+  --bg-2: #0e2f5b;
+  --card-1: rgba(255,255,255,.06);
+  --card-2: rgba(255,255,255,.02);
+  --accent: #8dd3f5;
+  --ring: rgba(141,211,245,.50);
+font-family: oswald;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 520px at 14% -180px, #123c71 0%, transparent 38%),
+    linear-gradient(180deg, var(--bg-2), var(--bg-1) 36%, #081a34 100%);
  
-    margin-bottom: 30px;
-    
-}
-.ig-icon{
-    margin-right: 4px;
+   padding-top: 50px;
+ padding-bottom:50px;
+  justify-content: flex-start;
 }
 
-.Instagram{
-    text-align: left;
-    font-size: 30px;
-    display: flex;
-align-items: center;
-
+.contact-flexbox{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+ 
 }
+
+  h1:after, h1:before {
+      content: " ";
+      display: block;
+      border-bottom: 1px solid #ffffff;
+      border-top: 1px solid  #ffffff;
+      height: 5px;
+    background-color: #ffffff;
+  }
 
 .ContactContainer h2{
-    text-align: center;
-    margin-bottom: 30px;
-   
+  color: #fff;
+ 
+ margin-bottom:10px;
+  letter-spacing: .3px;
+  font-size: 1.7rem;
 }
 
-.ContactContainer li{
-    font-family: Sahitya;
-    list-style:square;
-    margin-left:20px;
-    font-weight: 300;
-    margin-bottom:5px;
-   
-}
+ .contact-icons, .social-media-icons{
+  margin-bottom:30px;
+ 
+ }
+ 
+ 
+ 
 
+ 
+/* Map block */
 .ContactContainer ul{
-margin-bottom:20px;
+  margin: 0 0 12px; padding-left: 18px;
 }
-
-.Contact span{
-   font-size:25px
-    }
-    
-
-.ContactInfo-and-map{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-   
-}
-
-.ContactInfo-and-map img{
-    height:250px
-}
-
-.ContactInfo-and-map iframe {
-    display: block;
-    width:300px;
-    height:300px;
-    border-radius: 15px;
-    box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.265);
-    margin: 0 auto;
-    margin-top: 50px;
- 
-}
-
-.Phone, .Email, .Address {
-  
-    margin : 20px 0;
-    width:100%;
-}
-
-.Indent{
-    margin-left:25px;
-}
-
-.Contact h1{
-    text-align: left;
-}
-
-.Contact{
-    margin-top:50px;
-    font-size: 20px;
-}
- 
-#ContactText{
-    font-size: 17px; 
-}
-
-.Map{
-    padding: 0 20px;
-}
-
-@media(min-width:800px){
-    .ContactInfo-and-map iframe {
-        width:500px;
-        height:300px;     
-    }
-
-    
-.ContactContainer h2{
-    text-align: left;
-    padding-bottom: 30px 0;
-    font-size:35px; 
-}
-
 .ContactContainer li{
-   
-    font-size:20px; 
+  list-style: square;
+  margin: 6px 0;
+  font-size: 16px;
+  color: var(--ink-2);
+  font-weight: 500;
 }
 
+.ContactInfo-and-map {
+  max-width:300px;
+}
+.ContactInfo-and-map iframe{
+  display: block;
+  width: 90%;
+  height: 250px;
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 18px 36px rgba(4,30,66,.38);
+  margin: 10px 0;;
+  isolation: isolate;
+   width:250px;
+
+}
  
 
-    
+
+ 
+/* Subtle scanning gloss over the map */
+ 
+/* Contact lines */
+.Phone, .Email, .Address{
+  margin-bottom:10px;
+display: flex;
+ 
+
+}
+
+/* Icon sizing + hover */
+.Phone svg, .Email svg, .Address svg, .ig-icon, .fb-icon{
+  font-size: 30px;
+  line-height: 1;
+  color: #fff;
+  filter: drop-shadow(0 0 6px rgba(141,211,245,.45));
+  transition: transform .15s ease, filter .2s ease;
+}
+.Phone:hover svg,
+.Email:hover svg,
+.Address:hover svg,
+.instagram-and-facebook a:hover .ig-icon,
+.instagram-and-facebook a:hover .fb-icon{
+  transform: translateY(-1px);
+  filter: drop-shadow(0 0 10px rgba(141,211,245,.65));
+}
+
+/* Text + links */
+.contact-text{ font-size: 1em; line-height: 1.5; color: var(--ink-2);  }
+.ContactContainer a{
+  color: inherit; text-decoration: none; border-bottom: 1px solid transparent;
+}
+
+.contact-icon-text{
+  margin-left:10px;
+}
+
+/* Social row */
+.instagram-and-facebook{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 1100px;
+  margin: 8px auto 16px;
+}
+
+/* Social row */
+.instagram-and-facebook svg{
+font-size: 45px;
+}
+
+
+
+.contact-content{
+  position: relative;
+  margin-left:20px;
+ 
+
+}
+
+
+@media (min-width:1200px){
+.ContactContainer{
+ 
+  justify-content: space-around;
+}
 }

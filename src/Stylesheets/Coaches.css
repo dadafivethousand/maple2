@@ -1,253 +1,245 @@
-.coaches-container{
- 
-    flex-wrap: wrap;
-    width:100%;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    background-color:  rgb(243, 239, 227);
-    padding-top:50px;
+/* ===============================
+   Stylesheets/Coaches.css
+   Clean, professional UI
+   - Desktop: uniform grid (no selection styles)
+   - Mobile: 3D cover-flow with centered active slide
+   - Big, visible arrows
+   =============================== */
 
+/* ---------- Base ---------- */
+:root {
+  /* Tweak these to match your brand */
+  --panel: #0b162c;      /* card background */
+  --panel-2: #101a33;    /* media placeholder */
+  --text: #d8e1f0;       /* body + names */
+}
+
+.coaches-block {
+  font-family: roboto condensed;
+  width: 100%;
+  margin-inline: auto;
+  height: 100vh;
+  min-height: fit-content;
+  background: linear-gradient(to bottom, #041e42db, #041e42a1);
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+
+.coaches-block h1 { color: #fff; }
+.coaches-title {
+  color: #fff;
+  margin: 0 auto 16px;
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.1;
+  text-align: center;
+}
+
+.coach-plaque {
+  height: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* center the two sections inside the column flex parent */
+.coaches-desktop,
+.coaches-mobile {
+  align-self: center;
+  width: min(1100px, 100%);
+}
+
+/* decorative lines for h1 */
+h1:after, h1:before {
+  content: " ";
+  display: block;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  height: 5px;
+  background-color: #fff;
+}
+
+/* =========================================
+   DESKTOP (>= 901px): Uniform grid (no selection)
+   ========================================= */
+.coaches-desktop { display: none; }
+
+
+.coach-grid {
+  --card-max: 360px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--card-max)), 1fr));
+  gap: 20px;
+  padding: 8px 12px 20px;
+}
+
+.coach-card {
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+}
+
+.coach-media { aspect-ratio: 16 / 10; background: var(--panel-2); }
+.coach-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.coach-body { padding: 14px 16px 16px; color: var(--text); }
+.coach-name { margin: 0 0 6px; font-weight: 700; font-size: 1rem; color: inherit; }
+.coach-desc { margin: 0; line-height: 1.2; font-size: .95rem; color: inherit; }
+
+/* =========================================
+   MOBILE (<= 900px): 3D cover-flow
+   ========================================= */
+.coaches-mobile {
+  display: block;
+  position: relative;
+  --gutter: 56px;   /* side gutters for arrows */
+  --shift: 78%;     /* neighbor offset */
+  padding: 10px var(--gutter) 22px;
+  overflow: hidden; /* prevent horizontal scroll */
+}
+
+@media (min-width: 900px) {
+  /* Your requested mobile paragraph styling */
+  .cf-body .cf-desc { font-size: 19px;  }
+}
+
+/* tighter shift on very narrow phones so neighbors still peek in */
+@media (max-width: 360px) {
+  .coaches-mobile { --shift: 92%; }
+}
+
+.cf-stage { perspective:  1200px; position: relative; width: 100%; }
+.cf-stack { display: grid; place-items: center; position: relative; }
+
+/* Card sized to the frame, NOT the viewport, so the active stays centered */
+.cf-card {
+  width: 100%;
+  max-width: 720px; /* 680–900px works well; adjust if you want more/less peek */
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 42px rgba(0,0,0,.32);
+}
+@media (max-width: 420px) {
+  .cf-card { max-width: 600px; }
+}
+
+.cf-media { aspect-ratio: 16 / 10; background: var(--panel-2); }
+.cf-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.cf-body { padding: 14px 16px 16px; color: var(--text); }
+.cf-name { margin: 0 0 6px; font-weight: 800; font-size: 1.4rem; color: inherit; }
+.cf-desc { margin: 0; font-size: .95rem; color: inherit; }
+
+/* Stack all slides; container height follows the active card */
+.cf-slide {
+  grid-area: 1 / 1;
+  transition: transform 520ms cubic-bezier(.2,.8,.2,1), opacity 320ms ease, filter 320ms ease;
+  will-change: transform, opacity, filter;
+}
+
+/* Active slide centered perfectly */
+.cf-slide.is-active {
+  transform: translateX(0) rotateY(0deg) scale(0.96);
+  opacity: 1;
+  z-index: 6;
+  filter: none;
+}
+
+@media (min-width: 901px) {
+  .coaches-desktop { display: block; }
+  .coaches-mobile { display: none; }
+  .coach-plaque { height: 400px; }
+
+  /* Your requested desktop paragraph styling */
+  .coach-body .coach-desc { font-size: 19px;  }
+    .coach-body h3 { font-size: 25px;  }
 }
 
 
-.coach-belt{
-    margin-top:5px;
-    margin-bottom: 50px;
+/* Neighbors use % of their own width, keeping the layout balanced/centered */
+.cf-slide.is-prev {
+  transform: translateX(calc(-1 * var(--shift))) rotateY(24deg) scale(0.90);
+  opacity: 0.9;
+  z-index: 5;
+  filter: blur(0.5px) brightness(0.98);
+}
+.cf-slide.is-next {
+  transform: translateX(var(--shift)) rotateY(-24deg) scale(0.90);
+  opacity: 0.9;
+  z-index: 5;
+  filter: blur(0.5px) brightness(0.98);
+}
+.cf-slide.is-left2 {
+  transform: translateX(calc(-2 * var(--shift))) rotateY(28deg) scale(0.84);
+  opacity: 0.55;
+  z-index: 4;
+  filter: blur(1.1px) brightness(0.95);
+}
+.cf-slide.is-right2 {
+  transform: translateX(calc(2 * var(--shift))) rotateY(-28deg) scale(0.84);
+  opacity: 0.55;
+  z-index: 4;
+  filter: blur(1.1px) brightness(0.95);
+}
+.cf-slide.is-far { opacity: 0; pointer-events: none; }
+
+/* ---------- Arrows (big, visible) ---------- */
+.cf-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 140px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.88);
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 12px;
+  box-shadow: 0 14px 28px rgba(0,0,0,.35);
+  cursor: pointer;
+  z-index: 10;
+}
+.cf-arrow.left  { left: 8px; }
+.cf-arrow.right { right: 8px; }
+.cf-arrow svg { width: 28px; height: 28px; }
+.cf-arrow:hover { transform: translateY(-50%) scale(1.04); }
+.cf-arrow:active { transform: translateY(-50%) scale(.98); }
+.cf-arrow:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
 
-
-.coach-container{
-    margin-bottom:100px;
-    position: relative;
-     
+/* ---------- Motion reduction ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .cf-slide { transition: none; }
 }
 
-.coach-container p{
-    font-family: roboto condensed;
+/* ===== Mobile cover-flow: dim non-active slides with an overlay ===== */
+.cf-card { position: relative; }
+
+.cf-slide:not(.is-active) .cf-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.28));
+  transition: opacity 200ms ease;
+  opacity: 1;
 }
 
-.name-and-ig{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size:25px;
+.cf-slide.is-left2 .cf-card::after,
+.cf-slide.is-right2 .cf-card::after {
+  background: linear-gradient(180deg, rgba(0,0,0,.60), rgba(0,0,0,.40));
 }
 
-.coach-nm{
-    margin-right:10px
-}
-.image-overlay{
-    background:   linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0));
-     height:400px;
-    width:320px;
-    position: absolute;
-    z-index: 2;
- 
- 
-}
+.cf-slide.is-active .cf-card::after { opacity: 0; }
 
-.left{
-    background:   linear-gradient(to left, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0));
-     height:400px;
-    width:320px;
-    position: absolute;
-    z-index: 2;
-    display: flex;
-    justify-content: flex-end;
-    text-align: right;
-    margin-right: 5px; 
-}
-
-.left p{
-    margin-right: 5px;
-}
-
-
-.half{
-    width: 60%;
-    font-family: roboto condensed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height:100%;
-}
-
-.accomplishment{
-    font-size: 15px;
-}
- 
-
-
-.half p{
-    
-    font-family: roboto condensed;
-    margin-bottom:20px;
-    margin-left:5px;
-    text-shadow: 0 0 4px white;
-}
- 
-.coach-photo img{
-    margin:0 auto;
-   width:320px;
-    height:400px;
-    border-radius:10px;
-    object-fit: cover;
-    display: block;
-    box-shadow: 7px 7px 8px black;
-    margin-bottom: 20px;
-    border: 1px solid black;
-   
-}
-
-.lineage{
-    margin-top:50px;
-    font-size: 12px;
-    text-align: center;
-    font-family: roboto consensed;
-}
-
-.lineage p{
-    margin-top:50px;
-    font-size: 8px;
-    text-align: center;
-    font-family: roboto consensed;
-}
-
-.artur img{
-    border-top-left-radius:10%;
-}
- 
- 
-.dim{
-    filter: brightness(25%);
-}
-
-
-.coach-name{
-    text-align: center;
-    transform: translateY(-100%);
-    opacity: 0;
-    transition: transform ease-in-out 0.2s;
-    font-weight:200;
-    font-family: Roboto condensed;
-    color:white;
-    font-size:1.5rem
-}
-
- 
-            
-
-.name-and-bio{
-    position:absolute;
-    top:20px;
-    width:100%;
-    margin: 0 auto;   
-    padding:0 10px;
-    color:white;
-  
-}
-
-.coach-bio, .coach-accomplishments {
-    position: relative;
-    top:70px;
-    transform: translateY(100%);
-    opacity: 0;
-    transition: transform ease-in 0.2s;
-    font-family: Roboto condensed;
-    font-weight:200;
-}
-
-.coach-bio{
-    margin-bottom:20px
-}
-
-.coach-accomplishments p{
-    font-family: Roboto condensed;
-}
-
-.slide{
-    transform: translateY(0%);
-    opacity: 1;
-  
-}
-
-
-
-.coaches-intro h1{
-    margin-bottom:20px;
-    width: 98vw;;
-}
-
-.coaches-intro p{
-    
-    opacity: 80%;
-    width:90%;
-    margin: 0 auto;
-    margin-bottom:30px;
-}
-
-.coach-description{
-    width:350px;
-    margin: 0 auto;
-    font-family: roboto;
-    margin-top:10px;
-    border-left:2px solid black;
-    padding-left:6px;
-}
-
-.green-circle{
-    height:15px;
-    width:15px;
-    border-radius: 50%;
-    background-color: green;
-    margin-right:10px;
-    border: 1px solid black;
-}
-
-.privates{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    
-}
-
-.privates-text{
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 17px;
-}
-
-.click-to-book{
-    font-style: italic;
-    font-size: 17px;
-    text-decoration: underline;
-    font-family: Roboto condensed;
-}
-
-
-@media(min-width:800px){
-    .coaches{
-        display:flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-        width:98vw;
-      
-    }
-    .coaches >*{
-       margin: 50px;
-    }
-    .coach-container{
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: 100vw;
-    }
-    .coach-description{
-        width:40%;
-        margin: 50px ;
- 
-    }
+/* optional: add mild desaturation to non-active slides for extra 3D focus */
+.cf-slide:not(.is-active) {
+  filter: saturate(.92) contrast(.96);
 }

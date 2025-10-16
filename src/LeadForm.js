@@ -1,223 +1,261 @@
 import React, { useState, useEffect } from 'react';
 import './Stylesheets/LeadForm.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useAppContext } from "./AppContext";
-import pic from './Media/img.png'
-export default function LeadForm( {closebutton} ) {
+import bluelogo from "./Media/blue-logo.png";
+import AnimatedCheckmark from './Components/AnimatedCheckmark';
+import TypewriterCycle from './Utils/Typewriter';
+
+export default function LeadForm({ closebutton }) {
   const { setShowForm } = useAppContext();
+
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
-    lastName: '', 
+    lastName: '',
     email: '',
     phone: '',
-  // Default to Ontario
   });
 
-  const [message, setMessage] = useState(null); // To display success/error messages
-  const [isValid, setIsValid] = useState(false); // To track if the form is valid
+  // UI state
+  const [status, setStatus] = useState("idle"); // 'idle' | 'submitting' | 'success' | 'error'
+  const [showInstructions, setShowInstructions] = useState(false);
+  const [fadeOutCheck, setFadeOutCheck] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+  const [isValid, setIsValid] = useState(false);
 
-  const handleCaptchaChange = (token) => {
-    if (token) {
-      setCaptchaVerified(true); // Enable the submit button when CAPTCHA is verified
-    } else {
-      setCaptchaVerified(false); // Disable it if something goes wrong
-    }
-  };
+  const handleCaptchaChange = (token) => setCaptchaVerified(Boolean(token));
 
-  // Email validation function using regular expression
-  const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-  // Handle input changes, and format/validate phone number
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     if (name === 'phone') {
-      // Remove all non-digit characters
-      const cleanedPhone = value.replace(/\D/g, '');
-
-      // Apply the format (123) 456-7890
-      let formattedPhone = cleanedPhone;
-      if (cleanedPhone.length > 3 && cleanedPhone.length <= 6) {
-        formattedPhone = `(${cleanedPhone.slice(0, 3)}) ${cleanedPhone.slice(3)}`;
-      } else if (cleanedPhone.length > 6) {
-        formattedPhone = `(${cleanedPhone.slice(0, 3)}) ${cleanedPhone.slice(3, 6)}-${cleanedPhone.slice(6, 10)}`;
+      const cleaned = value.replace(/\D/g, '');
+      let formatted = cleaned;
+      if (cleaned.length > 3 && cleaned.length <= 6) {
+        formatted = `(${cleaned.slice(0, 3)}) ${cleaned.slice(3)}`;
+      } else if (cleaned.length > 6) {
+        formatted = `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)}-${cleaned.slice(6, 10)}`;
       }
-
-      // Update formData with the formatted phone number
-      setFormData({ ...formData, phone: formattedPhone });
+      setFormData((p) => ({ ...p, phone: formatted }));
     } else {
-      setFormData({ ...formData, [name]: value });
+      setFormData((p) => ({ ...p, [name]: value }));
     }
   };
 
-  // Validate the form fields
+  // Form validity
   useEffect(() => {
-    // Clean the phone number (remove formatting) to validate its length
     const cleanedPhone = formData.phone.replace(/\D/g, '');
-
-    // Ensure all required fields are filled, phone has exactly 10 digits, and email is valid
-    const isFormValid =
+    const ok =
       formData.firstName.trim() !== '' &&
-       
+      formData.lastName.trim() !== '' &&
       validateEmail(formData.email) &&
       cleanedPhone.length === 10 &&
-      captchaVerified === true;
-
-    setIsValid(isFormValid);
+      captchaVerified;
+    setIsValid(ok);
   }, [formData, captchaVerified]);
 
-  // Handle form submission
+  // After success: show checkmark, fade it, then swap to instructions
+  useEffect(() => {
+    if (status !== 'success') return;
+    setShowInstructions(false);
+    setFadeOutCheck(false);
+
+    const fadeTimer = setTimeout(() => setFadeOutCheck(true), 1200);   // start fade
+    const swapTimer = setTimeout(() => setShowInstructions(true), 1900); // swap to instructions
+
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(swapTimer);
+    };
+  }, [status]);
+
   const handleSubmit = async (e) => {
-
     e.preventDefault();
-    setIsValid(false)
-    if (!isValid) return; // Prevent submission if form is not valid
-    console.log('sending request to worker')
+    if (!isValid || status === 'submitting') return;
+
+    setStatus('submitting');
+    setErrorMsg('');
+
     try {
-      const response = await fetch('https://worker-consolidated.maxli5004.workers.dev/intake-form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          phone: formData.phone.replace(/\D/g, ''), // Send only digits to the backend
-        }),  
-        mode: 'cors', // Explicitly set the mode to 'cors'
-       });
+      const response = await fetch(
+        'https://worker-consolidated.maxli5004.workers.dev/intake-form',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          mode: 'cors',
+          body: JSON.stringify({
+            ...formData,
+            phone: formData.phone.replace(/\D/g, ''),
+          }),
+        }
+      );
 
-      if (response.ok) {
-        const result = await response.json();
-        console.log(result.message); 
-        setMessage(
-          
-          <>
-            <p id='message-title' className="message-title">Thank You!</p>
-<p className="message-body top"> Kindly complete the  <a href='https://waiver.smartwaiver.com/w/dj188118umjqr7iwcr7jfq/web/'>waiver</a> and then feel free to attend any classes listed on our schedule. </p>
- 
-    <p className="message-body center"> See you on the mats! </p> 
-
-             <img id='success-message-image' className='small-pic' src={pic} />
-          </>
-        );
-        console.log('Success:', result);
-
-        // Reset the form after a successful submission
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          phone: '',
- 
-        });
-      } else {
-        const errorData = await response.json();
-        setMessage(<p className="error-message">Error: {errorData.message}</p>);
-        console.error('Error:', errorData);
+      if (!response.ok) {
+        const err = await response.json().catch(() => ({}));
+        setErrorMsg(err?.message || 'Unexpected error');
+        setStatus('error');
+        return;
       }
-    } catch (error) {
-      setMessage(<p className="error-message">Error submitting the form</p>);
-      console.error('Error:', error);
+
+      // success
+      await response.json().catch(() => ({}));
+      setStatus('success');
+      setFormData({ firstName: '', lastName: '', email: '', phone: '' });
+    } catch (err) {
+      setErrorMsg('Error submitting the form');
+      setStatus('error');
     }
   };
 
+  const showFormUI = status === 'idle' || status === 'submitting' || status === 'error';
+
   return (
-    <div  className="form-outer-container">
-    <div  className="form-container">
-    
-    {closebutton ? <div className='close-form' onClick={()=>setShowForm(false)}> <FontAwesomeIcon icon={faTimes} />
-    </div> : null }
-      {message ? (
-        <div className='message-container'>
-        {message}
+    <div className="form-outer-container">
+      <div className="form-container">
+        {closebutton ? (
+          <div
+            className={`close-form`}
+            onClick={() => setShowForm(false)}
+            aria-label="Close form"
+            role="button"
+          >
+            <FontAwesomeIcon icon={faTimes} />
+          </div>
+        ) : null}
 
-        </div>
-      ) : (
-        <>
-          <img className='small-pic' src={pic} />
-     <h2> Free Trial - 7 Days</h2>  <br></br>
+        {status === 'success' ? (
+          <div className="message-container">
+            {!showInstructions ? (
+              <div className={`check-wrap ${fadeOutCheck ? 'fade-out' : ''}`}>
+                <AnimatedCheckmark />
+              </div>
+            ) : (
+             <>
+  {/* Typewriter title */}
+ <p id="message-title" className="message-title">
+  <TypewriterCycle speed={45} startDelay={0}>Your next steps...</TypewriterCycle>
+</p>
 
+  {/* Staggered slide-ins (one-by-one from left) */}
+  <ol className="instructions-list">
+    <li className="message-body slide-in" style={{ "--delay": "1.2s" }}>
+      Sign the{" "}
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://waiver.smartwaiver.com/w/dj188118umjqr7iwcr7jfq/web/"
+      >
+        waiver
+      </a>
+    </li>
 
+    <li className="message-body slide-in" style={{ "--delay": "1.6s" }}>
+      Check the class schedule
+    </li>
 
-           <form onSubmit={handleSubmit}>
-            <div className='grid'>
-            <div className="form-group">
-              <input
-                type="text"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
-                placeholder="First Name"
-                required
-              />
-            </div>
+    <li className="message-body slide-in" style={{ "--delay": "2.0s" }}>
+      Attend any classes you want
+    </li>
 
+    <li className="message-body slide-in" style={{ "--delay": "2.4s" }}>
+      For questions please see the FAQ section or call us directly
+    </li>
+  </ol>
 
-            <div className="form-group">
-              <input
-                type="text"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-                placeholder="Last Name"
-                required
-              />
-            </div>
+  {/* Logo fades in after the list */}
+  <img
+    className="blue-logo fade-in-late"
+    style={{ "--delay": "3.0s" }}
+    src={bluelogo}
+    alt="Logo"
+  />
+</>
 
+            )}
+          </div>
+        ) : (
+          <>
+            <img className="first-blue-logo" src={bluelogo} alt="Logo" />
+            <h2>Free Trial - 7 Days</h2>
+            <br />
 
-          
+            {status === 'error' && (
+              <p className="error-message center">{errorMsg}</p>
+            )}
 
-            <div className="form-group">
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email Address"
-                required
-              />
-            </div>
+            <form onSubmit={handleSubmit}>
+              <div className="grid">
+                <div className="form-group">
+                  <input
+                    type="text"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    placeholder="First Name"
+                    required
+                  />
+                </div>
 
-            <div className="form-group">
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="Phone Number"
-                required
-              />
-            </div>
-            </div>
-            {/* Google reCAPTCHA widget */}
-            <div className='captcha-container'>
-            <div className='captcha'>
-            <ReCAPTCHA
-              id="center"
-              className="recaptcha"
-              sitekey="6LfVmFoqAAAAAF811UKiqels-ToHS8VlodkDiS6G"
-              onChange={handleCaptchaChange}
-            />
-            </div>
-            </div>
-            <button
-              
-              type="submit"
-              className={isValid ? 'valid-button' : 'invalid-button'}
-              disabled={!isValid}
-            >
-              Submit
-            </button>
-          </form>
-        </>
-      )}
-    </div>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    placeholder="Last Name"
+                    required
+                  />
+                </div>
+
+                <div className="form-group">
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Email Address"
+                    required
+                  />
+                </div>
+
+                <div className="form-group">
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Phone Number"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="captcha-container">
+                <div className="captcha">
+                  <ReCAPTCHA
+                    id="center"
+                    className="recaptcha"
+                    sitekey="6LfVmFoqAAAAAF811UKiqels-ToHS8VlodkDiS6G"
+                    onChange={handleCaptchaChange}
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                className={isValid ? 'valid-button' : 'invalid-button'}
+                disabled={!isValid || status === 'submitting'}
+              >
+                {status === 'submitting' ? 'Submitting…' : 'Submit'}
+              </button>
+            </form>
+          </>
+        )}
+      </div>
     </div>
   );
 }
