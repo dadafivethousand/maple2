@@ -203,6 +203,8 @@ h1:after, h1:before {
   box-shadow: 0 14px 28px rgba(0,0,0,.35);
   cursor: pointer;
   z-index: 10;
+  border:1px solid rgba(255, 255, 255, 0.478);
+
 }
 .cf-arrow.left  { left: 8px; }
 .cf-arrow.right { right: 8px; }
