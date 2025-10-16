@@ -147,9 +147,20 @@ font-size: 45px;
 }
 
 
-@media (min-width:1200px){
+@media (min-width:800px){
 .ContactContainer{
  
   justify-content: space-around;
 }
+.ContactInfo-and-map iframe{
+
+  
+  height: 400px;
+
+  
+   width:400px;
+
+}
+ 
+
 }

@@ -12,26 +12,15 @@
     flex-direction: column;
     justify-content: center;
  
-     background-position: center 180px;
+     background-position: 70%;
     background-repeat: no-repeat;
     background-size: cover;    
-    animation: slowPan 50s ease infinite;
+ 
     position: relative; /* Needed for ::before */
 }
 
 
-
-@keyframes slowPan {
-    0% {
-      background-position: right center;
-    }
-    50% {
-      background-position: left center;
-    }
-    100% {
-      background-position: right center;
-    }
-  }
+ 
 .landing-container::before{
     position: absolute;
 content: "";

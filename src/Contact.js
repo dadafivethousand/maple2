@@ -10,7 +10,7 @@ export default function Contact() {
       <div className='contact-flexbox'>
       <div>
         <div className="contact-icons">
-          <h2>Call us, Email us, drop by</h2>
+   
 
           <div className="Phone contact-content ">
             <FontAwesomeIcon icon={faPhone} />
@@ -29,7 +29,7 @@ export default function Contact() {
         </div>
 
         <div className="social-media-icons">
-          <h2>Follow us on Social Media</h2>
+    
 
           <div className="instagram-and-facebook contact-content">
             <a
@@ -54,11 +54,8 @@ export default function Contact() {
       </div>
 
       <div className="ContactInfo-and-map">
-        <h2>Conveniently located in the Cranston Park Plaza</h2>
-        <div className="Map contact-content">
-          <p className='contact-text map-text'> 
-            On-site parking, convenient access from Highway 400, and close proximity to public transit — YRT Route 26.
-          </p>
+         <div className="Map contact-content">
+   
 
           <iframe
          

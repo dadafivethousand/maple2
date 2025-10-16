@@ -93,9 +93,9 @@ export default function Pricing() {
             {/* Button slides in; alternates L/R with a stagger */}
             <button
               onClick={() => display(idx)}
-              className={`AdultMembershipButton reveal-btn ${
+              className={`is-visible AdultMembershipButton reveal-btn ${
                 idx % 2 === 0 ? 'from-left' : 'from-right'
-              } ${buttonsRevealed ? 'is-visible' : ''}`}
+              } `}
               style={{ ['--btn-delay']: `${idx * 140}ms` }}
             >
               {item.label}
@@ -104,7 +104,7 @@ export default function Pricing() {
             <div className="membership-flex">
               {item.info &&
                 item.info.map((option, optionIndex) => {
-                  if (!displayArray.includes(idx)) return null;
+            
 
                   return (
                     <div key={optionIndex}>

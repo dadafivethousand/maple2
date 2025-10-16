@@ -21,7 +21,7 @@ export default function GetStarted({size}){
                     clearInterval(intervalId);
                 }
             }, 100);
-        }, 2000);
+        }, 100);
     
         return () => {
             clearTimeout(timeoutId);
