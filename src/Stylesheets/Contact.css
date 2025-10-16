@@ -164,3 +164,5 @@ font-size: 45px;
  
 
 }
+
+.Phone, .Email, .Address { cursor: pointer; }
