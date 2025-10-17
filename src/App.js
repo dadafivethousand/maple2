@@ -80,10 +80,10 @@ function App() {
            <Parallax />  
                 
                    {/*     <Parallax3   */} 
-                         <Pricing />  
+               
           
                    <FAQ />
-           
+                     <Pricing />  
                   <Contact />
               
          

@@ -12,17 +12,4 @@
 
  
 
-/* iPhone fallback (Safari often breaks background-attachment: fixed) */
-@supports (-webkit-touch-callout: none) {
-  .parallax-container {
-    background: none;                     /* disable the buggy path */
-  }
-  .parallax-container::before {
-    content: "";
-    position: fixed;                      /* pinned to viewport = true parallax */
-    inset: 0;
-    background: url('../Media/filipazzo.jpeg') center / cover no-repeat;
-    z-index: -1;                          /* behind content */
-    pointer-events: none;
-  }
-}
+ 
