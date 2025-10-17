@@ -1,24 +1,16 @@
 /* Simple version: background-attachment: fixed */
 .parallax-container {
-  height: 60vh;
+  height: 80vh;
   position: relative;
-  isolation: isolate;                     /* safe stacking */
   display: grid;
   place-items: center;
   text-align: center;
 
   /* The entire parallax trick here: */
-  background: url('../Media/22784.jpg') top right / cover no-repeat fixed;
+  background: url('../Media/22784.jpg') top right / cover no-repeat;
 }
-
-.parallax-content {
-  position: relative;
-  z-index: 1;
-  color: #fff;
-
 
  
-}
 
 /* iPhone fallback (Safari often breaks background-attachment: fixed) */
 @supports (-webkit-touch-callout: none) {
