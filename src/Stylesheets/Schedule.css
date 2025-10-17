@@ -23,15 +23,11 @@
 }
 
 .ScheduleContainer {
-  min-height: 80vh;
- 
+  min-height: 70vh;
  background-image: url('../Media/ibjjf.jpg');
- 
- 
   position: relative;
  border-top:2px solid black;
  background-size:cover;
- 
  background-size: cover;
  background-position: top center;
  display: flex;
@@ -83,6 +79,7 @@
   align-items: center;
   margin: 0 auto;
   width:100vw;
+  margin-bottom:30px
 }
 
 .Monday{
