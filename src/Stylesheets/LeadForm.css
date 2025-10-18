@@ -51,6 +51,12 @@
  
     text-align: left;
         font-family: roboto condensed;
+
+     
+ 
+  font-family: oswald;
+
+
   }
 .first-blue-logo{
     width:120px;
@@ -207,6 +213,14 @@ text-decoration: underline;
     .form-container form{
         width: 40vw;
       }
+
+
+ #message-title{
+
+    margin: 10px 2em;
+
+
+ }
      
  
 }
@@ -262,10 +276,6 @@ text-decoration: underline;
   color:white
 }
 
-#message-title {
- 
-  font-family: oswald;
-}
 
 
 

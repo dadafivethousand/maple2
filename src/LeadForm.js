@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useAppContext } from "./AppContext";
-import bluelogo from "./Media/whitelogonobg.png";
+import whitelogo from "./Media/whitelogonobg.png";
+import bluelogo from "./Media/blue-logo.png";
 import AnimatedCheckmark from './Components/AnimatedCheckmark';
 import TypewriterCycle from './Utils/Typewriter';
 
@@ -170,7 +171,7 @@ export default function LeadForm({ closebutton }) {
   <img
     className="blue-logo fade-in-late"
     style={{ "--delay": "3.0s" }}
-    src={bluelogo}
+    src={whitelogo}
     alt="Logo"
   />
 </>
