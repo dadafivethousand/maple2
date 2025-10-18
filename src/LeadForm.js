@@ -119,7 +119,7 @@ export default function LeadForm({ closebutton }) {
       <div className={`form-container ${status === 'success' && 'blue-bg'} `}>
         {closebutton ? (
           <div
-            className={`close-form`}
+            className={`close-form ${status === 'success' && 'close-form-white'}`}
             onClick={() => setShowForm(false)}
             aria-label="Close form"
             role="button"

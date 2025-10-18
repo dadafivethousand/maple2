@@ -131,6 +131,9 @@
      
 }
 
+.close-form-white{
+  color:white;
+}
  
 .visible { opacity: 1; }
 .invisible { opacity: 0; pointer-events: none; }
