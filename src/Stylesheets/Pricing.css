@@ -78,6 +78,11 @@
   display: block;
 }
 
+.PricingButtonContainer button:hover {
+ cursor: pointer;
+}
+
+
 
 /* ===== One-row flex strip (no wrap) ===== */
 .membership-flex {
