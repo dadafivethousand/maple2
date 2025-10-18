@@ -78,7 +78,7 @@
   display: block;
 }
 
-.PricingButtonContainer button:hover {
+#purchase-button:hover {
  cursor: pointer;
 }
 
