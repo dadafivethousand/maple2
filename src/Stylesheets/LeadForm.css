@@ -45,9 +45,10 @@
 }
 
  #message-title{
- width: 85%;
+ width: fit-content;
     font-size: 25px;
     margin: 10px auto;
+ 
     text-align: left;
         font-family: roboto condensed;
   }
@@ -206,9 +207,7 @@ text-decoration: underline;
         width: 40vw;
       }
      
-       .message-body{
-    text-align: center;
- }
+ 
 }
 
 /* Keep bullets aligned; we’ll animate items in sequence */
