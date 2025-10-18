@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useAppContext } from "./AppContext";
-import bluelogo from "./Media/blue-logo.png";
+import bluelogo from "./Media/whitelogonobg.png";
 import AnimatedCheckmark from './Components/AnimatedCheckmark';
 import TypewriterCycle from './Utils/Typewriter';
 
@@ -115,7 +115,7 @@ export default function LeadForm({ closebutton }) {
 
   return (
     <div className="form-outer-container">
-      <div className="form-container">
+      <div className={`form-container ${status === 'success' && 'blue-bg'} `}>
         {closebutton ? (
           <div
             className={`close-form`}

@@ -1,6 +1,6 @@
 /* Root */
 .ck {
-  --ck-color: #041e42; /* Leafs navy */
+  --ck-color: #ffffff; /* Leafs navy */
   --ck-size: 96px;
 
   width: var(--ck-size);

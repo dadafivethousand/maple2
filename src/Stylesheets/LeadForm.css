@@ -45,9 +45,9 @@
 }
 
  #message-title{
- width: fit-content;
+  
     font-size: 25px;
-    margin: 10px auto;
+    margin: 10px 10px;
  
     text-align: left;
         font-family: roboto condensed;
@@ -172,8 +172,9 @@
 
 .form-container a{
 text-decoration: underline;
-    font-family: roboto condensed;
-    color:blue;
+    font-family: oswald;
+    color:rgb(94, 192, 234);
+ 
  
 }
  
@@ -253,3 +254,25 @@ text-decoration: underline;
   0%, 49% { opacity: 1; }
   50%, 100% { opacity: 0; }
 }
+
+.blue-bg{
+  background-color: #041e42;
+  border:2px solid white;
+  font-family: oswald;
+  color:white
+}
+
+#message-title {
+ 
+  font-family: oswald;
+}
+
+
+
+.message-body {
+ 
+  font-family: oswald;
+}
+
+ 
+ 
