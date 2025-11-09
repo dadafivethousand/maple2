@@ -12,6 +12,7 @@ import bg7 from './Media/Iverson.JPG'
 
 import bg8 from './Media/kidstwo.jpg'
  
+import bg9 from './Media/alexbarsoum.JPG'
 export default function Landing() {
   const images = [
                 { src: bg6, alt: "Boxing" },
@@ -24,6 +25,8 @@ export default function Landing() {
             { src: bg7, alt: "Iverson" },
           
                                   { src: bg8, alt: "More Kids", right:true },
+                                             { src: bg9, alt: "Blue Belt"},
+
 
                 
     // Add more slides here if needed
