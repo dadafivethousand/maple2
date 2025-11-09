@@ -2,25 +2,30 @@ import './Stylesheets/Landing.css'
 import GetStarted from './Components/GetStarted'
 import { useEffect, useState } from 'react'
 import bg1 from './Media/IMG_4662.JPG'
-import bg2 from './Media/womensclass.JPG'
-import bg3 from './Media/kids.jpg'
+import bg2 from './Media/womensclass.jpeg'
+import bg3 from './Media/kids.jpeg'
 import bg4 from './Media/mt.jpg'
 import bg5 from './Media/Arteen.JPG'
 import bg6 from './Media/Tony.jpg'
-import bg7 from './Media/truck.JPG'
-import bg8 from './Media/Iverson.JPG'
+ 
+import bg7 from './Media/Iverson.JPG'
+
+import bg8 from './Media/kidstwo.jpg'
+ 
 export default function Landing() {
   const images = [
                 { src: bg6, alt: "Boxing" },
 
   { src: bg2, alt: "Women's class" },
     { src: bg1, alt: "BJJ class" },
-    { src: bg3, alt: "Kids' class" },
+    { src: bg3, alt: "Kids' class", right:true },
         { src: bg4, alt: "Muay Thai class" },
               { src: bg5, alt: "MMA" },
-    
-                               { src: bg7, alt: "Truck" },
-                                        { src: bg8, alt: "Iverson" },
+            { src: bg7, alt: "Iverson" },
+          
+                                  { src: bg8, alt: "More Kids", right:true },
+
+                
     // Add more slides here if needed
   ]
 
@@ -53,10 +58,11 @@ export default function Landing() {
       {/* slideshow images */}
       {images.map((img, i) => (
         <img
+ 
           key={i}
           src={img.src}
           alt={img.alt || ""}
-          className={`landing-slide ${i === index ? "is-visible" : ""}`}
+          className={`landing-slide ${i === index ? "is-visible" : ""} ${img.right ? "image-right" : ""}`}
           style={{ transitionDuration: `${transition}ms` }}
           loading="lazy"
           decoding="async"

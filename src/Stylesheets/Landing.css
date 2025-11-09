@@ -85,3 +85,7 @@
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 30px;
 }
+
+.image-right{
+object-position: right;
+}
