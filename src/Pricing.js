@@ -48,7 +48,7 @@ export default function Pricing() {
         'https://worker-consolidated.maxli5004.workers.dev/purchase',
         {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json'},
           body: JSON.stringify({ higherIndex, index }),
           mode: 'cors',
         }
