@@ -9,7 +9,7 @@ const schedule = {
   Tuesday: [
     { name: "BJJ - Gi", start: 7.5, end: 8.5 },
     { name: "BJJ - Gi", start: 12.5, end: 13.5 },
-    { name: "Kids", start: 17.5, end: 18.5},
+    { name: "Kids (5-12)", start: 17.5, end: 18.5},
     { name: "Muay Thai", start: 18.5, end: 19.5 },
     { name: "BJJ - Gi", start: 19.5, end: 20.5 }
   ],
@@ -23,7 +23,7 @@ const schedule = {
   Thursday: [
     { name: "BJJ - Gi", start: 7.5, end: 8.5 },
     { name: "BJJ - Gi", start: 12.5, end: 13.5 },
-        { name: "Kids", start: 17.5, end: 18.5},
+        { name: "Kids (5-12)", start: 17.5, end: 18.5},
     { name: "Muay Thai", start: 18.5, end: 19.5},
     { name: "BJJ - Gi", start: 19.5, end: 20.5 }
   ],
@@ -38,11 +38,11 @@ const schedule = {
   Saturday: [ 
  
     { name: "BJJ - Gi", start: 12, end: 13},
-      { name: "Kids", start: 14, end: 15},
+      { name: "Kids (5-12)", start: 14, end: 15},
   ]
   ,
   Sunday: [
-    { name: "Kids", start: 11, end: 12},
+    { name: "Kids (5-12)", start: 11, end: 12},
     { name: "Open Mat", start: 12, end: 13
       
     },
