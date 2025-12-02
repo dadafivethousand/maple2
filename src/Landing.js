@@ -9,7 +9,7 @@ import bg4 from './Media/mt.jpg'
 import bg5 from './Media/anotheropenmat.jpg'
 import bg6 from './Media/Tony.jpg'
  
-import bg7 from './Media/24_mapleJiujitsuStills-18.jpg'
+ 
 
 import bg8 from './Media/kidstwo.jpg'
  
@@ -39,7 +39,7 @@ export default function Landing() {
         { src: bg4, alt: "Muay Thai class" },
                  { src: bg16, alt: "Womens Martial Arts", right:true },
               { src: bg5, alt: "MMA" },
-            { src: bg7, alt: "Martial Arts" },
+          
                 { src: bg14, alt: "Women's BJJ" },
           
                                   { src: bg8, alt: "More Kids", right:true },
