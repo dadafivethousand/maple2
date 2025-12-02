@@ -97,7 +97,7 @@ export default function Testimonials() {
 
     return (
  
-    
+        <div className="ReviewsOuterContainer">
 
             <div className="ReviewsContainer">
                 <div className="ButtonContainer">
@@ -134,6 +134,7 @@ export default function Testimonials() {
                     <button onClick={moveRight}>&gt;</button>
            
                 </div>
+            </div>
             </div>
      
     );

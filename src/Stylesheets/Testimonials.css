@@ -21,6 +21,14 @@
 
 }
 
+.ReviewsOuterContainer{
+        position:absolute;
+    bottom:0;
+ width:100vw;
+
+ 
+}
+
 .ReviewsContainer {
     margin: 30px auto;
     border-bottom: 2px solid black;
@@ -42,9 +50,7 @@
   
     overflow: hidden;
     z-index: 4;
-    position:absolute;
-    bottom:0;
-    left:0;
+
 
 }
 

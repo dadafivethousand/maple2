@@ -1,4 +1,4 @@
-import MaxImage from '../Media/maxim.jpg'
+import MaxImage from '../Media/maxli.jpg'
 import ArthurImage from '../Media/art.jpg'
 
 import Rob from '../Media/rob.png'
