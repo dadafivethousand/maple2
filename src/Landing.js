@@ -43,7 +43,7 @@ export default function Landing() {
                 { src: bg14, alt: "Women's BJJ" },
           
                                   { src: bg8, alt: "More Kids", right:true },
-                                             { src: bg9, alt: "BJJ"},
+                                              { src: bg9, alt: "BJJ"},
                                                       { src: bg10, alt: "Jiu-Jitsu"},
  
       { src: bg12, alt: "Competition", top:true},
