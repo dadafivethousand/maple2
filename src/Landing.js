@@ -26,6 +26,7 @@ import bg17 from './Media/giclass.jpg'
 import bg18 from './Media/eamonn.jpg'
 import bg19 from './Media/ryan.jpg'
  import bg20 from './Media/maxjuliusartur.jpg'
+  import bg21 from './Media/canadiannationals.jpg'
  
  
 export default function Landing() {
@@ -53,6 +54,7 @@ export default function Landing() {
               { src: bg18, alt: "nogi class" },
                         { src: bg19, alt: "gold medal" },
                                 { src: bg20, alt: "mma fighters" },
+                                   { src: bg21, alt: "canadian nationals" },
 
 
 
