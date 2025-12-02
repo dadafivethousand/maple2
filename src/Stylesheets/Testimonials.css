@@ -22,7 +22,7 @@
 }
 
 .ReviewsContainer {
-    margin: 20px auto;
+    margin: 30px auto;
     border-bottom: 2px solid black;
     border-top: 2px solid black;
     overflow: hidden;
@@ -39,9 +39,13 @@
     opacity: 90%;
  
     
-    position: relative;
+  
     overflow: hidden;
     z-index: 4;
+    position:absolute;
+    bottom:0;
+    left:0;
+
 }
 
 

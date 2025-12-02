@@ -96,7 +96,7 @@ export default function Testimonials() {
     },[slideDirection])
 
     return (
-        <div className="ReviewsOuterContainer" id='Testimonials'>
+ 
     
 
             <div className="ReviewsContainer">
@@ -135,8 +135,6 @@ export default function Testimonials() {
            
                 </div>
             </div>
-    
-            
-        </div>
+     
     );
 }

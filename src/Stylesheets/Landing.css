@@ -42,10 +42,12 @@
 
 /* main content container */
 .image-container {
-  position: relative;
+
   z-index: 2; /* above overlay */
   width: 100%;
+  height:100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -88,4 +90,8 @@
 
 .image-right{
 object-position: right;
+}
+
+.image-top{
+  object-position: top;
 }

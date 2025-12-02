@@ -83,7 +83,7 @@ function App() {
                
           
                      <Pricing />  
-                                <Parallax /> 
+           
                    <FAQ />
                   <Contact />
               
