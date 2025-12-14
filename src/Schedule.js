@@ -36,11 +36,11 @@ const timeBlocksToRemove = [
 const PALETTE = {
   nogi:      { bg: '#9EC5FF' }, // cornflower blue
   gi:        { bg: '#AEE6B1' }, // mint green
-  muay:      { bg: 'rgb(243, 239, 227)' }, // apricot
+  muay:      { bg: 'rgba(255, 255, 255, 1)' }, // apricot
   wrestling: { bg: '#D3B3FF' }, // lavender
   mma:       { bg: '#FF9AA8' }, // coral pink
   kids:      { bg: '#FFE38A' }, // sunny yellow
-  openmat:   { bg: '#B8C2FF' }, // periwinkle
+  openmat:   { bg: '#6fdee2ff' }, // periwinkle
  };
 
 
