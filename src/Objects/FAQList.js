@@ -38,6 +38,11 @@ const faqList = [
     question: "What’s the difference between BJJ, Muay Thai, MMA, and Wrestling?",
     answer:
       "BJJ focuses on grappling—takedowns, control, and submissions. Muay Thai is striking with punches, kicks, knees, elbows, plus clinch. Wrestling emphasizes takedowns and top control. MMA blends striking and grappling for a complete skill set."
+  },
+    {
+    question: "Why should I chose to train here?",
+    answer:
+      "At Maple Jiu-Jitsu, you’ll train under high-level specialists. Our Wrestling & MMA program is taught by a specialist from Dagestan, and our BJJ coach is a Canadian national champion black belt—so you’re learning proven, elite-level technique from real experts."
   }
 ];
 
