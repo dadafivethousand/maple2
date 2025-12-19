@@ -28,7 +28,8 @@ export default function CancelPage() {
         </svg>
 
         <h1>Payment Failed</h1>
-        <p>Something went wrong with your payment. Please try again.</p>
+        <p>Something went wrong with your payment.</p>
+                <p>Please try again.</p>
         <Link to="/#Pricing" className="cancel-back-button">
           Back to Home
         </Link>

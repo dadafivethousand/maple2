@@ -25,6 +25,7 @@ import CancelPage from "./CancelPage";
 import BJJWhiteBelt from "./Components/BJJWhiteBelt";
 import GetStarted from "./Components/GetStarted";
 import ArturImage from "./Components/ArturImage";
+
   
 function App() {
   const { showForm, showKidForm, showPurchase } = useAppContext();
@@ -60,6 +61,7 @@ function App() {
               path="/*"
               element={
                 <>
+      
               
                   <Navbar />
 

@@ -7,6 +7,13 @@
    
   }
 
+  :root {
+  --primary-color:  #041e42;
+
+}
+
+
+
   h6{
     font-weight: 500;
     opacity: .9;

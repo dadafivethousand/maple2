@@ -25,8 +25,10 @@ export default function SuccessPage() {
           />
         </svg>
 
-        <h1>Payment Successful!</h1>
+        <h1 className='pmt-successful'>Payment Successful!</h1>
+                  <p>A receipt has been sent by email</p>
         <p>Thank you for joining Maple Jiu-Jitsu</p>
+
         <Link to="/#Pricing" className="back-button">
           Back to Home
         </Link>
