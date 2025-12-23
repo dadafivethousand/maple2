@@ -1,7 +1,7 @@
 import React from 'react';
 import cancellations from '../Objects/ClassCancellations'; // Assuming the cancellations file is exported as shown
 import '../Stylesheets/ScheduleWidget.css'; // Import the CSS file
-import { faInstagram, faSquareFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -28,7 +28,7 @@ const ScheduleWidget = () => {
                 <FontAwesomeIcon className="ig-icon-schedule" icon={faInstagram} />
                 maple_bjj 
               </a> for details</h4>
-      {/*
+  {/*  
       <table className="schedule-table">
  
         <tbody>
