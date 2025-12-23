@@ -1,5 +1,6 @@
 /* ScheduleWidget.css */
 .schedule-widget {
+  z-index: 11;
     margin: 0 auto;
     margin-top:40px;
     margin-bottom:40px;
@@ -17,6 +18,12 @@
     margin-bottom: 1rem;
     font-size: 1.5rem;
     color: #312e2e;
+
+  }
+
+    .schedule-widget a {
+   
+    color:rgb(10, 65, 175)
 
   }
   
@@ -63,6 +70,7 @@ max-height: 15px;
 padding:10px;
     font-weight:400;
     background-color: rgba(255, 0, 0, 0.205);
+    font-size: 1rem;
  }
 
 
@@ -73,6 +81,12 @@ padding:10px;
         width:40vw;
       
       }
+
+       .schedule-widget h4{
+ 
+    font-size: 1.5rem;
+ }
+
       
 
  }

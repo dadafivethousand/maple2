@@ -1,6 +1,10 @@
 import React from 'react';
 import cancellations from '../Objects/ClassCancellations'; // Assuming the cancellations file is exported as shown
 import '../Stylesheets/ScheduleWidget.css'; // Import the CSS file
+import { faInstagram, faSquareFacebook } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+
 
 const ScheduleWidget = () => {
   // Group cancellations by date
@@ -15,7 +19,16 @@ const ScheduleWidget = () => {
 
   return (
     <div className="schedule-widget">
-      <h4> Class Cancellations <br></br> Jan 22 - Jan 24</h4>
+      <h4>  New schedule starting January 5<br></br> See        <a
+                href="https://www.instagram.com/maple_bjj"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit our Instagram"
+              >
+                <FontAwesomeIcon className="ig-icon-schedule" icon={faInstagram} />
+                maple_bjj 
+              </a> for details</h4>
+      {/*
       <table className="schedule-table">
  
         <tbody>
@@ -37,6 +50,7 @@ const ScheduleWidget = () => {
           ))}
         </tbody>
       </table>
+       */}
      </div>
   );
 };

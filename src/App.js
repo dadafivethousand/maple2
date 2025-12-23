@@ -61,7 +61,7 @@ function App() {
               path="/*"
               element={
                 <>
-      
+ 
               
                   <Navbar />
 

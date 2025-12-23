@@ -12,7 +12,7 @@ const ScheduleWidget = () => {
 
   return (
     <div className="announcement-widget">
-      <h4> Class Cancellations <br /> Jan 22 - Jan 24</h4>
+      <h4> Holiday Closures <br /> December 25, 26, 31, & January 1</h4>
       <table className="announcement-table">
         <tbody>
           {Object.keys(groupedCancellations).map((day) => (
