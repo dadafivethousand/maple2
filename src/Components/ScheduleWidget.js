@@ -19,7 +19,7 @@ const ScheduleWidget = () => {
 
   return (
     <div className="schedule-widget">
-      <h4>  New schedule starting January 5<br></br> See        <a
+      <h4>  New schedule starting January 5<br></br> <br></br>  See        <a
                 href="https://www.instagram.com/maple_bjj"
                 target="_blank"
                 rel="noopener noreferrer"
