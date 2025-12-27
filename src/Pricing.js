@@ -84,7 +84,7 @@ export default function Pricing() {
   }, []);
 
   return (
-    <div id="Pricing" className="PricingContainer" ref={containerRef}>
+    <div id="Memberships" className="PricingContainer" ref={containerRef}>
       <h1 className="animate">Pricing</h1>
 
       <div>

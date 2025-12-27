@@ -84,7 +84,7 @@ export default function Navbar() {
                      
               <a href='#Coaches'>  <li onClick={()=>setClick(false)}>Coaches</li></a>
              
-            <a href='#Pricing'>  <li onClick={()=>setClick(false)}>Pricing</li></a>  
+            <a href='#Memberships'>  <li onClick={()=>setClick(false)}>Pricing</li></a>  
   
  
               <a href='#FAQ'>  <li onClick={()=>setClick(false)}>FAQ</li></a>
