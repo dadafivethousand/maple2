@@ -110,7 +110,7 @@ export default function Schedule() {
   return (
     <div id="Schedule" className='ScheduleContainer'>
  <h1 className='animate'> 🗓️ Schedule</h1>
-    <ScheduleWidget />  
+ 
       <div className="Schedule">
         {Object.keys(schedule).map((day) => (
           <div className='Column animate' key={day}>
