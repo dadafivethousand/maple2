@@ -19,15 +19,8 @@ const ScheduleWidget = () => {
 
   return (
     <div className="schedule-widget">
-      <h4>  New schedule starting January 5<br></br> <br></br>  See        <a
-                href="https://www.instagram.com/maple_bjj"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit our Instagram"
-              >
-                <FontAwesomeIcon className="ig-icon-schedule" icon={faInstagram} />
-                maple_bjj 
-              </a> for details</h4>
+      <h4>  No wrestling classes Jan 7 to Jan 9. <br></br> 
+      We will be hosting seminars on these days.      </h4>
   {/*  
       <table className="schedule-table">
  
