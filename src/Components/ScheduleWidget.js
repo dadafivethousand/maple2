@@ -19,7 +19,7 @@ const ScheduleWidget = () => {
 
   return (
     <div className="schedule-widget">
-      <h4>  No wrestling classes Jan 7 to Jan 9. <br></br> 
+      <h4>  No wrestling classes until Jan 16. <br></br> 
       We will be hosting seminars on these days.      </h4>
   {/*  
       <table className="schedule-table">
