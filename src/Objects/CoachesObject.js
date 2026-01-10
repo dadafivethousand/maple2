@@ -11,6 +11,7 @@ import Matt from "../Media/1000008223.jpg"
 import Goran from "../Media/Goran.jpg"
 import Thusean from "../Media/Thusean.jpg"
 import Isaiah from "../Media/Isaiah.jpg"
+import Andre from "../Media/Porferio.png"
 const CoachesList = 
 [
 
@@ -35,7 +36,18 @@ const CoachesList =
     setmoreLink: 'https://maplejiujitsu.setmore.com/artur-k'
 },
 
-  {name: "Artoorius",
+{
+  name: "Andre",
+
+  description: "Andre Porfirio is a black belt and one of the most decorated competitors in modern grappling—an ADCC veteran and proven champion across the biggest stages. His résumé includes being a Pan Am Champion, American National Champion, AJP Grand Slam Champion, and an IBJJF Worlds Bronze Medalist. With elite-level experience against the toughest competition in the world, Andre brings high-performance jiu-jitsu knowledge, precision technique, and championship-caliber insight to every training room.",
+ 
+  accomplishments:["30+ Years of Wrestling", "Dagestan Regional Wrestling Champion", "Freestyle Wrestling Champion of Southern Russia", "Freestyle Wrestling Master of Sport (Russia)", "Trained with the likes of Alexander Volkov and Zabit Magomedsharipov" , "Winner of the Ivan Yarygin Wrestling Tournament" ],
+  image:Andre,
+  link: 'https://www.instagram.com/ar_knv/',
+    setmoreLink: 'https://maplejiujitsu.setmore.com/artur-k'
+},
+
+  {name: "Arturion",
     belt:"Purple Belt",
     accomplishments:[, "AJP Gold Medalist", "Next-Gen Gold Medalist", "Ontario Open Silver Medalist", "IBJJF London Open Bronze Medalist", "ADCC Canada 4th place", "Godai Open Bronze Medallist"],
     description: "A purple belt in Brazilian Jiu-Jitsu, Artoorius has been training for 5 years and has already made a name for himself in competition. He has won gold at the AJP and Next-Gen tournaments, secured a silver medal at the Ontario Open, and earned a bronze at the IBJJF London Open. Additionally, he placed fourth at ADCC Canada and took bronze at the Godai Open.",
