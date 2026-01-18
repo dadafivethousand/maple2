@@ -12,6 +12,7 @@ import Goran from "../Media/Goran.jpg"
 import Thusean from "../Media/Thusean.jpg"
 import Isaiah from "../Media/Isaiah.jpg"
 import Andre from "../Media/Porferio.png"
+import Ivan from "../Media/Ivan.jpeg"
 const CoachesList = 
 [
 
@@ -44,6 +45,17 @@ const CoachesList =
   accomplishments:["30+ Years of Wrestling", "Dagestan Regional Wrestling Champion", "Freestyle Wrestling Champion of Southern Russia", "Freestyle Wrestling Master of Sport (Russia)", "Trained with the likes of Alexander Volkov and Zabit Magomedsharipov" , "Winner of the Ivan Yarygin Wrestling Tournament" ],
   image:Andre,
   link: 'https://www.instagram.com/ar_knv/',
+    setmoreLink: 'https://maplejiujitsu.setmore.com/artur-k'
+},
+
+{
+  name: "Ivan",
+
+  description: "Ivan Primorac is a highly experienced Muay Thai coach with over 20 years in the sport and a deep background in international competition. Ivan brings authentic technique, traditional fundamentals, and modern fight strategy into every session. His coaching emphasizes technical precision, conditioning, and fight IQ, shaped by decades of hands-on experience at the highest levels. With a passion for athlete development and real-world striking knowledge, Ivan delivers disciplined, effective training that builds confident, well-rounded fighters at every stage.",
+ 
+  accomplishments:["30+ Years of Wrestling", "Dagestan Regional Wrestling Champion", "Freestyle Wrestling Champion of Southern Russia", "Freestyle Wrestling Master of Sport (Russia)", "Trained with the likes of Alexander Volkov and Zabit Magomedsharipov" , "Winner of the Ivan Yarygin Wrestling Tournament" ],
+  image:Ivan,
+ 
     setmoreLink: 'https://maplejiujitsu.setmore.com/artur-k'
 },
 
