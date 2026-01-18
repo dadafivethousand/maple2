@@ -37,7 +37,8 @@
     { name: "BJJ - NoGi", start: 12.5, end: 13.5 },
 
     { name: "MMA", start: 18, end: 19 },
-    { name: "BJJ - NoGi", start: 19, end: 21},
+    { name: "Wrestling", start: 19, end: 20},
+    { name: "BJJ - Gi", start: 20, end: 21 }
  
   ],
   Saturday: [ 
