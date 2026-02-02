@@ -11,7 +11,7 @@ import Matt from "../Media/1000008223.jpg"
 import Goran from "../Media/Goran.jpg"
 import Thusean from "../Media/Thusean.jpg"
 import Isaiah from "../Media/Isaiah.jpg"
-import Andre from "../Media/Porferio.png"
+import Andre from "../Media/AndrePorfirio2.jpg"
 import Ivan from "../Media/Ivan.jpeg"
 const CoachesList = 
 [
