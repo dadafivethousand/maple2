@@ -37,6 +37,7 @@ export default function FullPost() {
   if (!post) return <div className="full-post">Loading...</div>;
 
   return (
+        <div className="full-post-container">
     <div className="full-post">
       <h3 id='post-title'>{post.title}</h3>
       <p>{new Date(post.date).toLocaleDateString('en-US', {
@@ -50,6 +51,8 @@ export default function FullPost() {
       ) : (
         <p style={{ color: 'red' }}>No body found</p>
       )}
+    </div>
+
     </div>
   );
 }

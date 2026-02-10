@@ -71,7 +71,7 @@ export default function Blog() {
           &lt;
         </button>
         <button className={page === 1 ? "active-page" : ""} onClick={() => goToPage(1)}>1</button>
-        {page > 4 && <span>...</span>}
+        {page > 5 && <span>...</span>}
         {Array.from({ length: totalPages }, (_, i) => i + 1)
           .filter(p => p !== 1 && p !== totalPages && Math.abs(p - page) <= 2)
           .map(p => (

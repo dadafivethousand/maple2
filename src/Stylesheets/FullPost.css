@@ -1,77 +1,183 @@
-.full-post {
-  max-width: 800px;
-  margin: 4rem auto;
-  padding: 2rem;
-  background-color: #fff;
-  color: #111;
-  font-family: 'Helvetica Neue', sans-serif;
-  line-height: 1.6;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
+/* FullPost.css — matches Blog.css (Maple blue + glass card) */
+
+.full-post{
+  /* Use same theme tokens as Blog.css (scoped locally) */
+  --blog-bg: #07142f;
+  --blog-bg-2: #0b2f58;
+  --blog-ink: #e9f1f8;
+  --blog-muted: #a8bdd6;
+  --blog-accent: #5ab0ff;
+  --blog-card: rgba(15, 30, 43, 0.86);
+  --blog-card-2: rgba(7, 18, 30, 0.92);
+  --blog-outline: rgba(255,255,255,.14);
+  --blog-outline-2: rgba(255,255,255,.22);
+  --blog-shadow: 0 16px 44px rgba(0,0,0,.45);
+  --blog-radius: 16px;
+
+  width: min(800px, 96vw);
+  margin: 0 auto;
+  padding: clamp(16px, 2.6vw, 28px);
+
+  color: var(--blog-ink);
+  font-family: "Roboto Condensed", Roboto, system-ui, sans-serif;
+  line-height: 1.65;
+
+  border-radius: calc(var(--blog-radius) + 2px);
+  border: 1px solid rgba(255,255,255,.10);
+
+  background:
+    radial-gradient(110% 140% at 100% -20%, rgba(255,255,255,.08), transparent 55%),
+    radial-gradient(900px 360px at 10% 0%, rgba(90,176,255,.16), transparent 55%),
+    linear-gradient(180deg, rgba(10,28,46,.72), rgba(6,16,28,.90));
+
+  box-shadow: var(--blog-shadow);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
 }
 
-#post-title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #000000; /* Maple Jiu-Jitsu red theme */
+.full-post-container{
+  background-color: #0b2f58;
+  min-height:100vh;
+  width:100vw;
+ padding-top:1em;
+}
+
+/* Title */
+#post-title{
+  margin: 0 0 12px;
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 900;
+  letter-spacing: .02em;
+  color: var(--blog-ink);
+  text-shadow: 0 2px 0 rgba(0,0,0,.35);
+
   word-wrap: break-word;
-  overflow-wrap: break-word;  /* modern equivalent */
+  overflow-wrap: break-word;
   white-space: normal;
-  font-family: roboto condensed;
 }
 
-.full-post p {
-  font-size: 1.1rem;
-  margin-bottom: 1.2rem;
+/* Subtle divider under title (like Blog title underline) */
+#post-title::after{
+  content: "";
+  display: block;
+  height: 1px;
+  margin-top: 12px;
+  background: linear-gradient(90deg, rgba(90,176,255,.55), transparent 70%);
+  opacity: .85;
 }
 
-.full-post em {
-  color: #777;
+/* Paragraphs */
+.full-post p{
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0 0 14px;
+  color: rgba(233,241,248,.92);
+}
+
+/* “meta” line (your em) */
+.full-post em{
+  color: var(--blog-muted);
   font-style: italic;
   display: block;
-  margin-bottom: 1.5rem;
+  margin: 10px 0 18px;
+  opacity: .95;
 }
 
-.full-post h2 {
-  font-size: 1.6rem;
-  margin-top: 2rem;
-  margin-bottom: 0.8rem;
-  color: #333;
-  border-left: 4px solid #cc0000;
-  padding-left: 0.5rem;
+/* Headings inside the post */
+.full-post h2{
+  font-size: clamp(18px, 2.1vw, 22px);
+  margin: 22px 0 10px;
+  color: var(--blog-ink);
+  letter-spacing: .01em;
+
+  border-left: 4px solid rgba(90,176,255,.85);
+  padding-left: 10px;
 }
 
-.full-post ul {
-  padding-left: 1.5rem;
-  margin-bottom: 1.5rem;
+/* Lists */
+.full-post ul{
+  padding-left: 1.2rem;
+  margin: 0 0 16px;
 }
 
-.full-post li {
-  margin-bottom: 0.6rem;
+.full-post li{
+  margin: 0 0 10px;
   list-style-type: disc;
+  color: rgba(233,241,248,.90);
 }
 
-.full-post strong {
-  color: #000;
-  font-weight: 600;
+/* Strong */
+.full-post strong{
+  color: #ffffff;
+  font-weight: 900;
 }
 
-@media (max-width: 600px) {
-  .full-post {
-    padding: 1rem;
-    margin: 2rem 1rem;
-  }
-
-  .full-post h1 {
-    font-size: 1.8rem;
-  }
-
-  .full-post h2 {
-    font-size: 1.4rem;
-  }
-
-  .full-post p {
-    font-size: 1rem;
-  }
+/* Links inside post (if any) */
+.full-post a{
+  color: rgba(90,176,255,.95);
+  text-decoration: none;
+  font-weight: 900;
+  border-bottom: 1px solid rgba(90,176,255,.35);
 }
+
+.full-post a:hover{
+  border-bottom-color: rgba(90,176,255,.75);
+}
+
+/* Optional: nicer blockquote styling if your content includes it */
+.full-post blockquote{
+  margin: 14px 0;
+  padding: 12px 14px;
+  border-left: 4px solid rgba(90,176,255,.70);
+  background: rgba(255,255,255,.05);
+  border-radius: 12px;
+  color: rgba(233,241,248,.92);
+}
+
+/* Optional: inline code / code blocks if your blog uses them */
+.full-post code{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95em;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  padding: 2px 6px;
+  border-radius: 8px;
+  color: rgba(233,241,248,.95);
+}
+
+.full-post pre{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  padding: 12px;
+  border-radius: 14px;
+  overflow: auto;
+}
+
+.full-post pre code{
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+/* Mobile tuning */
+@media (max-width: 600px){
+  .full-post{
+    padding: 14px 14px;
  
+  }
+
+  .full-post p{
+    font-size: 14px;
+  }
+
+  .full-post h2{
+    font-size: 18px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .full-post{
+    scroll-behavior: auto;
+  }
+}
