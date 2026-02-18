@@ -33,7 +33,7 @@
 
 /* Header */
 #blog-title{
-  width: min(var(--blog-maxw), 96vw);
+ 
   margin: 0 auto 14px;
   font-size: clamp(28px, 3.1vw, 42px);
   font-weight: 900;
@@ -44,12 +44,10 @@
 }
 
 #blog-title::after{
-  content: "";
+  content: " ";
   display: block;
-  height: 1px;
-  margin-top: 10px;
-  background: linear-gradient(90deg, rgba(90,176,255,.55), transparent 70%);
-  opacity: .85;
+  height: 5px;
+  background-color: rgba(255,255,255,.92);
 }
 
 /* Posts list (scroll area) */
