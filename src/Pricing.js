@@ -114,7 +114,7 @@ export default function Pricing() {
                         }`}
                       >
                         <div className="name-and-price">
-                          <p className="name-of-class">{option.description}</p>
+                          <p className="name-of-class">{option.duration ==1 ? "Per Month" : option.description}</p>
                         </div>
 
                         <div className="name-and-price">
