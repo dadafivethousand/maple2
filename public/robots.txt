@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /success
+Disallow: /cancel
+Disallow: /freetrial
+
+Sitemap: https://maplebjj.com/sitemap.xml
