@@ -4,4 +4,4 @@ Disallow: /success
 Disallow: /cancel
 Disallow: /freetrial
 
-Sitemap: https://maplebjj.com/sitemap.xml
+Sitemap: https://worker-consolidated.maxli5004.workers.dev/sitemap/maple
