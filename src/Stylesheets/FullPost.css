@@ -44,9 +44,14 @@
 
 /* Title */
 #post-title{
+  display: block;
   margin: 0 0 12px;
+  padding: 0;
   font-size: clamp(26px, 3vw, 40px);
   font-weight: 900;
+  font-family: "Roboto Condensed", Roboto, system-ui, sans-serif;
+  text-transform: none;
+  text-align: left;
   letter-spacing: .02em;
   color: var(--blog-ink);
   text-shadow: 0 2px 0 rgba(0,0,0,.35);
@@ -54,6 +59,11 @@
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
+}
+
+/* Reset global h1::before decorative line */
+#post-title::before{
+  display: none;
 }
 
 /* Subtle divider under title (like Blog title underline) */
