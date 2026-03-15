@@ -85,7 +85,7 @@ export default function Pricing() {
 
   return (
     <div id="Memberships" className="PricingContainer" ref={containerRef}>
-      <h1 className="animate">Pricing</h1>
+      <h1 className="animate">Sign Up</h1>
 
       <div>
         {priceObject?.map((item, idx) => (
