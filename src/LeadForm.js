@@ -105,6 +105,7 @@ export default function LeadForm({ closebutton }) {
       // success
       await response.json().catch(() => ({}));
       setStatus('success');
+      window.gtag?.('event', 'generate_lead', { event_category: 'form', event_label: 'intake_form' });
       setFormData({ firstName: '', lastName: '', email: '', phone: '' });
     } catch (err) {
       setErrorMsg('Error submitting the form');
