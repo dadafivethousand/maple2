@@ -203,6 +203,7 @@ a.nav-phone {
 a.nav-phone li {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 7px;
 }
 
