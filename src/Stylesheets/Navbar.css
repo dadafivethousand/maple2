@@ -192,6 +192,26 @@ z-index: 100;
 
 
 
+/* Phone number — shared base */
+a.nav-phone {
+    color: white;
+    text-decoration: none;
+    font-family: oswald;
+    font-size: 20px;
+}
+
+a.nav-phone li {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+/* Mobile: sits at the bottom of the slide menu, slightly highlighted */
+a.nav-phone {
+    margin-top: 10px;
+    opacity: 0.85;
+}
+
 @media(min-width:800px){
 
     .navbar{
