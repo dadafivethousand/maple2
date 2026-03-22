@@ -1,11 +1,11 @@
 
 import gi from '../Media/comp.webp'
-import nogi from '../Media/nogi.jpg'
+import nogi from '../Media/nogi.webp'
 import kids from '../Media/children.webp'
 import mma from '../Media/mma.webp'
-import muaythai from '../Media/mt.png'
+import muaythai from '../Media/mt.webp'
  
-import freestyle from '../Media/freestyle.jpeg'
+import freestyle from '../Media/freestyle.webp'
 
 
 const Programs = [

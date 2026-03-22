@@ -2,31 +2,31 @@ import './Stylesheets/Landing.css'
 import GetStarted from './Components/GetStarted'
 import Testimonials from './Components/Testimonials'
 import { useEffect, useState } from 'react'
-import bg1 from './Media/IMG_4662.JPG'
-import bg2 from './Media/womensclass.jpeg'
-import bg3 from './Media/kids.jpeg'
-import bg4 from './Media/mt.jpg'
-import bg5 from './Media/anotheropenmat.jpg'
-import bg6 from './Media/Tony.jpg'
+import bg1 from './Media/IMG_4662.webp'
+import bg2 from './Media/womensclass.webp'
+import bg3 from './Media/kids.webp'
+ 
+import bg5 from './Media/anotheropenmat.webp'
+import bg6 from './Media/Tony.webp'
  
  
 
-import bg8 from './Media/kidstwo.jpg'
+import bg8 from './Media/kidstwo.webp'
  
-import bg9 from './Media/openmat.jpg'
-import bg10 from './Media/scott.jpg'
-import bg11 from './Media/bags.jpg'
-import bg12 from './Media/competition.jpg'
-import bg13 from './Media/sixkids.jpg'
+import bg9 from './Media/openmat.webp'
+import bg10 from './Media/scott.webp'
+import bg11 from './Media/bags.webp'
+import bg12 from './Media/competition.webp'
+import bg13 from './Media/sixkids.webp'
 
-import bg14 from './Media/womensone.jpg'
-import bg15 from './Media/womenstwo.jpg'
-import bg16 from './Media/fivewomen.jpg'
-import bg17 from './Media/giclass.jpg'
-import bg18 from './Media/eamonn.jpg'
-import bg19 from './Media/ryan.jpg'
- import bg20 from './Media/maxjuliusartur.jpg'
-  import bg21 from './Media/canadiannationals.jpg'
+import bg14 from './Media/womensone.webp'
+import bg15 from './Media/womenstwo.webp'
+import bg16 from './Media/fivewomen.webp'
+import bg17 from './Media/giclass.webp'
+import bg18 from './Media/eamonn.webp'
+import bg19 from './Media/ryan.webp'
+ import bg20 from './Media/maxjuliusartur.webp'
+  import bg21 from './Media/canadiannationals.webp'
  
  
 export default function Landing() {
@@ -36,7 +36,7 @@ export default function Landing() {
   { src: bg2, alt: "Women's class" },
     { src: bg1, alt: "BJJ class" },
     { src: bg3, alt: "Kids' class", right:true },
-        { src: bg4, alt: "Muay Thai class" },
+ 
                  { src: bg16, alt: "Womens Martial Arts", right:true },
               { src: bg5, alt: "MMA" },
           

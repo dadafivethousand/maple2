@@ -3,7 +3,7 @@ import './Stylesheets/Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faBars, faPhone } from '@fortawesome/free-solid-svg-icons';
 import GetStarted from "./Components/GetStarted";
-import newlogo from "./Media/newlogo.png"
+import newlogo from "./Media/newlogo.webp"
 
 
 export default function Navbar() {

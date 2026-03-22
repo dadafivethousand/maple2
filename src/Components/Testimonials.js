@@ -3,7 +3,7 @@ import '../Stylesheets/Testimonials.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import google from '../Media/g.png'
+import google from '../Media/g.webp'
  
 import StarRating from './Stars';
  

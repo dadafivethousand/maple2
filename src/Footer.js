@@ -1,5 +1,5 @@
 import './Stylesheets/Footer.css'
-import logo from './Media/whitelogonobg.png'
+import logo from './Media/whitelogonobg.webp'
 
 export default function Footer(){
     return(

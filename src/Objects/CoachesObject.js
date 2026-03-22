@@ -1,18 +1,18 @@
-import MaxImage from '../Media/maxli.jpg'
-import ArthurImage from '../Media/art.jpg'
+import MaxImage from '../Media/maxli.webp'
+import ArthurImage from '../Media/art.webp'
 
-import Rob from '../Media/rob.png'
-import Vitaly from '../Media/Vitaly.png'
+import Rob from '../Media/rob.webp'
+import Vitaly from '../Media/Vitaly.webp'
 
-import Arthur from '../Media/ar.jpg'
+import Arthur from '../Media/ar.webp'
 
-import Joe from "../Media/1000008288.jpg"
-import Matt from "../Media/1000008223.jpg"
-import Goran from "../Media/Goran.jpg"
-import Thusean from "../Media/Thusean.jpg"
-import Isaiah from "../Media/Isaiah.jpg"
-import Andre from "../Media/AndrePorfirio2.jpg"
-import Ivan from "../Media/Ivan.jpeg"
+import Joe from "../Media/1000008288.webp"
+import Matt from "../Media/1000008223.webp"
+import Goran from "../Media/Goran.webp"
+import Thusean from "../Media/Thusean.webp"
+import Isaiah from "../Media/Isaiah.webp"
+import Andre from "../Media/AndrePorfirio2.webp"
+import Ivan from "../Media/Ivan.webp"
 const CoachesList = 
 [
 

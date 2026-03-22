@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Stylesheets/Coaches.css";
 import CoachesList from "./Objects/CoachesObject";
 import ImpactPlaque from "./Components/ImpactPlaque";
-import coachplaque from "./Media/coachesplaque.png"
 
 export default function Coaches({ className = "" }) {
   const items = Array.isArray(CoachesList) ? CoachesList : [];

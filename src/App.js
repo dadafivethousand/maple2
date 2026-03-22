@@ -1,22 +1,25 @@
 import "./Stylesheets/App.css";
+import { lazy, Suspense } from "react";
 import Navbar from "./Navbar";
 import Landing from "./Landing";
-import Coaches from "./Coaches";
-import FAQ from "./FAQ";
-import Contact from "./Contact";
-import Footer from "./Footer";
-import Pricing from "./Pricing";
-import Schedule from "./Schedule";
-import LeadForm from "./LeadForm";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useAppContext } from "./AppContext";
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Blog from "./Blog";
-import FullPost from "./Components/FullPost";
-import SuccessPage from "./SuccessPage";
-import CancelPage from "./CancelPage";
-import GetStarted from "./Components/GetStarted";
+
+// Below-fold main page sections — lazy loaded
+const Schedule = lazy(() => import("./Schedule"));
+const Coaches  = lazy(() => import("./Coaches"));
+const Pricing  = lazy(() => import("./Pricing"));
+const FAQ      = lazy(() => import("./FAQ"));
+const Contact  = lazy(() => import("./Contact"));
+const Footer   = lazy(() => import("./Footer"));
+
+// Separate routes — lazy loaded
+const LeadForm    = lazy(() => import("./LeadForm"));
+const Blog        = lazy(() => import("./Blog"));
+const FullPost    = lazy(() => import("./Components/FullPost"));
+const SuccessPage = lazy(() => import("./SuccessPage"));
+const CancelPage  = lazy(() => import("./CancelPage"));
 
 
 function App() {
@@ -34,34 +37,35 @@ function App() {
             />
           </Helmet>
 
-          {showForm && <LeadForm closebutton={true} />}
+          <Suspense fallback={null}>
+            {showForm && <LeadForm closebutton={true} />}
+          </Suspense>
 
-          <Routes>
-            {/* Route for /freetrial showing only LeadForm */}
-            <Route path="/freetrial" element={<LeadForm  closebutton={false}/>} />
-             <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<FullPost />} />
-            <Route path="/success" element={<SuccessPage />} />
-            <Route path="/cancel" element={<CancelPage />} />
+          <Suspense fallback={null}>
+            <Routes>
+              <Route path="/freetrial" element={<LeadForm closebutton={false} />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<FullPost />} />
+              <Route path="/success" element={<SuccessPage />} />
+              <Route path="/cancel" element={<CancelPage />} />
 
-
-            {/* Default route for the main app */}
-            <Route
-              path="/*"
-              element={
-                <>
-                  <Navbar />
-                  <Landing />
-                  <Schedule />
-                  <Coaches />
-                  <Pricing />
-                  <FAQ />
-                  <Contact />
-                  <Footer />
-                </>
-              }
-            />
-          </Routes>
+              <Route
+                path="/*"
+                element={
+                  <>
+                    <Navbar />
+                    <Landing />
+                    <Schedule />
+                    <Coaches />
+                    <Pricing />
+                    <FAQ />
+                    <Contact />
+                    <Footer />
+                  </>
+                }
+              />
+            </Routes>
+          </Suspense>
         </div>
       </Router>
     </HelmetProvider>

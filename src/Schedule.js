@@ -4,7 +4,7 @@ import './Stylesheets/Schedule.css';
 import Legend from './Components/Legend';
 import ScheduleWidget from './Components/ScheduleWidget';
 import KidsScheduleWidget from './Components/KidsScheduleWidget';
-import bluelogo from "./Media/blue-logo.png"
+import bluelogo from "./Media/blue-logo.webp"
 
 // Config: Pixels per hour
 const PIXELS_PER_HOUR = 47;

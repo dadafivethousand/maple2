@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useAppContext } from "./AppContext";
-import whitelogo from "./Media/whitelogonobg.png";
-import bluelogo from "./Media/blue-logo.png";
+import whitelogo from "./Media/whitelogonobg.webp";
+import bluelogo from "./Media/blue-logo.webp";
 import AnimatedCheckmark from './Components/AnimatedCheckmark';
 import TypewriterCycle from './Utils/Typewriter';
 
