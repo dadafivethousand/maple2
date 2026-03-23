@@ -212,7 +212,7 @@
 }
 
 .faq-item.is-open .faq-toggle::after {
-  transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
   background: #7dd3fc;
 }
 
