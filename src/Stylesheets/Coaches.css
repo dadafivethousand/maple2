@@ -18,16 +18,17 @@
   font-family: roboto condensed;
   width: 100%;
   margin-inline: auto;
- 
+  height: 100%;
   min-height: fit-content;
   background: linear-gradient(to bottom, #041e42db, #041e42a1);
-  padding-top: 50px;
+  padding-top: 8px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between
+  justify-content: flex-start;
+  box-sizing: border-box;
 }
 
-.coaches-block h1 { color: #fff; }
+/* Section heading uses shared SectionHeading.css — no overrides */
 .coaches-title {
   color: #fff;
   margin: 0 auto 16px;
@@ -49,15 +50,6 @@
   width: min(1100px, 100%);
 }
 
-/* decorative lines for h1 */
-h1:after, h1:before {
-  content: " ";
-  display: block;
-  border-bottom: 1px solid #fff;
-  border-top: 1px solid #fff;
-  height: 5px;
-  background-color: #fff;
-}
 
 /* =========================================
    DESKTOP (>= 901px): Uniform grid (no selection)
@@ -84,8 +76,8 @@ h1:after, h1:before {
 .coach-media { aspect-ratio: 16 / 10; background: var(--panel-2); }
 .coach-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-.coach-body { padding: 14px 16px 16px; color: var(--text); }
-.coach-name { margin: 0 0 6px; font-weight: 700; font-size: 1rem; color: inherit; }
+.coach-body { padding: 10px 12px 12px; color: var(--text); }
+.coach-name { margin: 0 0 3px; font-weight: 700; font-size: 1rem; color: inherit; }
 .coach-desc { margin: 0; line-height: 1.2; font-size: .95rem; color: inherit; }
 
 /* =========================================
@@ -94,9 +86,9 @@ h1:after, h1:before {
 .coaches-mobile {
   display: block;
   position: relative;
-  --gutter: 56px;   /* side gutters for arrows */
-  --shift: 78%;     /* neighbor offset */
-  padding: 10px var(--gutter) 22px;
+  --gutter: 48px;
+  --shift: 78%;
+  padding: 0 var(--gutter) 22px;
   overflow: hidden; /* prevent horizontal scroll */
 }
 
@@ -110,29 +102,84 @@ h1:after, h1:before {
   .coaches-mobile { --shift: 92%; }
 }
 
-.cf-stage { perspective:  1200px; position: relative; width: 100%; }
-.cf-stack { display: grid; place-items: center; position: relative; }
+.cf-stage { perspective: 1200px; position: relative; width: 100%; }
+.cf-stack { display: grid; place-items: start center; position: relative; }
 
 /* Card sized to the frame, NOT the viewport, so the active stays centered */
 .cf-card {
   width: 100%;
-  max-width: 720px; /* 680–900px works well; adjust if you want more/less peek */
+  max-width: 720px;
   background: var(--panel);
-  border: 1px solid rgba(255,255,255,.10);
+  border: 1px solid rgba(147, 197, 253, 0.1);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 16px 42px rgba(0,0,0,.32);
+  position: relative;
 }
 @media (max-width: 420px) {
   .cf-card { max-width: 600px; }
 }
 
-.cf-media { aspect-ratio: 16 / 10; background: var(--panel-2); }
-.cf-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Active card glows subtly */
+.cf-slide.is-active .cf-card {
+  border-color: rgba(147, 197, 253, 0.24);
+  box-shadow:
+    0 22px 56px rgba(0,0,0,.5),
+    0 0 0 1px rgba(147,197,253,0.06),
+    0 0 70px rgba(59,130,246,0.07);
+}
 
-.cf-body { padding: 14px 16px 16px; color: var(--text); }
-.cf-name { margin: 0 0 6px; font-weight: 800; font-size: 1.4rem; color: inherit; }
-.cf-desc { margin: 0; font-size: .95rem; color: inherit; }
+/* Image with bottom fade into card body */
+.cf-media {
+  aspect-ratio: 16 / 10;
+  background: var(--panel-2);
+  position: relative;
+}
+.cf-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cf-media::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 38%;
+  background: linear-gradient(to bottom, transparent, rgba(10,20,46,0.72));
+  pointer-events: none;
+}
+
+/* Card body */
+.cf-body {
+  padding: 9px 14px 13px;
+  color: var(--text);
+  background: linear-gradient(to bottom, #0c1830 0%, #070c1c 100%);
+  border-top: 1px solid rgba(147, 197, 253, 0.07);
+}
+
+/* Name — Oswald gradient with thin rule below */
+.cf-name {
+  margin: 0;
+  padding-bottom: 6px;
+  margin-bottom: 5px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background: linear-gradient(to bottom, #ffffff 0%, #bfdbfe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 12px rgba(147, 197, 253, 0.45));
+  border-bottom: 1px solid rgba(147, 197, 253, 0.14);
+}
+
+/* Bio */
+.cf-desc {
+  margin: 0;
+  font-size: 0.92rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: rgba(198, 216, 244, 0.88);
+  line-height: 1.42;
+}
 
 /* Stack all slides; container height follows the active card */
 .cf-slide {
@@ -143,7 +190,7 @@ h1:after, h1:before {
 
 /* Active slide centered perfectly */
 .cf-slide.is-active {
-  transform: translateX(0) rotateY(0deg) scale(0.96);
+  transform: translateX(0) rotateY(0deg) scale(1);
   opacity: 1;
   z-index: 6;
   filter: none;
@@ -187,32 +234,35 @@ h1:after, h1:before {
 }
 .cf-slide.is-far { opacity: 0; pointer-events: none; }
 
-/* ---------- Arrows (big, visible) ---------- */
+/* ---------- Arrows ---------- */
 .cf-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 46px;
-  height: 140px;
+  width: 36px;
+  height: 110px;
   display: grid;
   place-items: center;
   color: #fff;
   background: rgba(0, 0, 0, 0.88);
-  border: 1px solid rgba(255,255,255,.22);
-  border-radius: 12px;
-  box-shadow: 0 14px 28px rgba(0,0,0,.35);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.5);
   cursor: pointer;
   z-index: 10;
-  border:1px solid rgba(255, 255, 255, 0.478);
-
+  transition: transform 150ms ease, background 150ms ease, border-color 150ms ease;
 }
-.cf-arrow.left  { left: 8px; }
-.cf-arrow.right { right: 8px; }
-.cf-arrow svg { width: 28px; height: 28px; }
-.cf-arrow:hover { transform: translateY(-50%) scale(1.04); }
-.cf-arrow:active { transform: translateY(-50%) scale(.98); }
+.cf-arrow.left  { left: 6px; }
+.cf-arrow.right { right: 6px; }
+.cf-arrow svg { width: 22px; height: 22px; }
+.cf-arrow:hover {
+  transform: translateY(-50%) scale(1.06);
+  background: rgba(0, 0, 0, 0.96);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.cf-arrow:active { transform: translateY(-50%) scale(.96); }
 .cf-arrow:focus-visible {
-  outline: 2px solid #fff;
+  outline: 2px solid rgba(147,197,253,0.6);
   outline-offset: 2px;
 }
 
@@ -222,7 +272,6 @@ h1:after, h1:before {
 }
 
 /* ===== Mobile cover-flow: dim non-active slides with an overlay ===== */
-.cf-card { position: relative; }
 
 .cf-slide:not(.is-active) .cf-card::after {
   content: "";

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import schedule from './Objects/ScheduleObject'; // Import the schedule
 import './Stylesheets/Schedule.css';
+import './Stylesheets/SectionHeading.css';
 import Legend from './Components/Legend';
 import ScheduleWidget from './Components/ScheduleWidget';
 import KidsScheduleWidget from './Components/KidsScheduleWidget';
@@ -23,7 +24,7 @@ const convertToAmPm = (time) => {
   let minutes = Math.round((time % 1) * 60); // Round minutes to the nearest whole number
   const ampm = hours >= 12 ? 'pm' : 'am';
   hours = hours % 12 || 12; // Convert to 12-hour format
-  return `${hours}${minutes === 0 ? '' : ':' + String(minutes).padStart(2, '0')}${ampm}`;
+  return `${hours}:${String(minutes).padStart(2, '0')}${ampm}`;
 };
 
 // Time blocks to remove (example: between 9-11 AM and 1:30-3:30 PM)
@@ -109,7 +110,10 @@ export default function Schedule() {
 
   return (
     <div id="Schedule" className='ScheduleContainer'>
- <h1 className='animate'> 🗓️ Schedule</h1>
+      <p className="section-heading">
+        <span className="sh-kicker">Morning, Afternoon &amp; Evening Classes</span>
+        <span className="sh-main">Schedule</span>
+      </p>
  
       <div className="Schedule">
         {Object.keys(schedule).map((day) => (
@@ -121,35 +125,19 @@ export default function Schedule() {
             <div
               id={day}
               className={`day-column ${day}`}
-              style={{
-                height: `${totalHours * PIXELS_PER_HOUR - totalRemovedHeight}px`,
-                position: 'relative'
-              }}
+              style={{ height: `${totalHours * PIXELS_PER_HOUR - totalRemovedHeight}px`, position: 'relative' }}
             >
               {schedule[day].map((classTime, index) => {
                 const topPosition = adjustPosition(classTime.start);
-                const classHeight = (classTime.end - classTime.start) * PIXELS_PER_HOUR;
-
-                // NEW: compute colors per class name
-                const { bg, bar } = paintFor(classTime.name);
-
+                const { bg } = paintFor(classTime.name);
                 return (
                   <div
                     key={index}
                     className="timeslot"
-                    style={{
-                      top: `${topPosition}px`,
-                      height: `${classHeight}px`,
-                      position: 'absolute',        // unchanged
-                      backgroundColor: bg,         // NEW: background only
-                     }}
+                    style={{ top: `${topPosition}px`, position: 'absolute', backgroundColor: bg }}
                   >
-                    <p className='class-name'>{classTime.name} </p>
-                    <p>
-                      <span className='class-time'>
-                        {convertToAmPm(classTime.start)} - {convertToAmPm(classTime.end)}
-                      </span>
-                    </p>
+                    <p className='class-name'>{classTime.name}</p>
+                    <span className='class-time'>{convertToAmPm(classTime.start)}–{convertToAmPm(classTime.end)}</span>
                   </div>
                 );
               })}

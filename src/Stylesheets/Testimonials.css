@@ -1,211 +1,207 @@
-/* Reviews.css */
- 
- 
-.ReviewTitle h1{
-    margin-bottom:100px;
+/* ═══════════════════════════════════════════════
+   TESTIMONIALS — Google Review Widget Style
+   ═══════════════════════════════════════════════ */
+
+#google-logo {
+  height: 16px;
+  width: 16px;
+  display: block;
+  margin-right: 7px;
+  border-radius: 2px;
 }
 
-#google-logo{
-    height:40px;
-    width:40px;
-    display: block;
-    margin:0;
-    margin-right:10px
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.flex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+/* ── Section band ── */
+.ReviewsOuterContainer {
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
 }
 
-.ReviewsOuterContainer{
-        position:absolute;
-    bottom:0;
- width:100vw;
-
- 
-}
-
+/* ── Card ── */
 .ReviewsContainer {
-    margin: 30px auto;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.993);
-    border-top: 2px solid black;
-    overflow: hidden;
- 
-    display: flex;
-    justify-content: space-between;
-    font-family: 'Arial', sans-serif;
-    background-color: #fffffff1;
-    height: 170px;
-  
-    border: 2px solid black;
-    border-radius: 10px;
-    width: 80vw;
-    opacity: 90%;
- 
-    
-  
-    overflow: hidden;
-    z-index: 4;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 158px;
+  width: min(700px, 88vw);
+  position: relative;
 
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
 
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.10),
+    0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-
-.ReviewsOuterContainer h2 {
-    margin: 0 4rem;
-    font-family: "Oswald", sans-serif;
-    font-size: 50px;
+/* Google color bar — top */
+.ReviewsContainer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 8px;
+  background: linear-gradient(
+    90deg,
+    #4285F4 0%,   #4285F4 25%,
+    #EA4335 25%,  #EA4335 50%,
+    #FBBC05 50%,  #FBBC05 75%,
+    #34A853 75%,  #34A853 100%
+  );
+  z-index: 2;
 }
 
-.ReviewsContainer button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 20%;
-    background-color: rgb(66, 133, 244);
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    margin: 0 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+/* Google color bar — bottom */
+.ReviewsContainer::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 8px;
+  background: linear-gradient(
+    90deg,
+    #34A853 0%,   #34A853 25%,
+    #FBBC05 25%,  #FBBC05 50%,
+    #EA4335 50%,  #EA4335 75%,
+    #4285F4 75%,  #4285F4 100%
+  );
+  z-index: 2;
 }
 
- 
-
+/* ── Review wrapper ── */
 .ReviewWrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
+/* ── Single review — DO NOT change position/transition ── */
 .Review-Text {
-    text-align: center;
-    color: #000000;
-    font-size: 16px;
-    overflow: auto;
-    
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 1;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 
-}
- 
-.comments {
-    font-size: 100px;
- 
-    transition: transform 0.3s ease
-}
-
-
-.ReviewAuthor{
-    font-weight: bold;
-
-}
-.enlarge {
-    transform: scale(1.2)
-}
-
-.Review-Text p {
-    height: fit-content;
-    font-size: 15px;
-    
-}
-
-.Review-Text p:hover {
-cursor:default    
-}
- 
-
-.ButtonContainer {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    z-index:10;
- }
-
-.ReviewsOuterContainer img {
-    margin: 0 auto;
-    display: block;
-    border-radius: 10px;
- 
-    height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px 22px 12px;
+  box-sizing: border-box;
 }
 
 .txt {
-    font-style: italic;
-    font-size: 15px;
+  font-size: 14.5px;
+  color: #202124;
+  line-height: 1.65;
+  font-family: 'Roboto', 'Roboto Condensed', sans-serif;
+  font-style: normal;
+  letter-spacing: 0.15px;
+  font-weight: 400;
 }
 
-/* Sliding animation classes */
-.slide-out-left {
-    transform: translateX(-100%);
-    opacity: 0;
-}
- 
-.slide-out-right {
-    transform: translateX(100%);
-    opacity: 0;
+.Rating {
+  display: flex;
+  justify-content: center;
 }
 
- 
-
-.next.slide-in-from-left {
-    transform: translateX(130%);
-    opacity: 1;
+.ReviewAuthor {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.25px;
+  text-transform: none;
+  color: #4285F4;
 }
 
-.next.slide-in-from-right {
-    transform: translateX(-130%);
-    opacity: 1;
+/* ── Arrow buttons ── */
+.ButtonContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  z-index: 10;
 }
 
- 
+.ReviewsContainer button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s, color 0.18s, box-shadow 0.18s, transform 0.12s;
+}
 
+.ReviewsContainer button:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.22);
+  color: rgba(0, 0, 0, 0.75);
+  transform: scale(1.08);
+}
+
+.ReviewsContainer button:active {
+  transform: scale(0.96);
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.ReviewsOuterContainer img {
+  display: block;
+  border-radius: 2px;
+  height: auto;
+}
+
+/* ── Slide animations — DO NOT CHANGE ── */
+.slide-out-left  { transform: translateX(-100%); opacity: 0; }
+.slide-out-right { transform: translateX(100%);  opacity: 0; }
+
+.next.slide-in-from-left  { transform: translateX(130%);  opacity: 1; }
+.next.slide-in-from-right { transform: translateX(-130%); opacity: 1; }
+
+/* ── Mobile ── */
 @media (max-width: 800px) {
+  .ReviewsOuterContainer {
+    padding: 0;
+  }
 
-    
-    .ReviewsContainer {
-      height:140px;
-    
-        width:101vw;
-          
-     border-left:none;
-     border-right:none;
-    border-radius: 0
-    }
+  .ReviewsContainer {
+    height: 134px;
+    width: 100vw;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+  }
 
-    .ReviewAuthor{
-       
-        font-size: 12px;
-        
-    }
-    Text {
-        padding: 0vh;
-        margin: 0 auto;
-        font-size: 12px;
-    }
+  .txt { font-size: 13px; }
 
-   
-    .ReviewsOuterContainer h2 {
- 
-        font-size: 2rem;
-    }
- 
+  .ReviewAuthor { font-size: 11px; }
+
+  .Review-Text { padding: 14px 14px 12px; }
+
+  .ReviewsContainer button { width: 30px; height: 30px; margin: 0 8px; font-size: 12px; }
 }

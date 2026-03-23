@@ -1,0 +1,173 @@
+/* ═══════════════════════════════════════════════════════════
+   BADGE  —  gold coin with cinematic entrance + live shimmer
+   ═══════════════════════════════════════════════════════════ */
+
+/* 1. Entrance ─────────────────────────────────────────────── */
+@keyframes badge-hero {
+  0%   { opacity: 0; transform: translateY(84px) scale(1.8);   filter: blur(20px); }
+  9%   { opacity: 1; transform: translateY(84px) scale(1.8);   filter: blur(0);    }
+  38%  {             transform: translateY(84px) scale(1.8);                        }
+  76%  {             transform: translateY(0)    scale(1);                          }
+  85%  {             transform: translateY(-8px) scale(1.04);                       }
+  92%  {             transform: translateY(2px)  scale(0.99);                       }
+  96%  {             transform: translateY(-2px) scale(1.01);                       }
+  100% { opacity: 1; transform: translateY(0)    scale(1);     filter: blur(0);    }
+}
+
+/* 2. Shimmer — sweeps once every 8 s; movement in first 22 % of cycle ── */
+@keyframes badge-shimmer {
+  0%   { transform: translateX(-200%) skewX(-18deg); opacity: 0;    }
+  4%   {                                              opacity: 1;    }
+  18%  { transform: translateX(300%)  skewX(-18deg); opacity: 1;    }
+  22%  {                                              opacity: 0;    }
+  100% { transform: translateX(300%)  skewX(-18deg); opacity: 0;    }
+}
+
+/* 3. Idle glow breathe ──────────────────────────────────────── */
+@keyframes badge-glow-pulse {
+  0%, 100% {
+    box-shadow:
+      inset 0  1px 2px rgba(255,255,255,0.72),
+      inset 0 -1px 1px rgba(0,0,0,0.18),
+      0 1px 0 #e07008, 0 2px 0 #cf6407, 0 3px 0 #be5806,
+      0 4px 0 #ac4d05, 0 5px 0 #9b4204, 0 6px 0 #893603,
+      0 7px 0 #772b02, 0 8px 0 #642002, 0 9px 0 rgba(0,0,0,0.72),
+      0 13px 30px rgba(160,70,5,0.38),
+      0 26px 60px rgba(0,0,0,0.48),
+      0  0   55px rgba(251,191,36,0.18);
+  }
+  50% {
+    box-shadow:
+      inset 0  1px 2px rgba(255,255,255,0.72),
+      inset 0 -1px 1px rgba(0,0,0,0.18),
+      0 1px 0 #e07008, 0 2px 0 #cf6407, 0 3px 0 #be5806,
+      0 4px 0 #ac4d05, 0 5px 0 #9b4204, 0 6px 0 #893603,
+      0 7px 0 #772b02, 0 8px 0 #642002, 0 9px 0 rgba(0,0,0,0.72),
+      0 13px 30px rgba(160,70,5,0.48),
+      0 26px 60px rgba(0,0,0,0.48),
+      0  0   82px rgba(251,191,36,0.36);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────── */
+
+.badge {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 10px;
+
+  /* Liquid-gold face: extreme contrast between specular peaks and shadow trough */
+  background: linear-gradient(
+    142deg,
+    #ffffff  0%,
+    #fff8d4  4%,
+    #fef0a0  9%,
+    #fde272 15%,
+    #fbbf24 24%,
+    #f59e0b 36%,
+    #d97706 48%,
+    #c05d07 56%,
+    #b45309 63%,
+    #d97706 72%,
+    #f59e0b 81%,
+    #fde272 89%,
+    #fff8d4 95%,
+    #ffffff 100%
+  );
+
+  color: #3d1000;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 5.5px;
+  text-transform: uppercase;
+  padding: 11px 36px 12px;
+  border-radius: 999px;
+
+  /* Asymmetric bevel */
+  border-top:    1.5px solid rgba(255,255,255,0.85);
+  border-left:   1.5px solid rgba(255,255,255,0.60);
+  border-right:  1.5px solid rgba(150,62,5,0.50);
+  border-bottom: 1.5px solid rgba(110,44,8,0.65);
+
+  /* 9-layer depth stack + ambient */
+  box-shadow:
+    inset 0  1px 2px rgba(255,255,255,0.72),
+    inset 0 -1px 1px rgba(0,0,0,0.18),
+    0 1px 0 #e07008,
+    0 2px 0 #cf6407,
+    0 3px 0 #be5806,
+    0 4px 0 #ac4d05,
+    0 5px 0 #9b4204,
+    0 6px 0 #893603,
+    0 7px 0 #772b02,
+    0 8px 0 #642002,
+    0 9px 0 rgba(0,0,0,0.72),
+    0 13px 30px rgba(160,70,5,0.38),
+    0 26px 60px rgba(0,0,0,0.48),
+    0  0   55px rgba(251,191,36,0.18);
+
+  text-shadow:
+    0  1px 0   rgba(255,255,255,0.65),
+    0 -1px 0   rgba(0,0,0,0.28),
+    0  0   20px rgba(251,191,36,0.30);
+
+  animation:
+    badge-hero       3.2s cubic-bezier(0.25, 1, 0.35, 1) 0.2s  both,
+    badge-glow-pulse 4.0s ease-in-out                    3.8s  infinite;
+}
+
+/* Upper lens gloss — overhead light on a curved face */
+.badge::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 56%;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.55)  0%,
+    rgba(255,255,255,0.24) 42%,
+    rgba(255,255,255,0.05) 78%,
+    transparent 100%
+  );
+  border-radius: 999px 999px 38% 38% / 999px 999px 18px 18px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Shimmer streak — fires once per 8 s cycle after the entrance settles */
+.badge::after {
+  content: '';
+  position: absolute;
+  top: -30%; left: 0;
+  width: 36%; height: 160%;
+  background: linear-gradient(
+    90deg,
+    transparent                    0%,
+    rgba(255,255,255,0.12)        20%,
+    rgba(255,255,255,0.70)        50%,
+    rgba(255,255,255,0.12)        80%,
+    transparent                  100%
+  );
+  pointer-events: none;
+  z-index: 1;
+  /* delay = entrance duration (3.2 + 0.2 = 3.4 s) + small pause */
+  animation: badge-shimmer 8s linear 4.0s infinite;
+}
+
+/* Text above both overlays */
+.badge__text {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Mobile ── */
+@media (max-width: 799px) {
+  .badge {
+    font-size: 14px;
+    letter-spacing: 4px;
+    padding: 9px 24px 10px;
+  }
+}

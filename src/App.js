@@ -8,7 +8,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Below-fold main page sections — lazy loaded
 const Schedule = lazy(() => import("./Schedule"));
-const Coaches  = lazy(() => import("./Coaches"));
 const Pricing  = lazy(() => import("./Pricing"));
 const FAQ      = lazy(() => import("./FAQ"));
 const Contact  = lazy(() => import("./Contact"));
@@ -56,7 +55,6 @@ function App() {
                     <Navbar />
                     <Landing />
                     <Schedule />
-                    <Coaches />
                     <Pricing />
                     <FAQ />
                     <Contact />

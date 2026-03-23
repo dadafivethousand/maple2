@@ -19,17 +19,11 @@ export default function QA({ faq, isExpanded, toggleExpand }) {
           {/* use h2 to match your CSS selector */}
           <h2>{faq.question}</h2>
           <button aria-label={isExpanded ? 'Collapse' : 'Expand'}>
-            {isExpanded ? <i className="fa fa-chevron-up"></i> : <i className="fa fa-chevron-down"></i>}
+            <span className="faq-toggle" />
           </button>
         </div>
 
-        <div
-          className="faq-answer-wrapper"
-          style={{
-            maxHeight: isExpanded ? '1000px' : '0px',
-            transition: 'max-height 0.5s ease',
-          }}
-        >
+        <div className="faq-answer-wrapper">
           <div className="faq-answer">
             <p>{faq.answer}</p>
 

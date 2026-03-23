@@ -1,193 +1,165 @@
-/* FullPost.css — matches Blog.css (Maple blue + glass card) */
+/* ===== FullPost.css ===== */
 
-.full-post{
-  /* Use same theme tokens as Blog.css (scoped locally) */
-  --blog-bg: #07142f;
-  --blog-bg-2: #0b2f58;
-  --blog-ink: #e9f1f8;
-  --blog-muted: #a8bdd6;
-  --blog-accent: #5ab0ff;
-  --blog-card: rgba(15, 30, 43, 0.86);
-  --blog-card-2: rgba(7, 18, 30, 0.92);
-  --blog-outline: rgba(255,255,255,.14);
-  --blog-outline-2: rgba(255,255,255,.22);
-  --blog-shadow: 0 16px 44px rgba(0,0,0,.45);
-  --blog-radius: 16px;
+*,
+*::before,
+*::after { box-sizing: border-box; }
 
-  width: min(800px, 96vw);
+/* ---- Page wrapper ---- */
+.full-post-container {
+  background: linear-gradient(180deg, #020c1e 0%, #030f24 100%);
+  min-height: 100vh;
+  padding: clamp(40px, 5vw, 72px) 0 clamp(48px, 6vw, 80px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* dot-grid texture */
+.full-post-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(125, 211, 252, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 70% 50% at 50% 20%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 20%, black 30%, transparent 100%);
+}
+
+/* ---- Article card ---- */
+.full-post {
+  position: relative;
+  width: min(780px, 92vw);
   margin: 0 auto;
-  padding: clamp(16px, 2.6vw, 28px);
+  padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 48px);
+  color: #e9f1f8;
+  font-family: 'Roboto Condensed', Roboto, system-ui, sans-serif;
+  line-height: 1.7;
 
-  color: var(--blog-ink);
-  font-family: "Roboto Condensed", Roboto, system-ui, sans-serif;
-  line-height: 1.65;
-
-  border-radius: calc(var(--blog-radius) + 2px);
-  border: 1px solid rgba(255,255,255,.10);
-
+  border-radius: 20px;
+  border: 1px solid rgba(125, 211, 252, 0.1);
   background:
-    radial-gradient(110% 140% at 100% -20%, rgba(255,255,255,.08), transparent 55%),
-    radial-gradient(900px 360px at 10% 0%, rgba(90,176,255,.16), transparent 55%),
-    linear-gradient(180deg, rgba(10,28,46,.72), rgba(6,16,28,.90));
-
-  box-shadow: var(--blog-shadow);
-  backdrop-filter: blur(12px) saturate(120%);
-  -webkit-backdrop-filter: blur(12px) saturate(120%);
+    radial-gradient(ellipse at 60% -10%, rgba(125, 211, 252, 0.07) 0%, transparent 50%),
+    linear-gradient(175deg, #0c1a30 0%, #070d1c 100%);
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(125, 211, 252, 0.06);
 }
 
-.full-post-container{
-  background-color: #0b2f58;
-  min-height:100vh;
-  width:100vw;
- padding-top:1em;
+/* top accent bar */
+.full-post::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.6), transparent);
+  pointer-events: none;
 }
 
-/* Title */
-#post-title{
-  display: block;
-  margin: 0 0 12px;
-  padding: 0;
-  font-size: clamp(26px, 3vw, 40px);
-  font-weight: 900;
-  font-family: "Roboto Condensed", Roboto, system-ui, sans-serif;
-  text-transform: none;
-  text-align: left;
-  letter-spacing: .02em;
-  color: var(--blog-ink);
-  text-shadow: 0 2px 0 rgba(0,0,0,.35);
-
+/* ---- Title ---- */
+#post-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(24px, 3.5vw, 40px);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  margin: 0 0 10px;
+  color: #e0f2fe;
+  text-shadow: 0 0 30px rgba(125, 211, 252, 0.2);
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
 }
 
-/* Reset global h1::before decorative line */
-#post-title::before{
-  display: none;
+#post-title::before { display: none; }
+#post-title::after { display: none; }
+
+/* ---- Date ---- */
+.full-post > p:first-of-type {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(125, 211, 252, 0.45);
+  margin: 0 0 28px;
 }
 
-/* Subtle divider under title (like Blog title underline) */
-#post-title::after{
-  content: "";
+/* ---- Divider under date ---- */
+.full-post > p:first-of-type::after {
+  content: '';
   display: block;
   height: 1px;
-  margin-top: 12px;
-  background: linear-gradient(90deg, rgba(90,176,255,.55), transparent 70%);
-  opacity: .85;
+  margin-top: 18px;
+  background: linear-gradient(90deg, rgba(125, 211, 252, 0.2), transparent 70%);
 }
 
-/* Paragraphs */
-.full-post p{
-  font-size: 15px;
-  line-height: 1.7;
-  margin: 0 0 14px;
-  color: rgba(233,241,248,.92);
-}
-
-/* “meta” line (your em) */
-.full-post em{
-  color: var(--blog-muted);
-  font-style: italic;
-  display: block;
-  margin: 10px 0 18px;
-  opacity: .95;
-}
-
-/* Headings inside the post */
-.full-post h2{
-  font-size: clamp(18px, 2.1vw, 22px);
-  margin: 22px 0 10px;
-  color: var(--blog-ink);
-  letter-spacing: .01em;
-
-  border-left: 4px solid rgba(90,176,255,.85);
-  padding-left: 10px;
-}
-
-/* Lists */
-.full-post ul{
-  padding-left: 1.2rem;
+/* ---- Body paragraphs ---- */
+.full-post p {
+  font-size: clamp(14px, 1.5vw, 15px);
+  line-height: 1.8;
+  color: rgba(186, 230, 253, 0.75);
   margin: 0 0 16px;
 }
 
-.full-post li{
-  margin: 0 0 10px;
+/* ---- H2 inside post ---- */
+.full-post h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(17px, 2vw, 21px);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #e0f2fe;
+  margin: 28px 0 12px;
+  padding-left: 12px;
+  border-left: 3px solid rgba(125, 211, 252, 0.5);
+}
+
+/* ---- Lists ---- */
+.full-post ul {
+  padding-left: 1.4rem;
+  margin: 0 0 18px;
+}
+
+.full-post li {
+  margin: 0 0 8px;
   list-style-type: disc;
-  color: rgba(233,241,248,.90);
+  color: rgba(186, 230, 253, 0.7);
+  font-size: clamp(14px, 1.5vw, 15px);
+  line-height: 1.7;
 }
 
-/* Strong */
-.full-post strong{
-  color: #ffffff;
-  font-weight: 900;
+/* ---- Strong ---- */
+.full-post strong {
+  color: #e0f2fe;
+  font-weight: 700;
 }
 
-/* Links inside post (if any) */
-.full-post a{
-  color: rgba(90,176,255,.95);
+/* ---- Links ---- */
+.full-post a {
+  color: #7dd3fc;
   text-decoration: none;
-  font-weight: 900;
-  border-bottom: 1px solid rgba(90,176,255,.35);
+  border-bottom: 1px solid rgba(125, 211, 252, 0.35);
 }
 
-.full-post a:hover{
-  border-bottom-color: rgba(90,176,255,.75);
+.full-post a:hover {
+  border-bottom-color: rgba(125, 211, 252, 0.7);
 }
 
-/* Optional: nicer blockquote styling if your content includes it */
-.full-post blockquote{
-  margin: 14px 0;
-  padding: 12px 14px;
-  border-left: 4px solid rgba(90,176,255,.70);
-  background: rgba(255,255,255,.05);
-  border-radius: 12px;
-  color: rgba(233,241,248,.92);
+/* ---- Blockquote ---- */
+.full-post blockquote {
+  margin: 18px 0;
+  padding: 14px 18px;
+  border-left: 3px solid rgba(125, 211, 252, 0.45);
+  background: rgba(125, 211, 252, 0.04);
+  border-radius: 0 10px 10px 0;
+  color: rgba(186, 230, 253, 0.75);
 }
 
-/* Optional: inline code / code blocks if your blog uses them */
-.full-post code{
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 0.95em;
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.12);
-  padding: 2px 6px;
-  border-radius: 8px;
-  color: rgba(233,241,248,.95);
+/* ---- Mobile ---- */
+@media (max-width: 600px) {
+  .full-post { padding: 22px 18px; }
+  .full-post h2 { font-size: 17px; }
 }
 
-.full-post pre{
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
-  padding: 12px;
-  border-radius: 14px;
-  overflow: auto;
-}
-
-.full-post pre code{
-  background: transparent;
-  border: 0;
-  padding: 0;
-}
-
-/* Mobile tuning */
-@media (max-width: 600px){
-  .full-post{
-    padding: 14px 14px;
- 
-  }
-
-  .full-post p{
-    font-size: 14px;
-  }
-
-  .full-post h2{
-    font-size: 18px;
-  }
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .full-post{
-    scroll-behavior: auto;
-  }
+@media (prefers-reduced-motion: reduce) {
+  .full-post { scroll-behavior: auto; }
 }

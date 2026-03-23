@@ -1,168 +1,235 @@
-/* Contact.css — Compact hi-tech / glassmorphism, Leafs-blue palette */
+/* ===== Contact.css ===== */
 
-.ContactContainer{
-  --ink: #e9f1f8;
-  --ink-2: #cfe0f7;
-  --bg-1: #0a2242;
-  --bg-2: #0e2f5b;
-  --card-1: rgba(255,255,255,.06);
-  --card-2: rgba(255,255,255,.02);
-  --accent: #8dd3f5;
-  --ring: rgba(141,211,245,.50);
-font-family: oswald;
-  color: var(--ink);
-  background:
-    radial-gradient(1200px 520px at 14% -180px, #123c71 0%, transparent 38%),
-    linear-gradient(180deg, var(--bg-2), var(--bg-1) 36%, #081a34 100%);
- 
-   padding-top: 50px;
- padding-bottom:50px;
-  justify-content: flex-start;
+.ContactContainer {
+  background: linear-gradient(180deg, #020c1e 0%, #030f24 100%);
+  padding: clamp(48px, 5vw, 80px) 0 clamp(64px, 7vw, 96px);
+  color: #e9f1f8;
+  position: relative;
+  overflow: hidden;
 }
 
-.contact-flexbox{
-  display:flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+/* dot-grid */
+.ContactContainer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(125, 211, 252, 0.055) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse 80% 65% at 50% 50%, black 20%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 65% at 50% 50%, black 20%, transparent 100%);
+}
+
+/* ══════════════════════════
+   SCENE — map fills this, panel floats over it
+══════════════════════════ */
+.contact-scene {
+  position: relative;
+  width: min(1060px, 92vw);
+  margin: 48px auto 0;
+  min-height: 520px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(125, 211, 252, 0.1);
+  box-shadow:
+    0 32px 80px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(125, 211, 252, 0.07);
+}
+
+/* ── map fills scene absolutely ──
+   translateX shifts the map right so the pin lands
+   in the centre of the visible (non-overlaid) right portion */
+.contact-scene__map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  filter: saturate(0.7) brightness(0.85);
+  transform: translateX(22%);
+}
+
+/* ── gradient: opaque dark on left, dissolves to transparent revealing map ── */
+.contact-scene__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    #05091a 0%,
+    #05091a 24%,
+    rgba(5, 9, 26, 0.94) 38%,
+    rgba(5, 9, 26, 0.55) 54%,
+    rgba(5, 9, 26, 0.12) 68%,
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ══════════════════════════
+   CONTACT PANEL
+   floats over left side of the scene
+══════════════════════════ */
+.contact-panel {
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: 48%;
+  z-index: 2;
+  padding: 44px 48px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── eyebrow ── */
+.contact-panel__eyebrow {
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(125, 211, 252, 0.55);
+  margin-bottom: 20px;
+}
+
+/* ── contact rows ── */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+}
+
+.contact-detail {
+  display: flex;
   align-items: center;
- 
+  gap: 14px;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(125, 211, 252, 0.07);
+  text-decoration: none;
+  color: inherit;
+  transition: padding-left 0.2s;
 }
 
-  h1:after, h1:before {
-      content: " ";
-      display: block;
-      border-bottom: 1px solid #ffffff;
-      border-top: 1px solid  #ffffff;
-      height: 5px;
-    background-color: #ffffff;
+.contact-detail:hover { padding-left: 6px; }
+
+.contact-detail svg {
+  font-size: 14px;
+  color: rgba(125, 211, 252, 0.45);
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(125, 211, 252, 0.12);
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.contact-detail:hover svg {
+  color: #7dd3fc;
+  border-color: rgba(125, 211, 252, 0.3);
+  background: rgba(125, 211, 252, 0.07);
+}
+
+.contact-detail span {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: clamp(13px, 1.3vw, 15px);
+  font-weight: 400;
+  color: rgba(186, 230, 253, 0.58);
+  line-height: 1.4;
+  transition: color 0.2s;
+}
+
+.contact-detail:hover span { color: #e0f2fe; }
+
+/* ── social ── */
+.contact-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.contact-social__link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(125, 211, 252, 0.12);
+  background: rgba(125, 211, 252, 0.04);
+  color: rgba(186, 230, 253, 0.45);
+  text-decoration: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.contact-social__link svg { font-size: 17px; }
+
+.contact-social__link--ig:hover {
+  background: rgba(225, 48, 108, 0.12);
+  border-color: rgba(225, 48, 108, 0.4);
+  color: #ff7eb3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(225, 48, 108, 0.18);
+}
+
+.contact-social__link--fb:hover {
+  background: rgba(24, 119, 242, 0.12);
+  border-color: rgba(24, 119, 242, 0.4);
+  color: #60a5fa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(24, 119, 242, 0.18);
+}
+
+/* ══════════════════════════
+   MOBILE
+══════════════════════════ */
+@media (max-width: 680px) {
+  .contact-scene {
+    min-height: 700px;
   }
 
-.ContactContainer h2{
-  color: #fff;
- 
- margin-bottom:10px;
-  letter-spacing: .3px;
-  font-size: 1.7rem;
+  /* panel spans full width */
+  .contact-panel {
+    width: 100%;
+    padding: 32px 24px 28px;
+  }
+
+  /* contact-details should NOT expand to fill all space —
+     let social stay close below the rows */
+  .contact-details {
+    flex: 0 0 auto;
+  }
+
+  .contact-social {
+    margin-top: 24px;
+  }
+
+  /* diagonal gradient — same angle as desktop but rotated to flow top→bottom-right */
+  .contact-scene__overlay {
+    background: linear-gradient(
+      160deg,
+      #05091a 0%,
+      #05091a 30%,
+      rgba(5, 9, 26, 0.96) 42%,
+      rgba(5, 9, 26, 0.82) 54%,
+      rgba(5, 9, 26, 0.58) 64%,
+      rgba(5, 9, 26, 0.3) 74%,
+      rgba(5, 9, 26, 0.1) 83%,
+      transparent 92%
+    );
+  }
+
+  /* no vertical shift — eliminates the dark gap at the bottom.
+     small horizontal nudge to center the pin in the visible area */
+  .contact-scene__map {
+    transform: translateY(30%);
+    filter: saturate(0.7) brightness(0.85);
+  }
 }
-
- .contact-icons, .social-media-icons{
-  margin-bottom:30px;
- 
- }
- 
- 
- 
-
- 
-/* Map block */
-.ContactContainer ul{
-  margin: 0 0 12px; padding-left: 18px;
-}
-.ContactContainer li{
-  list-style: square;
-  margin: 6px 0;
-  font-size: 16px;
-  color: var(--ink-2);
-  font-weight: 500;
-}
-
-.ContactInfo-and-map {
-  max-width:300px;
-}
-.ContactInfo-and-map iframe{
-  display: block;
-  width: 90%;
-  height: 250px;
-  border: 0;
-  border-radius: 12px;
-  box-shadow: 0 18px 36px rgba(4,30,66,.38);
-  margin: 10px 0;;
-  isolation: isolate;
-   width:250px;
-
-}
- 
-
-
- 
-/* Subtle scanning gloss over the map */
- 
-/* Contact lines */
-.Phone, .Email, .Address{
-  margin-bottom:10px;
-display: flex;
- 
-
-}
-
-/* Icon sizing + hover */
-.Phone svg, .Email svg, .Address svg, .ig-icon, .fb-icon{
-  font-size: 30px;
-  line-height: 1;
-  color: #fff;
-  filter: drop-shadow(0 0 6px rgba(141,211,245,.45));
-  transition: transform .15s ease, filter .2s ease;
-}
-.Phone:hover svg,
-.Email:hover svg,
-.Address:hover svg,
-.instagram-and-facebook a:hover .ig-icon,
-.instagram-and-facebook a:hover .fb-icon{
-  transform: translateY(-1px);
-  filter: drop-shadow(0 0 10px rgba(141,211,245,.65));
-}
-
-/* Text + links */
-.contact-text{ font-size: 1em; line-height: 1.5; color: var(--ink-2);  }
-.ContactContainer a{
-  color: inherit; text-decoration: none; border-bottom: 1px solid transparent;
-}
-
-.contact-icon-text{
-  margin-left:10px;
-}
-
-/* Social row */
-.instagram-and-facebook{
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  justify-content: flex-start;
-  max-width: 1100px;
-  margin: 8px auto 16px;
-}
-
-/* Social row */
-.instagram-and-facebook svg{
-font-size: 45px;
-}
-
-
-
-.contact-content{
-  position: relative;
-  margin-left:20px;
- 
-
-}
-
-
-@media (min-width:800px){
-.ContactContainer{
- 
-  justify-content: space-around;
-}
-.ContactInfo-and-map iframe{
-
-  
-  height: 400px;
-
-  
-   width:400px;
-
-}
- 
-
-}
-
-.Phone, .Email, .Address { cursor: pointer; }

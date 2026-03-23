@@ -2,32 +2,24 @@ import React, { useState, useEffect } from 'react';
 import './Stylesheets/LeadForm.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import ReCAPTCHA from 'react-google-recaptcha';
+import { Turnstile } from '@marsidev/react-turnstile';
 import { useAppContext } from "./AppContext";
 import whitelogo from "./Media/whitelogonobg.webp";
-import bluelogo from "./Media/blue-logo.webp";
 import AnimatedCheckmark from './Components/AnimatedCheckmark';
 import TypewriterCycle from './Utils/Typewriter';
+import Badge from './Components/Badge';
+import InlineLeadForm from './Components/InlineLeadForm';
 
-export default function LeadForm({ closebutton }) {
+export default function LeadForm({ closebutton, inline = false }) {
   const { setShowForm } = useAppContext();
 
-  const [captchaVerified, setCaptchaVerified] = useState(false);
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-  });
-
-  // UI state
-  const [status, setStatus] = useState("idle"); // 'idle' | 'submitting' | 'success' | 'error'
+  const [captchaToken, setCaptchaToken] = useState(null);
+  const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', phone: '' });
+  const [status, setStatus] = useState('idle');
   const [showInstructions, setShowInstructions] = useState(false);
   const [fadeOutCheck, setFadeOutCheck] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState('');
   const [isValid, setIsValid] = useState(false);
-
-  const handleCaptchaChange = (token) => setCaptchaVerified(Boolean(token));
 
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
@@ -36,223 +28,142 @@ export default function LeadForm({ closebutton }) {
     if (name === 'phone') {
       const cleaned = value.replace(/\D/g, '');
       let formatted = cleaned;
-      if (cleaned.length > 3 && cleaned.length <= 6) {
-        formatted = `(${cleaned.slice(0, 3)}) ${cleaned.slice(3)}`;
-      } else if (cleaned.length > 6) {
-        formatted = `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)}-${cleaned.slice(6, 10)}`;
-      }
-      setFormData((p) => ({ ...p, phone: formatted }));
+      if (cleaned.length > 3 && cleaned.length <= 6) formatted = `(${cleaned.slice(0,3)}) ${cleaned.slice(3)}`;
+      else if (cleaned.length > 6) formatted = `(${cleaned.slice(0,3)}) ${cleaned.slice(3,6)}-${cleaned.slice(6,10)}`;
+      setFormData(p => ({ ...p, phone: formatted }));
     } else {
-      setFormData((p) => ({ ...p, [name]: value }));
+      setFormData(p => ({ ...p, [name]: value }));
     }
   };
 
-  // Form validity
   useEffect(() => {
     const cleanedPhone = formData.phone.replace(/\D/g, '');
-    const ok =
+    setIsValid(
       formData.firstName.trim() !== '' &&
       formData.lastName.trim() !== '' &&
       validateEmail(formData.email) &&
       cleanedPhone.length === 10 &&
-      captchaVerified;
-    setIsValid(ok);
-  }, [formData, captchaVerified]);
+      Boolean(captchaToken)
+    );
+  }, [formData, captchaToken]);
 
-  // After success: show checkmark, fade it, then swap to instructions
   useEffect(() => {
     if (status !== 'success') return;
     setShowInstructions(false);
     setFadeOutCheck(false);
-
-    const fadeTimer = setTimeout(() => setFadeOutCheck(true), 1200);   // start fade
-    const swapTimer = setTimeout(() => setShowInstructions(true), 1900); // swap to instructions
-
-    return () => {
-      clearTimeout(fadeTimer);
-      clearTimeout(swapTimer);
-    };
+    const t1 = setTimeout(() => setFadeOutCheck(true), 1200);
+    const t2 = setTimeout(() => setShowInstructions(true), 1900);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
   }, [status]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!isValid || status === 'submitting') return;
-
     setStatus('submitting');
     setErrorMsg('');
-
     try {
-      const response = await fetch(
-        'https://worker-consolidated.maxli5004.workers.dev/intake-form',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          mode: 'cors',
-          body: JSON.stringify({
-            ...formData,
-            phone: formData.phone.replace(/\D/g, ''),
-          }),
-        }
-      );
-
-      if (!response.ok) {
-        const err = await response.json().catch(() => ({}));
+      const res = await fetch('https://worker-consolidated.maxli5004.workers.dev/intake-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        mode: 'cors',
+        body: JSON.stringify({ ...formData, phone: formData.phone.replace(/\D/g, ''), turnstileToken: captchaToken }),
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
         setErrorMsg(err?.message || 'Unexpected error');
         setStatus('error');
         return;
       }
-
-      // success
-      await response.json().catch(() => ({}));
       setStatus('success');
       window.gtag?.('event', 'generate_lead', { event_category: 'form', event_label: 'intake_form' });
       setFormData({ firstName: '', lastName: '', email: '', phone: '' });
-    } catch (err) {
+    } catch {
       setErrorMsg('Error submitting the form');
       setStatus('error');
     }
   };
 
-  const showFormUI = status === 'idle' || status === 'submitting' || status === 'error';
+  if (inline) return <InlineLeadForm />;
 
   return (
-    <div className="form-outer-container">
-      <div className={`form-container ${status === 'success' && 'blue-bg'} `}>
-        {closebutton ? (
-          <div
-            className={`close-form ${status === 'success' && 'close-form-white'}`}
-            onClick={() => setShowForm(false)}
-            aria-label="Close form"
-            role="button"
-          >
+    <div className="modal-backdrop" onClick={(e) => e.target === e.currentTarget && setShowForm(false)}>
+      <div className={`modal-card ${status === 'success' ? 'modal-card--success' : ''}`}>
+
+        {/* close */}
+        {closebutton && (
+          <button className="modal-close" onClick={() => setShowForm(false)} aria-label="Close">
             <FontAwesomeIcon icon={faTimes} />
-          </div>
-        ) : null}
+          </button>
+        )}
 
         {status === 'success' ? (
-          <div className="message-container">
+          <div className="lf-success-wrap">
             {!showInstructions ? (
               <div className={`check-wrap ${fadeOutCheck ? 'fade-out' : ''}`}>
                 <AnimatedCheckmark />
               </div>
             ) : (
-             <>
-  {/* Typewriter title */}
- <p id="message-title" className="message-title">
-  <TypewriterCycle speed={45} startDelay={0}>Your next steps...</TypewriterCycle>
-</p>
-
-  {/* Staggered slide-ins (one-by-one from left) */}
-  <ol className="instructions-list">
-    <li className="message-body slide-in" style={{ "--delay": "1.2s" }}>
-      Sign the{" "}
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://waiver.smartwaiver.com/w/dj188118umjqr7iwcr7jfq/web/"
-      >
-        waiver
-      </a>
-    </li>
-
-    <li className="message-body slide-in" style={{ "--delay": "1.6s" }}>
-      Check the class schedule
-    </li>
-
-    <li className="message-body slide-in" style={{ "--delay": "2.0s" }}>
-      Attend any classes you want
-    </li>
-
-    <li className="message-body slide-in" style={{ "--delay": "2.4s" }}>
-      For questions please see the FAQ section or call us directly
-    </li>
-  </ol>
-
-  {/* Logo fades in after the list */}
-  <img
-    className="blue-logo fade-in-late"
-    style={{ "--delay": "3.0s" }}
-    src={whitelogo}
-    alt="Logo"
-  />
-</>
-
+              <>
+                <p className="lf-success-title">
+                  <TypewriterCycle speed={45} startDelay={0}>Your next steps...</TypewriterCycle>
+                </p>
+                <ol className="lf-steps-list">
+                  <li className="lf-step slide-in" style={{ '--delay': '1.2s' }}>
+                    Sign the{' '}
+                    <a target="_blank" rel="noopener noreferrer" href="https://waiver.smartwaiver.com/w/dj188118umjqr7iwcr7jfq/web/">
+                      waiver
+                    </a>
+                  </li>
+                  <li className="lf-step slide-in" style={{ '--delay': '1.6s' }}>Check the class schedule</li>
+                  <li className="lf-step slide-in" style={{ '--delay': '2.0s' }}>Attend any classes you want</li>
+                  <li className="lf-step slide-in" style={{ '--delay': '2.4s' }}>For questions see the FAQ or call us directly</li>
+                </ol>
+                <img className="lf-success-logo fade-in-late" style={{ '--delay': '3.0s' }} src={whitelogo} alt="Maple Jiu-Jitsu" />
+              </>
             )}
           </div>
         ) : (
           <>
-            <img className="first-blue-logo" src={bluelogo} alt="Logo" />
-            <h2>Free Trial - 7 Days</h2>
-            <br />
+            <div className="lf-top">
+              <Badge>7-Day Free Trial</Badge>
+              <p className="lf-sub">No commitment &nbsp;·&nbsp; All levels &nbsp;·&nbsp; Adults &amp; Kids</p>
+            </div>
 
-            {status === 'error' && (
-              <p className="error-message center">{errorMsg}</p>
-            )}
+            {status === 'error' && <p className="lf-error">{errorMsg}</p>}
 
-            <form onSubmit={handleSubmit}>
-              <div className="grid">
-                <div className="form-group">
-                  <input
-                    type="text"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    placeholder="First Name"
-                    required
-                  />
+            <form onSubmit={handleSubmit} className="lf-form">
+              <div className="lf-row">
+                <div className="lf-field">
+                  <input className="lf-input" type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="First Name" required autoComplete="given-name" />
                 </div>
-
-                <div className="form-group">
-                  <input
-                    type="text"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    placeholder="Last Name"
-                    required
-                  />
+                <div className="lf-field">
+                  <input className="lf-input" type="text" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Last Name" required autoComplete="family-name" />
                 </div>
-
-                <div className="form-group">
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Email Address"
-                    required
-                  />
+              </div>
+              <div className="lf-row">
+                <div className="lf-field">
+                  <input className="lf-input" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" required autoComplete="email" />
                 </div>
-
-                <div className="form-group">
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="Phone Number"
-                    required
-                  />
+                <div className="lf-field">
+                  <input className="lf-input" type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone" required autoComplete="tel" />
                 </div>
               </div>
 
-              <div className="captcha-container">
-                <div className="captcha">
-                  <ReCAPTCHA
-                    id="center"
-                    className="recaptcha"
-                    sitekey="6LfVmFoqAAAAAF811UKiqels-ToHS8VlodkDiS6G"
-                    onChange={handleCaptchaChange}
-                  />
-                </div>
+              <div className="lf-captcha-wrap">
+                <Turnstile
+                  siteKey="0x4AAAAAACuXuYqwDOUxvxFB"
+                  onSuccess={(t) => setCaptchaToken(t)}
+                  onExpire={() => setCaptchaToken(null)}
+                  options={{ theme: 'dark', size: 'normal' }}
+                />
               </div>
 
               <button
                 type="submit"
-                className={isValid ? 'valid-button' : 'invalid-button'}
+                className={`lf-btn ${isValid ? 'lf-btn--active' : 'lf-btn--disabled'}`}
                 disabled={!isValid || status === 'submitting'}
               >
-                {status === 'submitting' ? 'Submitting…' : 'Submit'}
+                {status === 'submitting' ? 'Submitting…' : 'CLAIM YOUR FREE TRIAL →'}
               </button>
             </form>
           </>

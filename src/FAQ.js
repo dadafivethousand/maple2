@@ -1,6 +1,7 @@
 import { useState } from "react";
 import QA from "./Components/QA"; // Import the QA component
 import "./Stylesheets/FAQ.css";
+import "./Stylesheets/SectionHeading.css";
 import faqList from './Objects/FAQList';
 {/*import Jocko from "./Components/Jocko";*/}
 
@@ -30,7 +31,10 @@ export default function FAQ() {
     <div id="FAQ" className="FAQContainer">
       
        
-          <h1> FAQ</h1>
+          <p className="section-heading">
+            <span className="sh-kicker">Common Questions, Straight Answers</span>
+            <span className="sh-main">FAQ</span>
+          </p>
  
     
       

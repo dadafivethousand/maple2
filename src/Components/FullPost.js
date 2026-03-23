@@ -13,19 +13,7 @@ export default function FullPost() {
       try {
         const res = await fetch(`https://worker-consolidated.maxli5004.workers.dev/full-blog/${slug}`);
         const data = await res.json();
-        console.log("✅ Fetched post:", data);
-  
-        // Adjust date by subtracting 1 month
-        const originalDate = new Date(data.date);
-        originalDate.setMonth(originalDate.getMonth()-1);
-  
-        // Replace date in post
-        const adjustedPost = {
-          ...data,
-          date: originalDate.toISOString() // or format however you like
-        };
-  
-        setPost(adjustedPost);
+        setPost(data);
       } catch (err) {
         console.error("❌ Error loading post:", err);
       }

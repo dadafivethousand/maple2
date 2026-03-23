@@ -20,7 +20,7 @@ const CoachesList =
     name: "Мах",
  
     headInstructor: true,
-    description: "A black belt under Jorge Britto, Мах brings nearly 15 years of Brazilian Jiu-Jitsu experience. He is a multiple-time IBJJF Open Champion, a Canadian National Champion, ADCC Toronto Open Champion and an Ontario Open Gold Medalist. With a background in Muay Thai and MMA, he has 10 amateur Muay Thai fights, 5 amateur MMA fights, an amateur MMA Championship and a 1-0 professional MMA record.",
+    description: "A black belt under Jorge Britto, Мах brings nearly 15 years of BJJ experience. A multiple-time IBJJF Open Champion, Canadian National Champion, ADCC Toronto Open Champion, and Ontario Open Gold Medalist. He also has 10 amateur Muay Thai fights, 5 amateur MMA fights, an amateur MMA Championship, and a 1-0 professional MMA record.",
     accomplishments:["Canadian National Champion", "Multiple Time IBJJF Open Champion", "IBJJF American Nationals Bronze Medalist", "Ontario Open Gold Medalist", "Amateur MMA Champion", "1-0 Pro MMA Record"],
     image: MaxImage,
     link: 'https://www.instagram.com/maxli5000'
@@ -29,7 +29,7 @@ const CoachesList =
 {
   name: "Artur",
 
-  description: "With over 30 years of wrestling experience, Artur is a decorated competitor from Dagestan. A former regional chamption in Dagestan and champion of Southern Russia, he holds the prestigious title of Master of Sport in Freestyle Wrestling. Artur also has an extensive Muay Thai & MMA background and has trained with some of the most elite fighters of the sport including Alexander Volkov and Zabit Magomedsharipov.",
+  description: "With over 30 years of wrestling experience, Artur is a decorated competitor from Dagestan — a former regional champion and champion of Southern Russia, holding the prestigious title of Master of Sport in Freestyle Wrestling. He also has an extensive Muay Thai & MMA background and has trained alongside elite fighters including Alexander Volkov and Zabit Magomedsharipov.",
  
   accomplishments:["30+ Years of Wrestling", "Dagestan Regional Wrestling Champion", "Freestyle Wrestling Champion of Southern Russia", "Freestyle Wrestling Master of Sport (Russia)", "Trained with the likes of Alexander Volkov and Zabit Magomedsharipov" , "Winner of the Ivan Yarygin Wrestling Tournament" ],
   image:Arthur,
@@ -40,7 +40,7 @@ const CoachesList =
 {
   name: "Andre",
 
-  description: "Andre Porfirio is a black belt and one of the most decorated competitors in modern grappling—an ADCC veteran and proven champion across the biggest stages. His résumé includes being a Pan Am Champion, American National Champion, AJP Grand Slam Champion, and an IBJJF Worlds Bronze Medalist. With elite-level experience against the toughest competition in the world, Andre brings high-performance jiu-jitsu knowledge, precision technique, and championship-caliber insight to every training room.",
+  description: "Andre Porfirio is a black belt and ADCC veteran — one of the most decorated grapplers in the modern era. A Pan Am Champion, American National Champion, AJP Grand Slam Champion, and IBJJF Worlds Bronze Medalist, Andre has won against the toughest opposition in the world. He brings elite precision and championship-caliber insight to every session at Maple.",
  
   accomplishments:["30+ Years of Wrestling", "Dagestan Regional Wrestling Champion", "Freestyle Wrestling Champion of Southern Russia", "Freestyle Wrestling Master of Sport (Russia)", "Trained with the likes of Alexander Volkov and Zabit Magomedsharipov" , "Winner of the Ivan Yarygin Wrestling Tournament" ],
   image:Andre,
@@ -51,7 +51,7 @@ const CoachesList =
 {
   name: "Ivan",
 
-  description: "Ivan Primorac is a highly experienced Muay Thai coach with over 20 years in the sport and a deep background in international competition. Ivan brings authentic technique, traditional fundamentals, and modern fight strategy into every session. His coaching emphasizes technical precision, conditioning, and fight IQ, shaped by decades of hands-on experience at the highest levels. With a passion for athlete development and real-world striking knowledge, Ivan delivers disciplined, effective training that builds confident, well-rounded fighters at every stage.",
+  description: "Ivan Primorac brings over 20 years of Muay Thai experience and a deep background in international competition. His coaching blends authentic technique, traditional fundamentals, and modern fight strategy into every session. Ivan emphasizes technical precision, conditioning, and fight IQ — developing confident, well-rounded strikers from the ground up.",
  
   accomplishments:["30+ Years of Wrestling", "Dagestan Regional Wrestling Champion", "Freestyle Wrestling Champion of Southern Russia", "Freestyle Wrestling Master of Sport (Russia)", "Trained with the likes of Alexander Volkov and Zabit Magomedsharipov" , "Winner of the Ivan Yarygin Wrestling Tournament" ],
   image:Ivan,

@@ -1,5 +1,6 @@
 // Pricing.js
 import './Stylesheets/Pricing.css';
+import './Stylesheets/SectionHeading.css';
 import { useState, useEffect, useRef } from 'react';
 
 const formatCurrency = (amount) =>
@@ -85,7 +86,10 @@ export default function Pricing() {
 
   return (
     <div id="Memberships" className="PricingContainer" ref={containerRef}>
-      <h1 className="animate">Sign Up</h1>
+      <p className="section-heading">
+        <span className="sh-kicker">No Contracts · Cancel Anytime</span>
+        <span className="sh-main">Memberships</span>
+      </p>
 
       <div>
         {priceObject?.map((item, idx) => (
@@ -114,12 +118,12 @@ export default function Pricing() {
                         }`}
                       >
                         <div className="name-and-price">
-                          <p className="name-of-class">{option.duration ==1 ? "Per Month" : option.description}</p>
+                          <p className="name-of-class">{option.description}</p>
                         </div>
 
                         <div className="name-and-price">
                           <p className="price">
-                            {formatCurrency(option.price)} <br />
+                            {formatCurrency(option.price)}
                             <span className="hst">+ HST</span>
                           </p>
                         </div>
@@ -151,10 +155,6 @@ export default function Pricing() {
         ))}
       </div>
 
-      <p className="hst-disclaimer">
-        *All prices subject to HST <br />
-        **All sales are final.
-      </p>
     </div>
   );
 }

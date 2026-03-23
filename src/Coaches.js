@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Stylesheets/Coaches.css";
+import "./Stylesheets/SectionHeading.css";
 import CoachesList from "./Objects/CoachesObject";
 import ImpactPlaque from "./Components/ImpactPlaque";
 
@@ -53,7 +54,10 @@ export default function Coaches({ className = "" }) {
 
   return (
     <section id='Coaches' className={`coaches-block ${className}`}>
-    <h1>Coaches</h1>
+    <p className="section-heading">
+      <span className="sh-kicker">World-Class Instruction</span>
+      <span className="sh-main">Coaches</span>
+    </p>
         {/* Desktop: simple, uniform grid (no selection styles) */}
       <div className="coaches-desktop">
         <div className="coach-grid">
