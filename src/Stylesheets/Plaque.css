@@ -3,9 +3,8 @@
    ═══════════════════════════════════════════════════════════ */
 
 @keyframes plaque-rise {
-  0%   { opacity: 0; transform: translateY(36px) scale(0.94); filter: blur(18px); }
-  55%  { filter: blur(0); }
-  100% { opacity: 1; transform: translateY(0)    scale(1);    filter: blur(0);    }
+  0%   { opacity: 0; transform: translateY(36px) scale(0.94); }
+  100% { opacity: 1; transform: translateY(0)    scale(1);    }
 }
 
 @keyframes plaque-shimmer {
@@ -13,6 +12,11 @@
   4%          { opacity: 1; }
   22%         { transform: translateX(270%)  skewX(-14deg); opacity: 1; }
   27%, 100%   { transform: translateX(270%)  skewX(-14deg); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plaque-wrap { animation: none; opacity: 1; transform: none; }
+  .plaque::after { animation: none; }
 }
 
 /* ── Gradient-border wrapper ── */

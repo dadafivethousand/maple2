@@ -4,14 +4,11 @@
 
 /* 1. Entrance ─────────────────────────────────────────────── */
 @keyframes badge-hero {
-  0%   { opacity: 0; transform: translateY(84px) scale(1.8);   filter: blur(20px); }
-  9%   { opacity: 1; transform: translateY(84px) scale(1.8);   filter: blur(0);    }
-  38%  {             transform: translateY(84px) scale(1.8);                        }
-  76%  {             transform: translateY(0)    scale(1);                          }
-  85%  {             transform: translateY(-8px) scale(1.04);                       }
-  92%  {             transform: translateY(2px)  scale(0.99);                       }
-  96%  {             transform: translateY(-2px) scale(1.01);                       }
-  100% { opacity: 1; transform: translateY(0)    scale(1);     filter: blur(0);    }
+  0%   { opacity: 0; transform: translateY(24px) scale(0.92); }
+  60%  { opacity: 1; }
+  80%  {             transform: translateY(-5px) scale(1.03); }
+  90%  {             transform: translateY(2px)  scale(0.99); }
+  100% { opacity: 1; transform: translateY(0)    scale(1);    }
 }
 
 /* 2. Shimmer — sweeps once every 8 s; movement in first 22 % of cycle ── */
@@ -115,8 +112,8 @@
     0  0   20px rgba(251,191,36,0.30);
 
   animation:
-    badge-hero       3.2s cubic-bezier(0.25, 1, 0.35, 1) 0.2s  both,
-    badge-glow-pulse 4.0s ease-in-out                    3.8s  infinite;
+    badge-hero       0.7s cubic-bezier(0.25, 1, 0.35, 1) 0.15s both,
+    badge-glow-pulse 4.0s ease-in-out                    1.2s  infinite;
 }
 
 /* Upper lens gloss — overhead light on a curved face */
@@ -153,14 +150,18 @@
   );
   pointer-events: none;
   z-index: 1;
-  /* delay = entrance duration (3.2 + 0.2 = 3.4 s) + small pause */
-  animation: badge-shimmer 8s linear 4.0s infinite;
+  animation: badge-shimmer 8s linear 1.5s infinite;
 }
 
 /* Text above both overlays */
 .badge__text {
   position: relative;
   z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badge { animation: none; opacity: 1; transform: none; }
+  .badge::after { animation: none; }
 }
 
 /* ── Mobile ── */
