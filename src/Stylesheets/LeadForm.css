@@ -296,6 +296,7 @@
   font-family: 'Roboto Condensed', sans-serif;
   margin: 5px 0;
   line-height: 1.4;
+  text-align: left;
 }
 
 .lf-step a { color: #60a5fa; text-decoration: underline; }
