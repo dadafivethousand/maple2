@@ -55,7 +55,7 @@ export default function Coaches({ className = "" }) {
   return (
     <section id='Coaches' className={`coaches-block ${className}`}>
     <p className="section-heading">
-      <span className="sh-kicker">World-Class Instruction</span>
+      <span className="sh-kicker">Learn From The Best</span>
       <span className="sh-main">Coaches</span>
     </p>
         {/* Desktop: simple, uniform grid (no selection styles) */}

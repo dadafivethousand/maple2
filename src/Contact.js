@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <div id="Contact" className="ContactContainer">
       <p className="section-heading">
-        <span className="sh-kicker">Come Train With Us</span>
+        <span className="sh-kicker">Always Happy To Talk</span>
         <span className="sh-main">Contact</span>
       </p>
 

@@ -118,6 +118,7 @@
   margin-bottom: 18px;
   padding-bottom: 12px;
   border-bottom: 1px solid rgba(125, 211, 252, 0.08);
+  text-align: center;
 }
 
 .footer-nav ul {
@@ -127,6 +128,8 @@
   display: grid;
   grid-template-columns: repeat(3, auto);
   gap: 2px 32px;
+  justify-content: center;
+  text-align: center;
 }
 
 .footer-nav a {
