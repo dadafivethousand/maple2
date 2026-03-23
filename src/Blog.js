@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import './Stylesheets/Blog.css';
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 
 export default function Blog() {
   const [posts, setPosts] = useState([]);
@@ -33,52 +34,66 @@ export default function Blog() {
   };
 
   return (
-    <div className="blog-container">
-      <h1 id="blog-title">Blog</h1>
-
-      <div className="blog-posts">
-        {paginatedPosts.map((post, index) => (
-          <div className="blog-post" key={index}>
-            <Link to={`/blog/${post.slug}`}>
-              <h5>{post.title}</h5>
-              <p>{post.snippet}</p>
-              <span className="blog-date">
-                {new Date(post.date).toLocaleDateString('en-US', {
-                  year: 'numeric', month: 'short', day: 'numeric'
-                })}
-              </span>
-            </Link>
-          </div>
-        ))}
-      </div>
-
-      {totalPages > 1 && (
-        <div className="pagination-controls">
-          <button onClick={() => goToPage(page - 1)} disabled={page === 1}>‹</button>
-
-          <button className={page === 1 ? "active-page" : ""} onClick={() => goToPage(1)}>1</button>
-
-          {page > 4 && <span>…</span>}
-
-          {Array.from({ length: totalPages }, (_, i) => i + 1)
-            .filter(p => p !== 1 && p !== totalPages && Math.abs(p - page) <= 2)
-            .map(p => (
-              <button key={p} className={page === p ? "active-page" : ""} onClick={() => goToPage(p)}>
-                {p}
-              </button>
-            ))}
-
-          {page < totalPages - 3 && <span>…</span>}
-
-          {totalPages > 1 && (
-            <button className={page === totalPages ? "active-page" : ""} onClick={() => goToPage(totalPages)}>
-              {totalPages}
-            </button>
-          )}
-
-          <button onClick={() => goToPage(page + 1)} disabled={page === totalPages}>›</button>
+    <>
+      <Navbar />
+      <div className="blog-container">
+        <div className="blog-header">
+          <p className="blog-eyebrow">Maple Jiu-Jitsu Academy</p>
+          <h1 id="blog-title">Blog</h1>
+          <p className="blog-subtitle">Training tips, academy news, and BJJ insights</p>
         </div>
-      )}
-    </div>
+
+        <div className="blog-posts">
+          {paginatedPosts.map((post, index) => (
+            <div className="blog-post" key={index}>
+              <Link to={`/blog/${post.slug}`}>
+                <h5>{post.title}</h5>
+                <p>{post.snippet}</p>
+                <span className="blog-date">
+                  {new Date(post.date).toLocaleDateString('en-US', {
+                    year: 'numeric', month: 'short', day: 'numeric'
+                  })}
+                </span>
+              </Link>
+            </div>
+          ))}
+        </div>
+
+        {totalPages > 1 && (
+          <div className="pagination-controls">
+            <button onClick={() => goToPage(page - 1)} disabled={page === 1}>‹</button>
+
+            <button className={page === 1 ? "active-page" : ""} onClick={() => goToPage(1)}>1</button>
+
+            {page > 4 && <span>…</span>}
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1)
+              .filter(p => p !== 1 && p !== totalPages && Math.abs(p - page) <= 2)
+              .map(p => (
+                <button key={p} className={page === p ? "active-page" : ""} onClick={() => goToPage(p)}>
+                  {p}
+                </button>
+              ))}
+
+            {page < totalPages - 3 && <span>…</span>}
+
+            {totalPages > 1 && (
+              <button className={page === totalPages ? "active-page" : ""} onClick={() => goToPage(totalPages)}>
+                {totalPages}
+              </button>
+            )}
+
+            <button onClick={() => goToPage(page + 1)} disabled={page === totalPages}>›</button>
+          </div>
+        )}
+
+        <div className="blog-cta">
+          <p className="blog-cta-label">Ready to get on the mats?</p>
+          <h2 className="blog-cta-heading">Claim Your 7-Day Free Trial</h2>
+          <p className="blog-cta-sub">No commitment. All levels welcome. Adults &amp; kids.</p>
+          <a className="blog-cta-btn" href="/">Start Free Trial</a>
+        </div>
+      </div>
+    </>
   );
 }

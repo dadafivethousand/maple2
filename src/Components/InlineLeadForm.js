@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../Stylesheets/LeadForm.css';
 import { Turnstile } from '@marsidev/react-turnstile';
 import whitelogo from '../Media/whitelogonobg.webp';
@@ -9,6 +9,8 @@ import Badge from './Badge';
 
 export default function InlineLeadForm() {
   const [captchaToken, setCaptchaToken] = useState(null);
+  const plaqueRef = useRef(null);
+  const [lockedHeight, setLockedHeight] = useState(null);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -64,6 +66,7 @@ export default function InlineLeadForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!isValid || status === 'submitting') return;
+    if (plaqueRef.current) setLockedHeight(plaqueRef.current.offsetHeight);
     setStatus('submitting');
     setErrorMsg('');
     try {
@@ -93,7 +96,7 @@ export default function InlineLeadForm() {
   };
 
   return (
-    <Plaque success={status === 'success'}>
+    <Plaque success={status === 'success'} minHeight={lockedHeight} innerRef={plaqueRef}>
       {status === 'success' ? (
         <div className="lf-success-wrap">
           {!showInstructions ? (
