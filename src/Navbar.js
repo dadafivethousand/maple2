@@ -79,8 +79,7 @@ export default function Navbar() {
                         <a href='#Memberships'><li onClick={() => setClick(false)}>Sign Up</li></a>
                         <a href='#FAQ'><li onClick={() => setClick(false)}>FAQ</li></a>
                         <a href='#Contact'><li onClick={() => setClick(false)}>Contact Us</li></a>
-                        <a href='/blog'><li onClick={() => setClick(false)}>Blog</li></a>
-                    </ul>
+                     </ul>
                 </div>
             </div>
 
