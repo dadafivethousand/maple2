@@ -134,7 +134,7 @@ export default function Schedule() {
                   <div
                     key={index}
                     className="timeslot"
-                    style={{ top: `${topPosition}px`, position: 'absolute', backgroundColor: bg }}
+                    style={{ top: `${topPosition}px`, height: `${(classTime.end - classTime.start) * PIXELS_PER_HOUR}px`, position: 'absolute', backgroundColor: bg }}
                   >
                     <p className='class-name'>{classTime.name}</p>
                     <span className='class-time'>{convertToAmPm(classTime.start)}–{convertToAmPm(classTime.end)}</span>
