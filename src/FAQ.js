@@ -1,8 +1,19 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import QA from "./Components/QA"; // Import the QA component
 import "./Stylesheets/FAQ.css";
 import "./Stylesheets/SectionHeading.css";
 import faqList from './Objects/FAQList';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqList.map(({ question, answer }) => ({
+    "@type": "Question",
+    "name": question,
+    "acceptedAnswer": { "@type": "Answer", "text": answer }
+  }))
+};
 {/*import Jocko from "./Components/Jocko";*/}
 
 export default function FAQ() {
@@ -29,6 +40,9 @@ export default function FAQ() {
 
   return (
     <div id="FAQ" className="FAQContainer">
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      </Helmet>
       
        
           <p className="section-heading">
