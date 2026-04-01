@@ -16,10 +16,14 @@ const WEEKS = [
   { id: 11, dates: 'Aug 31 – Sep 4'    },
 ];
 
-const PRICE_PER_WEEK = 300;
+const PRICE_PER_WEEK = 299.99;
+const DISCOUNT = 0.15;
+const ALL_IDS = new Set(WEEKS.map(w => w.id));
 
 export default function SummerCamp() {
   const [selected, setSelected] = useState(new Set());
+
+  const allSelected = selected.size === WEEKS.length;
 
   const toggle = (id) => {
     setSelected((prev) => {
@@ -29,7 +33,13 @@ export default function SummerCamp() {
     });
   };
 
-  const total = selected.size * PRICE_PER_WEEK;
+  const toggleAll = () => {
+    setSelected(allSelected ? new Set() : new Set(ALL_IDS));
+  };
+
+  const discounted = allSelected;
+  const pricePerWeek = discounted ? PRICE_PER_WEEK * (1 - DISCOUNT) : PRICE_PER_WEEK;
+  const total = selected.size * pricePerWeek;
 
   const selectedWeeks = WEEKS.filter((w) => selected.has(w.id));
 
@@ -66,6 +76,19 @@ export default function SummerCamp() {
           <p className="sc-section-label">Select Your Weeks</p>
           <p className="sc-section-hint">Choose one or more — mix and match as you like.</p>
 
+          {/* Select All row */}
+          <button className={`sc-select-all ${allSelected ? 'sc-select-all--active' : ''}`} onClick={toggleAll}>
+            <span className={`sc-checkbox ${allSelected ? 'sc-checkbox--checked' : ''}`}>
+              {allSelected && (
+                <svg viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              )}
+            </span>
+            <span className="sc-select-all-text">Select All 11 Weeks</span>
+            <span className="sc-discount-badge">15% OFF</span>
+          </button>
+
           <div className="sc-grid">
             {WEEKS.map((week) => {
               const isSelected = selected.has(week.id);
@@ -77,15 +100,16 @@ export default function SummerCamp() {
                   aria-pressed={isSelected}
                 >
                   <div className="sc-week-top">
-                    <p className="sc-week-dates">{week.dates}</p>
-                    <span className={`sc-check ${isSelected ? 'sc-check--visible' : ''}`}>
-                      <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                        <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="1.5"/>
-                        <path d="M6 10l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
+                    <span className={`sc-checkbox ${isSelected ? 'sc-checkbox--checked' : ''}`}>
+                      {isSelected && (
+                        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                          <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
                     </span>
+                    <p className="sc-week-dates">{week.dates}</p>
                   </div>
-                  <p className="sc-week-price">$300</p>
+                  <p className="sc-week-price">$299.99</p>
                 </button>
               );
             })}
@@ -104,8 +128,8 @@ export default function SummerCamp() {
                 <ul className="sc-summary-list">
                   {selectedWeeks.map((w) => (
                     <li key={w.id} className="sc-summary-item">
-                      <span className="sc-summary-item-label">{w.label} &mdash; {w.dates}</span>
-                      <span className="sc-summary-item-price">$300</span>
+                      <span className="sc-summary-item-label">{w.dates}</span>
+                      <span className="sc-summary-item-price">${pricePerWeek.toFixed(2)}</span>
                     </li>
                   ))}
                 </ul>
@@ -117,7 +141,8 @@ export default function SummerCamp() {
                 <p className="sc-total-label">
                   {selected.size} {selected.size === 1 ? 'week' : 'weeks'} selected
                 </p>
-                <p className="sc-total-amount">${total.toLocaleString()}</p>
+                <p className="sc-total-amount">${total.toFixed(2)}</p>
+                {discounted && <p className="sc-discount-applied">15% discount applied</p>}
                 <p className="sc-total-tax">+ HST</p>
               </div>
 
