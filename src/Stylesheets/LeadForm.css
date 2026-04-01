@@ -89,14 +89,14 @@
   background: #ffffff;
   border: 2px solid rgba(125, 211, 252, 0.3);
   border-radius: 8px;
-  padding: 18px 13px 6px;
+  padding: 16px 13px 4px;
   color: #0a1628;
-  font-size: 14px;
+  font-size: 15px;
   font-family: 'Roboto Condensed', sans-serif;
   letter-spacing: 0.3px;
   transition: border-color 0.2s, box-shadow 0.2s;
   box-sizing: border-box;
-  height: 52px;
+  height: 46px;
 }
 
 .lf-input::placeholder {
@@ -122,18 +122,19 @@
   top: 50%;
   transform: translateY(-50%);
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   color: #6b7280;
   pointer-events: none;
-  transition: top 0.18s ease, font-size 0.18s ease, color 0.18s ease;
+  transition: top 0.18s ease, font-size 0.18s ease, color 0.18s ease, transform 0.18s ease;
   letter-spacing: 0.3px;
 }
 
 /* floated — when focused or filled */
 .lf-input:focus + .lf-label,
 .lf-input:not(:placeholder-shown) + .lf-label {
-  top: 10px;
+  top: 8px;
+  transform: translateY(0);
   font-size: 9px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
