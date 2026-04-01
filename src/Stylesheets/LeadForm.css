@@ -142,7 +142,7 @@
 }
 
 .lf-input:focus + .lf-label {
-  color: #fbbf24;
+  color: rgba(186, 210, 255, 0.7);
 }
 
 
