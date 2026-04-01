@@ -134,29 +134,31 @@ export default function LeadForm({ closebutton, inline = false }) {
             <form onSubmit={handleSubmit} className="lf-form">
               <div className="lf-row">
                 <div className="lf-field">
-                  <input className="lf-input" type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="First Name" required autoComplete="given-name" />
+                  <input className="lf-input" id="firstName" type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder=" " required autoComplete="given-name" />
+                  <label className="lf-label" htmlFor="firstName">First Name</label>
                 </div>
                 <div className="lf-field">
-                  <input className="lf-input" type="text" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Last Name" required autoComplete="family-name" />
+                  <input className="lf-input" id="lastName" type="text" name="lastName" value={formData.lastName} onChange={handleChange} placeholder=" " required autoComplete="family-name" />
+                  <label className="lf-label" htmlFor="lastName">Last Name</label>
                 </div>
               </div>
               <div className="lf-row">
                 <div className="lf-field">
-                  <input className="lf-input" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email" required autoComplete="email" />
+                  <input className="lf-input" id="email" type="email" name="email" value={formData.email} onChange={handleChange} placeholder=" " required autoComplete="email" />
+                  <label className="lf-label" htmlFor="email">Email</label>
                 </div>
                 <div className="lf-field">
-                  <input className="lf-input" type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone" required autoComplete="tel" />
+                  <input className="lf-input" id="phone" type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder=" " required autoComplete="tel" />
+                  <label className="lf-label" htmlFor="phone">Phone</label>
                 </div>
               </div>
 
-              <div className="lf-captcha-wrap">
-                <Turnstile
-                  siteKey="0x4AAAAAACuXuYqwDOUxvxFB"
-                  onSuccess={(t) => setCaptchaToken(t)}
-                  onExpire={() => setCaptchaToken(null)}
-                  options={{ theme: 'dark', size: 'normal' }}
-                />
-              </div>
+              <Turnstile
+                siteKey="0x4AAAAAACuXuYqwDOUxvxFB"
+                onSuccess={(t) => setCaptchaToken(t)}
+                onExpire={() => setCaptchaToken(null)}
+                options={{ size: 'invisible' }}
+              />
 
               <button
                 type="submit"
