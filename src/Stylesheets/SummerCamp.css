@@ -19,30 +19,37 @@
 /* ── Hero ── */
 .sc-hero {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: clamp(48px, 6vw, 80px) 0 clamp(48px, 6vw, 72px);
   overflow: hidden;
-  background-image: var(--hero-img);
-  background-size: cover;
-  background-position: center 30%;
-  background-attachment: fixed;
 }
 
+/* full photo — no cropping */
+.sc-hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* gradient overlay */
 .sc-hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(1,10,25,0.92) 0%, rgba(1,10,25,0.7) 45%, rgba(1,10,25,0.38) 75%, rgba(1,10,25,0.5) 100%);
-  z-index: 0;
+  background: linear-gradient(to right, rgba(1,10,25,0.88) 0%, rgba(1,10,25,0.65) 40%, rgba(1,10,25,0.3) 70%, rgba(1,10,25,0.45) 100%);
+  z-index: 1;
 }
 
-.sc-hero > * { position: relative; z-index: 1; }
+/* text sits bottom-left over the image */
+.sc-hero-content {
+  position: absolute;
+  bottom: clamp(36px, 5vw, 64px);
+  left: 0;
+  padding: 0 min(10vw, 130px);
+  max-width: 860px;
+  z-index: 2;
+}
 
-@supports (-webkit-touch-callout: none) {
-  .sc-hero { background-attachment: scroll; }
+.sc-scroll-hint {
+  z-index: 2;
 }
 
 .sc-hero-content {

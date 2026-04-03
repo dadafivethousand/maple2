@@ -80,7 +80,8 @@ export default function SummerCamp() {
       <div className="sc-page">
 
         {/* ── Hero ── */}
-        <header className="sc-hero" style={{ '--hero-img': `url(${campHeroImg})` }}>
+        <header className="sc-hero">
+          <img src={campHeroImg} className="sc-hero-img" alt="" aria-hidden="true" />
           <div className="sc-hero-content">
             <p className="sc-eyebrow">Maple Jiu-Jitsu Academy · Summer 2026</p>
             <h1 id="sc-title">A summer they'll<br />never forget.</h1>
