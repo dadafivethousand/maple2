@@ -1,27 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Stylesheets/SummerCamp.css';
 import Navbar from './Navbar';
 
-const WEEKS = [
-  { id: 1,  dates: 'June 22 – 26'      },
-  { id: 2,  dates: 'June 30 – July 4'  },
-  { id: 3,  dates: 'July 7 – 11'       },
-  { id: 4,  dates: 'July 14 – 18'      },
-  { id: 5,  dates: 'July 21 – 25'      },
-  { id: 6,  dates: 'July 28 – Aug 1'   },
-  { id: 7,  dates: 'Aug 4 – 8'         },
-  { id: 8,  dates: 'Aug 11 – 15'       },
-  { id: 9,  dates: 'Aug 18 – 22'       },
-  { id: 10, dates: 'Aug 25 – 29'       },
-  { id: 11, dates: 'Aug 31 – Sep 4'    },
-];
-
-const PRICE_PER_WEEK = 299.99;
-const DISCOUNT = 0.15;
-const ALL_IDS = new Set(WEEKS.map(w => w.id));
+const WORKER = 'https://worker-consolidated.maxli5004.workers.dev';
 
 export default function SummerCamp() {
+  const [campData, setCampData] = useState(null);
   const [selected, setSelected] = useState(new Set());
+  const [loading, setLoading] = useState(false);
+  const [checkoutError, setCheckoutError] = useState(null);
+
+  useEffect(() => {
+    fetch(`${WORKER}/summer-camp`)
+      .then(r => r.json())
+      .then(setCampData)
+      .catch(console.error);
+  }, []);
+
+  if (!campData) return <div className="sc-page"><div className="sc-loading">Loading...</div></div>;
+
+  const WEEKS = campData.weeks.filter(w => w.active);
+  const PRICE_PER_WEEK = campData.pricePerWeek / 100;
+  const DISCOUNT = campData.bulkDiscount;
+  const ALL_IDS = new Set(WEEKS.map(w => w.id));
 
   const allSelected = selected.size === WEEKS.length;
 
@@ -38,10 +39,39 @@ export default function SummerCamp() {
   };
 
   const discounted = allSelected;
-  const pricePerWeek = discounted ? PRICE_PER_WEEK * (1 - DISCOUNT) : PRICE_PER_WEEK;
-  const total = selected.size * pricePerWeek;
+
+  const weekPrice = (week) => {
+    const base = week.priceOverride != null ? week.priceOverride / 100 : PRICE_PER_WEEK;
+    return discounted ? base * (1 - DISCOUNT) : base;
+  };
 
   const selectedWeeks = WEEKS.filter((w) => selected.has(w.id));
+
+  const total = selectedWeeks.reduce((sum, w) => sum + weekPrice(w), 0);
+
+  const allWeeksSavings = WEEKS.reduce((sum, w) => {
+    const base = w.priceOverride != null ? w.priceOverride / 100 : PRICE_PER_WEEK;
+    return sum + base * DISCOUNT;
+  }, 0);
+
+  const handleCheckout = async () => {
+    if (selected.size === 0) return;
+    setLoading(true);
+    setCheckoutError(null);
+    try {
+      const res = await fetch(`${WORKER}/summer-camp-purchase`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ weekIds: Array.from(selected) }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Something went wrong');
+      window.location.href = data.url;
+    } catch (err) {
+      setCheckoutError(err.message);
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -56,18 +86,12 @@ export default function SummerCamp() {
             A week-by-week BJJ experience for kids &amp; teens &mdash; all skill levels welcome.
           </p>
           <div className="sc-meta-row">
-            <div className="sc-meta-pill">
-              <span className="sc-meta-icon">📅</span>
-              <span>June 22 – Sep 4</span>
-            </div>
+
             <div className="sc-meta-pill">
               <span className="sc-meta-icon">⏰</span>
-              <span>Mon – Fri · 9am – 3pm</span>
+              <span>Mon – Fri · 8:30am – 4:30pm</span>
             </div>
-            <div className="sc-meta-pill">
-              <span className="sc-meta-icon">💰</span>
-              <span>$300 / week</span>
-            </div>
+    
           </div>
         </header>
 
@@ -78,15 +102,20 @@ export default function SummerCamp() {
 
           {/* Select All row */}
           <button className={`sc-select-all ${allSelected ? 'sc-select-all--active' : ''}`} onClick={toggleAll}>
-            <span className={`sc-checkbox ${allSelected ? 'sc-checkbox--checked' : ''}`}>
+            <span className={`sc-checkbox sc-select-all-check ${allSelected ? 'sc-checkbox--checked' : ''}`}>
               {allSelected && (
                 <svg viewBox="0 0 12 12" fill="none" aria-hidden="true">
                   <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               )}
             </span>
-            <span className="sc-select-all-text">Select All 11 Weeks</span>
-            <span className="sc-discount-badge">15% OFF</span>
+            <span className="sc-select-all-eyebrow">★ Best Value of the Season</span>
+            <span className="sc-select-all-text">Full Summer — All {WEEKS.length} Weeks</span>
+            <span className="sc-select-all-savings-row">
+              <span className="sc-discount-badge">15% OFF</span>
+   
+            </span>
+            <span className="sc-select-all-sub">Jun 22 – Sept 4, 2026 &nbsp;·&nbsp; Mon – Fri</span>
           </button>
 
           <div className="sc-grid">
@@ -107,9 +136,10 @@ export default function SummerCamp() {
                         </svg>
                       )}
                     </span>
-                    <p className="sc-week-dates">{week.dates}</p>
+                    <p className="sc-week-dates">{week.displayDates}</p>
                   </div>
-                  <p className="sc-week-price">$299.99</p>
+                  <p className="sc-week-price">${weekPrice(week).toFixed(2)}</p>
+                  <p className="sc-week-stat-note">{week.statHoliday ? <><strong>Short week</strong> —<br />{week.statHoliday}</> : ''}</p>
                 </button>
               );
             })}
@@ -128,8 +158,8 @@ export default function SummerCamp() {
                 <ul className="sc-summary-list">
                   {selectedWeeks.map((w) => (
                     <li key={w.id} className="sc-summary-item">
-                      <span className="sc-summary-item-label">{w.dates}</span>
-                      <span className="sc-summary-item-price">${pricePerWeek.toFixed(2)}</span>
+                      <span className="sc-summary-item-label">{w.label} · {w.displayDates}</span>
+                      <span className="sc-summary-item-price">${weekPrice(w).toFixed(2)}</span>
                     </li>
                   ))}
                 </ul>
@@ -148,16 +178,13 @@ export default function SummerCamp() {
 
               <button
                 className={`sc-cta-btn ${selected.size > 0 ? 'sc-cta-btn--active' : ''}`}
-                disabled={selected.size === 0}
+                disabled={selected.size === 0 || loading}
+                onClick={handleCheckout}
               >
-                Register Now →
+                {loading ? 'Redirecting…' : 'Register Now →'}
               </button>
+              {checkoutError && <p className="sc-checkout-error">{checkoutError}</p>}
 
-              {selected.size > 1 && (
-                <p className="sc-multi-note">
-                  Registering for {selected.size} weeks at $300 each.
-                </p>
-              )}
             </div>
 
           </div>
@@ -182,10 +209,11 @@ export default function SummerCamp() {
               <p>Groups are divided by age and skill level so every child thrives.</p>
             </div>
             <div className="sc-info-card">
-              <span className="sc-info-icon">🍱</span>
-              <h3>Lunch &amp; Snacks Included</h3>
-              <p>Healthy meals provided. Just bring a water bottle and a gi (loaner gis available).</p>
+              <span className="sc-info-icon">🏅</span>
+              <h3>Experienced Instructors</h3>
+              <p>Our coaches are certified, competition-tested, and passionate about teaching kids in a safe environment.</p>
             </div>
+
           </div>
         </section>
 
@@ -199,15 +227,31 @@ export default function SummerCamp() {
             </div>
             <div className="sc-faq-item">
               <h4>What should my child wear?</h4>
-              <p>A gi (kimono) is preferred. If you don't have one, loaner gis are available at no extra charge.</p>
-            </div>
-            <div className="sc-faq-item">
-              <h4>Is there a sibling discount?</h4>
-              <p>Yes — 10% off each additional sibling. Contact us after registering to apply the discount.</p>
+              <p>A gi (kimono) is required along with regular clothing.</p>
             </div>
             <div className="sc-faq-item">
               <h4>What is the cancellation policy?</h4>
               <p>Full refund if cancelled 7+ days before the week starts. No refunds within 7 days.</p>
+            </div>
+            <div className="sc-faq-item">
+              <h4>Where is the camp held?</h4>
+              <p>Camp takes place at Maple Jiu-Jitsu Academy, located at 20 Cranston Park Ave, Maple, ON.</p>
+            </div>
+            <div className="sc-faq-item">
+              <h4>What time does drop-off and pick-up happen?</h4>
+              <p>Drop-off is at 8:30am and pick-up is at 4:30pm, Monday through Friday.</p>
+            </div>
+            <div className="sc-faq-item">
+              <h4>Is lunch provided?</h4>
+              <p>Lunch is not provided — please pack a lunch and snacks for your child each day.</p>
+            </div>
+            <div className="sc-faq-item">
+              <h4>My child has never done BJJ before — is that okay?</h4>
+              <p>Absolutely. Camp is designed to welcome complete beginners. Our coaches will meet your child at their level.</p>
+            </div>
+            <div className="sc-faq-item">
+              <h4>How many kids are in each group?</h4>
+              <p>Groups are kept small to ensure each child gets individual attention from our instructors.</p>
             </div>
           </div>
         </section>

@@ -300,11 +300,19 @@
 @media (max-width: 799px) {
   .lf-top { margin-bottom: 14px; }
   .lf-badge { font-size: 14px; letter-spacing: 3.5px; padding: 7px 20px 8px; }
-  .lf-sub { font-size: 9px; letter-spacing: 2px;   }
-  .lf-label { font-size: 8.5px; letter-spacing: 2px; }
-  .lf-form { gap: 8px; }
-  .lf-row { gap: 8px; }
-  .lf-input { padding: 9px 11px; font-size: 13px; }
+  .lf-sub { font-size: 9px; letter-spacing: 2px; }
+  .lf-form { gap: 7px; }
+  .lf-row { gap: 7px; }
+  /* Keep asymmetric padding so floating label has room above the text */
+  .lf-input { height: 42px; padding: 14px 11px 3px; font-size: 14px; }
+  /* Label at rest: same size as input text so it looks like placeholder */
+  .lf-label { font-size: 14px; }
+  /* Floated state on mobile */
+  .lf-input:focus + .lf-label,
+  .lf-input:not(:placeholder-shown) + .lf-label {
+    top: 7px;
+    font-size: 9px;
+  }
   .lf-btn { padding: 11px; font-size: 12px; letter-spacing: 2px; }
 }
 

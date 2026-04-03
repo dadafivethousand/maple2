@@ -46,7 +46,7 @@ function App() {
               <Route path="/freetrial" element={<LeadForm closebutton={false} />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<FullPost />} />
-              <Route path="/summercamp" element={<SummerCamp />} />
+              <Route path="/camp" element={<SummerCamp />} />
               <Route path="/success" element={<SuccessPage />} />
               <Route path="/cancel" element={<CancelPage />} />
 
