@@ -80,11 +80,7 @@ export default function SummerCamp() {
       <div className="sc-page">
 
         {/* ── Hero ── */}
-        <header className="sc-hero">
-          <div
-            className="sc-hero-bg"
-            style={{ backgroundImage: `linear-gradient(to right, rgba(1,10,25,0.92) 0%, rgba(1,10,25,0.7) 45%, rgba(1,10,25,0.4) 75%, rgba(1,10,25,0.5) 100%), url(${campHeroImg})` }}
-          />
+        <header className="sc-hero" style={{ '--hero-img': `url(${campHeroImg})` }}>
           <div className="sc-hero-content">
             <p className="sc-eyebrow">Maple Jiu-Jitsu Academy · Summer 2026</p>
             <h1 id="sc-title">A summer they'll<br />never forget.</h1>
@@ -204,12 +200,6 @@ export default function SummerCamp() {
 
           </div>
         </section>
-
-        {/* ── Photo banner ── */}
-        <div
-          className="sc-photo-banner"
-          style={{ backgroundImage: `url(${campHeroImg})` }}
-        />
 
         {/* ── Info strip ── */}
         <section className="sc-info-strip">

@@ -19,25 +19,31 @@
 /* ── Hero ── */
 .sc-hero {
   position: relative;
-  min-height: 92vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
-  padding: 0 0 clamp(60px, 8vw, 100px);
+  padding: clamp(48px, 6vw, 80px) 0 clamp(48px, 6vw, 72px);
   overflow: hidden;
-}
-
-.sc-hero-bg {
-  position: absolute;
-  inset: 0;
+  background-image: var(--hero-img);
   background-size: cover;
   background-position: center 30%;
-  pointer-events: none;
+  background-attachment: fixed;
+}
+
+.sc-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(1,10,25,0.92) 0%, rgba(1,10,25,0.7) 45%, rgba(1,10,25,0.38) 75%, rgba(1,10,25,0.5) 100%);
   z-index: 0;
 }
 
 .sc-hero > * { position: relative; z-index: 1; }
+
+@supports (-webkit-touch-callout: none) {
+  .sc-hero { background-attachment: scroll; }
+}
 
 .sc-hero-content {
   padding: 0 min(10vw, 130px);
@@ -555,28 +561,6 @@
   color: #f87171;
   margin-top: 8px;
   text-align: center;
-}
-
-/* ── Photo banner (parallax) ── */
-.sc-photo-banner {
-  width: 100%;
-  height: clamp(220px, 28vw, 400px);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-  margin: clamp(56px, 7vw, 88px) 0;
-}
-
-.sc-photo-banner::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(1, 10, 25, 0.45);
-}
-
-@supports (-webkit-touch-callout: none) {
-  .sc-photo-banner { background-attachment: scroll; }
 }
 
 /* ── Info strip ── */
