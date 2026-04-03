@@ -81,14 +81,9 @@ export default function SummerCamp() {
 
         {/* ── Hero ── */}
         <header className="sc-hero">
-          <div
-            className="sc-hero-bg"
-            style={{ backgroundImage: `linear-gradient(180deg, rgba(2,12,30,0.55) 0%, rgba(2,12,30,0.28) 35%, rgba(2,12,30,0.5) 60%, rgba(2,12,30,0.96) 90%, rgba(2,12,30,1) 100%), url(${campHeroImg})` }}
-          />
- 
-          <h1 id="sc-title">Summer Camp</h1>
+     
           <p className="sc-subtitle">
-            A week-by-week BJJ experience for kids &amp; teens <br></br>All skill levels welcome.
+            An immersive martial arts experience. <br></br>All skill levels welcome including beginners.
           </p>
   
         </header>
