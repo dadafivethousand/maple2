@@ -205,6 +205,12 @@ export default function SummerCamp() {
           </div>
         </section>
 
+        {/* ── Photo banner ── */}
+        <div
+          className="sc-photo-banner"
+          style={{ backgroundImage: `url(${campHeroImg})` }}
+        />
+
         {/* ── Info strip ── */}
         <section className="sc-info-strip">
           <div className="sc-info-grid">

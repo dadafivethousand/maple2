@@ -557,6 +557,28 @@
   text-align: center;
 }
 
+/* ── Photo banner (parallax) ── */
+.sc-photo-banner {
+  width: 100%;
+  height: clamp(220px, 28vw, 400px);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  margin: clamp(56px, 7vw, 88px) 0;
+}
+
+.sc-photo-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(1, 10, 25, 0.45);
+}
+
+@supports (-webkit-touch-callout: none) {
+  .sc-photo-banner { background-attachment: scroll; }
+}
+
 /* ── Info strip ── */
 .sc-info-strip {
   width: min(1060px, 92vw);
