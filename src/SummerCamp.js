@@ -284,6 +284,23 @@ export default function SummerCamp() {
         </div>
 
       </div>
+
+      {/* ── Fixed cart bar ── */}
+      <div className={`sc-cart-bar ${selected.size > 0 ? 'sc-cart-bar--visible' : ''}`}>
+        <div className="sc-cart-bar-info">
+          <span className="sc-cart-bar-count">{selected.size} {selected.size === 1 ? 'week' : 'weeks'}</span>
+          <span className="sc-cart-bar-sep">·</span>
+          <span className="sc-cart-bar-total">${total.toFixed(2)}</span>
+          <span className="sc-cart-bar-tax">+ HST</span>
+        </div>
+        <button
+          className="sc-cart-bar-btn"
+          disabled={loading}
+          onClick={handleCheckout}
+        >
+          {loading ? 'Redirecting…' : 'Register Now →'}
+        </button>
+      </div>
     </>
   );
 }
