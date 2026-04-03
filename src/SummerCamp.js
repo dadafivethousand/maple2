@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import './Stylesheets/SummerCamp.css';
 import Navbar from './Navbar';
 import campHeroImg from './Media/IMG_0640.jpg';
-import campPhoto1 from './Media/IMG_0195.jpeg';
-import campPhoto2 from './Media/IMG_0075.jpeg';
 
 const WORKER = 'https://worker-consolidated.maxli5004.workers.dev';
 
@@ -85,7 +83,7 @@ export default function SummerCamp() {
         <header className="sc-hero">
           <div
             className="sc-hero-bg"
-            style={{ backgroundImage: `linear-gradient(180deg, rgba(2,12,30,0.62) 0%, rgba(2,12,30,0.82) 60%, rgba(2,12,30,0.97) 100%), url(${campHeroImg})` }}
+            style={{ backgroundImage: `linear-gradient(180deg, rgba(2,12,30,0.55) 0%, rgba(2,12,30,0.28) 35%, rgba(2,12,30,0.5) 60%, rgba(2,12,30,0.96) 90%, rgba(2,12,30,1) 100%), url(${campHeroImg})` }}
           />
           <p className="sc-eyebrow">Maple Jiu-Jitsu Academy · Summer 2026</p>
           <h1 id="sc-title">Summer Camp</h1>
@@ -93,29 +91,25 @@ export default function SummerCamp() {
             A week-by-week BJJ experience for kids &amp; teens &mdash; all skill levels welcome.
           </p>
           <div className="sc-meta-row">
-
             <div className="sc-meta-pill">
               <span className="sc-meta-icon">⏰</span>
               <span>Mon – Fri · 8:30am – 4:30pm</span>
             </div>
-    
+            <div className="sc-meta-pill">
+              <span className="sc-meta-icon">📍</span>
+              <span>Maple, ON</span>
+            </div>
+            <div className="sc-meta-pill">
+              <span className="sc-meta-icon">🗓️</span>
+              <span>Jun 22 – Sep 4, 2026</span>
+            </div>
+          </div>
+          <div className="sc-scroll-hint" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
           </div>
         </header>
-
-        {/* ── Photo gallery ── */}
-        <div className="sc-gallery">
-          <div className="sc-gallery-main">
-            <img src={campPhoto1} alt="Kids BJJ summer camp" />
-          </div>
-          <div className="sc-gallery-side">
-            <div className="sc-gallery-side-item">
-              <img src={campPhoto2} alt="BJJ training" />
-            </div>
-            <div className="sc-gallery-side-item">
-              <img src={campHeroImg} alt="Summer camp action" />
-            </div>
-          </div>
-        </div>
 
         {/* ── Week picker ── */}
         <section className="sc-section">
@@ -211,6 +205,16 @@ export default function SummerCamp() {
 
           </div>
         </section>
+
+        {/* ── Photo banner ── */}
+        <div
+          className="sc-photo-banner"
+          style={{ backgroundImage: `url(${campHeroImg})` }}
+        >
+          <div className="sc-photo-banner-inner">
+            <p className="sc-photo-banner-text">A summer they'll never forget.</p>
+          </div>
+        </div>
 
         {/* ── Info strip ── */}
         <section className="sc-info-strip">
