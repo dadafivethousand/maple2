@@ -19,37 +19,35 @@
 /* ── Hero ── */
 .sc-hero {
   position: relative;
-  overflow: hidden;
+  height: clamp(420px, 70vw, 720px);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: flex-end;
 }
 
-/* full photo — no cropping */
-.sc-hero-img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* gradient overlay */
 .sc-hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(1,10,25,0.88) 0%, rgba(1,10,25,0.65) 40%, rgba(1,10,25,0.3) 70%, rgba(1,10,25,0.45) 100%);
+  background: linear-gradient(to right, rgba(1,10,25,0.88) 0%, rgba(1,10,25,0.62) 45%, rgba(1,10,25,0.3) 75%, rgba(1,10,25,0.45) 100%);
   z-index: 1;
 }
 
-/* text sits bottom-left over the image */
 .sc-hero-content {
-  position: absolute;
-  bottom: clamp(36px, 5vw, 64px);
-  left: 0;
-  padding: 0 min(10vw, 130px);
-  max-width: 860px;
+  position: relative;
   z-index: 2;
+  padding: 0 min(10vw, 130px) clamp(40px, 5vw, 64px);
+  max-width: 860px;
 }
 
 .sc-scroll-hint {
   z-index: 2;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .sc-hero { background-attachment: scroll; }
 }
 
 .sc-hero-content {
@@ -568,28 +566,6 @@
   color: #f87171;
   margin-top: 8px;
   text-align: center;
-}
-
-/* ── Parallax photo strip ── */
-.sc-photo-banner {
-  width: 100%;
-  height: clamp(220px, 28vw, 400px);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-  margin: clamp(56px, 7vw, 88px) 0;
-}
-
-.sc-photo-banner::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(1, 10, 25, 0.35);
-}
-
-@supports (-webkit-touch-callout: none) {
-  .sc-photo-banner { background-attachment: scroll; }
 }
 
 /* ── Info strip ── */

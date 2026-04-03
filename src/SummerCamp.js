@@ -80,8 +80,7 @@ export default function SummerCamp() {
       <div className="sc-page">
 
         {/* ── Hero ── */}
-        <header className="sc-hero">
-          <img src={campHeroImg} className="sc-hero-img" alt="" aria-hidden="true" />
+        <header className="sc-hero" style={{ backgroundImage: `url(${campHeroImg})` }}>
           <div className="sc-hero-content">
             <p className="sc-eyebrow">Maple Jiu-Jitsu Academy · Summer 2026</p>
             <h1 id="sc-title">A summer they'll<br />never forget.</h1>
@@ -201,9 +200,6 @@ export default function SummerCamp() {
 
           </div>
         </section>
-
-        {/* ── Parallax photo strip ── */}
-        <div className="sc-photo-banner" style={{ backgroundImage: `url(${campHeroImg})` }} />
 
         {/* ── Info strip ── */}
         <section className="sc-info-strip">
