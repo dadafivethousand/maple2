@@ -83,25 +83,24 @@ export default function SummerCamp() {
         <header className="sc-hero">
           <div
             className="sc-hero-bg"
-            style={{ backgroundImage: `linear-gradient(180deg, rgba(2,12,30,0.55) 0%, rgba(2,12,30,0.28) 35%, rgba(2,12,30,0.5) 60%, rgba(2,12,30,0.96) 90%, rgba(2,12,30,1) 100%), url(${campHeroImg})` }}
+            style={{ backgroundImage: `linear-gradient(to right, rgba(1,10,25,0.92) 0%, rgba(1,10,25,0.7) 45%, rgba(1,10,25,0.4) 75%, rgba(1,10,25,0.5) 100%), url(${campHeroImg})` }}
           />
-          <p className="sc-eyebrow">Maple Jiu-Jitsu Academy · Summer 2026</p>
-          <h1 id="sc-title">Summer Camp</h1>
-          <p className="sc-subtitle">
-            A week-by-week BJJ experience for kids &amp; teens &mdash; all skill levels welcome.
-          </p>
-          <div className="sc-meta-row">
-            <div className="sc-meta-pill">
-              <span className="sc-meta-icon">⏰</span>
-              <span>Mon – Fri · 8:30am – 4:30pm</span>
-            </div>
-            <div className="sc-meta-pill">
-              <span className="sc-meta-icon">📍</span>
-              <span>Maple, ON</span>
-            </div>
-            <div className="sc-meta-pill">
-              <span className="sc-meta-icon">🗓️</span>
-              <span>Jun 22 – Sep 4, 2026</span>
+          <div className="sc-hero-content">
+            <p className="sc-eyebrow">Maple Jiu-Jitsu Academy · Summer 2026</p>
+            <h1 id="sc-title">A summer they'll<br />never forget.</h1>
+            <div className="sc-meta-row">
+              <div className="sc-meta-pill">
+                <span className="sc-meta-icon">⏰</span>
+                <span>Mon – Fri · 8:30am – 4:30pm</span>
+              </div>
+              <div className="sc-meta-pill">
+                <span className="sc-meta-icon">📍</span>
+                <span>Maple, ON</span>
+              </div>
+              <div className="sc-meta-pill">
+                <span className="sc-meta-icon">🗓️</span>
+                <span>Jun 22 – Sep 4, 2026</span>
+              </div>
             </div>
           </div>
           <div className="sc-scroll-hint" aria-hidden="true">
@@ -205,16 +204,6 @@ export default function SummerCamp() {
 
           </div>
         </section>
-
-        {/* ── Photo banner ── */}
-        <div
-          className="sc-photo-banner"
-          style={{ backgroundImage: `url(${campHeroImg})` }}
-        >
-          <div className="sc-photo-banner-inner">
-            <p className="sc-photo-banner-text">A summer they'll never forget.</p>
-          </div>
-        </div>
 
         {/* ── Info strip ── */}
         <section className="sc-info-strip">
