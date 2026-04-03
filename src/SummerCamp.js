@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import './Stylesheets/SummerCamp.css';
 import Navbar from './Navbar';
+import campHeroImg from './Media/IMG_0640.jpg';
+import campPhoto1 from './Media/IMG_0195.jpeg';
+import campPhoto2 from './Media/IMG_0075.jpeg';
 
 const WORKER = 'https://worker-consolidated.maxli5004.workers.dev';
 
@@ -80,6 +83,10 @@ export default function SummerCamp() {
 
         {/* ── Hero ── */}
         <header className="sc-hero">
+          <div
+            className="sc-hero-bg"
+            style={{ backgroundImage: `linear-gradient(180deg, rgba(2,12,30,0.62) 0%, rgba(2,12,30,0.82) 60%, rgba(2,12,30,0.97) 100%), url(${campHeroImg})` }}
+          />
           <p className="sc-eyebrow">Maple Jiu-Jitsu Academy · Summer 2026</p>
           <h1 id="sc-title">Summer Camp</h1>
           <p className="sc-subtitle">
@@ -94,6 +101,21 @@ export default function SummerCamp() {
     
           </div>
         </header>
+
+        {/* ── Photo gallery ── */}
+        <div className="sc-gallery">
+          <div className="sc-gallery-main">
+            <img src={campPhoto1} alt="Kids BJJ summer camp" />
+          </div>
+          <div className="sc-gallery-side">
+            <div className="sc-gallery-side-item">
+              <img src={campPhoto2} alt="BJJ training" />
+            </div>
+            <div className="sc-gallery-side-item">
+              <img src={campHeroImg} alt="Summer camp action" />
+            </div>
+          </div>
+        </div>
 
         {/* ── Week picker ── */}
         <section className="sc-section">
