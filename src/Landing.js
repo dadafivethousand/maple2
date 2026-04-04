@@ -13,8 +13,9 @@ import t7 from './Media/kids.webp'
  
 import t9 from './Media/womensone.webp'
 import t10 from './Media/kidstwo.webp'
+import t11 from './Media/DSC_7821.webp'
 
-const TICKER_IMGS = [t1, t2, t3, t4, t5, t6, t7, t9, t10];
+const TICKER_IMGS = [t1, t2, t3, t4, t5, t6, t7, t9, t10, t11];
 
 export default function Landing() {
   return (
