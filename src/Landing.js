@@ -21,19 +21,23 @@ export default function Landing() {
     <div className="landing-page">
       <section className="landing-hero">
 
-        {/* Desktop-only photo ticker — sits behind the form */}
+        {/* Photo ticker — sits behind the form */}
         <div className="hero-ticker" aria-hidden="true">
           <div className="hero-ticker__track">
-            {/* First set */}
             {TICKER_IMGS.map((src, i) => (
               <img key={`a-${i}`} src={src} alt="" draggable="false" />
             ))}
-            {/* Duplicate for seamless loop */}
             {TICKER_IMGS.map((src, i) => (
               <img key={`b-${i}`} src={src} alt="" draggable="false" />
             ))}
           </div>
           <div className="hero-ticker__overlay" />
+        </div>
+
+        <div className="hero-copy">
+          <p className="hero-eyebrow">20 Cranston Park Ave, Maple, ON</p>
+          <p className="hero-headline"><em> MMA </em> &nbsp;·&nbsp; <em>Wrestling</em> &nbsp;·&nbsp; <em>Muay Thai</em> &nbsp;·&nbsp; <em>BJJ</em></p>
+ 
         </div>
 
         <LeadForm inline={true} />
