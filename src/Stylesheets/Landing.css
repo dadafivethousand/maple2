@@ -28,7 +28,7 @@
   align-items: center;
   height: 100%;
   width: max-content;
-  animation: hero-ticker-scroll 55s linear infinite;
+  animation: hero-ticker-scroll 75s linear infinite;
   will-change: transform;
 }
 
@@ -111,6 +111,6 @@
     padding: 32px 16px 36px;
   }
   .hero-ticker__track {
-    animation: hero-ticker-scroll 90s linear infinite;
+    animation: hero-ticker-scroll 120s linear infinite;
   }
 }
