@@ -28,7 +28,7 @@
   align-items: center;
   height: 100%;
   width: max-content;
-  animation: hero-ticker-scroll 75s linear infinite;
+  animation: hero-ticker-scroll 195s linear infinite;
   will-change: transform;
 }
 

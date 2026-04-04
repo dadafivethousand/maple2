@@ -54,7 +54,7 @@
   overflow: hidden;
   width: 100%;
   border-radius: 21.5px;
-  padding: 14px 18px 12px;
+  padding: 14px 11px 12px;
 
   /* frosted-glass — lighter than navbar (#040f28) so it visually lifts */
   backdrop-filter: blur(20px);
