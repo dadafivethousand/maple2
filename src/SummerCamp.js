@@ -104,13 +104,10 @@ export default function SummerCamp() {
 
             <button className="sc-hero-cta" onClick={scrollToPicker}>
               Register Now
-       
             </button>
           </div>
 
-          <div className="sc-scroll-hint" aria-hidden="true">
-            <span />
-          </div>
+     
         </header>
 
         <div className="sc-photo-banner" style={{ backgroundImage: `url(${campHeroImg})` }}>
