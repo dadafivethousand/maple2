@@ -177,7 +177,7 @@
     gap: 3px;
   }
 
-  .class-time { font-size: 9px; letter-spacing: -0.3px; }
+  .class-time { font-size: 13px; letter-spacing: -0.3px; }
 
   .WeekDay h3 {
     font-size: 12px;
@@ -202,5 +202,7 @@
   .WeekDay .full-day-name {
     display: block; /* Show full names on wide screens */
   }
+
+
 }
 .header-logo{z-index: 30; height:40px;}
