@@ -38,7 +38,7 @@ export default function Landing() {
         <div className="hero-award">
           <span className="hero-award__trophy" aria-hidden="true">🏆</span>
           <div className="hero-award__body">
-            <span className="hero-award__title">New Business of the Year &mdash; Finalist</span>
+            <span className="hero-award__title">New Business of the Year Finalist</span>
             <span className="hero-award__sub">Vaughan Chamber of Commerce</span>
           </div>
           <span className="hero-award__trophy" aria-hidden="true">🏆</span>
