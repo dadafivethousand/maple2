@@ -43,11 +43,11 @@ export default function Navbar() {
 
                 {/* Brand — left on desktop, centred on mobile */}
                 <div className={`image-and-logo ${click ? 'borderless disappear' : 'show'}`}>
-                    <div className="nav-brand">
+                    <a href="/" className="nav-brand">
                         <span className="nav-brand-maple">MAPLE</span>
                         <span className="nav-brand-rule" aria-hidden="true"></span>
                         <span className="nav-brand-sub">JIU-JITSU</span>
-                    </div>
+                    </a>
                 </div>
 
                 {/* Nav panel — slide-out on mobile, inline on desktop */}

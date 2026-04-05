@@ -35,10 +35,20 @@ export default function Landing() {
           <div className="hero-ticker__overlay" />
         </div>
 
-        <div className="hero-copy">
-          <p className="hero-eyebrow">20 Cranston Park Ave, Maple, ON</p>
-          <p className="hero-headline"><em> MMA </em> &nbsp;·&nbsp; <em>Wrestling</em> &nbsp;·&nbsp; <em>Muay Thai</em> &nbsp;·&nbsp; <em>BJJ</em></p>
- 
+        <div className="hero-award">
+          <span className="hero-award__trophy" aria-hidden="true">🏆</span>
+          <div className="hero-award__body">
+            <span className="hero-award__title">New Business of the Year &mdash; Finalist</span>
+            <span className="hero-award__sub">Vaughan Chamber of Commerce</span>
+          </div>
+          <span className="hero-award__trophy" aria-hidden="true">🏆</span>
+        </div>
+
+        <div className="hero-title">
+
+          <h2 className="hero-name">Maple Jiu-Jitsu</h2>
+                    <p className="hero-pretitle">20 Cranston Park Ave, Maple, ON</p>
+          <p className="hero-disciplines">BJJ &nbsp;·&nbsp; Muay Thai &nbsp;·&nbsp; Wrestling &nbsp;·&nbsp; MMA</p>
         </div>
 
         <LeadForm inline={true} />

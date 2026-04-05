@@ -1,4 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
+
+function fmt12(t) {
+  const [h, m] = t.split(':').map(Number);
+  const ampm = h >= 12 ? 'PM' : 'AM';
+  const h12 = h % 12 || 12;
+  return m === 0 ? `${h12} ${ampm}` : `${h12}:${String(m).padStart(2, '0')} ${ampm}`;
+}
 import './Stylesheets/SummerCamp.css';
 import Navbar from './Navbar';
 import campHeroImg from './Media/IMG_0640.jpg';
@@ -107,8 +114,20 @@ export default function SummerCamp() {
             </button>
           </div>
 
-     
+
         </header>
+
+        {/* Award recognition strip */}
+        <div className="sc-award-strip">
+          <div className="sc-award-badge">
+            <span className="sc-award-trophy" aria-hidden="true">🏆</span>
+            <div className="sc-award-text">
+              <span className="sc-award-org">Vaughan Chamber of Commerce &nbsp;·&nbsp; 2024</span>
+              <span className="sc-award-name">New Business of the Year</span>
+            </div>
+            <span className="sc-award-finalist">Finalist</span>
+          </div>
+        </div>
 
         <div className="sc-photo-banner" style={{ backgroundImage: `url(${campHeroImg})` }}>
           <div className="sc-photo-banner-inner">
@@ -116,11 +135,43 @@ export default function SummerCamp() {
             <div className="sc-meta-row">
               <div className="sc-meta-pill"><span>🗓️</span><span>June 22 – September 4, 2026</span></div>
               <div className="sc-meta-pill"><span>📍</span><span>20 Cranston Park Ave, Maple, ON</span></div>
-              <div className="sc-meta-pill"><span>⏰</span><span>Monday – Friday &nbsp;·&nbsp; 8:30 am – 4:30 pm</span></div>
+              <div className="sc-meta-pill"><span>⏰</span><span>Monday – Friday &nbsp;·&nbsp; {fmt12(campData.startTime)} – {fmt12(campData.endTime)}</span></div>
               <div className="sc-meta-pill"><span>👧</span><span>Ages 7 – 12</span></div>
             </div>
           </div>
         </div>
+
+        {/* Academy section */}
+        <section className="sc-academy">
+          <div className="sc-academy-inner">
+            <div className="sc-academy-text">
+              <p className="sc-eyebrow">About Maple Jiu-Jitsu</p>
+              <h2 className="sc-academy-heading">Built by Champions.<br />Designed for Kids.</h2>
+              <p className="sc-academy-body">
+                One of Vaughan's fastest-growing academies and a <strong>2024 finalist for New Business of the Year</strong> at the Vaughan Chamber of Commerce. We don't just teach jiu-jitsu — we build kids who are confident on the mat and off it.
+              </p>
+              <p className="sc-academy-body">
+                Our coaches are competition-tested black and brown belts who love working with children. Small groups, real progressions, and an environment where every kid — complete beginner or not — thrives from day one.
+              </p>
+            </div>
+            <div className="sc-academy-cards">
+              {[
+                { icon: '🥋', title: 'Elite Instruction', body: 'Black and brown belt coaches with active competition records. Technique is taught correctly from day one.' },
+                { icon: '🧠', title: 'More Than Fighting', body: 'Discipline, focus, and resilience are woven into every session. Kids leave more confident than they arrived.' },
+                { icon: '🏆', title: 'Chamber Recognized', body: 'Finalist — New Business of the Year, Vaughan Chamber of Commerce. We\'re building something special in this community.' },
+                { icon: '🤝', title: 'Small Groups', body: 'Kept intentionally small so every child gets individual attention and real progression throughout every week.' },
+              ].map(({ icon, title, body }) => (
+                <div className="sc-academy-card" key={title}>
+                  <span className="sc-academy-card-icon">{icon}</span>
+                  <div>
+                    <h4 className="sc-academy-card-title">{title}</h4>
+                    <p className="sc-academy-card-body">{body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <section className="sc-section" ref={pickerRef}>
           <div className="sc-section-header">
@@ -149,7 +200,7 @@ export default function SummerCamp() {
                     </svg>
                   )}
                 </span>
-                <span className="sc-week-num">11 weeks</span>
+                <span className="sc-week-num">{WEEKS.length} weeks</span>
               </div>
 
               <p className="sc-week-dates">FULL SUMMER</p>
