@@ -283,7 +283,7 @@
   background: rgba(0, 0, 0, 0.377);
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
-  font-size: 13px;
+  font-size: 14px;
   color: rgba(224,242,254,.78);
   width: fit-content;
 }
