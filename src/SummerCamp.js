@@ -135,7 +135,7 @@ export default function SummerCamp() {
 
         <section className="sc-section" ref={pickerRef}>
           <div className="sc-section-header">
-            <p className="sc-eyebrow">Step 1</p>
+          
             <h2 className="sc-section-title">Pick Your Weeks</h2>
             <p className="sc-section-hint">Mix and match any weeks — no consecutive booking required.</p>
           </div>
