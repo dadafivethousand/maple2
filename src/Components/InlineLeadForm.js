@@ -118,7 +118,8 @@ export default function InlineLeadForm() {
                 <li className="lf-step slide-in" style={{ '--delay': '1.6s' }}>Check the class schedule</li>
                 <li className="lf-step slide-in" style={{ '--delay': '2.0s' }}>Attend any classes you want</li>
                 <li className="lf-step slide-in" style={{ '--delay': '2.4s' }}>
-                  For questions see the FAQ or call us directly
+                  For questions see the FAQ or{' '}
+                  <a href="tel:+16478879940">📞 call us directly (647) 887-9940</a>
                 </li>
               </ol>
               <img
