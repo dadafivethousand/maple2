@@ -9,6 +9,7 @@ function fmt12(t) {
 import './Stylesheets/SummerCamp.css';
 import Navbar from './Navbar';
 import campHeroImg from './Media/IMG_0640.jpg';
+import AwardWidget from './Components/AwardWidget';
 
 const WORKER = 'https://worker-consolidated.maxli5004.workers.dev';
 
@@ -119,13 +120,8 @@ export default function SummerCamp() {
 
         {/* Award recognition strip */}
         <div className="sc-award-strip">
-          <div className="sc-award-badge">
-            <span className="sc-award-trophy" aria-hidden="true">🏆</span>
-            <div className="sc-award-text">
-              <span className="sc-award-org">Vaughan Chamber of Commerce &nbsp;·&nbsp; 2024</span>
-              <span className="sc-award-name">New Business of the Year</span>
-            </div>
-            <span className="sc-award-finalist">Finalist</span>
+          <div className="sc-award-widget-wrap">
+            <AwardWidget />
           </div>
         </div>
 
@@ -146,7 +142,7 @@ export default function SummerCamp() {
           <div className="sc-academy-inner">
             <div className="sc-academy-text">
               <p className="sc-eyebrow">About Maple Jiu-Jitsu</p>
-              <h2 className="sc-academy-heading">Built by Champions.<br />Designed for Kids.</h2>
+              <h2 className="sc-academy-heading">Built by Champions. Designed for Kids.</h2>
               <p className="sc-academy-body">
                 One of Vaughan's fastest-growing academies and a <strong>2024 finalist for New Business of the Year</strong> at the Vaughan Chamber of Commerce. We don't just teach jiu-jitsu — we build kids who are confident on the mat and off it.
               </p>
@@ -157,8 +153,8 @@ export default function SummerCamp() {
             <div className="sc-academy-cards">
               {[
                 { icon: '🥋', title: 'Elite Instruction', body: 'Black and brown belt coaches with active competition records. Technique is taught correctly from day one.' },
-                { icon: '🧠', title: 'More Than Fighting', body: 'Discipline, focus, and resilience are woven into every session. Kids leave more confident than they arrived.' },
-                { icon: '🏆', title: 'Chamber Recognized', body: 'Finalist — New Business of the Year, Vaughan Chamber of Commerce. We\'re building something special in this community.' },
+                { icon: '🧠', title: 'More Than Training', body: 'Discipline, focus, and resilience are woven into every session. Kids leave more confident than they arrived.' },
+                { icon: '🏆', title: 'Recognized Business', body: 'Finalist — New Business of the Year, Vaughan Chamber of Commerce. We\'re building something special in this community.' },
                 { icon: '🤝', title: 'Small Groups', body: 'Kept intentionally small so every child gets individual attention and real progression throughout every week.' },
               ].map(({ icon, title, body }) => (
                 <div className="sc-academy-card" key={title}>
@@ -204,7 +200,10 @@ export default function SummerCamp() {
               </div>
 
               <p className="sc-week-dates">FULL SUMMER</p>
-              <p className="sc-week-price">15% OFF</p>
+              <p className="sc-week-price">
+                15% OFF
+                <span className="sc-week-tax">+ HST</span>
+              </p>
               <p className="sc-stat-note sc-stat-note--featured">Best value</p>
             </button>
 
@@ -236,7 +235,10 @@ export default function SummerCamp() {
                   </div>
 
                   <p className="sc-week-dates">{week.displayDates}</p>
-                  <p className="sc-week-price">${weekPrice(week).toFixed(2)}</p>
+                  <p className="sc-week-price">
+                    ${weekPrice(week).toFixed(2)}
+                    <span className="sc-week-tax">+ HST</span>
+                  </p>
 
                   {week.statHoliday ? (
                     <p className="sc-stat-note">⚡ Short week</p>
