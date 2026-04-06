@@ -14,7 +14,7 @@ export default function AwardWidget() {
         <div className="award-widget__copy">
           <span className="award-widget__issuer">Vaughan Chamber of Commerce</span>
           <span className="award-widget__title">New Business of the Year Finalist</span>
-          <span className="award-widget__status">Business Excellence Achievement Award</span>
+          <span className="award-widget__status">Business Excellence Achievement Awards</span>
         </div>
       </div>
     </div>
