@@ -35,7 +35,7 @@ export default function Landing() {
         </div>
 
         <AwardWidget />
-        {/* <AwardWidget2 />*/}
+         {/* <AwardWidget2 /> */}
 
         <div className="hero-title">
           <h2 className="hero-name">Maple Jiu-Jitsu</h2>
