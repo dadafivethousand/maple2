@@ -61,6 +61,16 @@ export default function Contact() {
 
           <div className="contact-social">
             <a
+              href="https://www.google.com/maps/dir/?api=1&destination=20%20Cranston%20Park%20Ave%2C%20Maple%2C%20ON%20L6A%202W2"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Get directions to Maple BJJ"
+              className="contact-social__link contact-social__link--directions"
+            >
+              <FontAwesomeIcon icon={faLocationDot} />
+              <span>Get Directions</span>
+            </a>
+            <a
               href="https://www.instagram.com/maple_bjj"
               target="_blank"
               rel="noopener noreferrer"
