@@ -268,20 +268,22 @@
 
 .lf-steps-list {
   list-style: decimal;
-  padding-left: 18px;
-  margin: 0;
+  padding-left: 22px;
+  margin: 8px 0 0;
 }
 
 .lf-step {
-  color: rgba(200, 225, 255, 0.88);
-  font-size: 14px;
+  color: #ffffff;
+  font-size: 20px;
   font-family: 'Roboto Condensed', sans-serif;
-  margin: 5px 0;
-  line-height: 1.4;
+  font-weight: 700;
+  margin: 10px 0;
+  line-height: 1.35;
   text-align: left;
+  letter-spacing: 0.3px;
 }
 
-.lf-step a { color: #60a5fa; text-decoration: underline; }
+.lf-step a { color: #93c5fd; text-decoration: underline; font-weight: 700; }
 
 .lf-success-logo {
   width: 70px;

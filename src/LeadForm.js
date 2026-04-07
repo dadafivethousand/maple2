@@ -116,7 +116,6 @@ export default function LeadForm({ closebutton, inline = false }) {
                   </li>
                   <li className="lf-step slide-in" style={{ '--delay': '1.6s' }}>Check the class schedule</li>
                   <li className="lf-step slide-in" style={{ '--delay': '2.0s' }}>Attend any classes you want</li>
-                  <li className="lf-step slide-in" style={{ '--delay': '2.4s' }}>For questions see the FAQ or call us directly</li>
                 </ol>
                 <img className="lf-success-logo fade-in-late" style={{ '--delay': '3.0s' }} src={whitelogo} alt="Maple Jiu-Jitsu" />
               </>
