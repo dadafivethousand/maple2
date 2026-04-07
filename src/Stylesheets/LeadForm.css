@@ -250,12 +250,13 @@
 /* ── Success state ── */
 
 .lf-success-wrap {
-  min-height: 180px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   padding: 8px 0;
+  overflow: hidden;
 }
 
 .lf-success-title {
@@ -361,7 +362,7 @@
 }
 
 .modal-card--success {
-  min-height: 280px;
+  min-height: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
