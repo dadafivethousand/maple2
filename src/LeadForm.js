@@ -155,8 +155,9 @@ export default function LeadForm({ closebutton, inline = false }) {
 
               <Turnstile
                 siteKey="0x4AAAAAACuXuYqwDOUxvxFB"
-                onSuccess={(t) => setCaptchaToken(t)}
+                onSuccess={(t) => { setCaptchaToken(t); setErrorMsg(''); }}
                 onExpire={() => setCaptchaToken(null)}
+                onError={() => { setCaptchaToken(null); setErrorMsg('Security check failed. Please refresh the page and try again.'); }}
                 options={{ size: 'invisible' }}
               />
 

@@ -164,8 +164,9 @@ export default function InlineLeadForm() {
 
             <Turnstile
               siteKey="0x4AAAAAACuXuYqwDOUxvxFB"
-              onSuccess={handleCaptchaSuccess}
+              onSuccess={(t) => { handleCaptchaSuccess(t); setErrorMsg(''); }}
               onExpire={() => setCaptchaToken(null)}
+              onError={() => { setCaptchaToken(null); setErrorMsg('Security check failed. Please refresh the page and try again.'); }}
               options={{ size: 'invisible' }}
             />
 
