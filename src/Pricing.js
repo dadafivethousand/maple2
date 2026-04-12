@@ -108,15 +108,14 @@ export default function Pricing() {
             <div className="membership-flex">
               {item.info &&
                 item.info.map((option, optionIndex) => {
-            
+                  const monthlyPrice = item.info[0].price;
+                  const saveCents = !option.subscription
+                    ? monthlyPrice - Math.round(option.price / option.duration)
+                    : 0;
 
                   return (
                     <div key={optionIndex}>
-                      <div
-                        className={`pricing-flex ${
-                          option.bestvalue ? 'best' : ''
-                        }`}
-                      >
+                      <div className="pricing-flex">
                         <div className="name-and-price">
                           <p className="name-of-class">{option.description}</p>
                         </div>
@@ -125,6 +124,9 @@ export default function Pricing() {
                           <p className="price">
                             {formatCurrency(option.price)}
                             <span className="hst">+ HST</span>
+                            {saveCents > 0 && (
+                              <span className="price-save">Save {formatCurrency(saveCents)}/mo</span>
+                            )}
                           </p>
                         </div>
 

@@ -79,7 +79,7 @@
 /* ===== Card row ===== */
 .membership-flex {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
   padding: 20px 0 0;
   width: 100%;
@@ -246,6 +246,16 @@
   color: var(--muted);
   -webkit-text-fill-color: var(--muted);
   margin-top: 6px;
+}
+
+.price-save {
+  font-size: clamp(9px, 0.8vw, 11px);
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #4ade80;
+  -webkit-text-fill-color: #4ade80;
+  margin-top: 5px;
 }
 
 /* ===== Features ===== */
