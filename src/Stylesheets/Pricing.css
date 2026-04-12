@@ -241,12 +241,6 @@
 }
 
 .price-save {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 12px;
-  border-radius: 20px;
-  background: rgba(74, 222, 128, 0.12);
-  border: 1px solid rgba(74, 222, 128, 0.28);
   font-size: clamp(9px, 0.8vw, 11px);
   font-family: 'Oswald', sans-serif;
   font-weight: 600;
