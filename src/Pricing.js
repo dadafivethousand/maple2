@@ -11,6 +11,14 @@ const formatCurrency = (amount) =>
     maximumFractionDigits: 2,
   }).format(amount / 100);
 
+const formatSavings = (cents) =>
+  new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(cents / 100);
+
 export default function Pricing() {
   const [priceObject, setPriceObject] = useState(null);
   const [displayArray, setDisplayArray] = useState([]);
@@ -123,7 +131,7 @@ export default function Pricing() {
                         <div className="name-and-price">
                           <p className="price">
                             {saveCents > 0 && (
-                              <span className="price-save">Save {formatCurrency(saveCents)} per month</span>
+                              <span className="price-save">Save {formatSavings(saveCents)} per month</span>
                             )}
                             {formatCurrency(option.price)}
                             <span className="hst">+ HST</span>
