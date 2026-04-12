@@ -122,11 +122,11 @@ export default function Pricing() {
 
                         <div className="name-and-price">
                           <p className="price">
-                            {formatCurrency(option.price)}
-                            <span className="hst">+ HST</span>
                             {saveCents > 0 && (
                               <span className="price-save">Save {formatCurrency(saveCents)}/mo</span>
                             )}
+                            {formatCurrency(option.price)}
+                            <span className="hst">+ HST</span>
                           </p>
                         </div>
 
