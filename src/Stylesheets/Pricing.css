@@ -98,17 +98,17 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  min-height: 155px;
+  min-height: 240px;
   margin-bottom: 20px;
-  border-radius: 16px;
-  border: 1px solid rgba(125, 211, 252, 0.12);
+  border-radius: 18px;
+  border: 1px solid rgba(125, 211, 252, 0.14);
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(125, 211, 252, 0.06) 0%, transparent 60%),
-    linear-gradient(175deg, #0e1e36 0%, #070d1c 100%);
+    radial-gradient(ellipse at 50% 0%, rgba(125, 211, 252, 0.07) 0%, transparent 65%),
+    linear-gradient(175deg, #0e1e36 0%, #060c1a 100%);
   color: var(--ink);
   box-shadow:
-    0 4px 24px rgba(0, 0, 0, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    0 4px 32px rgba(0, 0, 0, 0.50),
+    0 1px 0 rgba(125, 211, 252, 0.08) inset;
   transition: transform 0.18s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
@@ -190,33 +190,30 @@
 }
 
 .pricing-flex > .name-and-price:first-of-type {
-  padding: 20px 12px 14px;
-  border-bottom: 1px solid rgba(125, 211, 252, 0.07);
-}
-
-.pricing-flex.best > .name-and-price:first-of-type {
-  border-bottom-color: rgba(251, 191, 36, 0.1);
+  padding: 26px 16px 18px;
+  border-bottom: 1px solid rgba(125, 211, 252, 0.08);
 }
 
 .pricing-flex > .name-and-price:nth-of-type(2) {
-  padding: 16px 12px 18px;
+  padding: 22px 16px 20px;
   flex: 1;
+  gap: 0;
 }
 
 /* ===== Typography ===== */
 .name-of-class {
   font-family: 'Oswald', sans-serif;
-  font-size: clamp(11px, 1.1vw, 15px);
-  font-weight: 400;
-  letter-spacing: 3px;
+  font-size: clamp(11px, 1.1vw, 14px);
+  font-weight: 500;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  color: rgba(186, 230, 253, 0.45);
+  color: rgba(186, 230, 253, 0.60);
   margin: 0;
   text-align: center;
 }
 
 .price {
-  font-size: clamp(20px, 2.6vw, 36px);
+  font-size: clamp(24px, 2.8vw, 38px);
   font-weight: 900;
   font-family: 'Oswald', sans-serif;
   background: linear-gradient(160deg, #ffffff 0%, #e0f2fe 40%, #7dd3fc 100%);
@@ -225,17 +222,12 @@
   background-clip: text;
   letter-spacing: 0.5px;
   line-height: 1.1;
-  margin: 8px 0 0;
+  margin: 0;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.pricing-flex.best .price {
-  background: linear-gradient(160deg, #ffffff 0%, #fef3c7 40%, #fbbf24 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
+  gap: 0;
 }
 
 .hst {
@@ -243,20 +235,26 @@
   font-family: 'Oswald', sans-serif;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(186, 230, 253, 0.65);
-  -webkit-text-fill-color: rgba(186, 230, 253, 0.65);
-  margin-top: 6px;
+  color: rgba(186, 230, 253, 0.60);
+  -webkit-text-fill-color: rgba(186, 230, 253, 0.60);
+  margin-top: 7px;
 }
 
 .price-save {
-  font-size: clamp(10px, 0.9vw, 12px);
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(74, 222, 128, 0.12);
+  border: 1px solid rgba(74, 222, 128, 0.28);
+  font-size: clamp(9px, 0.8vw, 11px);
   font-family: 'Oswald', sans-serif;
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: #86efac;
   -webkit-text-fill-color: #86efac;
-  margin-top: 6px;
+  margin-bottom: 12px;
 }
 
 /* ===== Features ===== */
