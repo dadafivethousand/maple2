@@ -110,7 +110,7 @@ export default function Pricing() {
                 item.info.map((option, optionIndex) => {
                   const monthlyPrice = item.info[0].price;
                   const saveCents = !option.subscription
-                    ? monthlyPrice - Math.round(option.price / option.duration)
+                    ? Math.round((monthlyPrice - Math.round(option.price / option.duration)) / 500) * 500
                     : 0;
 
                   return (
