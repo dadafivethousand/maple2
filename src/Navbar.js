@@ -9,6 +9,7 @@ import InlineLeadForm from "./Components/InlineLeadForm";
 export default function Navbar() {
     const [click, setClick] = useState(false);
     const [showGetStarted, setShowGetStarted] = useState(false);
+    const [minimized, setMinimized] = useState(false);
     const location = useLocation();
     const root = location.pathname === '/' ? '' : '/';
 
@@ -20,6 +21,7 @@ export default function Navbar() {
             setShowGetStarted(true);
         } else {
             setShowGetStarted(false);
+            setMinimized(false);
         }
     };
 
@@ -54,8 +56,17 @@ export default function Navbar() {
                 <div className={`navbar ${click ? 'slide' : ''}`}>
 
                     {/* Inline form — slides in on scroll (desktop) */}
-                    <div className={`${showGetStarted ? 'show-get-started' : ''} getstarted`}>
-                        <InlineLeadForm />
+                    <div className={`${showGetStarted ? 'show-get-started' : ''} getstarted${minimized ? ' getstarted--minimized' : ''}`}>
+                        {minimized ? (
+                            <button className="getstarted-restore" onClick={() => setMinimized(false)}>
+                                7-Day Free Trial ↑
+                            </button>
+                        ) : (
+                            <div className="getstarted-inner">
+                                <button className="getstarted-minimize" onClick={() => setMinimized(true)} aria-label="Minimize form">−</button>
+                                <InlineLeadForm />
+                            </div>
+                        )}
                     </div>
 
                     {/* Desktop-only: phone + socials row */}
