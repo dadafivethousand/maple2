@@ -57,16 +57,13 @@ export default function Navbar() {
 
                     {/* Inline form — slides in on scroll (desktop) */}
                     <div className={`${showGetStarted ? 'show-get-started' : ''} getstarted${minimized ? ' getstarted--minimized' : ''}`}>
-                        {minimized ? (
-                            <button className="getstarted-restore" onClick={() => setMinimized(false)}>
-                                7-Day Free Trial ↑
-                            </button>
-                        ) : (
-                            <div className="getstarted-inner">
-                                <button className="getstarted-minimize" onClick={() => setMinimized(true)} aria-label="Minimize form">−</button>
-                                <InlineLeadForm />
-                            </div>
-                        )}
+                        <div className="getstarted-inner">
+                            <button className="getstarted-minimize" onClick={() => setMinimized(true)} aria-label="Minimize form">›</button>
+                            <InlineLeadForm />
+                        </div>
+                        <button className="getstarted-tab" onClick={() => setMinimized(false)} aria-label="Expand free trial form">
+                            Free Trial
+                        </button>
                     </div>
 
                     {/* Desktop-only: phone + socials row */}
