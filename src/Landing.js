@@ -9,7 +9,7 @@ import t1 from './Media/ibjjf.webp'
 import t2 from './Media/giclass.webp'
 import t3 from './Media/openmat.webp'
 import t4 from './Media/competition.webp'
-import t5 from './Media/womensclass.jpg'
+import t5 from './Media/womensclass.webp'
 import t6 from './Media/anotheropenmat.webp'
 import t7 from './Media/kids.webp'
  
@@ -28,7 +28,7 @@ export default function Landing() {
               <img key={`a-${i}`} src={src} alt="" draggable="false" />
             ))}
             {TICKER_IMGS.map((src, i) => (
-              <img key={`b-${i}`} src={src} alt="" draggable="false" />
+              <img key={`b-${i}`} src={src} alt="" draggable="false" loading="lazy" />
             ))}
           </div>
           <div className="hero-ticker__overlay" />
