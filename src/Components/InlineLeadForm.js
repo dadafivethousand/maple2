@@ -23,6 +23,7 @@ export default function InlineLeadForm() {
   const [fadeOutCheck, setFadeOutCheck] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
   const [isValid, setIsValid] = useState(false);
+  const [userStarted, setUserStarted] = useState(false);
 
   const handleCaptchaSuccess = (token) => setCaptchaToken(token);
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -136,7 +137,7 @@ export default function InlineLeadForm() {
 
           {status === 'error' && <p className="lf-error">{errorMsg}</p>}
 
-          <form onSubmit={handleSubmit} className="lf-form">
+          <form onSubmit={handleSubmit} className="lf-form" onFocus={() => setUserStarted(true)}>
             <div className="lf-row">
               <div className="lf-field">
                 <input className="lf-input" id="il-firstName" type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder=" " required autoComplete="given-name" />
@@ -159,13 +160,15 @@ export default function InlineLeadForm() {
               </div>
             </div>
 
-            <Turnstile
-              siteKey="0x4AAAAAACuXuYqwDOUxvxFB"
-              onSuccess={(t) => { handleCaptchaSuccess(t); setErrorMsg(''); }}
-              onExpire={() => setCaptchaToken(null)}
-              onError={() => { setCaptchaToken(null); setErrorMsg('Security check failed. Please refresh the page and try again.'); }}
-              options={{ size: 'invisible' }}
-            />
+            {userStarted && (
+              <Turnstile
+                siteKey="0x4AAAAAACuXuYqwDOUxvxFB"
+                onSuccess={(t) => { handleCaptchaSuccess(t); setErrorMsg(''); }}
+                onExpire={() => setCaptchaToken(null)}
+                onError={() => { setCaptchaToken(null); setErrorMsg('Security check failed. Please refresh the page and try again.'); }}
+                options={{ size: 'invisible' }}
+              />
+            )}
 
             <button
               type="submit"
