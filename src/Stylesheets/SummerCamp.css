@@ -27,8 +27,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 100vh;
-  padding: 120px 24px 72px;
+  padding: 100px 24px 60px;
   overflow: hidden;
   background-size: cover;
   background-position: center 30%;
@@ -1556,7 +1555,7 @@
 }
 
 .sc-hero {
-  padding: 56px 24px 64px;
+  padding: 80px 24px 48px;
   background:
     radial-gradient(circle at 50% 2%, rgba(251, 191, 36, 0.24), transparent 28%),
     radial-gradient(circle at 14% 26%, rgba(125, 211, 252, 0.12), transparent 26%),
@@ -1859,7 +1858,7 @@
 
 @media (max-width: 640px) {
   .sc-hero {
-    padding: 36px 16px 52px;
+    padding: 60px 16px 32px;
   }
 
   .sc-hero-content {
