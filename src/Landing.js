@@ -1,7 +1,5 @@
 import './Stylesheets/Landing.css'
 import LeadForm from './LeadForm'
-import Coaches from './Coaches'
-import Testimonials from './Components/Testimonials'
 import AwardWidget from './Components/AwardWidget'
 import AwardWidget2 from './Components/AwardWidget2'
 
@@ -45,9 +43,6 @@ export default function Landing() {
 
         <LeadForm inline={true} />
       </section>
-
-      <Coaches />
-      <Testimonials />
     </div>
   )
 }

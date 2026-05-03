@@ -7,11 +7,13 @@ import { useAppContext } from "./AppContext";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Below-fold main page sections — lazy loaded
-const Schedule = lazy(() => import("./Schedule"));
-const Pricing  = lazy(() => import("./Pricing"));
-const FAQ      = lazy(() => import("./FAQ"));
-const Contact  = lazy(() => import("./Contact"));
-const Footer   = lazy(() => import("./Footer"));
+const Coaches      = lazy(() => import("./Coaches"));
+const Testimonials = lazy(() => import("./Components/Testimonials"));
+const Schedule     = lazy(() => import("./Schedule"));
+const Pricing      = lazy(() => import("./Pricing"));
+const FAQ          = lazy(() => import("./FAQ"));
+const Contact      = lazy(() => import("./Contact"));
+const Footer       = lazy(() => import("./Footer"));
 
 // Separate routes — lazy loaded
 const LeadForm    = lazy(() => import("./LeadForm"));
@@ -56,6 +58,8 @@ function App() {
                   <>
                     <Navbar />
                     <Landing />
+                    <Coaches />
+                    <Testimonials />
                     <Schedule />
                     <Pricing />
                     <FAQ />
