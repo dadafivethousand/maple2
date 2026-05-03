@@ -329,6 +329,8 @@
     border-radius: 10px;
     font-size: 15px;
   }
+  .getstarted-minimize,
+  .getstarted-tab { display: none; }
 }
 
 
