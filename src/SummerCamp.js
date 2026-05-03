@@ -8,7 +8,7 @@ function fmt12(t) {
 }
 import './Stylesheets/SummerCamp.css';
 import Navbar from './Navbar';
-import campHeroImg from './Media/IMG_0640.jpg';
+import campHeroImg from './Media/IMG_0640.webp';
 import AwardWidget from './Components/AwardWidget';
 
 const WORKER = 'https://worker-consolidated.maxli5004.workers.dev';
