@@ -34,14 +34,6 @@
   background-position: center 30%;
 }
 
-.sc-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(0,8,20,.50) 0%, rgba(0,8,20,.75) 60%, rgba(0,8,20,.98) 100%),
-    radial-gradient(ellipse 120% 55% at 50% 0%, rgba(56,189,248,.12) 0%, transparent 65%);
-  z-index: 0;
-}
 
 .sc-hero > * {
   position: relative;

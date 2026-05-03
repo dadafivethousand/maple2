@@ -89,9 +89,7 @@ export default function SummerCamp() {
     <>
       <Navbar />
       <div className="sc-page">
-        <header className="sc-hero" style={{ backgroundImage: `url(${campHeroImg})` }}>
-          <div className="sc-hero-overlay" aria-hidden="true" />
-
+        <header className="sc-hero">
           <div className="sc-hero-content">
             <p className="sc-hero-kicker">Maple Jiu-Jitsu &nbsp;·&nbsp; Summer 2026</p>
 
