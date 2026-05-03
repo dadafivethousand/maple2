@@ -108,20 +108,18 @@ export default function SummerCamp() {
               All skill levels welcome — no experience necessary.
             </p>
 
+            <div className="sc-meta-pills">
+              <div className="sc-meta-pill"><span>🗓️</span><span>June 22 – Sep 4, 2026</span></div>
+              <div className="sc-meta-pill"><span>📍</span><span>Maple, ON</span></div>
+              <div className="sc-meta-pill"><span>⏰</span><span>{fmt12(campData.startTime)} – {fmt12(campData.endTime)}</span></div>
+              <div className="sc-meta-pill"><span>👧</span><span>Ages 7 – 12</span></div>
+            </div>
+
             <button className="sc-hero-cta" onClick={scrollToPicker}>
               Register Now
             </button>
           </div>
-
-
         </header>
-
-        <div className="sc-meta-strip">
-          <div className="sc-meta-pill"><span>🗓️</span><span>June 22 – September 4, 2026</span></div>
-          <div className="sc-meta-pill"><span>📍</span><span>20 Cranston Park Ave, Maple, ON</span></div>
-          <div className="sc-meta-pill"><span>⏰</span><span>Mon – Fri &nbsp;·&nbsp; {fmt12(campData.startTime)} – {fmt12(campData.endTime)}</span></div>
-          <div className="sc-meta-pill"><span>👧</span><span>Ages 7 – 12</span></div>
-        </div>
 
         <section className="sc-section" ref={pickerRef}>
           <div className="sc-section-header">
