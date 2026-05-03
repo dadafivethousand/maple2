@@ -9,7 +9,6 @@ function fmt12(t) {
 import './Stylesheets/SummerCamp.css';
 import Navbar from './Navbar';
 import campHeroImg from './Media/IMG_0640.webp';
-import AwardWidget from './Components/AwardWidget';
 
 const WORKER = 'https://worker-consolidated.maxli5004.workers.dev';
 
@@ -90,9 +89,8 @@ export default function SummerCamp() {
     <>
       <Navbar />
       <div className="sc-page">
-        <header className="sc-hero">
-          <div className="sc-hero-glow" aria-hidden="true" />
-          <div className="sc-hero-glow-2" aria-hidden="true" />
+        <header className="sc-hero" style={{ backgroundImage: `url(${campHeroImg})` }}>
+          <div className="sc-hero-overlay" aria-hidden="true" />
 
           <div className="sc-hero-content">
             <p className="sc-hero-kicker">Maple Jiu-Jitsu &nbsp;·&nbsp; Summer 2026</p>
@@ -118,56 +116,12 @@ export default function SummerCamp() {
 
         </header>
 
-        {/* Award recognition strip */}
-        <div className="sc-award-strip">
-          <div className="sc-award-widget-wrap">
-            <AwardWidget />
-          </div>
+        <div className="sc-meta-strip">
+          <div className="sc-meta-pill"><span>🗓️</span><span>June 22 – September 4, 2026</span></div>
+          <div className="sc-meta-pill"><span>📍</span><span>20 Cranston Park Ave, Maple, ON</span></div>
+          <div className="sc-meta-pill"><span>⏰</span><span>Mon – Fri &nbsp;·&nbsp; {fmt12(campData.startTime)} – {fmt12(campData.endTime)}</span></div>
+          <div className="sc-meta-pill"><span>👧</span><span>Ages 7 – 12</span></div>
         </div>
-
-        <div className="sc-photo-banner" style={{ backgroundImage: `url(${campHeroImg})` }}>
-          <div className="sc-photo-banner-inner">
-            <p className="sc-banner-quote">A summer they'll never forget</p>
-            <div className="sc-meta-row">
-              <div className="sc-meta-pill"><span>🗓️</span><span>June 22 – September 4, 2026</span></div>
-              <div className="sc-meta-pill"><span>📍</span><span>20 Cranston Park Ave, Maple, ON</span></div>
-              <div className="sc-meta-pill"><span>⏰</span><span>Monday – Friday &nbsp;·&nbsp; {fmt12(campData.startTime)} – {fmt12(campData.endTime)}</span></div>
-              <div className="sc-meta-pill"><span>👧</span><span>Ages 7 – 12</span></div>
-            </div>
-          </div>
-        </div>
-
-        {/* Academy section */}
-        <section className="sc-academy">
-          <div className="sc-academy-inner">
-            <div className="sc-academy-text">
-              <p className="sc-eyebrow">About Maple Jiu-Jitsu</p>
-              <h2 className="sc-academy-heading">Built by Champions. Designed for Kids.</h2>
-              <p className="sc-academy-body">
-                One of Vaughan's fastest-growing academies and a <strong>2024 finalist for New Business of the Year</strong> at the Vaughan Chamber of Commerce. We don't just teach jiu-jitsu — we build kids who are confident on the mat and off it.
-              </p>
-              <p className="sc-academy-body">
-                Our coaches are competition-tested black and brown belts who love working with children. Small groups, real progressions, and an environment where every kid — complete beginner or not — thrives from day one.
-              </p>
-            </div>
-            <div className="sc-academy-cards">
-              {[
-                { icon: '🥋', title: 'Elite Instruction', body: 'Black and brown belt coaches with active competition records. Technique is taught correctly from day one.' },
-                { icon: '🧠', title: 'More Than Training', body: 'Discipline, focus, and resilience are woven into every session. Kids leave more confident than they arrived.' },
-                { icon: '🏆', title: 'Recognized Business', body: 'Finalist — New Business of the Year, Vaughan Chamber of Commerce. We\'re building something special in this community.' },
-                { icon: '🤝', title: 'Small Groups', body: 'Kept intentionally small so every child gets individual attention and real progression throughout every week.' },
-              ].map(({ icon, title, body }) => (
-                <div className="sc-academy-card" key={title}>
-                  <span className="sc-academy-card-icon">{icon}</span>
-                  <div>
-                    <h4 className="sc-academy-card-title">{title}</h4>
-                    <p className="sc-academy-card-body">{body}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         <section className="sc-section" ref={pickerRef}>
           <div className="sc-section-header">
