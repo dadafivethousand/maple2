@@ -25,7 +25,7 @@ export default function Landing() {
         <div className="hero-ticker" aria-hidden="true">
           <div className="hero-ticker__track">
             {TICKER_IMGS.map((src, i) => (
-              <img key={`a-${i}`} src={src} alt="" draggable="false" />
+              <img key={`a-${i}`} src={src} alt="" draggable="false" loading={i === 0 ? "eager" : "lazy"} />
             ))}
             {TICKER_IMGS.map((src, i) => (
               <img key={`b-${i}`} src={src} alt="" draggable="false" loading="lazy" />
