@@ -22,11 +22,12 @@ export default function Landing() {
 
   useEffect(() => {
     if (!trackRef.current) return;
-    const imgs = [...trackRef.current.querySelectorAll('img')].slice(0, TICKER_IMGS.length);
+    const WAIT_FOR = 2; // start after first 2 images load
+    const imgs = [...trackRef.current.querySelectorAll('img')].slice(0, WAIT_FOR);
     let loaded = 0;
     const tryStart = () => {
       loaded += 1;
-      if (loaded >= TICKER_IMGS.length) setTickerReady(true);
+      if (loaded >= WAIT_FOR) setTickerReady(true);
     };
     imgs.forEach(img => {
       if (img.complete && img.naturalWidth > 0) tryStart();
