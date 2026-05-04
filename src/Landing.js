@@ -16,22 +16,37 @@ const TICKER_IMGS = [t1, t2, t3, t4, t5, t6, t7, t11];
 
 export default function Landing() {
   const [tickerReady, setTickerReady] = useState(false);
-  const loadedCount = useRef(0);
+  const trackRef = useRef(null);
 
-  const onImgLoad = () => {
-    loadedCount.current += 1;
-    if (loadedCount.current >= TICKER_IMGS.length) {
-      setTickerReady(true);
-    }
-  };
+  useEffect(() => {
+    if (!trackRef.current) return;
+
+    // Only check the first set of images (a-*)
+    const imgs = [...trackRef.current.querySelectorAll('img')].slice(0, TICKER_IMGS.length);
+    let loaded = 0;
+
+    const tryStart = () => {
+      loaded += 1;
+      if (loaded >= TICKER_IMGS.length) setTickerReady(true);
+    };
+
+    imgs.forEach(img => {
+      // Image already loaded before we could attach onLoad (CDN cache case)
+      if (img.complete && img.naturalWidth > 0) {
+        tryStart();
+      } else {
+        img.addEventListener('load', tryStart, { once: true });
+      }
+    });
+  }, []);
 
   return (
     <div className="landing-page">
       <section className="landing-hero">
         <div className="hero-ticker" aria-hidden="true">
-          <div className={`hero-ticker__track${tickerReady ? ' hero-ticker__track--ready' : ''}`}>
+          <div ref={trackRef} className={`hero-ticker__track${tickerReady ? ' hero-ticker__track--ready' : ''}`}>
             {TICKER_IMGS.map((src, i) => (
-              <img key={`a-${i}`} src={src} alt="" draggable="false" onLoad={onImgLoad} />
+              <img key={`a-${i}`} src={src} alt="" draggable="false" />
             ))}
             {TICKER_IMGS.map((src, i) => (
               <img key={`b-${i}`} src={src} alt="" draggable="false" />
