@@ -29,10 +29,17 @@
   height: 100%;
   animation: hero-ticker-scroll 195s linear infinite;
   -webkit-animation: hero-ticker-scroll 195s linear infinite;
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+}
+
+.hero-ticker__track--ready {
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
 }
 
 .hero-ticker__track img {
