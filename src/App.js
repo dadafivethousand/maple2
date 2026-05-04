@@ -58,13 +58,13 @@ function App() {
                   <>
                     <Navbar />
                     <Landing />
-                    <Coaches />
-                    <Testimonials />
-                    <Schedule />
-                    <Pricing />
-                    <FAQ />
-                    <Contact />
-                    <Footer />
+                    <Suspense fallback={null}><Coaches /></Suspense>
+                    <Suspense fallback={null}><Testimonials /></Suspense>
+                    <Suspense fallback={null}><Schedule /></Suspense>
+                    <Suspense fallback={null}><Pricing /></Suspense>
+                    <Suspense fallback={null}><FAQ /></Suspense>
+                    <Suspense fallback={null}><Contact /></Suspense>
+                    <Suspense fallback={null}><Footer /></Suspense>
                   </>
                 }
               />
