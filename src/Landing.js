@@ -23,10 +23,10 @@ export default function Landing() {
         <div className="hero-ticker" aria-hidden="true">
           <div className="hero-ticker__track">
             {TICKER_IMGS.map((src, i) => (
-              <img key={`a-${i}`} src={src} alt="" draggable="false" loading={i === 0 ? "eager" : "lazy"} />
+              <img key={`a-${i}`} src={src} alt="" draggable="false" />
             ))}
             {TICKER_IMGS.map((src, i) => (
-              <img key={`b-${i}`} src={src} alt="" draggable="false" loading="lazy" />
+              <img key={`b-${i}`} src={src} alt="" draggable="false" />
             ))}
           </div>
           <div className="hero-ticker__overlay" />
