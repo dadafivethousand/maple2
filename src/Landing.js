@@ -8,8 +8,10 @@ import AwardWidget2 from './Components/AwardWidget2'
 
 import t1 from './Media/ibjjf.webp'
 import t2 from './Media/giclass.webp'
+import t3 from './Media/DSC_7821.webp'
+import t4 from './Media/IMG_4662.webp'
 
-const TICKER_IMGS = [t1, t2];
+const TICKER_IMGS = [t1, t2, t3, t4];
 
 export default function Landing() {
   const [tickerReady, setTickerReady] = useState(false);
@@ -17,11 +19,11 @@ export default function Landing() {
 
   useEffect(() => {
     if (!trackRef.current) return;
-    const imgs = [...trackRef.current.querySelectorAll('img')].slice(0, TICKER_IMGS.length);
+    const imgs = [...trackRef.current.querySelectorAll('img')].slice(0, 2);
     let loaded = 0;
     const tryStart = () => {
       loaded += 1;
-      if (loaded >= TICKER_IMGS.length) setTickerReady(true);
+      if (loaded >= 2) setTickerReady(true);
     };
     imgs.forEach(img => {
       if (img.complete && img.naturalWidth > 0) tryStart();
