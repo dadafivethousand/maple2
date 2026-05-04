@@ -179,6 +179,6 @@
   }
 
   .hero-ticker__track {
-    animation: hero-ticker-scroll 120s linear infinite;
+    animation-duration: 120s;
   }
 }
