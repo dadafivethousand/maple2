@@ -28,12 +28,7 @@
   width: max-content;
   height: 100%;
   animation: hero-ticker-scroll 195s linear infinite;
-  animation-play-state: paused;
   will-change: transform;
-}
-
-.hero-ticker__track--ready {
-  animation-play-state: running;
 }
 
 .hero-ticker__track img {
@@ -179,6 +174,6 @@
   }
 
   .hero-ticker__track {
-    animation-duration: 80s;
+    animation: hero-ticker-scroll 120s linear infinite;
   }
 }

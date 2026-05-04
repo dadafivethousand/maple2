@@ -21,6 +21,7 @@ const SuccessPage = lazy(() => import("./SuccessPage"));
 const CancelPage  = lazy(() => import("./CancelPage"));
 const SummerCamp  = lazy(() => import("./SummerCamp"));
 
+
 function App() {
   const { showForm } = useAppContext();
 
@@ -55,11 +56,11 @@ function App() {
                   <>
                     <Navbar />
                     <Landing />
-                    <Suspense fallback={null}><Schedule /></Suspense>
-                    <Suspense fallback={null}><Pricing /></Suspense>
-                    <Suspense fallback={null}><FAQ /></Suspense>
-                    <Suspense fallback={null}><Contact /></Suspense>
-                    <Suspense fallback={null}><Footer /></Suspense>
+                    <Schedule />
+                    <Pricing />
+                    <FAQ />
+                    <Contact />
+                    <Footer />
                   </>
                 }
               />
