@@ -9,9 +9,8 @@ import AwardWidget2 from './Components/AwardWidget2'
 import t1 from './Media/ibjjf.webp'
 import t2 from './Media/giclass.webp'
 import t3 from './Media/DSC_7821.webp'
-import t4 from './Media/IMG_4662.webp'
 
-const TICKER_IMGS = [t1, t2, t3, t4];
+const TICKER_IMGS = [t1, t2, t3];
 
 export default function Landing() {
   const [tickerReady, setTickerReady] = useState(false);
