@@ -1,5 +1,7 @@
 import './Stylesheets/Landing.css'
 import LeadForm from './LeadForm'
+import Coaches from './Coaches'
+import Testimonials from './Components/Testimonials'
 import AwardWidget from './Components/AwardWidget'
 
 import t1 from './Media/ibjjf.webp'
@@ -23,7 +25,7 @@ export default function Landing() {
               <img key={`a-${i}`} src={src} alt="" draggable="false" />
             ))}
             {TICKER_IMGS.map((src, i) => (
-              <img key={`b-${i}`} src={src} alt="" draggable="false" />
+              <img key={`b-${i}`} src={src} alt="" draggable="false" loading="lazy" />
             ))}
           </div>
           <div className="hero-ticker__overlay" />
@@ -39,6 +41,9 @@ export default function Landing() {
 
         <LeadForm inline={true} />
       </section>
+
+      <Coaches />
+      <Testimonials />
     </div>
   )
 }
