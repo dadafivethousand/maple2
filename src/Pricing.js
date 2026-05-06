@@ -94,7 +94,7 @@ export default function Pricing() {
 
   return (
     <div id="Memberships" className="PricingContainer" ref={containerRef}>
-      <p className="section-heading">
+      <p className="section-heading" data-sr>
         <span className="sh-kicker">No Contracts · Cancel Anytime</span>
         <span className="sh-main">Memberships</span>
       </p>
@@ -122,7 +122,7 @@ export default function Pricing() {
                     : 0;
 
                   return (
-                    <div key={optionIndex}>
+                    <div key={optionIndex} data-sr="flip-r" data-sr-delay={`${idx * 160 + optionIndex * 120}`}>
                       <div className="pricing-flex">
                         <div className="name-and-price">
                           <p className="name-of-class">{option.description}</p>

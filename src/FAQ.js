@@ -45,7 +45,7 @@ export default function FAQ() {
       </Helmet>
       
        
-          <p className="section-heading">
+          <p className="section-heading" data-sr>
             <span className="sh-kicker">Common Questions, Straight Answers</span>
             <span className="sh-main">FAQ</span>
           </p>
@@ -54,17 +54,18 @@ export default function FAQ() {
       
       <div className="FAQ-and-video">
         <div className="FAQ">
-          <div className="faq-controls animate">
+          <div className="faq-controls" data-sr data-sr-delay="100">
             <button onClick={handleExpandAll}>Expand All</button>
             <button onClick={handleMinimizeAll}>Minimize All</button>
           </div>
           {faqList.map((faq, index) => (
-            <QA
-              key={index}
-              faq={faq}
-              isExpanded={!!expandedFaqs[index]}
-              toggleExpand={() => toggleExpand(index)}
-            />
+            <div key={index} data-sr data-sr-delay={`${index * 50}`}>
+              <QA
+                faq={faq}
+                isExpanded={!!expandedFaqs[index]}
+                toggleExpand={() => toggleExpand(index)}
+              />
+            </div>
           ))}
         </div>
  

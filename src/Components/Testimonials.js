@@ -9,7 +9,7 @@ import StarRating from './Stars';
  
 
 export default function Testimonials() {
-    const [reviewIndex, setReviewIndex] = useState(0);
+const [reviewIndex, setReviewIndex] = useState(0);
     const [nextReviewIndex, setNextReviewIndex] = useState(0);
     const [isSliding, setIsSliding] = useState(false);
     const [slideDirection, setSlideDirection] = useState(''); // 'left' or 'right'
@@ -97,7 +97,7 @@ export default function Testimonials() {
 
     return (
  
-        <div className="ReviewsOuterContainer">
+        <div className="ReviewsOuterContainer" data-sr>
 
             <div className="ReviewsContainer">
                 <div className="ButtonContainer">

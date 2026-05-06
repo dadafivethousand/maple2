@@ -228,6 +228,7 @@
 
   .contact-social {
     margin-top: 24px;
+    flex-wrap: wrap;
   }
 
   /* diagonal gradient — same angle as desktop but rotated to flow top→bottom-right */

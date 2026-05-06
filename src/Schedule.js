@@ -110,14 +110,14 @@ export default function Schedule() {
 
   return (
     <div id="Schedule" className='ScheduleContainer'>
-      <p className="section-heading">
+      <p className="section-heading" data-sr>
         <span className="sh-kicker">Morning, Afternoon &amp; Evening Classes</span>
         <span className="sh-main">Schedule</span>
       </p>
  
       <div className="Schedule">
-        {Object.keys(schedule).map((day) => (
-          <div className='Column animate' key={day}>
+        {Object.keys(schedule).map((day, colIndex) => (
+          <div className='Column' key={day}>
             <div className='WeekDay'>
               <h3 className="full-day-name">{day}</h3>
               <h3 className="short-day-name">{day.substring(0, 3)}</h3>
@@ -127,13 +127,15 @@ export default function Schedule() {
               className={`day-column ${day}`}
               style={{ height: `${totalHours * PIXELS_PER_HOUR - totalRemovedHeight}px`, position: 'relative' }}
             >
-              {schedule[day].map((classTime, index) => {
+              {schedule[day].map((classTime, slotIndex) => {
                 const topPosition = adjustPosition(classTime.start);
                 const { bg } = paintFor(classTime.name);
                 return (
                   <div
-                    key={index}
+                    key={slotIndex}
                     className="timeslot"
+                    data-sr="flip"
+                    data-sr-delay={`${colIndex * 80 + slotIndex * 65}`}
                     style={{ top: `${topPosition}px`, height: `${(classTime.end - classTime.start) * PIXELS_PER_HOUR}px`, position: 'absolute', backgroundColor: bg }}
                   >
                     <p className='class-name'>{classTime.name}</p>

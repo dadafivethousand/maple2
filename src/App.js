@@ -1,5 +1,6 @@
 import "./Stylesheets/App.css";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
+import { initScrollReveal } from "./Utils/scrollReveal";
 import Navbar from "./Navbar";
 import Landing from "./Landing";
 import { Helmet, HelmetProvider } from "react-helmet-async";
@@ -24,6 +25,7 @@ const SummerCamp  = lazy(() => import("./SummerCamp"));
 
 function App() {
   const { showForm } = useAppContext();
+  useEffect(() => initScrollReveal(), []);
 
   return (
     <HelmetProvider>

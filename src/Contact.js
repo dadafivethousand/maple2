@@ -7,13 +7,13 @@ import { faInstagram, faSquareFacebook } from '@fortawesome/free-brands-svg-icon
 export default function Contact() {
   return (
     <div id="Contact" className="ContactContainer">
-      <p className="section-heading">
+      <p className="section-heading" data-sr>
         <span className="sh-kicker">Always Happy To Talk</span>
         <span className="sh-main">Contact</span>
       </p>
 
       {/* ── Map-as-background scene ── */}
-      <div className="contact-scene">
+      <div className="contact-scene" data-sr data-sr-delay="150">
 
         <iframe
           className="contact-scene__map"
@@ -33,7 +33,7 @@ export default function Contact() {
           <div className="contact-panel__eyebrow">Maple Jiu-Jitsu Academy</div>
 
           <div className="contact-details">
-            <a className="contact-detail" href="tel:+16478879940" aria-label="Call Maple BJJ">
+            <a className="contact-detail" href="tel:+16478879940" aria-label="Call Maple BJJ" data-sr data-sr-delay="600">
               <FontAwesomeIcon icon={faPhone} />
               <span>(647) 887-9940</span>
             </a>
@@ -41,6 +41,7 @@ export default function Contact() {
             <a
               className="contact-detail"
               href="mailto:admin@maplebjj.com?subject=Inquiry%20from%20Website"
+              data-sr data-sr-delay="720"
               aria-label="Email Maple BJJ"
             >
               <FontAwesomeIcon icon={faEnvelope} />
@@ -53,13 +54,14 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Directions to Maple BJJ"
+              data-sr data-sr-delay="840"
             >
               <FontAwesomeIcon icon={faLocationDot} />
               <span>20 Cranston Park Ave, Maple ON</span>
             </a>
           </div>
 
-          <div className="contact-social">
+          <div className="contact-social" data-sr data-sr-delay="960">
             <a
               href="https://www.google.com/maps/dir/?api=1&destination=20%20Cranston%20Park%20Ave%2C%20Maple%2C%20ON%20L6A%202W2"
               target="_blank"

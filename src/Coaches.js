@@ -54,7 +54,7 @@ export default function Coaches({ className = "" }) {
 
   return (
     <section id='Coaches' className={`coaches-block ${className}`}>
-    <p className="section-heading">
+    <p className="section-heading" data-sr>
       <span className="sh-kicker">Learn From The Best</span>
       <span className="sh-main">Coaches</span>
     </p>
@@ -62,7 +62,7 @@ export default function Coaches({ className = "" }) {
       <div className="coaches-desktop">
         <div className="coach-grid">
           {items.map((c, i) => (
-            <article className="coach-card" key={(c.name || "coach") + i}>
+            <article className="coach-card" key={(c.name || "coach") + i} data-sr data-sr-delay={`${i * 100}`}>
               <div className="coach-media">
                 <img src={c.image} alt={c.name || "Coach"} loading="lazy" decoding="async" />
               </div>
@@ -98,7 +98,7 @@ export default function Coaches({ className = "" }) {
           </button>
         )}
 
-        <div className="cf-stage">
+        <div className="cf-stage" data-sr data-sr-delay="80">
           <div className="cf-stack">
             {items.map((c, i) => {
               const cls = posClass(i);

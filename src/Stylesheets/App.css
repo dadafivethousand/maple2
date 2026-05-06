@@ -80,13 +80,54 @@ color:white;
   }
  
 
-/*  .animate {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
- 
-  .animate.visible {
-    opacity: 1;
-    transform: translateY(0);
-  } */
+/* ── Scroll Reveal ── */
+[data-sr] {
+  opacity: 0;
+  transform: translateY(64px) scale(0.92);
+  transition:
+    opacity  0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-sr="left"]  { transform: translateX(-64px) scale(0.94); }
+[data-sr="right"] { transform: translateX(64px)  scale(0.94); }
+[data-sr="scale"] { transform: scale(0.82) translateY(28px); }
+
+/* Schedule: side-spin with spring overshoot */
+[data-sr="flip"] {
+  opacity: 0;
+  transform: perspective(700px) rotateY(90deg) scale(0.72);
+  transition: none;
+}
+/* Pricing: fold up from flat like a card standing up */
+[data-sr="flip-r"] {
+  opacity: 0;
+  transform: perspective(1000px) rotateX(82deg) translateY(50px) scale(0.85);
+  transform-origin: bottom center;
+  transition: none;
+}
+
+[data-sr].sr-visible {
+  opacity: 1;
+  transform: none;
+}
+[data-sr="flip"].sr-visible {
+  animation: sr-flip-y 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+[data-sr="flip-r"].sr-visible {
+  animation: sr-flip-x 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes sr-flip-y {
+  0%   { opacity: 0; transform: perspective(700px) rotateY(90deg) scale(0.72); }
+  45%  { opacity: 1; }
+  100% { opacity: 1; transform: perspective(700px) rotateY(0deg) scale(1); }
+}
+@keyframes sr-flip-x {
+  0%   { opacity: 0; transform: perspective(1000px) rotateX(82deg) translateY(50px) scale(0.85); }
+  40%  { opacity: 1; }
+  100% { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-sr] { opacity: 1 !important; transform: none !important; transition: none !important; animation: none !important; }
+}

@@ -19,7 +19,7 @@ export default function Footer() {
       <div className="footer-inner">
 
         {/* ── Brand ── */}
-        <div className="footer-brand">
+        <div className="footer-brand" data-sr="left">
           <img src={logo} alt="Maple Jiu-Jitsu" className="footer-logo" />
           <p className="footer-tagline">
             Brazilian Jiu-Jitsu, Muay Thai &amp;<br />Wrestling — Maple, Ontario.
@@ -37,7 +37,7 @@ export default function Footer() {
         </div>
 
         {/* ── Nav ── */}
-        <nav className="footer-nav" aria-label="Footer navigation">
+        <nav className="footer-nav" aria-label="Footer navigation" data-sr data-sr-delay="150">
           <span className="footer-col-heading">Navigation</span>
           <ul>
             {NAV_LINKS.map(({ label, href }) => (
