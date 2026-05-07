@@ -42,6 +42,22 @@ export default function Coaches({ className = "" }) {
     touchX.current = null;
   };
 
+  // Desktop card 3-D tilt
+  const handleTilt = (e) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width  - 0.5) * 18;
+    const y = ((e.clientY - rect.top)  / rect.height - 0.5) * -14;
+    card.style.transition = 'none';
+    card.style.transform = `perspective(900px) rotateX(${y}deg) rotateY(${x}deg) translateY(-6px) scale(1.02)`;
+  };
+
+  const handleTiltEnd = (e) => {
+    const card = e.currentTarget;
+    card.style.transition = 'transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1)';
+    card.style.transform = '';
+  };
+
   const posClass = (i) => {
     const d = i - index;
     if (d === 0) return "is-active";
@@ -62,7 +78,14 @@ export default function Coaches({ className = "" }) {
       <div className="coaches-desktop">
         <div className="coach-grid">
           {items.map((c, i) => (
-            <article className="coach-card" key={(c.name || "coach") + i} data-sr data-sr-delay={`${i * 100}`}>
+            <article
+              className="coach-card"
+              key={(c.name || "coach") + i}
+              data-sr
+              data-sr-delay={`${i * 100}`}
+              onMouseMove={handleTilt}
+              onMouseLeave={handleTiltEnd}
+            >
               <div className="coach-media">
                 <img src={c.image} alt={c.name || "Coach"} loading="lazy" decoding="async" />
               </div>

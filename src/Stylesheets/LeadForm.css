@@ -162,6 +162,8 @@
 }
 
 .lf-btn--active {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(
     150deg,
     #fffbeb  0%,
@@ -191,6 +193,27 @@
   text-shadow:
     0 1px 0 rgba(255,255,255,0.5),
     0 -1px 0 rgba(0,0,0,0.15);
+}
+
+/* Shimmer sweep */
+.lf-btn--active::after {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -80%;
+  width: 50%;
+  height: 220%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.42), transparent);
+  transform: skewX(-14deg);
+  pointer-events: none;
+  animation: btn-shimmer 4s ease-in-out 2.5s infinite;
+}
+
+@keyframes btn-shimmer {
+  0%        { left: -80%; opacity: 0; }
+  5%        { opacity: 1; }
+  28%       { left: 130%; opacity: 1; }
+  33%, 100% { left: 130%; opacity: 0; }
 }
 
 .lf-btn--active:hover {

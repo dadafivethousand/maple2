@@ -6,6 +6,7 @@ import Testimonials from './Components/Testimonials'
 import AwardWidget from './Components/AwardWidget'
 import AwardWidget2 from './Components/AwardWidget2'
 
+import StatsBar from './Components/StatsBar'
 import t1 from './Media/ibjjf.webp'
 import t2 from './Media/giclass.webp'
 import t3 from './Media/DSC_7821.webp'
@@ -59,6 +60,7 @@ export default function Landing() {
       </section>
 
       <Coaches />
+      <StatsBar />
       <Testimonials />
     </div>
   )

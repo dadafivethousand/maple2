@@ -131,3 +131,41 @@ color:white;
 @media (prefers-reduced-motion: reduce) {
   [data-sr] { opacity: 1 !important; transform: none !important; transition: none !important; animation: none !important; }
 }
+
+
+/* ── Section slant dividers ── */
+.slant {
+  position: relative;
+  z-index: 5;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+.slant--ltr { clip-path: polygon(0 0, 0 100%, 100% 100%); }
+.slant--rtl { clip-path: polygon(0 100%, 100% 0, 100% 100%); }
+
+/* Major colour-change transition */
+.slant--major {
+  height: 60px;
+  margin-top: -60px;
+}
+
+/* Dark-to-dark accent seam */
+.slant--subtle {
+  height: 32px;
+  margin-top: -32px;
+  background: linear-gradient(
+    to right,
+    rgba(125, 211, 252, 0.07),
+    rgba(29, 78, 216, 0.09)
+  );
+}
+
+/* ── Ambient orb drift (shared) ── */
+@keyframes orb-drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(36px, 28px) scale(1.08); }
+}
+@keyframes orb-drift-r {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-32px, 22px) scale(1.06); }
+}

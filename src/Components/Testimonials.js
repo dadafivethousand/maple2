@@ -97,7 +97,7 @@ const [reviewIndex, setReviewIndex] = useState(0);
 
     return (
  
-        <div className="ReviewsOuterContainer" data-sr>
+        <div className="ReviewsOuterContainer">
 
             <div className="ReviewsContainer">
                 <div className="ButtonContainer">
