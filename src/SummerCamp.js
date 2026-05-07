@@ -121,9 +121,8 @@ export default function SummerCamp() {
 
         <section className="sc-section" ref={pickerRef}>
           <div className="sc-section-header">
-          
-            <h2 className="sc-section-title">Pick Your Weeks</h2>
-            <p className="sc-section-hint">Mix and match any weeks — no consecutive booking required.</p>
+            <h2 className="sc-section-title" data-sr>Pick Your Weeks</h2>
+            <p className="sc-section-hint" data-sr data-sr-delay="80">Mix and match any weeks — no consecutive booking required.</p>
           </div>
 
           <div className="sc-grid">
@@ -131,6 +130,7 @@ export default function SummerCamp() {
               className={`sc-week-card sc-week-card--select-all ${allSelected ? 'sc-week-card--selected' : ''}`}
               onClick={toggleAll}
               aria-pressed={allSelected}
+              data-sr data-sr-delay="100"
             >
               <div className="sc-card-top">
                 <span className={`sc-checkbox ${allSelected ? 'sc-checkbox--checked' : ''}`}>
@@ -157,7 +157,7 @@ export default function SummerCamp() {
               <p className="sc-stat-note sc-stat-note--featured">Best value</p>
             </button>
 
-            {WEEKS.map((week) => {
+            {WEEKS.map((week, i) => {
               const isSel = selected.has(week.id);
 
               return (
@@ -166,6 +166,7 @@ export default function SummerCamp() {
                   className={`sc-week-card ${isSel ? 'sc-week-card--selected' : ''} ${week.statHoliday ? 'sc-week-card--short' : ''}`}
                   onClick={() => toggle(week.id)}
                   aria-pressed={isSel}
+                  data-sr data-sr-delay={`${120 + i * 50}`}
                 >
                   <div className="sc-card-top">
                     <span className={`sc-checkbox ${isSel ? 'sc-checkbox--checked' : ''}`}>
@@ -203,8 +204,8 @@ export default function SummerCamp() {
 
         <section className="sc-info-strip">
           <div className="sc-section-header">
-            <p className="sc-eyebrow">What to Expect</p>
-            <h2 className="sc-section-title">Why Kids Love It</h2>
+            <p className="sc-eyebrow" data-sr>What to Expect</p>
+            <h2 className="sc-section-title" data-sr data-sr-delay="80">Why Kids Love It</h2>
           </div>
           <div className="sc-info-grid">
             {[
@@ -212,8 +213,8 @@ export default function SummerCamp() {
               { icon: '🏆', color: '#fbbf24', title: 'Structured Curriculum', body: 'Each week has its own theme, building skills progressively for well-rounded development.' },
               { icon: '👧', color: '#c084fc', title: 'Ages 7 – 12', body: 'Groups split by age and skill so every child is challenged at exactly the right pace.' },
               { icon: '🏅', color: '#4ade80', title: 'Expert Instructors', body: 'Certified, competition-tested coaches who genuinely love teaching kids in a safe, positive environment.' },
-            ].map(({ icon, color, title, body }) => (
-              <div className="sc-info-card" key={title} style={{ '--card-color': color }}>
+            ].map(({ icon, color, title, body }, i) => (
+              <div className="sc-info-card" key={title} style={{ '--card-color': color }} data-sr data-sr-delay={`${i * 100}`}>
                 <div className="sc-info-icon-wrap"><span className="sc-info-icon">{icon}</span></div>
                 <h3 className="sc-info-title">{title}</h3>
                 <p className="sc-info-body">{body}</p>
@@ -224,8 +225,8 @@ export default function SummerCamp() {
 
         <section className="sc-faq">
           <div className="sc-section-header">
-            <p className="sc-eyebrow">Got Questions?</p>
-            <h2 className="sc-section-title">Common Questions</h2>
+            <p className="sc-eyebrow" data-sr>Got Questions?</p>
+            <h2 className="sc-section-title" data-sr data-sr-delay="80">Common Questions</h2>
           </div>
           <div className="sc-faq-grid">
             {[
@@ -237,8 +238,8 @@ export default function SummerCamp() {
               ['Is lunch provided?', 'No — please pack a lunch and snacks for your child each day.'],
               ['My child has never done BJJ — is that okay?', 'Absolutely. Camp is designed for beginners. Coaches meet every child at their level.'],
               ['How many kids per group?', 'Groups are kept small so every child gets individual attention from our instructors.'],
-            ].map(([q, a]) => (
-              <div className="sc-faq-item" key={q}>
+            ].map(([q, a], i) => (
+              <div className="sc-faq-item" key={q} data-sr data-sr-delay={`${i * 60}`}>
                 <h4>{q}</h4>
                 <p>{a}</p>
               </div>
@@ -246,7 +247,7 @@ export default function SummerCamp() {
           </div>
         </section>
 
-        <div className="sc-bottom-cta">
+        <div className="sc-bottom-cta" data-sr>
           <div className="sc-bottom-cta-inner">
             <p className="sc-bottom-cta-label">Still have questions?</p>
             <p className="sc-bottom-cta-headline">Give us a call.</p>
