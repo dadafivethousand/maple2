@@ -17,7 +17,19 @@ export default function SummerCamp() {
   const [selected, setSelected] = useState(new Set());
   const [loading, setLoading] = useState(false);
   const [checkoutError, setCheckoutError] = useState(null);
+  const [gridVisible, setGridVisible] = useState(false);
   const pickerRef = useRef(null);
+  const gridRef = useRef(null);
+
+  useEffect(() => {
+    const el = gridRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) { setGridVisible(true); obs.disconnect(); }
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [campData]);
 
   useEffect(() => {
     fetch(`${WORKER}/summer-camp`)
@@ -125,12 +137,12 @@ export default function SummerCamp() {
             <p className="sc-section-hint" data-sr data-sr-delay="80">Mix and match any weeks — no consecutive booking required.</p>
           </div>
 
-          <div className="sc-grid">
+          <div className="sc-grid" ref={gridRef}>
             <button
-              className={`sc-week-card sc-week-card--select-all ${allSelected ? 'sc-week-card--selected' : ''}`}
+              className={`sc-week-card sc-week-card--select-all ${allSelected ? 'sc-week-card--selected' : ''}${gridVisible ? ' sc-flip-in' : ''}`}
+              style={gridVisible ? { animationDelay: '100ms' } : undefined}
               onClick={toggleAll}
               aria-pressed={allSelected}
-              data-sr="flip" data-sr-delay="100"
             >
               <div className="sc-card-top">
                 <span className={`sc-checkbox ${allSelected ? 'sc-checkbox--checked' : ''}`}>
@@ -163,10 +175,10 @@ export default function SummerCamp() {
               return (
                 <button
                   key={week.id}
-                  className={`sc-week-card ${isSel ? 'sc-week-card--selected' : ''} ${week.statHoliday ? 'sc-week-card--short' : ''}`}
+                  className={`sc-week-card ${isSel ? 'sc-week-card--selected' : ''} ${week.statHoliday ? 'sc-week-card--short' : ''}${gridVisible ? ' sc-flip-in' : ''}`}
+                  style={gridVisible ? { animationDelay: `${120 + i * 50}ms` } : undefined}
                   onClick={() => toggle(week.id)}
                   aria-pressed={isSel}
-                  data-sr="flip" data-sr-delay={`${120 + i * 50}`}
                 >
                   <div className="sc-card-top">
                     <span className={`sc-checkbox ${isSel ? 'sc-checkbox--checked' : ''}`}>
