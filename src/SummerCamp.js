@@ -130,7 +130,7 @@ export default function SummerCamp() {
               className={`sc-week-card sc-week-card--select-all ${allSelected ? 'sc-week-card--selected' : ''}`}
               onClick={toggleAll}
               aria-pressed={allSelected}
-              data-sr data-sr-delay="100"
+              data-sr="flip" data-sr-delay="100"
             >
               <div className="sc-card-top">
                 <span className={`sc-checkbox ${allSelected ? 'sc-checkbox--checked' : ''}`}>
@@ -166,7 +166,7 @@ export default function SummerCamp() {
                   className={`sc-week-card ${isSel ? 'sc-week-card--selected' : ''} ${week.statHoliday ? 'sc-week-card--short' : ''}`}
                   onClick={() => toggle(week.id)}
                   aria-pressed={isSel}
-                  data-sr data-sr-delay={`${120 + i * 50}`}
+                  data-sr="flip" data-sr-delay={`${120 + i * 50}`}
                 >
                   <div className="sc-card-top">
                     <span className={`sc-checkbox ${isSel ? 'sc-checkbox--checked' : ''}`}>
