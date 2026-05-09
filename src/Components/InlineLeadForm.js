@@ -166,7 +166,7 @@ export default function InlineLeadForm() {
                 onSuccess={(t) => { handleCaptchaSuccess(t); setErrorMsg(''); }}
                 onExpire={() => setCaptchaToken(null)}
                 onError={() => { setCaptchaToken(null); setErrorMsg('Security check failed. Please refresh the page and try again.'); }}
-                options={{ size: 'invisible' }}
+                options={{ size: 'invisible', retry: 'auto', retryInterval: 3000, refreshExpired: 'auto' }}
               />
             )}
 
