@@ -19,10 +19,17 @@ export default function LeadForm({ closebutton, inline = false }) {
   const [showInstructions, setShowInstructions] = useState(false);
   const [fadeOutCheck, setFadeOutCheck] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
-  const [isValid, setIsValid] = useState(false);
   const [userStarted, setUserStarted] = useState(false);
 
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  const cleanedPhone = formData.phone.replace(/\D/g, '');
+  const isValid =
+    formData.firstName.trim() !== '' &&
+    formData.lastName.trim() !== '' &&
+    validateEmail(formData.email) &&
+    cleanedPhone.length === 10 &&
+    Boolean(captchaToken);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,17 +43,6 @@ export default function LeadForm({ closebutton, inline = false }) {
       setFormData(p => ({ ...p, [name]: value }));
     }
   };
-
-  useEffect(() => {
-    const cleanedPhone = formData.phone.replace(/\D/g, '');
-    setIsValid(
-      formData.firstName.trim() !== '' &&
-      formData.lastName.trim() !== '' &&
-      validateEmail(formData.email) &&
-      cleanedPhone.length === 10 &&
-      Boolean(captchaToken)
-    );
-  }, [formData, captchaToken]);
 
   useEffect(() => {
     if (status !== 'success') return;

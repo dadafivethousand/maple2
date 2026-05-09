@@ -22,7 +22,6 @@ export default function InlineLeadForm() {
   const [showInstructions, setShowInstructions] = useState(false);
   const [fadeOutCheck, setFadeOutCheck] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
-  const [isValid, setIsValid] = useState(false);
   const [userStarted, setUserStarted] = useState(false);
 
   const handleCaptchaSuccess = (token) => setCaptchaToken(token);
@@ -44,16 +43,13 @@ export default function InlineLeadForm() {
     }
   };
 
-  useEffect(() => {
-    const cleanedPhone = formData.phone.replace(/\D/g, '');
-    const ok =
-      formData.firstName.trim() !== '' &&
-      formData.lastName.trim() !== '' &&
-      validateEmail(formData.email) &&
-      cleanedPhone.length === 10 &&
-      Boolean(captchaToken);
-    setIsValid(ok);
-  }, [formData, captchaToken]);
+  const cleanedPhone = formData.phone.replace(/\D/g, '');
+  const isValid =
+    formData.firstName.trim() !== '' &&
+    formData.lastName.trim() !== '' &&
+    validateEmail(formData.email) &&
+    cleanedPhone.length === 10 &&
+    Boolean(captchaToken);
 
   useEffect(() => {
     if (status !== 'success') return;
