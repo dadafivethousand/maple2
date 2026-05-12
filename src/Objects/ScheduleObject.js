@@ -41,11 +41,11 @@
     { name: "BJJ - NoGi", start: 19, end: 21 },
  
   ],
-  Saturday: [ 
- 
-    { name: "Muay-Thai", start: 12, end: 13},
-       { name: "Wrestling", start: 13, end: 14},
-    { name: "Open Mat", start: 14, end: 15}
+  Saturday: [
+    { name: "Kids Muay Thai", start: 12, end: 13},
+    { name: "Muay-Thai", start: 13, end: 14},
+    { name: "Wrestling", start: 14, end: 15},
+    { name: "Open Mat", start: 15, end: 16}
   ]
   
  
