@@ -52,13 +52,12 @@ const PALETTE = {
 const paintFor = (name = '') => {
   if (/open\s*mat/i.test(name)) return PALETTE.openmat;
   if (/no[ -]?gi|nogi/i.test(name)) return PALETTE.nogi;
-  if (/\bgi\b|bjj/i.test(name)) return PALETTE.gi;
   if (/kids\s*mt\b/i.test(name)) return PALETTE.kidsmt;
+  if (/\bkids?\b|youth|junior|teen/i.test(name)) return PALETTE.kids;
+  if (/\bgi\b|bjj/i.test(name)) return PALETTE.gi;
   if (/muay|thai|striking/i.test(name)) return PALETTE.muay;
   if (/wrestling|freestyle|folkstyle|greco/i.test(name)) return PALETTE.wrestling;
   if (/\bmma\b/i.test(name)) return PALETTE.mma;
-  if (/\bkids?\b|youth|junior|teen/i.test(name)) return PALETTE.kids;
-  if (/fundamentals?|basics?|intro/i.test(name)) return PALETTE.fundamentals;
   return PALETTE.default;
 };
 
