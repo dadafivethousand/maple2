@@ -41,6 +41,7 @@ const PALETTE = {
   wrestling: { bg: '#D3B3FF' }, // lavender
   mma:       { bg: '#FF9AA8' }, // coral pink
   kids:      { bg: '#FFE38A' }, // sunny yellow
+  kidsmt:    { bg: '#FFA97A' }, // warm orange
   openmat:   { bg: '#6fdee2ff' }, // periwinkle
  };
 
@@ -52,6 +53,7 @@ const paintFor = (name = '') => {
   if (/open\s*mat/i.test(name)) return PALETTE.openmat;
   if (/no[ -]?gi|nogi/i.test(name)) return PALETTE.nogi;
   if (/\bgi\b|bjj/i.test(name)) return PALETTE.gi;
+  if (/kids\s*mt\b/i.test(name)) return PALETTE.kidsmt;
   if (/muay|thai|striking/i.test(name)) return PALETTE.muay;
   if (/wrestling|freestyle|folkstyle|greco/i.test(name)) return PALETTE.wrestling;
   if (/\bmma\b/i.test(name)) return PALETTE.mma;
