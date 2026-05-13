@@ -583,8 +583,8 @@
   box-shadow: inset 0 1px 0 rgba(125,211,252,.18), 0 1px 4px rgba(0,0,0,.3);
 }
 
-/* Half day active — gold accent */
-.sc-week-card--selected .sc-day-opt:last-child.sc-day-opt--active {
+/* Half day (AM/PM) active — gold accent */
+.sc-day-opt--half.sc-day-opt--active {
   background: rgba(251,191,36,.14);
   color: #fbbf24;
   box-shadow: inset 0 1px 0 rgba(251,191,36,.18), 0 1px 4px rgba(0,0,0,.3);
