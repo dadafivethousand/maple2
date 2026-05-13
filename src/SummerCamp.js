@@ -76,7 +76,7 @@ export default function SummerCamp() {
   );
 
   const weekPrice = (week, dayType = 'full') => {
-    if (dayType === 'morning' || dayType === 'afternoon') {
+    if (dayType === 'half') {
       const base = week.halfDayPriceOverride != null ? week.halfDayPriceOverride / 100 : PRICE_HALF;
       return allSelected ? base * (1 - DISCOUNT) : base;
     }
@@ -163,7 +163,7 @@ export default function SummerCamp() {
             </div>
             <div className="sc-legend-item">
               <span className="sc-legend-dot sc-legend-dot--half" />
-              <span><strong>Half Day</strong> — 8:30 AM – 12:30 PM &nbsp;or&nbsp; 12:30 PM – 4:30 PM · $189.99 + HST</span>
+              <span><strong>Half Day</strong> — AM (8:30–12:30) or PM (12:30–4:30) · $189.99 + HST</span>
             </div>
           </div>
 
@@ -224,21 +224,18 @@ export default function SummerCamp() {
                         className={`sc-day-opt ${dayType === 'full' ? 'sc-day-opt--active' : ''}`}
                         onClick={() => setDayType(week.id, 'full')}
                       >
-                        Full
+                        Full Day
                       </button>
                       <button
-                        className={`sc-day-opt ${dayType === 'morning' ? 'sc-day-opt--active sc-day-opt--half' : ''}`}
-                        onClick={() => setDayType(week.id, 'morning')}
+                        className={`sc-day-opt ${dayType === 'half' ? 'sc-day-opt--active sc-day-opt--half' : ''}`}
+                        onClick={() => setDayType(week.id, 'half')}
                       >
-                        AM
-                      </button>
-                      <button
-                        className={`sc-day-opt ${dayType === 'afternoon' ? 'sc-day-opt--active sc-day-opt--half' : ''}`}
-                        onClick={() => setDayType(week.id, 'afternoon')}
-                      >
-                        PM
+                        Half Day
                       </button>
                     </div>
+                  )}
+                  {isSel && dayType === 'half' && (
+                    <p className="sc-half-day-note">AM or PM — your choice</p>
                   )}
 
                   <p className="sc-week-price">
@@ -286,7 +283,7 @@ export default function SummerCamp() {
           <div className="sc-faq-grid">
             {[
               ['Do I need to register for consecutive weeks?', 'No — pick any combination. Mix and match as freely as you like.'],
-              ['What is the difference between full day and half day?', 'Full day runs 8:30 AM to 4:30 PM. Half day is either the morning (8:30 AM – 12:30 PM) or afternoon (12:30 PM – 4:30 PM) — your choice, same price. You can pick per week.'],
+              ['What is the difference between full day and half day?', 'Full day runs 8:30 AM to 4:30 PM. Half day is either the morning (8:30 AM – 12:30 PM) or afternoon (12:30 PM – 4:30 PM) — your choice when you arrive. Same price either way.'],
               ['What should my child wear?', 'A gi (kimono) is required along with comfortable athletic clothing.'],
               ['What is the cancellation policy?', 'Full refund if cancelled 7+ days before the week starts. No refunds within 7 days.'],
               ['Where is camp held?', 'Maple Jiu-Jitsu Academy, 20 Cranston Park Ave, Maple, ON.'],
