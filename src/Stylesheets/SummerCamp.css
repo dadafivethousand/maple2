@@ -285,6 +285,35 @@
 }
 
 /* ─────────────────────────────────────────────────────
+   PRICING LEGEND
+   ───────────────────────────────────────────────────── */
+.sc-pricing-legend {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin: 0 0 24px;
+}
+
+.sc-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  color: rgba(186,230,253,.70);
+}
+
+.sc-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.sc-legend-dot--full  { background: #7dd3fc; box-shadow: 0 0 6px rgba(125,211,252,.5); }
+.sc-legend-dot--half  { background: #fbbf24; box-shadow: 0 0 6px rgba(251,191,36,.5); }
+
+/* ─────────────────────────────────────────────────────
    WEEK GRID + CARDS
    ───────────────────────────────────────────────────── */
 .sc-grid {
@@ -514,6 +543,56 @@
   text-transform: uppercase;
   color: rgba(224, 242, 254, 0.56);
   line-height: 1.1;
+}
+
+/* ─────────────────────────────────────────────────────
+   FULL / HALF DAY TOGGLE
+   ───────────────────────────────────────────────────── */
+.sc-day-toggle {
+  display: flex;
+  gap: 4px;
+  width: 100%;
+  background: rgba(0,0,0,.28);
+  border-radius: 9px;
+  padding: 3px;
+  margin: 8px 0 4px;
+  position: relative;
+  z-index: 2;
+}
+
+.sc-day-opt {
+  flex: 1;
+  padding: 6px 4px;
+  border-radius: 7px;
+  font-size: 9.5px;
+  font-weight: 700;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: rgba(186,230,253,.38);
+  transition: background .15s ease, color .15s ease, box-shadow .15s ease;
+  line-height: 1;
+}
+
+.sc-day-opt--active {
+  background: rgba(125,211,252,.14);
+  color: #7dd3fc;
+  box-shadow: inset 0 1px 0 rgba(125,211,252,.18), 0 1px 4px rgba(0,0,0,.3);
+}
+
+/* Half day active — gold accent */
+.sc-week-card--selected .sc-day-opt:last-child.sc-day-opt--active {
+  background: rgba(251,191,36,.14);
+  color: #fbbf24;
+  box-shadow: inset 0 1px 0 rgba(251,191,36,.18), 0 1px 4px rgba(0,0,0,.3);
+}
+
+.sc-day-opt:hover:not(.sc-day-opt--active) {
+  color: rgba(186,230,253,.65);
+  background: rgba(255,255,255,.05);
 }
 
 .sc-stat-note {

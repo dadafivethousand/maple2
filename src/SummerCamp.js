@@ -8,13 +8,13 @@ function fmt12(t) {
 }
 import './Stylesheets/SummerCamp.css';
 import Navbar from './Navbar';
-import campHeroImg from './Media/IMG_0640.webp';
 
 const WORKER = 'https://worker-consolidated.maxli5004.workers.dev';
 
 export default function SummerCamp() {
   const [campData, setCampData] = useState(null);
-  const [selected, setSelected] = useState(new Set());
+  // Map<weekId, 'full' | 'half'>
+  const [selected, setSelected] = useState(new Map());
   const [loading, setLoading] = useState(false);
   const [checkoutError, setCheckoutError] = useState(null);
   const [gridVisible, setGridVisible] = useState(false);
@@ -51,27 +51,42 @@ export default function SummerCamp() {
   }
 
   const WEEKS = campData.weeks.filter(w => w.active);
-  const PRICE_PER_WEEK = campData.pricePerWeek / 100;
+  const PRICE_FULL = campData.pricePerWeek / 100;
+  const PRICE_HALF = campData.halfDayPrice / 100;
   const DISCOUNT = campData.bulkDiscount;
-  const ALL_IDS = new Set(WEEKS.map(w => w.id));
+  const ALL_IDS = WEEKS.map(w => w.id);
   const allSelected = selected.size === WEEKS.length;
 
-  const toggle = (id) =>
-    setSelected(prev => {
-      const next = new Set(prev);
-      next.has(id) ? next.delete(id) : next.add(id);
-      return next;
-    });
+  const toggle = (id) => setSelected(prev => {
+    const next = new Map(prev);
+    if (next.has(id)) next.delete(id);
+    else next.set(id, 'full');
+    return next;
+  });
 
-  const toggleAll = () => setSelected(allSelected ? new Set() : new Set(ALL_IDS));
+  const setDayType = (id, type) => setSelected(prev => {
+    const next = new Map(prev);
+    next.set(id, type);
+    return next;
+  });
 
-  const weekPrice = (week) => {
-    const base = week.priceOverride != null ? week.priceOverride / 100 : PRICE_PER_WEEK;
+  const toggleAll = () => setSelected(allSelected
+    ? new Map()
+    : new Map(ALL_IDS.map(id => [id, 'full']))
+  );
+
+  const weekPrice = (week, dayType = 'full') => {
+    if (dayType === 'half') {
+      return allSelected ? PRICE_HALF * (1 - DISCOUNT) : PRICE_HALF;
+    }
+    const base = week.priceOverride != null ? week.priceOverride / 100 : PRICE_FULL;
     return allSelected ? base * (1 - DISCOUNT) : base;
   };
 
-  const selectedWeeks = WEEKS.filter(w => selected.has(w.id));
-  const total = selectedWeeks.reduce((sum, w) => sum + weekPrice(w), 0);
+  const selectedEntries = WEEKS
+    .filter(w => selected.has(w.id))
+    .map(w => ({ week: w, dayType: selected.get(w.id) }));
+  const total = selectedEntries.reduce((sum, { week, dayType }) => sum + weekPrice(week, dayType), 0);
 
   const handleCheckout = async () => {
     if (selected.size === 0) return;
@@ -82,7 +97,9 @@ export default function SummerCamp() {
       const res = await fetch(`${WORKER}/summer-camp-purchase`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ weekIds: Array.from(selected) }),
+        body: JSON.stringify({
+          weeks: Array.from(selected.entries()).map(([id, dayType]) => ({ id, dayType })),
+        }),
       });
 
       const data = await res.json();
@@ -134,10 +151,23 @@ export default function SummerCamp() {
         <section className="sc-section" ref={pickerRef}>
           <div className="sc-section-header">
             <h2 className="sc-section-title" data-sr>Pick Your Weeks</h2>
-            <p className="sc-section-hint" data-sr data-sr-delay="80">Mix and match any weeks — no consecutive booking required.</p>
+            <p className="sc-section-hint" data-sr data-sr-delay="80">Mix and match any weeks — choose full day or half day per week.</p>
+          </div>
+
+          {/* Pricing legend */}
+          <div className="sc-pricing-legend" data-sr data-sr-delay="120">
+            <div className="sc-legend-item">
+              <span className="sc-legend-dot sc-legend-dot--full" />
+              <span><strong>Full Day</strong> — 8:30 AM to 4:30 PM · $299.99 + HST</span>
+            </div>
+            <div className="sc-legend-item">
+              <span className="sc-legend-dot sc-legend-dot--half" />
+              <span><strong>Half Day</strong> — 8:30 AM to 12:30 PM · $180.00 + HST</span>
+            </div>
           </div>
 
           <div className="sc-grid" ref={gridRef}>
+            {/* Select All */}
             <button
               className={`sc-week-card sc-week-card--select-all ${allSelected ? 'sc-week-card--selected' : ''}${gridVisible ? ' sc-flip-in' : ''}`}
               style={gridVisible ? { animationDelay: '100ms' } : undefined}
@@ -148,19 +178,12 @@ export default function SummerCamp() {
                 <span className={`sc-checkbox ${allSelected ? 'sc-checkbox--checked' : ''}`}>
                   {allSelected && (
                     <svg viewBox="0 0 12 12" fill="none">
-                      <path
-                        d="M2 6l3 3 5-5"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
+                      <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   )}
                 </span>
                 <span className="sc-week-num">{WEEKS.length} weeks</span>
               </div>
-
               <p className="sc-week-dates">FULL SUMMER</p>
               <p className="sc-week-price">
                 15% OFF
@@ -171,6 +194,7 @@ export default function SummerCamp() {
 
             {WEEKS.map((week, i) => {
               const isSel = selected.has(week.id);
+              const dayType = selected.get(week.id) || 'full';
 
               return (
                 <button
@@ -184,13 +208,7 @@ export default function SummerCamp() {
                     <span className={`sc-checkbox ${isSel ? 'sc-checkbox--checked' : ''}`}>
                       {isSel && (
                         <svg viewBox="0 0 12 12" fill="none">
-                          <path
-                            d="M2 6l3 3 5-5"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
+                          <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       )}
                     </span>
@@ -198,8 +216,26 @@ export default function SummerCamp() {
                   </div>
 
                   <p className="sc-week-dates">{week.displayDates}</p>
+
+                  {isSel && (
+                    <div className="sc-day-toggle" onClick={e => e.stopPropagation()}>
+                      <button
+                        className={`sc-day-opt ${dayType === 'full' ? 'sc-day-opt--active' : ''}`}
+                        onClick={() => setDayType(week.id, 'full')}
+                      >
+                        Full Day
+                      </button>
+                      <button
+                        className={`sc-day-opt ${dayType === 'half' ? 'sc-day-opt--active' : ''}`}
+                        onClick={() => setDayType(week.id, 'half')}
+                      >
+                        Half Day
+                      </button>
+                    </div>
+                  )}
+
                   <p className="sc-week-price">
-                    ${weekPrice(week).toFixed(2)}
+                    ${weekPrice(week, dayType).toFixed(2)}
                     <span className="sc-week-tax">+ HST</span>
                   </p>
 
@@ -243,12 +279,12 @@ export default function SummerCamp() {
           <div className="sc-faq-grid">
             {[
               ['Do I need to register for consecutive weeks?', 'No — pick any combination. Mix and match as freely as you like.'],
+              ['What is the difference between full day and half day?', 'Full day runs 8:30 AM to 4:30 PM. Half day runs 8:30 AM to 12:30 PM. You can choose per week.'],
               ['What should my child wear?', 'A gi (kimono) is required along with comfortable athletic clothing.'],
               ['What is the cancellation policy?', 'Full refund if cancelled 7+ days before the week starts. No refunds within 7 days.'],
               ['Where is camp held?', 'Maple Jiu-Jitsu Academy, 20 Cranston Park Ave, Maple, ON.'],
-              ['What time is drop-off and pick-up?', 'Drop-off 8:30 am, pick-up 4:30 pm — Monday through Friday.'],
+              ['What time is drop-off and pick-up?', 'Drop-off 8:30 am, pick-up 4:30 pm (full day) or 12:30 pm (half day) — Monday through Friday.'],
               ['Is lunch provided?', 'No — please pack a lunch and snacks for your child each day.'],
-              ['My child has never done BJJ — is that okay?', 'Absolutely. Camp is designed for beginners. Coaches meet every child at their level.'],
               ['How many kids per group?', 'Groups are kept small so every child gets individual attention from our instructors.'],
             ].map(([q, a], i) => (
               <div className="sc-faq-item" key={q} data-sr data-sr-delay={`${i * 60}`}>
