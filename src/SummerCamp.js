@@ -163,7 +163,7 @@ export default function SummerCamp() {
             </div>
             <div className="sc-legend-item">
               <span className="sc-legend-dot sc-legend-dot--half" />
-              <span><strong>Half Day</strong> — 8:30 AM – 12:30 PM &nbsp;or&nbsp; 12:30 PM – 4:30 PM · $179.99 + HST</span>
+              <span><strong>Half Day</strong> — 8:30 AM – 12:30 PM &nbsp;or&nbsp; 12:30 PM – 4:30 PM · $189.99 + HST</span>
             </div>
           </div>
 
