@@ -218,25 +218,30 @@ export default function SummerCamp() {
 
                   <p className="sc-week-dates">{week.displayDates}</p>
 
-                  {isSel && (
-                    <div className="sc-day-toggle" onClick={e => e.stopPropagation()}>
-                      <button
-                        className={`sc-day-opt ${dayType === 'full' ? 'sc-day-opt--active' : ''}`}
-                        onClick={() => setDayType(week.id, 'full')}
-                      >
-                        Full Day
-                      </button>
-                      <button
-                        className={`sc-day-opt ${dayType === 'half' ? 'sc-day-opt--active sc-day-opt--half' : ''}`}
-                        onClick={() => setDayType(week.id, 'half')}
-                      >
-                        Half Day
-                      </button>
-                    </div>
-                  )}
-                  {isSel && dayType === 'half' && (
-                    <p className="sc-half-day-note">AM or PM — your choice</p>
-                  )}
+                  <div
+                    className="sc-day-toggle"
+                    style={isSel ? undefined : { visibility: 'hidden', pointerEvents: 'none' }}
+                    onClick={e => e.stopPropagation()}
+                  >
+                    <button
+                      className={`sc-day-opt ${dayType === 'full' ? 'sc-day-opt--active' : ''}`}
+                      onClick={() => setDayType(week.id, 'full')}
+                    >
+                      Full Day
+                    </button>
+                    <button
+                      className={`sc-day-opt ${dayType === 'half' ? 'sc-day-opt--active sc-day-opt--half' : ''}`}
+                      onClick={() => setDayType(week.id, 'half')}
+                    >
+                      Half Day
+                    </button>
+                  </div>
+                  <p
+                    className="sc-half-day-note"
+                    style={isSel && dayType === 'half' ? undefined : { visibility: 'hidden' }}
+                  >
+                    AM or PM — your choice
+                  </p>
 
                   <p className="sc-week-price">
                     ${weekPrice(week, dayType).toFixed(2)}
