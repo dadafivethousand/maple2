@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import './Stylesheets/Blog.css';
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Navbar from "./Navbar";
 
 export default function Blog() {
@@ -35,6 +36,15 @@ export default function Blog() {
 
   return (
     <>
+      <Helmet>
+        <title>BJJ Blog — Training Tips & Martial Arts Insights | Maple Jiu-Jitsu Academy</title>
+        <meta name="description" content="Training tips, academy news, and BJJ insights from Maple Jiu-Jitsu Academy in Maple, Ontario. Brazilian Jiu-Jitsu, Muay Thai, Wrestling, and MMA articles." />
+        <link rel="canonical" href="https://maplebjj.com/blog" />
+        <meta property="og:title" content="BJJ Blog — Training Tips & Martial Arts Insights | Maple Jiu-Jitsu Academy" />
+        <meta property="og:description" content="Training tips, academy news, and BJJ insights from Maple Jiu-Jitsu Academy in Maple, Ontario." />
+        <meta property="og:url" content="https://maplebjj.com/blog" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <Navbar />
       <div className="blog-container">
         <div className="blog-header">

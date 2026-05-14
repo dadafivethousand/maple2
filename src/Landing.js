@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Helmet } from 'react-helmet-async'
 import './Stylesheets/Landing.css'
 import LeadForm from './LeadForm'
 import Coaches from './Coaches'
@@ -33,6 +34,9 @@ export default function Landing() {
 
   return (
     <div className="landing-page">
+      <Helmet>
+        <link rel="preload" as="image" href={t1} type="image/webp" />
+      </Helmet>
       <section className="landing-hero">
         {/* Photo ticker - sits behind the form */}
         <div className="hero-ticker" aria-hidden="true">
@@ -51,7 +55,7 @@ export default function Landing() {
          {/* <AwardWidget2 /> */}
 
         <div className="hero-title">
-          <h2 className="hero-name">Maple Jiu-Jitsu</h2>
+          <h1 className="hero-name">Maple Jiu-Jitsu</h1>
           <p className="hero-pretitle">20 Cranston Park Ave, Maple, ON</p>
           <p className="hero-disciplines">BJJ · Muay Thai · Wrestling · MMA</p>
         </div>

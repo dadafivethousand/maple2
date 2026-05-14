@@ -33,10 +33,10 @@ function App() {
       <Router>
         <div className="App">
           <Helmet>
-            <title>Maple Jiu-Jitsu Academy</title>
+            <title>Maple Jiu-Jitsu Academy | Free Trial — Maple, ON</title>
             <meta
               name="description"
-              content="Join Maple Jiu-Jitsu Academy and embark on your Brazilian Jiu-Jitsu journey."
+              content="Try your first week free. Maple Jiu-Jitsu Academy in Maple, Ontario offers Brazilian Jiu-Jitsu, Muay Thai, and Wrestling for all ages and skill levels."
             />
           </Helmet>
 
