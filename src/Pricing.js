@@ -4,17 +4,17 @@ import './Stylesheets/SectionHeading.css';
 import { useState, useEffect, useRef } from 'react';
 
 const formatCurrency = (amount) =>
-  new Intl.NumberFormat('en-US', {
+  new Intl.NumberFormat('en-CA', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'CAD',
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   }).format(amount / 100);
 
 const formatSavings = (cents) =>
-  new Intl.NumberFormat('en-US', {
+  new Intl.NumberFormat('en-CA', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'CAD',
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   }).format(cents / 100);
