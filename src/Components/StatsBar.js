@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import '../Stylesheets/StatsBar.css';
 
 const STATS = [
-  { target: 250, suffix: '+', label: 'Students Trained' },
-  { target: 100, suffix: '+', label: '5-Star Google Reviews' },
+  { target: 350, suffix: '+', label: 'Students Trained' },
+  { target: 110, suffix: '+', label: '5-Star Google Reviews' },
   { target: 3,   suffix: '',  label: 'Ontario Champions' },
 ];
 
