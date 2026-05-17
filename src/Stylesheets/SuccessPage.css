@@ -1,86 +1,156 @@
-/* SuccessPage.css */
+/* ── Payment Success — Maple ── */
+*, *::before, *::after { box-sizing: border-box; }
 
 .success-page {
-    background: #ffffff;       /* same cream as your site */
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .success-content {
-    text-align: center;
-  }
-  
-  .checkmark {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 20px;
-  }
-  
-  .checkmark__circle {
-    stroke: var(--primary-color);
-    stroke-width: 2;
-    stroke-dasharray: 157;     /* ≈2π·r */
-    stroke-dashoffset: 157;
-    animation: draw-circle 0.6s ease-out forwards;
-  }
-  
-  .checkmark__tick {
-    stroke:   var(--primary-color);
-    stroke-width: 4;
-    stroke-linecap: round;
-    stroke-dasharray: 48;      /* approx length of path */
-    stroke-dashoffset: 48;
-    animation: draw-tick 0.3s ease-out 0.6s forwards;
-  }
-  
-  @keyframes draw-circle {
-    to { stroke-dashoffset: 0; }
-  }
-  
-  @keyframes draw-tick {
-    to { stroke-dashoffset: 0; }
-  }
-  
-  .success-content h1 {
-    font-family: 'Cinzel', serif;  /* or whatever you use */
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-        font-family: roboto condensed;
-  }
-  
-  .success-content p {
-    margin-bottom: 1.5rem;
-    color: var(--primary-color);
-    font-family: roboto condensed;
-  }
-  
-  .success-content a {
-    background: var(--primary-color);
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: opacity 0.2s;
-    border-radius: 10px;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.443);
-        font-family: roboto condensed;
-  }
-  
-  .success-content button:hover {
-    opacity: 0.8;
-  }
-  
+  min-height: 100vh;
+  background: #021336;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, 'Roboto Condensed', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
 
-  .pmt-successful{
-    color: var(--primary-color);
-  }
+/* Diagonal stripe texture */
+.success-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -52deg,
+    transparent 0px,
+    transparent 48px,
+    rgba(255,255,255,0.015) 48px,
+    rgba(255,255,255,0.015) 49px
+  );
+  pointer-events: none;
+}
 
-  .back-button{
-    position: relative;
-    top:20px
-  }
+/* Radial glow */
+.success-page::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 42%, rgba(16,185,129,0.08) 0%, transparent 68%);
+  pointer-events: none;
+}
+
+.success-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 48px 32px;
+  max-width: 520px;
+  width: 100%;
+  animation: spFadeUp 0.55s cubic-bezier(0.16,1,0.3,1) both;
+}
+
+@keyframes spFadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Logo */
+.success-content .sp-logo {
+  width: min(160px, 60%);
+  margin-bottom: 40px;
+  opacity: 0.88;
+  filter: drop-shadow(0 4px 18px rgba(0,0,0,0.4));
+}
+
+/* Checkmark */
+.checkmark {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 32px;
+  filter: drop-shadow(0 0 24px rgba(16,185,129,0.35));
+}
+
+.checkmark__circle {
+  stroke: rgba(16,185,129,0.35);
+  stroke-width: 2;
+  stroke-dasharray: 157;
+  stroke-dashoffset: 157;
+  animation: spCircle 0.65s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+
+.checkmark__tick {
+  stroke: #10b981;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: spTick 0.38s cubic-bezier(0.16,1,0.3,1) 0.55s forwards;
+}
+
+@keyframes spCircle { to { stroke-dashoffset: 0; } }
+@keyframes spTick   { to { stroke-dashoffset: 0; } }
+
+/* Heading */
+.success-content h1 {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin: 0 0 16px;
+  line-height: 1.1;
+}
+
+/* Divider */
+.sp-divider {
+  width: 40px;
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+  margin: 0 auto 20px;
+}
+
+/* Body text */
+.success-content p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.58);
+  margin: 0 0 8px;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+.success-content p:first-of-type {
+  color: rgba(255,255,255,0.75);
+  font-weight: 500;
+}
+
+/* CTA button */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding: 0 32px;
+  height: 52px;
+  border-radius: 14px;
+  background: #fff;
+  color: #021336;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 90ms ease, box-shadow 140ms ease, opacity 140ms ease;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.28);
+}
+
+.back-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.34);
+}
+
+.back-button:active {
+  transform: translateY(1px);
+  opacity: 0.9;
+}
