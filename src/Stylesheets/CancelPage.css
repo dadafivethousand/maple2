@@ -1,6 +1,12 @@
 /* ── Payment Cancel — Maple ── */
 *, *::before, *::after { box-sizing: border-box; }
 
+html:has(.cancel-page),
+body:has(.cancel-page) {
+  padding-top: 0 !important;
+  background: #021336;
+}
+
 .cancel-page {
   min-height: 100vh;
   background: #021336;
