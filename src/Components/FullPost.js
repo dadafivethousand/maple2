@@ -12,7 +12,7 @@ export default function FullPost() {
   useEffect(() => {
     async function fetchPost() {
       try {
-        const res = await fetch(`https://worker-consolidated.maxli5004.workers.dev/full-blog/${slug}`);
+        const res = await fetch(`https://worker-consolidated.maxli5004.workers.dev/full-blog/${slug}`, { headers: { "x-maple": "true" } });
         const data = await res.json();
         setPost(data);
       } catch (err) {
