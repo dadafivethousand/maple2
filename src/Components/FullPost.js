@@ -58,11 +58,18 @@ export default function FullPost() {
             "description": postDescription,
             "url": postUrl,
             "datePublished": post.date,
+            "dateModified": post.date,
+            "author": {
+              "@type": "Organization",
+              "name": "Maple Jiu-Jitsu Academy",
+              "url": "https://maplebjj.com"
+            },
             "publisher": {
               "@type": "Organization",
               "name": "Maple Jiu-Jitsu Academy",
               "url": "https://maplebjj.com"
-            }
+            },
+            ...(post.image ? { "image": post.image } : {})
           })}</script>
         </Helmet>
 
