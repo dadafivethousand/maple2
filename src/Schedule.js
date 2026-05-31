@@ -8,7 +8,7 @@ import KidsScheduleWidget from './Components/KidsScheduleWidget';
 import bluelogo from "./Media/blue-logo.webp"
 
 // Config: Pixels per hour
-const PIXELS_PER_HOUR = 38;
+const PIXELS_PER_HOUR = 47;
 
 // Utility function to convert 24-hour time to AM/PM
 const dontConvertToAmPm = (time) => {
