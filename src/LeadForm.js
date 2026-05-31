@@ -5,6 +5,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Turnstile } from '@marsidev/react-turnstile';
 import { useAppContext } from "./AppContext";
 import whitelogo from "./Media/whitelogonobg.webp";
+import smartwaiverLogo from "./Media/smartwaiver_logo.webp";
 import AnimatedCheckmark from './Components/AnimatedCheckmark';
 import TypewriterCycle from './Utils/Typewriter';
 import Badge from './Components/Badge';
@@ -102,19 +103,26 @@ export default function LeadForm({ closebutton, inline = false }) {
             ) : (
               <>
                 <p className="lf-success-title">
-                  <TypewriterCycle speed={45} startDelay={0}>Your next steps...</TypewriterCycle>
+                  <TypewriterCycle speed={45} startDelay={0}>You're all set!</TypewriterCycle>
                 </p>
-                <ol className="lf-steps-list">
-                  <li className="lf-step slide-in" style={{ '--delay': '1.2s' }}>
-                    Sign the{' '}
-                    <a target="_blank" rel="noopener noreferrer" href="https://waiver.smartwaiver.com/w/dj188118umjqr7iwcr7jfq/web/">
-                      waiver
-                    </a>
-                  </li>
-                  <li className="lf-step slide-in" style={{ '--delay': '1.6s' }}>Check the class schedule</li>
-                  <li className="lf-step slide-in" style={{ '--delay': '2.0s' }}>Attend any classes you want</li>
-                </ol>
-                <img className="lf-success-logo fade-in-late" style={{ '--delay': '3.0s' }} src={whitelogo} alt="Maple Jiu-Jitsu" />
+                <p className="lf-success-sub slide-in" style={{ '--delay': '0.9s' }}>
+                  Just show up to any class — no booking needed. One last thing before you come in:
+                </p>
+                <a
+                  className="lf-waiver-btn slide-in"
+                  style={{ '--delay': '1.5s' }}
+                  href="https://waiver.smartwaiver.com/w/dj188118umjqr7iwcr7jfq/web/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img className="lf-waiver-logo" src={smartwaiverLogo} alt="Smartwaiver" />
+                  <span className="lf-waiver-text">
+                    <span className="lf-waiver-cta">Sign the Waiver</span>
+                    <span className="lf-waiver-sub">Tap to complete — takes 1 minute</span>
+                  </span>
+                  <span className="lf-waiver-arrow">→</span>
+                </a>
+                <img className="lf-success-logo fade-in-late" style={{ '--delay': '3.2s' }} src={whitelogo} alt="Maple Jiu-Jitsu" />
               </>
             )}
           </div>
