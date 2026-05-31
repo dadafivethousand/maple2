@@ -107,7 +107,7 @@ export default function LeadForm({ closebutton, inline = false }) {
                   <TypewriterCycle speed={45} startDelay={0}>One step left —</TypewriterCycle>
                 </p>
                 <p className="lf-success-sub slide-in" style={{ '--delay': '0.9s' }}>
-                  You must sign the waiver before your first class. No waiver, no training — it only takes a minute.
+                  Sign the waiver and then show up to any class!
                 </p>
                 <a
                   className="lf-waiver-btn slide-in"
