@@ -29,7 +29,8 @@ const convertToAmPm = (time) => {
 
 // Time blocks to remove (example: between 9-11 AM and 1:30-3:30 PM)
 const timeBlocksToRemove = [
-  { start: 8.5, end: 12 },    // gap after morning class, before Saturday noon classes
+  { start: 8.5, end: 11.5 },  // compress morning gap — leaves ~30min visible before noon
+  { start: 16.5, end: 17 },   // compress afternoon gap — leaves ~30min visible before 5pm
 ];
 
 // NEW: tiny palette + detector (background only + inset bar; no layout impact)
