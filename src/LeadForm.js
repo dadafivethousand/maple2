@@ -21,6 +21,7 @@ export default function LeadForm({ closebutton, inline = false }) {
   const [fadeOutCheck, setFadeOutCheck] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
   const [userStarted, setUserStarted] = useState(false);
+  const [waiverClicked, setWaiverClicked] = useState(false);
 
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
@@ -84,11 +85,11 @@ export default function LeadForm({ closebutton, inline = false }) {
   if (inline) return <InlineLeadForm />;
 
   return (
-    <div className="modal-backdrop" onClick={(e) => e.target === e.currentTarget && setShowForm(false)}>
+    <div className="modal-backdrop" onClick={(e) => { if (e.target !== e.currentTarget) return; if (status !== 'success' || waiverClicked) setShowForm(false); }}>
       <div className={`modal-card ${status === 'success' ? 'modal-card--success' : ''}`}>
 
-        {/* close */}
-        {closebutton && (
+        {/* close — hidden on success screen until waiver tapped */}
+        {closebutton && (status !== 'success' || waiverClicked) && (
           <button className="modal-close" onClick={() => setShowForm(false)} aria-label="Close">
             <FontAwesomeIcon icon={faTimes} />
           </button>
@@ -103,10 +104,10 @@ export default function LeadForm({ closebutton, inline = false }) {
             ) : (
               <>
                 <p className="lf-success-title">
-                  <TypewriterCycle speed={45} startDelay={0}>You're all set!</TypewriterCycle>
+                  <TypewriterCycle speed={45} startDelay={0}>One step left —</TypewriterCycle>
                 </p>
                 <p className="lf-success-sub slide-in" style={{ '--delay': '0.9s' }}>
-                  Just show up to any class — no booking needed. One last thing before you come in:
+                  You must sign the waiver before your first class. No waiver, no training — it only takes a minute.
                 </p>
                 <a
                   className="lf-waiver-btn slide-in"
@@ -114,6 +115,7 @@ export default function LeadForm({ closebutton, inline = false }) {
                   href="https://waiver.smartwaiver.com/w/dj188118umjqr7iwcr7jfq/web/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => setWaiverClicked(true)}
                 >
                   <img className="lf-waiver-logo" src={smartwaiverLogo} alt="Smartwaiver" />
                   <span className="lf-waiver-text">
