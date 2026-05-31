@@ -87,6 +87,7 @@
 
 /* ---- Title ---- */
 #post-title {
+  display: block;
   font-family: 'Oswald', sans-serif;
   font-size: clamp(24px, 3.5vw, 40px);
   font-weight: 700;

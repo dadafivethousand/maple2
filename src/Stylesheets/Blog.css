@@ -44,6 +44,7 @@
 }
 
 #blog-title {
+  display: block;
   font-family: 'Oswald', sans-serif;
   font-size: clamp(32px, 5vw, 56px);
   font-weight: 700;
