@@ -3,7 +3,7 @@
   Monday: [
     { name: "BJJ - NoGi", start: 7.5, end: 8.5 },
     { name: "BJJ - NoGi", start: 12.5, end: 13.5 },
-    { name: "Kids BJJ", start: 17, end: 18 },
+    { name: "Kids Muay Thai", start: 17, end: 18 },
     { name: "Muay Thai", start: 18, end: 19},
     { name: "Wrestling", start: 19, end: 20},
     { name: "BJJ - NoGi", start: 20, end: 21 }
@@ -19,7 +19,7 @@
   Wednesday: [
     { name: "BJJ - NoGi", start: 7.5, end: 8.5 },
     { name: "BJJ - NoGi", start: 12.5, end: 13.5 },
-    { name: "Kids BJJ", start: 17, end: 18 },
+    { name: "Kids Muay Thai", start: 17, end: 18 },
     { name: "Muay Thai", start: 18, end: 19},
     { name: "Wrestling", start: 19, end: 20},
     { name: "BJJ - NoGi", start: 20, end: 21 }
@@ -35,6 +35,7 @@
   Friday: [
     { name: "BJJ - NoGi", start: 7.5, end: 8.5 },
     { name: "BJJ - NoGi", start: 12.5, end: 13.5 },
+    { name: "Kids BJJ", start: 17, end: 18 },
     { name: "Muay Thai", start: 18, end: 19},
     { name: "Wrestling", start: 19, end: 20},
     { name: "BJJ - NoGi", start: 20, end: 21 }
