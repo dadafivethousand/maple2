@@ -11,7 +11,6 @@ import Matt from "../Media/1000008223.webp"
 import Goran from "../Media/Goran.webp"
 import Thusean from "../Media/Thusean.webp"
 import Isaiah from "../Media/Isaiah.webp"
-import Andre from "../Media/AndrePorfirio2.webp"
 import Ivan from "../Media/Ivan.webp"
 const CoachesList = 
 [
@@ -33,17 +32,6 @@ const CoachesList =
  
   accomplishments:["30+ Years of Wrestling", "Dagestan Regional Wrestling Champion", "Freestyle Wrestling Champion of Southern Russia", "Freestyle Wrestling Master of Sport (Russia)", "Trained with the likes of Alexander Volkov and Zabit Magomedsharipov" , "Winner of the Ivan Yarygin Wrestling Tournament" ],
   image:Arthur,
-  link: 'https://www.instagram.com/ar_knv/',
-    setmoreLink: 'https://maplejiujitsu.setmore.com/artur-k'
-},
-
-{
-  name: "Andre",
-
-  description: "Andre Porfirio is a black belt and ADCC veteran — one of the most decorated grapplers in the modern era. A Pan Am Champion, American National Champion, AJP Grand Slam Champion, and IBJJF Worlds Bronze Medalist, Andre has won against the toughest opposition in the world. He brings elite precision and championship-caliber insight to every session at Maple.",
- 
-  accomplishments:["30+ Years of Wrestling", "Dagestan Regional Wrestling Champion", "Freestyle Wrestling Champion of Southern Russia", "Freestyle Wrestling Master of Sport (Russia)", "Trained with the likes of Alexander Volkov and Zabit Magomedsharipov" , "Winner of the Ivan Yarygin Wrestling Tournament" ],
-  image:Andre,
   link: 'https://www.instagram.com/ar_knv/',
     setmoreLink: 'https://maplejiujitsu.setmore.com/artur-k'
 },
