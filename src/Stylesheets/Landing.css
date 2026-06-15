@@ -168,6 +168,12 @@
   font-style: normal;
 }
 
+/* StatsBar full width inside hero */
+.landing-hero .stats-bar {
+  width: 100vw;
+  align-self: stretch;
+}
+
 /* Always show carousel on all screen sizes */
 .landing-page .coaches-desktop { display: none !important; }
 .landing-page .coaches-mobile { display: block !important; }
