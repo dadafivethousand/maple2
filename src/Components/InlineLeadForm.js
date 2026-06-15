@@ -174,7 +174,7 @@ export default function InlineLeadForm() {
               className={`lf-btn ${isValid ? 'lf-btn--active' : 'lf-btn--disabled'}`}
               disabled={!isValid || status === 'submitting'}
             >
-              {status === 'submitting' ? 'Submitting…' : 'CLAIM YOUR FREE TRIAL →'}
+              {status === 'submitting' ? 'Submitting…' : 'RESERVE MY SPOT →'}
             </button>
           </form>
         </>

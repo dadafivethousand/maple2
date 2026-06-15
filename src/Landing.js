@@ -60,11 +60,11 @@ export default function Landing() {
           <p className="hero-disciplines">BJJ · Muay Thai · Wrestling · MMA</p>
         </div>
 
+        <StatsBar />
         <LeadForm inline={true} />
       </section>
 
       <Coaches />
-      <StatsBar />
       <Testimonials />
     </div>
   )
