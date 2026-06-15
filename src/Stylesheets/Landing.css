@@ -94,7 +94,7 @@
 }
 
 .hero-name {
-  margin: 15px 0 6px;
+  margin: 15px 0 0;
   color: #ffffffc2;
   font-family: 'Oswald', sans-serif;
   font-size: clamp(2.4rem, 6vw, 4rem);
@@ -173,6 +173,7 @@
   align-self: stretch;
   margin-left: -16px;
   margin-right: -16px;
+  margin-top: 20px;
   background: rgba(2, 8, 28, 0.55);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);

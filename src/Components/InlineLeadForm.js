@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../Stylesheets/LeadForm.css';
-import { Turnstile } from '@marsidev/react-turnstile';
 import whitelogo from '../Media/whitelogonobg.webp';
 import AnimatedCheckmark from './AnimatedCheckmark';
 import TypewriterCycle from '../Utils/Typewriter';
@@ -8,7 +7,6 @@ import Plaque from './Plaque';
 import Badge from './Badge';
 
 export default function InlineLeadForm() {
-  const [captchaToken, setCaptchaToken] = useState(null);
   const plaqueRef = useRef(null);
   const [lockedHeight, setLockedHeight] = useState(null);
   const [formData, setFormData] = useState({
@@ -21,9 +19,7 @@ export default function InlineLeadForm() {
   const [showInstructions, setShowInstructions] = useState(false);
   const [fadeOutCheck, setFadeOutCheck] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
-  const [userStarted, setUserStarted] = useState(false);
 
-  const handleCaptchaSuccess = (token) => setCaptchaToken(token);
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleChange = (e) => {
@@ -71,12 +67,11 @@ export default function InlineLeadForm() {
           headers: { 'Content-Type': 'application/json' },
           mode: 'cors',
           body: JSON.stringify({
-        ...formData,
-        firstName: formData.fullName.trim().split(/\s+/)[0],
-        lastName: formData.fullName.trim().split(/\s+/).slice(1).join(' '),
-        phone: formData.phone.replace(/\D/g, ''),
-        turnstileToken: captchaToken,
-      }),
+          ...formData,
+          firstName: formData.fullName.trim().split(/\s+/)[0],
+          lastName: formData.fullName.trim().split(/\s+/).slice(1).join(' '),
+          phone: formData.phone.replace(/\D/g, ''),
+        }),
         }
       );
       if (!response.ok) {
@@ -136,7 +131,7 @@ export default function InlineLeadForm() {
 
           {status === 'error' && <p className="lf-error">{errorMsg}</p>}
 
-          <form onSubmit={handleSubmit} className="lf-form" onFocus={() => setUserStarted(true)}>
+          <form onSubmit={handleSubmit} className="lf-form">
             <div className="lf-row">
               <div className="lf-field lf-field--full">
                 <input className="lf-input" id="il-fullName" type="text" name="fullName" value={formData.fullName} onChange={handleChange} placeholder=" " required autoComplete="name" />
@@ -157,16 +152,6 @@ export default function InlineLeadForm() {
                 <label className="lf-label" htmlFor="il-phone">Phone</label>
               </div>
             </div>
-
-            {userStarted && (
-              <Turnstile
-                siteKey="0x4AAAAAACuXuYqwDOUxvxFB"
-                onSuccess={(t) => { handleCaptchaSuccess(t); setErrorMsg(''); }}
-                onExpire={() => setCaptchaToken(null)}
-                onError={() => { setCaptchaToken(null); setErrorMsg('Security check failed. Please refresh the page and try again.'); }}
-                options={{ size: 'invisible', retry: 'auto', retryInterval: 3000, refreshExpired: 'auto' }}
-              />
-            )}
 
             <button
               type="submit"
