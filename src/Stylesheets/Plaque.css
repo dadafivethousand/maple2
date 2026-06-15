@@ -129,7 +129,7 @@
 /* ── Mobile ── */
 @media (max-width: 799px) {
   .plaque-wrap {
-    width: min(360px, calc(100vw - 60px));
+    width: min(200px, calc(100vw - 32px));
     border-radius: 19px;
   }
 
