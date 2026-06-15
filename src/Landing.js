@@ -61,10 +61,10 @@ export default function Landing() {
         </div>
 
         <LeadForm inline={true} />
-        <StatsBar />
       </section>
 
       <Coaches />
+      <StatsBar />
       <Testimonials />
     </div>
   )

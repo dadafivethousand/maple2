@@ -168,34 +168,6 @@
   font-style: normal;
 }
 
-/* StatsBar full width inside hero */
-.landing-hero .stats-bar {
-  align-self: stretch;
-  margin-left: -16px;
-  margin-right: -16px;
-  margin-top: 20px;
-  background: rgba(2, 8, 28, 0.55);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(125, 211, 252, 0.12);
-  border-bottom: 1px solid rgba(125, 211, 252, 0.12);
-}
-
-.landing-hero .stats-item {
-  padding: 14px 0;
-  flex: 1;
-}
-
-.landing-hero .stats-num {
-  font-size: clamp(20px, 5vw, 28px);
-  margin-bottom: 3px;
-}
-
-.landing-hero .stats-label {
-  font-size: 8px;
-  letter-spacing: 2px;
-}
-
 /* Always show carousel on all screen sizes */
 .landing-page .coaches-desktop { display: none !important; }
 .landing-page .coaches-mobile { display: block !important; }
