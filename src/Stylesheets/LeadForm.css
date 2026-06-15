@@ -294,8 +294,8 @@
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin: 0 0 10px;
-  text-align: left;
+  margin: 0 0 14px;
+  text-align: center;
 }
 
 .lf-success-sub {
@@ -304,7 +304,33 @@
   font-family: 'Roboto Condensed', sans-serif;
   line-height: 1.5;
   margin: 0 0 18px;
-  text-align: left;
+  text-align: center;
+}
+
+.lf-steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  width: 100%;
+}
+
+.lf-step {
+  color: rgba(186, 230, 253, 0.85);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(125, 211, 252, 0.08);
+  text-align: center;
+}
+
+.lf-step:last-child {
+  border-bottom: none;
+}
+
+.lf-step a {
+  color: #fbbf24;
+  text-decoration: underline;
 }
 
 /* ── Waiver button widget ── */

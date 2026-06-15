@@ -43,11 +43,11 @@ export default function InlineLeadForm() {
   };
 
   const cleanedPhone = formData.phone.replace(/\D/g, '');
-  const isValid =
+  const fieldsValid =
     formData.fullName.trim() !== '' &&
     validateEmail(formData.email) &&
-    cleanedPhone.length === 10 &&
-    Boolean(captchaToken);
+    cleanedPhone.length === 10;
+  const isValid = fieldsValid && Boolean(captchaToken);
 
   useEffect(() => {
     if (status !== 'success') return;
@@ -171,10 +171,10 @@ export default function InlineLeadForm() {
 
             <button
               type="submit"
-              className={`lf-btn ${isValid ? 'lf-btn--active' : 'lf-btn--disabled'}`}
+              className={`lf-btn ${fieldsValid ? 'lf-btn--active' : 'lf-btn--disabled'}`}
               disabled={!isValid || status === 'submitting'}
             >
-              {status === 'submitting' ? 'Submitting…' : 'RESERVE MY SPOT →'}
+              {status === 'submitting' ? 'Submitting…' : !fieldsValid ? 'RESERVE MY SPOT →' : !captchaToken ? 'Please wait…' : 'RESERVE MY SPOT →'}
             </button>
           </form>
         </>

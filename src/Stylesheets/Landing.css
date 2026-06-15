@@ -170,8 +170,9 @@
 
 /* StatsBar full width inside hero */
 .landing-hero .stats-bar {
-  width: calc(100% + 32px);
+  align-self: stretch;
   margin-left: -16px;
+  margin-right: -16px;
   background: rgba(2, 8, 28, 0.55);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
