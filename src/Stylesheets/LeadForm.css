@@ -83,6 +83,10 @@
   position: relative;
 }
 
+.lf-field--full {
+  grid-column: 1 / -1;
+}
+
 /* Inputs */
 .lf-input {
   width: 100%;

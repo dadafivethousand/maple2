@@ -12,8 +12,7 @@ export default function InlineLeadForm() {
   const plaqueRef = useRef(null);
   const [lockedHeight, setLockedHeight] = useState(null);
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    fullName: '',
     email: '',
     phone: '',
   });
@@ -45,8 +44,7 @@ export default function InlineLeadForm() {
 
   const cleanedPhone = formData.phone.replace(/\D/g, '');
   const isValid =
-    formData.firstName.trim() !== '' &&
-    formData.lastName.trim() !== '' &&
+    formData.fullName.trim() !== '' &&
     validateEmail(formData.email) &&
     cleanedPhone.length === 10 &&
     Boolean(captchaToken);
@@ -73,7 +71,13 @@ export default function InlineLeadForm() {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           mode: 'cors',
-          body: JSON.stringify({ ...formData, phone: formData.phone.replace(/\D/g, ''), turnstileToken: captchaToken }),
+          body: JSON.stringify({
+        ...formData,
+        firstName: formData.fullName.trim().split(/\s+/)[0],
+        lastName: formData.fullName.trim().split(/\s+/).slice(1).join(' '),
+        phone: formData.phone.replace(/\D/g, ''),
+        turnstileToken: captchaToken,
+      }),
         }
       );
       if (!response.ok) {
@@ -85,7 +89,7 @@ export default function InlineLeadForm() {
       await response.json().catch(() => ({}));
       setStatus('success');
       window.gtag?.('event', 'generate_lead', { event_category: 'form', event_label: 'intake_form' });
-      setFormData({ firstName: '', lastName: '', email: '', phone: '' });
+      setFormData({ fullName: '', email: '', phone: '' });
     } catch (err) {
       setErrorMsg('Error submitting the form');
       setStatus('error');
@@ -135,13 +139,9 @@ export default function InlineLeadForm() {
 
           <form onSubmit={handleSubmit} className="lf-form" onFocus={() => setUserStarted(true)}>
             <div className="lf-row">
-              <div className="lf-field">
-                <input className="lf-input" id="il-firstName" type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder=" " required autoComplete="given-name" />
-                <label className="lf-label" htmlFor="il-firstName">First Name</label>
-              </div>
-              <div className="lf-field">
-                <input className="lf-input" id="il-lastName" type="text" name="lastName" value={formData.lastName} onChange={handleChange} placeholder=" " required autoComplete="family-name" />
-                <label className="lf-label" htmlFor="il-lastName">Last Name</label>
+              <div className="lf-field lf-field--full">
+                <input className="lf-input" id="il-fullName" type="text" name="fullName" value={formData.fullName} onChange={handleChange} placeholder=" " required autoComplete="name" />
+                <label className="lf-label" htmlFor="il-fullName">Full Name</label>
               </div>
             </div>
 
