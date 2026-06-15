@@ -146,14 +146,11 @@ export default function InlineLeadForm() {
             </div>
 
             <div className="lf-row">
-              <div className="lf-field lf-field--full">
+              <div className="lf-field">
                 <input className="lf-input" id="il-email" type="email" name="email" value={formData.email} onChange={handleChange} placeholder=" " required autoComplete="email" />
                 <label className="lf-label" htmlFor="il-email">Email</label>
               </div>
-            </div>
-
-            <div className="lf-row">
-              <div className="lf-field lf-field--full">
+              <div className="lf-field">
                 <input className="lf-input" id="il-phone" type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder=" " required autoComplete="tel" />
                 <label className="lf-label" htmlFor="il-phone">Phone</label>
               </div>
