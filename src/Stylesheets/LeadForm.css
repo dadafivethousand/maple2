@@ -281,9 +281,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding: 8px 0;
   width: 100%;
+  text-align: center;
 }
 
 .lf-success-title {
@@ -492,6 +493,10 @@
 .check-wrap {
   opacity: 1;
   transition: opacity 600ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 .check-wrap.fade-out { opacity: 0; }
 
