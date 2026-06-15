@@ -28,7 +28,7 @@
 
 /* ── Gradient-border wrapper ── */
 .plaque-wrap {
-  width: min(380px, calc(100vw - 32px));
+  width: min(300px, calc(100vw - 32px));
   margin: 0 auto;
   border-radius: 23px;
   padding: 1.5px;
