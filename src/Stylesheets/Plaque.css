@@ -28,7 +28,7 @@
 
 /* ── Gradient-border wrapper ── */
 .plaque-wrap {
-  width: min(200px, calc(100vw - 32px));
+  width: min(300px, calc(100vw - 32px));
   margin: 0 auto;
   border-radius: 23px;
   padding: 1.5px;
@@ -129,7 +129,7 @@
 /* ── Mobile ── */
 @media (max-width: 799px) {
   .plaque-wrap {
-    width: min(200px, calc(100vw - 32px));
+    width: min(300px, calc(100vw - 32px));
     border-radius: 19px;
   }
 
