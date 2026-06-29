@@ -207,3 +207,32 @@
 }
 .header-logo{z-index: 30; height:40px;}
 
+/* ===== Canada Day closure notice ===== */
+.schedule-notice-wrap {
+  position: relative;
+  z-index: 6;
+  width: 100%;
+  text-align: center;
+  margin: 4px 0 18px;
+}
+
+.schedule-notice {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  max-width: 92%;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: #c8102e;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  color: #fff;
+  font-size: clamp(0.78rem, 1.6vw, 0.92rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.schedule-notice strong { font-weight: 800; white-space: nowrap; }
+.schedule-notice__leaf { font-size: 1.05em; line-height: 1; }

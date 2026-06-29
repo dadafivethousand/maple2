@@ -1,34 +1,14 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { useLocation } from "react-router-dom"
 import './Stylesheets/Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faBars, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faSquareFacebook } from '@fortawesome/free-brands-svg-icons';
-import InlineLeadForm from "./Components/InlineLeadForm";
 
 export default function Navbar() {
     const [click, setClick] = useState(false);
-    const [showGetStarted, setShowGetStarted] = useState(false);
-    const [minimized, setMinimized] = useState(false);
     const location = useLocation();
     const root = location.pathname === '/' ? '' : '/';
-
-    const isSummerCamp = location.pathname === '/camp';
-
-    const changeExpand = () => {
-        if (isSummerCamp) return;
-        if (window.scrollY >= 400) {
-            setShowGetStarted(true);
-        } else {
-            setShowGetStarted(false);
-            setMinimized(false);
-        }
-    };
-
-    useEffect(() => {
-        window.addEventListener('scroll', changeExpand);
-        return () => window.removeEventListener('scroll', changeExpand);
-    }, []);
 
     const handleClick = () => setClick((prev) => !prev);
 
@@ -54,17 +34,6 @@ export default function Navbar() {
 
                 {/* Nav panel — slide-out on mobile, inline on desktop */}
                 <div className={`navbar ${click ? 'slide' : ''}`}>
-
-                    {/* Inline form — slides in on scroll (desktop) */}
-                    <div className={`${showGetStarted ? 'show-get-started' : ''} getstarted${minimized ? ' getstarted--minimized' : ''}`}>
-                        <div className="getstarted-inner">
-                            <button className="getstarted-minimize" onClick={() => setMinimized(true)} aria-label="Minimize form">✕</button>
-                            <InlineLeadForm />
-                        </div>
-                        <button className="getstarted-tab" onClick={() => setMinimized(false)} aria-label="Expand free trial form">
-                            Free Trial
-                        </button>
-                    </div>
 
                     {/* Desktop-only: phone + socials row */}
                     <div className="nav-desktop-meta">
