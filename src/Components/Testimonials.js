@@ -18,8 +18,6 @@ const [reviewIndex, setReviewIndex] = useState(0);
 
     const reviews = [
         { text: "Good vibes and friendly atmosphere.", author: "Sukh Brar"},
-
-        { text: "Highly recommend this gym. Great teachers, safe environment and great location.", author: "Jessica Chab" },
         { text: "Best place for Brazilian Jiu Jitsu in Maple", author: "Taj Gordon"},
         { text: "Top instruction from one of the best competitive BJJ athletes in Canada.", author: "Robert Rende"},
         { text: "Best place for training, Very friendly and highly professional. I recommend", author: "Iryna Kap" },

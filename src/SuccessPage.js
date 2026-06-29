@@ -1,9 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Stylesheets/SuccessPage.css';
 import logo from './Media/whitelogonobg.webp';
 
 export default function SuccessPage() {
+  const { search } = useLocation();
+  const isStore = new URLSearchParams(search).get('type') === 'store';
+
   return (
     <div className="success-page">
       <div className="success-content">
@@ -16,10 +19,19 @@ export default function SuccessPage() {
 
         <h1>Payment Successful</h1>
         <div className="sp-divider" />
-        <p>Thank you for joining Maple Jiu-Jitsu!</p>
-        <p>A receipt has been sent to your email.</p>
-
-        <Link to="/#Pricing" className="back-button">← Back to Home</Link>
+        {isStore ? (
+          <>
+            <p>Thank you for your order!</p>
+            <p>A receipt has been sent to your email.</p>
+            <Link to="/store" className="back-button">← Back to Shop</Link>
+          </>
+        ) : (
+          <>
+            <p>Thank you for joining Maple Jiu-Jitsu!</p>
+            <p>A receipt has been sent to your email.</p>
+            <Link to="/#Pricing" className="back-button">← Back to Home</Link>
+          </>
+        )}
       </div>
     </div>
   );

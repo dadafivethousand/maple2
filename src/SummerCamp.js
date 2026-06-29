@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 function fmt12(t) {
   const [h, m] = t.split(':').map(Number);
@@ -117,6 +118,11 @@ export default function SummerCamp() {
 
   return (
     <>
+      <Helmet>
+        <title>Summer Camp 2026 | Maple Jiu-Jitsu Academy — Maple, ON</title>
+        <meta name="description" content="Sign up for Maple Jiu-Jitsu Academy's summer camp in Maple, Ontario. BJJ and martial arts training for kids, June 22 – September 4, 2026." />
+        <link rel="canonical" href="https://maplebjj.com/camp" />
+      </Helmet>
       <Navbar />
       <div className="sc-page">
         <header className="sc-hero">

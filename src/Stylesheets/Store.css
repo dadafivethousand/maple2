@@ -1,0 +1,355 @@
+/* ═══════════════════════════════════════════════════════
+   Store.css — Maple Jiu-Jitsu Academy
+   ═══════════════════════════════════════════════════════ */
+
+.store-page {
+  background: #000d1f;
+  min-height: 100vh;
+  color: #ddeeff;
+  font-family: 'Roboto Condensed', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── Hero ─────────────────────────────────────────────── */
+.store-hero {
+  text-align: center;
+  padding: 60px 24px 48px;
+}
+
+.store-kicker {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(238, 172, 5, 0.9);
+  margin-bottom: 14px;
+}
+
+.store-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* ── Layout ───────────────────────────────────────────── */
+.store-layout {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px 120px; /* bottom padding clears the cart bar */
+}
+
+/* ── Product grid ─────────────────────────────────────── */
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+/* ── Product card ─────────────────────────────────────── */
+.store-card {
+  background: #081830;
+  border: 1px solid rgba(100, 160, 255, 0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s;
+}
+
+.store-card:hover {
+  border-color: rgba(100, 160, 255, 0.28);
+}
+
+.store-card-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.store-img-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #0d2040;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(221, 238, 255, 0.25);
+  font-family: 'Oswald', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.store-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  text-align: center;
+}
+
+.store-card-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 4px;
+}
+
+.store-card-desc {
+  font-size: 13px;
+  color: rgba(221, 238, 255, 0.5);
+  margin: 0 0 6px;
+}
+
+.store-card-price {
+  font-size: 22px;
+  font-weight: 700;
+  color: #eeac05;
+  margin: 0;
+}
+
+.store-card-hst {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(221, 238, 255, 0.4);
+}
+
+/* ── Size selector area — fixed height on every card ──── */
+.store-size-area {
+  min-height: 80px;
+  padding-top: 12px;
+  width: 100%;
+}
+
+.store-size-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+
+.store-size-btn {
+  padding: 5px 10px;
+  background: transparent;
+  border: 1px solid rgba(100, 160, 255, 0.25);
+  border-radius: 5px;
+  color: #ddeeff;
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.store-size-btn:hover {
+  border-color: rgba(100, 160, 255, 0.5);
+  background: rgba(100, 160, 255, 0.08);
+}
+
+.store-size-btn.selected {
+  background: #eeac05;
+  border-color: #eeac05;
+  color: #000;
+}
+
+.store-size-btn.error {
+  border-color: rgba(255, 107, 107, 0.6);
+}
+
+/* Always in DOM — visibility toggled so it never shifts layout */
+.store-size-error {
+  font-size: 11px;
+  color: #ff6b6b;
+  margin-top: 6px;
+  height: 14px;
+}
+
+/* ── Quantity row ─────────────────────────────────────── */
+.store-qty-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.store-qty-btn {
+  width: 32px;
+  height: 32px;
+  background: #0d2040;
+  border: 1px solid rgba(100, 160, 255, 0.2);
+  border-radius: 6px;
+  color: #ddeeff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  padding: 0;
+}
+
+.store-qty-btn:hover:not(:disabled) {
+  background: #122845;
+}
+
+.store-qty-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.store-qty-val {
+  font-size: 18px;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* ── Add to cart button ───────────────────────────────── */
+.store-add-btn {
+  margin-top: 10px;
+  padding: 11px 0;
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(238, 172, 5, 0.55);
+  color: #eeac05;
+  font-family: 'Oswald', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.store-add-btn:hover {
+  background: #eeac05;
+  color: #000;
+}
+
+/* ── Bottom cart bar ──────────────────────────────────── */
+.store-cart-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: rgba(2, 8, 22, 0.97);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-top: 1px solid rgba(100, 160, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(20px, 5vw, 72px);
+  gap: 16px;
+  z-index: 999;
+  transform: translateY(100%);
+  transition: transform 0.34s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.store-cart-bar--visible {
+  transform: translateY(0);
+}
+
+.store-cart-bar-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.store-cart-bar-count {
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ddeeff;
+  letter-spacing: 0.5px;
+}
+
+.store-cart-bar-sep {
+  color: rgba(100, 160, 255, 0.3);
+  font-size: 13px;
+}
+
+.store-cart-bar-total {
+  font-family: 'Oswald', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.store-cart-bar-tax {
+  font-size: 11px;
+  color: rgba(221, 238, 255, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.store-cart-bar-error {
+  color: #ff6b6b;
+  font-size: 13px;
+  flex: 1;
+  text-align: center;
+}
+
+.store-cart-bar-btn {
+  appearance: none;
+  cursor: pointer;
+  padding: 11px 28px;
+  border-radius: 8px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: #eeac05;
+  color: #000;
+  border: none;
+  box-shadow: 0 4px 16px rgba(238, 172, 5, 0.3);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.store-cart-bar-btn:hover {
+  background: #ffc107;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(238, 172, 5, 0.4);
+}
+
+.store-cart-bar-btn:active {
+  transform: translateY(1px);
+}
+
+.store-cart-bar-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Mobile ───────────────────────────────────────────── */
+@media (max-width: 800px) {
+  .store-title { font-size: 40px; }
+
+  .store-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+  }
+
+  .store-cart-bar-total { font-size: 20px; }
+}

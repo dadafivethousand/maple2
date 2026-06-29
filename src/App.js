@@ -21,6 +21,7 @@ const FullPost    = lazy(() => import("./Components/FullPost"));
 const SuccessPage = lazy(() => import("./SuccessPage"));
 const CancelPage  = lazy(() => import("./CancelPage"));
 const SummerCamp  = lazy(() => import("./SummerCamp"));
+const Store       = lazy(() => import("./Store"));
 
 
 
@@ -50,6 +51,7 @@ function App() {
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<FullPost />} />
               <Route path="/camp" element={<SummerCamp />} />
+              <Route path="/store" element={<Store />} />
               <Route path="/success" element={<SuccessPage />} />
               <Route path="/cancel" element={<CancelPage />} />
 
