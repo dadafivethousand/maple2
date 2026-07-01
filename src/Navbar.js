@@ -62,7 +62,6 @@ export default function Navbar() {
                         <a href={`${root}#Memberships`}><li onClick={() => setClick(false)}>Sign Up</li></a>
                         <a href={`${root}#FAQ`}><li onClick={() => setClick(false)}>FAQ</li></a>
                         <a href={`${root}#Contact`}><li onClick={() => setClick(false)}>Contact Us</li></a>
-                        <a href="/camp"><li onClick={() => setClick(false)}>Summer Camp</li></a>
                         <a href="/store"><li onClick={() => setClick(false)}>Shop</li></a>
                      </ul>
                 </div>
