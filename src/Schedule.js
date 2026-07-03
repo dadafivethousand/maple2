@@ -116,13 +116,6 @@ export default function Schedule() {
         <span className="sh-main">Schedule</span>
       </p>
 
-      <div className="schedule-notice-wrap" data-sr>
-        <div className="schedule-notice">
-          <span className="schedule-notice__leaf" aria-hidden="true">🍁</span>
-          <span>Closed <strong>Wednesday, July&nbsp;1</strong> for Canada Day</span>
-        </div>
-      </div>
-
       <div className="Schedule">
         {Object.keys(schedule).map((day, colIndex) => (
           <div className='Column' key={day}>
