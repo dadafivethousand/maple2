@@ -25,7 +25,8 @@ export default function InlineLeadForm() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === 'phone') {
-      const cleaned = value.replace(/\D/g, '');
+      let cleaned = value.replace(/\D/g, '');
+      if (cleaned.length === 11 && cleaned.startsWith('1')) cleaned = cleaned.slice(1);
       let formatted = cleaned;
       if (cleaned.length > 3 && cleaned.length <= 6) {
         formatted = `(${cleaned.slice(0, 3)}) ${cleaned.slice(3)}`;
