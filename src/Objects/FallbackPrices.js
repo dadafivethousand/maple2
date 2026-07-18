@@ -1,0 +1,94 @@
+// MapleFallbackPrices.js
+// Static snapshot of /membership-info, bundled so the pricing section renders
+// instantly and never goes blank if the live API request is blocked (ad
+// blockers, network firewalls, offline). The live fetch overrides this on
+// success. Keep in sync when membership prices change.
+
+const FALLBACK_PRICES = [
+  {
+    "label": "Adult & Teens",
+    "info": [
+      {
+        "price": 19999,
+        "description": "1 Month",
+        "cancel": "Cancel Any Time",
+        "duration": 1,
+        "subscription": true,
+        "billed": "per month",
+        "stripe": true,
+        "adult": true,
+        "paymentLink": "https://buy.stripe.com/14AcMXdvacEl3Qw9dXds40u",
+        "features": []
+      },
+      {
+        "price": 109999,
+        "description": "6 Months",
+        "duration": 6,
+        "subscription": false,
+        "billed": "one time payment",
+        "stripe": true,
+        "adult": true,
+        "paymentLink": "https://buy.stripe.com/14AdR1cr6eMt2Msbm5ds40v",
+        "features": []
+      },
+      {
+        "price": 189900,
+        "description": "1 Year",
+        "duration": 12,
+        "subscription": false,
+        "billed": "one time payment",
+        "stripe": true,
+        "adult": true,
+        "paymentLink": "https://buy.stripe.com/bJebIT4YE6fX1IofClds40w",
+        "cash": true,
+        "features": []
+      }
+    ]
+  },
+  {
+    "label": "Kids (5-12)",
+    "info": [
+      {
+        "price": 19599,
+        "description": "1 Month",
+        "cancel": "Cancel Any Time",
+        "duration": 1,
+        "subscription": true,
+        "billed": "per month",
+        "stripe": true,
+        "adult": false,
+        "kids": true,
+        "paymentLink": "https://buy.stripe.com/eVadUz13zg3h0V228A",
+        "features": []
+      },
+      {
+        "price": 104999,
+        "description": "6 Months",
+        "duration": 6,
+        "subscription": false,
+        "billed": "one time payment",
+        "stripe": true,
+        "adult": false,
+        "kids": true,
+        "paymentLink": "https://buy.stripe.com/6oEcQv3bH8AP0V2aF1",
+        "cash": true,
+        "features": []
+      },
+      {
+        "price": 184999,
+        "description": "1 Year",
+        "duration": 12,
+        "subscription": false,
+        "billed": "one time payment",
+        "stripe": true,
+        "adult": false,
+        "kids": true,
+        "paymentLink": "https://buy.stripe.com/4gw5o3h2x4kzbzG5kG",
+        "cash": true,
+        "features": []
+      }
+    ]
+  }
+];
+
+export default FALLBACK_PRICES;

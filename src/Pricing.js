@@ -2,6 +2,7 @@
 import './Stylesheets/Pricing.css';
 import './Stylesheets/SectionHeading.css';
 import { useState, useEffect, useRef } from 'react';
+import FALLBACK_PRICES from './Objects/FallbackPrices';
 
 const formatCurrency = (amount) =>
   new Intl.NumberFormat('en-CA', {
@@ -20,7 +21,10 @@ const formatSavings = (cents) =>
   }).format(cents / 100);
 
 export default function Pricing() {
-  const [priceObject, setPriceObject] = useState(null);
+  // Start from a bundled snapshot so prices render instantly and never go
+  // blank if the live API is blocked/unreachable; the fetch below overrides
+  // it with fresh data when it succeeds.
+  const [priceObject, setPriceObject] = useState(FALLBACK_PRICES);
   const [displayArray, setDisplayArray] = useState([]);
 
   // NEW: watch the whole Pricing section
@@ -74,22 +78,34 @@ export default function Pricing() {
   }
 
   useEffect(() => {
+    let cancelled = false;
+    const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
     async function fetchMembershipInfo() {
-      try {
-        const response = await fetch(
-          'https://worker-consolidated.maxli5004.workers.dev/membership-info'
-        );
-        if (response.ok) {
-          const data = await response.json();
-          setPriceObject(data);
-        } else {
-          console.error('Failed to fetch membership info');
+      // Retry a few times before giving up; on total failure we keep the
+      // bundled fallback prices already in state, so the section never blanks.
+      for (let attempt = 0; attempt < 3; attempt++) {
+        try {
+          const response = await fetch(
+            'https://worker-consolidated.maxli5004.workers.dev/membership-info'
+          );
+          if (response.ok) {
+            const data = await response.json();
+            if (!cancelled && Array.isArray(data) && data.length) {
+              setPriceObject(data);
+            }
+            return;
+          }
+        } catch (error) {
+          console.error('Error fetching Membership Info:', error);
         }
-      } catch (error) {
-        console.error('Error fetching Membership Info:', error);
+        await sleep(800 * (attempt + 1));
       }
+      console.warn('membership-info unreachable; using bundled fallback prices');
     }
+
     fetchMembershipInfo();
+    return () => { cancelled = true; };
   }, []);
 
   return (
